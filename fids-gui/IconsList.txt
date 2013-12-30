@@ -1,0 +1,30 @@
+Arrivals
+	- Modify
+	- Clear
+	- Landed
+	- OnBlocks
+	- Delayed
+	- PreLanded
+Departures
+	- Modify
+	- Clear
+	- Boarding
+	- Final Call
+	- Closed
+	- Closed
+	- OffBlocks
+	- Departed
+	- Delayed
+Checkins
+	- Modify
+	- Copy 
+	- Paste
+	- Clear
+Gates
+	- Modify
+	- Copy 
+	- Paste 
+	- Clear
+Bays
+Baggages
+Timetable

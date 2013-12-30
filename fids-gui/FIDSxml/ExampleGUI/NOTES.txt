@@ -1,0 +1,4 @@
+unit uFidsTags;
+aFlightKind = ( fkNone, fkArrivals, fkDepartures );  // breaking change - fixed inconsistent 'afk' prefix - sorry
+
+

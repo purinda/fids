@@ -1,0 +1,420 @@
+Definitive XML.xml    ver 20 Jan 2010
+
+// all xml files start with a byte order mark (BOM) to indicate encoding, UTF-8 preferred, UTF-16 supported 
+// this document is intended to be 'RFC', please mark up and return to GT as appropriate. 
+
+
+<?xml version="1.0" encoding="UTF-8"?>	// optional header
+// is read only and carries any software licence information, ie locks down the software to one site.
+// Nominal owner is system configuror ( KZ, JC )
+<SystemConfig>
+	<JobName> Digital Images </JobName>	// should be displayed on any user interface apps
+	
+	// itemises the xml files to be loaded in to the FIDS data base ( root level )
+	<Load> SystemSettings.xml, IATAPort.xml, Users.xml, Arrivals.xml, Departures.xml, TimeTable.xml, CheckIns.xml </Load>
+
+	// KeyTag="true" forces unique server names.
+	<Servers KeyTag="true">
+    	<StandAlone/>                    // no TCP - pipe only - for no DHCP support demo
+		<TCP_Port> 1667 </TCP_Port>
+		<Server-1>
+			<IP> 192.168.0.2 </IP>
+		</Server-1>
+		<Server-2>
+			<IP> 192.168.0.104 </IP>
+		</Server-2>
+	</Servers>
+	
+	// enables the timetable app
+	<UseTimeTable/>
+	
+	// <UseFeedQantas/> etc enables specific feed type
+	
+	<KeyPads_UDC>				//	defines UDC connected keypads
+		<Port> 9201 </Port>		// UDC terminal server UDP/TCP port number
+		<Gates>					// use gate type user interface function
+			<7>						// location is gate 7
+				<IP> 192.168.0.31 </IP>		// UDC address
+				<Drop> 1 </Drop>			// keypad multi-drop address ( always 1 ? )
+			</7>
+		</Gates>
+		<CICs>
+			<2>
+				<IP> 192.168.0.20 </IP>
+				<Drop> 1 </Drop>
+			</2>
+		</CICs>
+	</KeyPads_UDC>
+	<KeyPads_Lantronix>		// uses lantronix terminal server - see <KeyPads_UDC>
+		<Port> 3001 </Port>
+		<CICs>
+			<2>
+				<IP> 192.168.0.211 </IP>
+				<Drop> 1 </Drop>
+			</2>
+		</CICs>
+	</KeyPads_Lantronix>
+
+	<TimeTable/>
+	<HttpServer>
+		<noLogInRequired/>
+		<Port> 80 </Port>
+		<SessionKeepAliveMin> 120 </SessionKeepAliveMin>
+	</HttpServer>
+	<AutoFlush/>
+	
+	// itemises valid site objects - input validation
+	<Terminals> T1,T2,T3 </Terminals>
+	<Bays>
+		1,2,3,4,5,6,7,8,9
+	</Bays>
+	<Gates>
+		1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+	</Gates>
+	<CheckIns>
+		1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32
+	</CheckIns>
+	<Belts> 1,2,3,4,5,6,7,8,9 </Belts>
+	
+	// screen size is used to provide checkin drop down selection of available graphics (in the right size) 
+	<DefaultScreenSize>
+		<FullScr> 1360x768 </FullScr>
+		<Footer> 1360x160 </Footer>
+		<Body> 1360x508 </Body>
+		<Header> 1360x160 </Header>
+	</DefaultScreenSize>
+</SystemConfig>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+// writeable, non-volatile, settings. Nominal owner = FIDSxml.exe
+<SystemSettings>
+	// preferred fonts for various unicode ranges
+	<DisplayFonts>
+		<FontPath> D:\Windows\Fonts\ </FontPath>
+		<Font>
+			Bitstream Cyberbit
+			<Range> $4E00-$9FFF </Range>
+		</Font>
+	</DisplayFonts>
+	
+	// alternative logo prefixes for flight number ranges
+	<Logo>
+		<QF>
+			<Range>
+				100-299
+				<Use> AR </Use>
+			</Range>
+			<Alt> QFA </Alt>
+		</QF>
+	</Logo>
+	
+	// UDC packet throttling. 10mSec is minimum value. Increase this in the event of packet loss
+	<UDPinterval> 10 </UDPinterval>
+	<Comments/>
+	
+	// Timetable and times flight flush control
+	<Timetable>
+		<LookAhead_hrs> 16 </LookAhead_hrs>
+		<AutoFlush>
+			<ST_min> 2160 </ST_min>
+			<ET_min> 120 </ET_min>
+			<Dep_min> 15 </Dep_min>
+			<Arr_min> 60 </Arr_min>
+			<Can_min> 60 </Can_min>
+		</AutoFlush>
+	</Timetable>
+	
+	// standard string vocabulary for statuses etc. GUI drop down lists, input validation
+	<Strings>
+		<StatusA>
+			Cancelled,Delayed,Pre-Landed,Landed,Diverted,On Blocks,Confirmed,Re-Timed,Ask Airline,Special
+		</StatusA>
+		<StatusD>
+			Cancelled,Delayed,Boarding,Final Call,Closed,Departed,Off Blocks,Gate Open,Gate Closing,Gate Closed,Last Call,Re-Timed,Ask Airline,Special,Suspended
+		</StatusD>
+		<PublicStatusD>   // matching status string as displayed on public screens
+			Cancelled,Delayed,Boarding,Final Call,Closed,Departed,,Gate Open,,,,,Ask Airline,Special,Suspended
+		</PublicStatusD>
+		<CheckinServices>
+			Group,VIP,24 Hour,Manager,Oversize,Re-Checkin,Nolug,Easyboarding,All Flights,Individual
+		</CheckinServices>
+		<CheckinClasses> First,Business,Economy </CheckinClasses>
+		<Aircraft>
+			AC50,ATR42,ATR72,B200,B350,B1900,BE90,C550,C130,C130J,C160,C208,CNA,C310,C402,C404,C421,C550,CL601,CL604,DA90,DH3,DH8,DHT,E110,E120,F27,F28,F100,G3,G4,G5,PA31,SC5,SW3,SWM,330,333,340,717,727,733,734,738,73H,763,764,742,743,744,747B,757,737,747,767,AR7,BA146,DC10
+		</Aircraft>
+	</Strings>
+	<Codes>
+		<Airlines> QA,GT,ST,NZ,PA </Airlines>
+		<CheckinServices> GP,VI,24,MA,OS,RC,NL,EB,AF,IN </CheckinServices>
+		<CheckinClasses> FC,BC,EC </CheckinClasses>
+	</Codes>
+	<Graphics>
+		// list of available graphics installed for checkin use (etc)
+		<FullScr> QF1360x508.gif </FullScr>
+		<Body/>
+		<Footer/>
+		<BodyGraphic/>
+	</Graphics>
+	
+	<NotResponding>		// more system status - lists equipment not responding
+		<UDC>
+			<ñ192.168.0.31>		// UDC address and time first noticed not responding
+				<TimeStamp> 20100607 1029 </TimeStamp>
+			</ñ192.168.0.31>
+			<ñ192.168.0.20>
+				<TimeStamp> 20100627 1841 </TimeStamp>
+			</ñ192.168.0.20>
+			<ñ192.168.0.21>
+				<TimeStamp> 20100627 1842 </TimeStamp>
+			</ñ192.168.0.21>
+		</UDC>
+		<Server>
+			<ñ192.168.0.2>		// server PC time first noticed not responding
+				<TimeStamp> 20100607 1029 </TimeStamp>
+			</ñ192.168.0.2>
+		</Server>
+		<TerminalServer>
+			<ñ192.168.0.202>		// Serial / terminal server and time first noticed not responding
+				<TimeStamp> 20100607 1029 </TimeStamp>
+			</ñ192.168.0.202>
+		</TerminalServer>
+		<Feed>
+			<ñ192.168.0.242>		// FEED eg qantas and time first noticed not responding
+				<TimeStamp> 20100607 1029 </TimeStamp>
+			</ñ192.168.0.242>
+		</TerminalServer>
+	</NotResponding>
+
+</SystemSettings>
+
+
+
+// IATA port codes and abbreviations used by formatter to resolve <Ports> information
+// owner is system configuror ie JC, KZ
+// can be available to GUI elements for code selection etc.
+<IATAPort KeyTag="true">   // key tag provides fast hash table lookup
+	<ABH> Alpha,Alfa </ABH>   // ABH is the IATA code for Alpha
+	<ABM> Bamaga,Bama </ABM>
+	<ABX> Albury,Alby </ABX>
+	<ADL> Adelaide,Adel </ADL>
+	<AKL> Auckland,Auck
+		<Ch> 奥克兰</Ch>			// Chinese language for destination
+		<Local> 奥克兰</Local>  // the local language version for the destination ( Auckland is in China right ?)
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+// screen format specifications. See FIDS Design.odt/pdf for numerous details
+// owner is DII graphics designer (JC)
+<DisplayConfig>
+	<Formats KeyTag="true">
+		<Departures>
+			Public
+			<Rect> 0,0,1359,767, </Rect>
+			<ColourBG> 0,0,0, </ColourBG>
+			<ColourFG> 255,255,255, </ColourFG>
+			<Font> swis721 blkcn bt </Font>
+			<Attributes> -LnBox, -Bold </Attributes>
+			<Procedure> SortDB( :Departures:; ST: ) </Procedure>
+			<Frame>
+				<Header>
+					<ColourBG> 0,85,85, </ColourBG>
+					<Line>
+						<Height> 60 </Height>
+						<Attributes> +Center </Attributes>
+						<Field> 150, </Field>
+						<Field>
+							0,DEPARTURES
+							<FontSize> 55 </FontSize>
+						</Field>
+						<Field>
+							150,@Time(hh:mm)
+							<FontSize> 34 </FontSize>
+						</Field>
+					</Line>
+
+
+
+// see end of uMirrorDB.pas, uXmlParser.pas for internal XML messages. owner = FIDSxml.exe (GT)
+<EditRequest>
+	<ReqEdit>  |5|| </ReqEdit>
+	<Path>  |Departures|ST1234-20090114|Bay| </Path>
+	<ReqID> 2 </ReqID>
+</EditRequest>
+<EditReply>
+	<Result> ERROR 105				// or 'OK'
+		<ReqEdit> |5|| </ReqEdit>
+		<Path> |Departures|ST1234-20090114|Bay| </Path>
+		<ReqID> 2 </ReqID>
+	</Result>
+</EditReply>
+
+
+// all following XMLs have nominal owner = GUI (PG)
+// wholly created by GUI elements - see uFlight.pas
+<?xml version="1.0" encoding="UTF-8"?>
+
+// arrival flighst DB. Lifetime typically +16 hours to -1/2 hour.
+<Arrivals KeyTag="true" AutoInc="765655">
+	<NZ123-765654>  // flight key
+		<NonPublic> 0 </NonPublic>
+		<ST> 20081215 093000 </ST>	// internal date time is always YYYYMMDD HHmmSS
+		<ET> 20081215 093200 </ET>
+		<Flights>						// 'code share' sub tree
+			<NZ1231/>					// displayed flight name
+				<Ports> BNE,TYO </Ports>	// specific source ports (IATA list)
+				....
+			</NZ1231>					// displayed flight name
+			<QF123/>					// shared display flight name
+				<Ports> BNE,TYO </Ports>	// specific source ports (IATA list)
+				....
+			</QF123>					// shared display flight name
+		</Flights>
+		<Terminal> T1 </Terminal>
+		<Bays> 3 </Bays>
+		<Gates> 2 </Gates>
+		<Belts> 2 
+			<Belt> 2
+				<FirstDrop> 20081215 103000 </FirstDrop>
+				<LastDrop> 20081215 104500 </LastDrop>
+			</Belt>
+		</Belts>
+		<BeltPriority> 2
+		<PassAdult/> 143
+		<PassInfant/> 43
+		<CarrierType> I </CarrierType>
+		<Aircraft> 733 </Aircraft>
+		<AStatus> Delayed </AStatus>
+		.....
+		<CorrespondingFlight> QF123-19 </CorrespondingFlight> // or QF123/20100611 123000 ?
+	</NZ123-765654>
+	......
+	
+	
+// departure flights DB. Lifetime typically +16 hours to -1/2 hour.
+	
+<?xml version="1.0" encoding="UTF-8"?>
+<Departures KeyTag="true" {AutoInc="20"}>  // AutoInc ?
+	<QF123-19>
+		<ST> 20090810 120000 </ST>
+		<ET> 20090810 120700 </ET>
+		<Gates> 5 </Gates>
+		<DStatus> Boarding </DStatus>
+		<Flights>					// 'code share' sub tree
+			<QF123/>
+				<Ports> SYD,BEY </Ports>
+				<CheckIns> C2,C5 </CheckIns>
+			</QF123>
+		</Flights>
+		<Comment> Would passenger Graeme Tunbridge please report to the gate lounge immediately. </Comment>
+	</QF123-19>	
+	
+	
+// wholly created by GUI elements - see uCheckInControl.pas
+// check in display instructions - used by the formatter to resolve checkin display style and graphic selection
+// the checkin flights requires a search of |Departures|{flight_key}|Flights|{flight_name}|CheckIns|
+// see also |SystemSettings|CheckIn|LookAhead_hrs| to limit future flight display
+<?xml version="1.0" encoding="UTF-8"?>
+<CheckIns KeyTag="true">
+	<ñ1>
+		<Airline> QF </Airline>                        // first 3 fields are raw user input - ignored by DisplayConfig.xml
+		<FullGraphic> dial1360x768.gif </FullGraphic>
+		<DefaultGraphic> defb_1360x768.gif </DefaultGraphic>
+		<Style> FullGraphic </Style>                   // used by DisplayConfig.xml to pick style
+		<FullScrn> dial1360x768.gif </FullScrn>        // used by DisplayConfig.xml to select graphic
+	</ñ1>
+	<ñ2>
+		<Airline> QF </Airline>
+		<CheckInService> OS </CheckInService>
+		<DefaultGraphic> defa_1360x768.gif </DefaultGraphic>
+		<Service> OS </Service>
+		<Style> DualGraphic </Style>                   // used by DisplayConfig.xml to pick style
+		<HeaderScrn> QF1360x160.gif </HeaderScrn>      // used by DisplayConfig.xml to load header graphic
+		<FooterScrn/>                                  // ie no footer graphic
+		<BodyScrn> QF_OS1360x508.gif </BodyScrn>       // used by DisplayConfig.xml to load body graphic
+	</ñ2>
+	<ñ3>
+		<Class> EC </Class>
+		<DefaultGraphic> defa_1360x768.gif </DefaultGraphic>
+		<Airline> QF </Airline>
+		<Style> ListFlights </Style>                   // used by DisplayConfig.xml to pick style ie list of flights for this check in
+		<HeaderScrn> QF1360x160.gif </HeaderScrn>      // used by DisplayConfig.xml to load header graphic
+		<FooterScrn> QF_EC1360x160.gif </FooterScrn>   // used by DisplayConfig.xml to load footer graphic
+	</ñ3>
+	<ñ4>
+		<DefaultGraphic> defa_1360x768.gif </DefaultGraphic>
+		<Style> FullGraphic </Style>                   // used by DisplayConfig.xml to pick style
+		<FullScrn> defa_1360x768.gif </FullScrn>       // used by DisplayConfig.xml to select graphic
+	</ñ4>
+	.....
+	etc for all checkIn names
+	'ñ' is to allow numeric names ( numeric tag is not legal xml ) - automatically added by uXmlParser.pas
+	.......
+</CheckIns>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+// timetable flight generation rules. Wholly created by GUI or separate resource control app.
+<Timetable KeyTag="true">
+	<Departures KeyTag="true">
+		<ST1234>		// base flight name
+			<Rules>
+				<DateStart> 20081201 </DateStart>
+				<DateEnd> 20090131 </DateEnd>
+				<Time> 0700 </Time>
+				<Days> 77 </Days>		// 2 hex digits representing a set of days. bit0=Mon .. bit6=Sun
+				
+				<DaysExcept> 00 </DaysExcept>	// 2 hex digits representing a set of days. bit0=Mon .. bit6=Sun
+												// <DaysExcept> qualifies <DateException>
+				<DateException> 20081218-20081220, 21010312, 20100315-20100318 </DateException>
+			</Rules>
+			<Template>
+				<Flights>		// 'code share' sub tree
+					<ST1234>
+						<Ports> PER </Ports>
+					</ST1234>
+				</Flights>
+				<ST/>	// timetable knows how to complete STD and ETD from <Time> and timetable date
+				<ET/>
+				<Gates> 13 </Gates>     // any pre assigned resources
+				<Bay/>
+			</Template>
+		</ST1234>
+	</Departures>
+</Timetable>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+// users holds user names, passwords and permission string
+// owned by GUI / system administrator.
+<Users KeyTag="true">
+	<GT>
+		<PassWord> itsme </PassWord>     // todo crunch at UI
+		<Access> 9,* </Access>           // QF,2  airline, level access rights
+		<LoggedIn> 20100428 1152 </LoggedIn>   // last log in TD - easy purge of old / unused passwords
+		<ReqID> HTTP_GT </ReqID>               // where last logged in
+	</GT>
+	<Feed>									// used by Feeds.exe to gain access to DB
+		<PassWord> _DI_system_ </PassWord>
+		<Access> 9,* </Access>
+		<LoggedIn/>
+	</Feed>
+	<TimeTable>								// used by Feeds.exe to gain access to DB
+		<PassWord> _DI_system_ </PassWord>
+		<Access> 9,* </Access>
+		<LoggedIn/>
+	</TimeTable>
+	<Server>								// used by FIDSxml.exe to gain access to DB
+		<PassWord> _DI_system_ </PassWord>
+		<Access> 9,* </Access>
+		<LoggedIn/>
+	</Server>
+	<ST>									// GUI test access - its traditional. Should put Monica in here too.
+		<PassWord> Password </PassWord>
+		<Access> 9,* </Access>
+		<LoggedIn> 081208  1458 </LoggedIn>
+	</ST>
+</Users>

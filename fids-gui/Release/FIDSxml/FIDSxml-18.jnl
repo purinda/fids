@@ -1,0 +1,77 @@
+<TimeStamp> 20131230 002141 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131230 002141  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002141 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002152 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131230 002151  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002206 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Boarding </ReqEdit>
+		<Prev> Departed </Prev>
+		<Path> |Departures|FJI930-2178|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002214 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Boarding </ReqEdit>
+		<Prev> Cancelled </Prev>
+		<Path> |Departures|ANZ726-2175|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002218 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Boarding </ReqEdit>
+		<Prev> Cancelled </Prev>
+		<Path> |Departures|JQ171-2173|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002224 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Off Blocks </ReqEdit>
+		<Prev> Boarding </Prev>
+		<Path> |Departures|JQ171-2173|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 002228 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit/>
+		<Prev> Boarding </Prev>
+		<Path> |Departures|QFA9-2172|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 010456 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 510 </ReqEdit>
+		<Path> |SystemSettings|MainForm|Top| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>

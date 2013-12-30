@@ -1,0 +1,47 @@
+
+[Captions]
+TfrmWindow.About1=About~!@#$~!@#$
+TfrmWindow.Arrivals1=Arrivals~!@#$~!@#$
+TfrmWindow.Arrivals2=Arrivals~!@#$~!@#$
+TfrmWindow.Baggages1=Belts~!@#$~!@#$
+TfrmWindow.Bays1=Bays~!@#$~!@#$
+TfrmWindow.Checkins1=Checkins~!@#$~!@#$
+TfrmWindow.Copy1=&Copy~!@#$~!@#$
+TfrmWindow.Cut1=C&ut~!@#$~!@#$
+TfrmWindow.Delete1=&Delete~!@#$~!@#$
+TfrmWindow.Departures1=Departures~!@#$~!@#$
+TfrmWindow.Departures2=Departures~!@#$~!@#$
+TfrmWindow.Edit1=Edit~!@#$??~!@#$
+TfrmWindow.File1=File~!@#$??~!@#$
+TfrmWindow.Find1=Search~!@#$??~!@#$
+TfrmWindow.Find2=Find ...~!@#$~!@#$
+TfrmWindow.FindNext1=Find Next~!@#$~!@#$
+TfrmWindow.Gates1=Gates~!@#$~!@#$
+TfrmWindow.imetable1=Timetables~!@#$~!@#$
+TfrmWindow.Index1=Index~!@#$~!@#$
+TfrmWindow.mnuHelp=Help~!@#$??~!@#$
+TfrmWindow.mnuNavigate=Quick Select~!@#$~!@#$
+TfrmWindow.Modify1=Modify...~!@#$~!@#$
+TfrmWindow.Past1=&Past~!@#$~!@#$
+TfrmWindow.Preferences1=Preferences...~!@#$~!@#$
+TfrmWindow.Redo1=&Redo~!@#$~!@#$
+TfrmWindow.tbbAdd=Add~!@#$?~!@#$
+TfrmWindow.tbBasic=Basic controls~!@#$~!@#$
+TfrmWindow.tbbDelete=Delete~!@#$??~!@#$
+TfrmWindow.tbbModify=Details~!@#$????~!@#$
+TfrmWindow.tbDummyButton=DummyButton~!@#$~!@#$
+TfrmWindow.tbExtended=Window specific controls~!@#$~!@#$
+TfrmWindow.tblDetails=Window specific controls~!@#$~!@#$
+TfrmWindow.TfrmWindow=#~!@#$~!@#$
+TfrmWindow.Undo1=&Undo~!@#$~!@#$
+TfrmWindow.View1=Tools~!@#$??~!@#$
+TfrmWindow.View2=View~!@#$?~!@#$
+
+[Language names - for internal use only!]
+Language_1=English
+Language_2=Chinese (Traditional)
+
+[OPTIONS]
+DELIMITER=~!@#$
+IsUTF8File=0
+

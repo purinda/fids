@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Timetable KeyTag="true">
+	<LT4444>
+		<Rules>
+			<DateStart> 20081201 </DateStart>
+			<DateEnd> 20110131 </DateEnd>
+			<Time> 0830 </Time>
+			<Days> FF </Days>
+			<DaysExcept> 00 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Path> Departures </Path>
+		<Template>
+			<Flights>
+				<LT4444>
+					<Ports> MEL </Ports>
+					<CheckIns> 3 </CheckIns>
+				</LT4444>
+				<LT4444c>
+					<Ports> MEL,ADL </Ports>
+					<CheckIns> 2 </CheckIns>
+				</LT4444c>
+				<QFX9231>
+					<Ports> MEL </Ports>
+					<CheckIns> 2 </CheckIns>
+				</QFX9231>
+			</Flights>
+			<ST/>
+			<ET/>
+			<Gates> 3 </Gates>
+			<Bays/>
+		</Template>
+	</LT4444>
+	<ST1234>
+		<Rules>
+			<DateStart> 20081201 </DateStart>
+			<DateEnd> 20110131 </DateEnd>
+			<Time> 0751 </Time>
+			<Days> FF </Days>
+			<DaysExcept> 7F </DaysExcept>
+			<DateException> 20081218-20081220, 21010312, 20100315-20100318 </DateException>
+		</Rules>
+		<Path> Departures </Path>
+		<Template>
+			<Flights>
+				<ST1234>
+					<Ports> PER </Ports>
+					<CheckIns> 4 </CheckIns>
+				</ST1234>
+				<BL987>
+					<Ports> PER </Ports>
+					<CheckIns> 3 </CheckIns>
+				</BL987>
+			</Flights>
+			<ST/>
+			<ET/>
+			<Gates> 13 </Gates>
+			<Bays> 3 </Bays>
+		</Template>
+	</ST1234>
+	<QF666>
+		<Rules>
+			<DateStart> 20091201 </DateStart>
+			<DateEnd> 20110131 </DateEnd>
+			<Time> 0330 </Time>
+			<Days> 00 </Days>
+			<DaysExcept> 00 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Path> Departures </Path>
+		<Template>
+			<Flights>
+				<QF666>
+					<Ports> DWN,NIP,SWS </Ports>
+					<CheckIns> 2 </CheckIns>
+				</QF666>
+			</Flights>
+			<ST/>
+			<ET/>
+			<Gates> 25 </Gates>
+			<Bays/>
+		</Template>
+	</QF666>
+	<QF143>
+		<Rules>
+			<DateStart> 20091201 </DateStart>
+			<DateEnd> 20110131 </DateEnd>
+			<Time> 0345 </Time>
+			<Days> FF </Days>
+			<DaysExcept> 00 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Path> Departures </Path>
+		<Template>
+			<Flights>
+				<QF143>
+					<Ports> BNE,SYD </Ports>
+					<CheckIns> 1 </CheckIns>
+				</QF143>
+				<BL143>
+					<Ports> BNE,SYD </Ports>
+					<CheckIns> 2 </CheckIns>
+				</BL143>
+			</Flights>
+			<ST/>
+			<ET/>
+			<Gates> 5 </Gates>
+			<Bays> 13 </Bays>
+		</Template>
+	</QF143>
+	<LT4444_A>
+		<RuleName> LT4444_A </RuleName>
+		<Rules>
+			<DateStart> 20081201 </DateStart>
+			<DateEnd> 20111231 </DateEnd>
+			<Time> 1330 </Time>
+			<Days> 3F </Days>
+			<DaysExcept> 00 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Path> Arrivals </Path>
+		<Template>
+			<Flights>
+				<GT4444>
+					<Ports> ADL,SYD </Ports>
+					<CheckIns> 42 </CheckIns>
+				</GT4444>
+				<BLA4444>
+					<Ports> ADL </Ports>
+					<CheckIns> 23 </CheckIns>
+				</BLA4444>
+			</Flights>
+			<Gates> 3 </Gates>
+			<Bays> 45 </Bays>
+		</Template>
+	</LT4444_A>
+	<PJ666>
+		<RuleName> PJ666 </RuleName>
+		<Rules>
+			<DateStart> 20081201 </DateStart>
+			<DateEnd> 20111231 </DateEnd>
+			<Time> 1430 </Time>
+			<Days> 15 </Days>
+			<DaysExcept> 04 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Path> Ground </Path>
+		<Template>
+			<Flights>
+				<PJ666/>
+				<SWE666/>
+			</Flights>
+			<Gates> 4 </Gates>
+			<Bays> 42 </Bays>
+		</Template>
+	</PJ666>
+	<NW453>
+		<Path> Departures </Path>
+		<Rules>
+			<Time> 0555 </Time>
+			<DateStart> 20091201 </DateStart>
+			<DateEnd> 20110131 </DateEnd>
+			<DaysExcept> 04 </DaysExcept>
+			<DateException> 20081218-20081220 </DateException>
+		</Rules>
+		<Template>
+			<Flights>
+				<QF143>
+					<Ports> BNE,SYD </Ports>
+					<CheckIns> 12 </CheckIns>
+				</QF143>
+			</Flights>
+		</Template>
+	</NW453>
+</Timetable>

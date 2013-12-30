@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Sensors>
+	<Hosts>
+		<Sensor>
+			<Name> Host 1 </Name>
+			<IP> 192.168.0.100 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Host 2 </Name>
+			<IP> 192.168.0.101 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Host 3 </Name>
+			<IP> 192.168.0.102 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Host 4 </Name>
+			<IP> 192.168.0.103 </IP>
+			<Status> up </Status>
+		</Sensor>
+	</Hosts>
+	<Feeds>
+		<Sensor>
+			<Name> Quantas Feed </Name>
+			<IP> 192.168.0.100 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Virgin Feed </Name>
+			<IP> 192.168.0.101 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Other </Name>
+			<IP> 192.168.0.101 </IP>
+			<Status> down </Status>
+		</Sensor>
+	</Feeds>
+	<Workstations>
+		<Sensor>
+			<Name> Workstation 1 </Name>
+			<IP> 192.168.0.120 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 11 </Name>
+			<IP> 192.168.0.121 </IP>
+			<Status> up </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 12 </Name>
+			<IP> 192.168.0.122 </IP>
+			<Status> up </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 31 </Name>
+			<IP> 192.168.0.123 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 41 </Name>
+			<IP> 192.168.0.124 </IP>
+			<Status> up </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 51 </Name>
+			<IP> 192.168.0.125 </IP>
+			<Status> down </Status>
+		</Sensor>
+		<Sensor>
+			<Name> Workstation 15 </Name>
+			<IP> 192.168.0.126 </IP>
+			<Status> down </Status>
+		</Sensor>
+	</Workstations>
+</Sensors>

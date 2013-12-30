@@ -1,0 +1,4319 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Departures KeyTag="true" AutoInc="2185">
+	<SIA238-1923>
+		<Flights>
+			<SIA238>
+				<Ports> SIN,ADL </Ports>
+				<CheckIns> 2,4 </CheckIns>
+			</SIA238>
+		</Flights>
+		<FeedKey> SIA238/081031 </FeedKey>
+		<ST> 20100812 112000 </ST>
+		<ET> 20100812 111200 </ET>
+		<AT> 20100812 113100 </AT>
+		<Rego> 9VSPN </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+		<Gates> 1 </Gates>
+	</SIA238-1923>
+	<QFA614-1924>
+		<Flights>
+			<QFA614>
+				<Ports> BNE </Ports>
+				<CheckIns> 2 </CheckIns>
+			</QFA614>
+			<JST6614>
+				<Ports> BNE </Ports>
+			</JST6614>
+		</Flights>
+		<FeedKey> QFA614/081031 </FeedKey>
+		<ST> 20100812 110500 </ST>
+		<ET> 20100812 111700 </ET>
+		<AT> 20100812 112500 </AT>
+		<Rego> VHVXR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 167,0 </Pax>
+		<PaxJoin> 167 </PaxJoin>
+		<Fuel> 7300 </Fuel>
+		<Burn> 4600 </Burn>
+		<Gates/>
+	</QFA614-1924>
+	<QFA426-1925>
+		<Flights>
+			<QFA426>
+				<Ports> SYD </Ports>
+			</QFA426>
+			<JST6426>
+				<Ports> SYD </Ports>
+			</JST6426>
+		</Flights>
+		<FeedKey> QFA426/081031 </FeedKey>
+		<ST> 20100812 110000 </ST>
+		<ET> 20100812 111800 </ET>
+		<AT> 20100812 113600 </AT>
+		<Rego> VHVXB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 167,0 </Pax>
+		<PaxJoin> 167 </PaxJoin>
+		<Fuel> 5800 </Fuel>
+		<Burn> 2800 </Burn>
+		<Gates> 2 </Gates>
+	</QFA426-1925>
+	<GT4444-1926>
+		<Flights>
+			<GT4444>
+				<Ports> PER </Ports>
+				<CheckIns> 44 </CheckIns>
+			</GT4444>
+		</Flights>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
+		<Gates> 13 </Gates>
+		<Bays> 5 </Bays>
+	</GT4444-1926>
+	<ANZ124-1927>
+		<Flights>
+			<ANZ124>
+				<Ports> AKL </Ports>
+			</ANZ124>
+		</Flights>
+		<FeedKey> ANZ124/081031 </FeedKey>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113200 </ET>
+		<AT> 20100812 114300 </AT>
+		<Rego> ZKNBS </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+		<PaxJoin> 273 </PaxJoin>
+		<Fuel> 37800 </Fuel>
+		<Burn> 26100 </Burn>
+		<Gates> 1 </Gates>
+	</ANZ124-1927>
+	<QFA25-1928>
+		<Flights>
+			<QFA25>
+				<Ports> AKL,LAX </Ports>
+			</QFA25>
+			<CES8905>
+				<Ports> AKL </Ports>
+			</CES8905>
+			<BAW7303>
+				<Ports> AKL,LAX </Ports>
+				<CheckIns> 4 </CheckIns>
+			</BAW7303>
+			<AAL7315>
+				<Ports> AKL,LAX </Ports>
+			</AAL7315>
+		</Flights>
+		<FeedKey> QFA25/081031 </FeedKey>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113500 </ET>
+		<AT> 20100812 115200 </AT>
+		<Rego> VHEBX </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 743 </AirCraft>
+		<PaxJoin> 371 </PaxJoin>
+		<Fuel> 48600 </Fuel>
+		<Burn> 32100 </Burn>
+		<Gates> 3 </Gates>
+	</QFA25-1928>
+	<QFA428-1929>
+		<Flights>
+			<QFA428>
+				<Ports> SYD </Ports>
+			</QFA428>
+			<JST6428>
+				<Ports> SYD </Ports>
+			</JST6428>
+		</Flights>
+		<FeedKey> QFA428/081031 </FeedKey>
+		<ST> 20100812 113000 </ST>
+		<ET> 20100812 113600 </ET>
+		<AT> 20100812 114700 </AT>
+		<Rego> VHOGT </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 223,0 </Pax>
+		<PaxJoin> 223 </PaxJoin>
+		<Fuel> 10400 </Fuel>
+		<Burn> 5300 </Burn>
+	</QFA428-1929>
+	<JST474-1930>
+		<Flights>
+			<JST474>
+				<Ports> NTL </Ports>
+			</JST474>
+			<QFA5474>
+				<Ports> NTL </Ports>
+			</QFA5474>
+		</Flights>
+		<FeedKey> JST474/081031 </FeedKey>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 114000 </ET>
+		<AT> 20100812 114900 </AT>
+		<Gates> 10 </Gates>
+		<Rego> VHVQZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 156,0 </Pax>
+		<PaxJoin> 156 </PaxJoin>
+	</JST474-1930>
+	<LT4444-1931>
+		<Flights>
+			<LT4444>
+				<Ports> MEL </Ports>
+			</LT4444>
+		</Flights>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
+		<Gates> 3 </Gates>
+		<Bays/>
+	</LT4444-1931>
+	<QFA93-1932>
+		<Flights>
+			<QFA93>
+				<Ports> LAX </Ports>
+			</QFA93>
+			<MXA3689>
+				<Ports> LAX </Ports>
+			</MXA3689>
+			<AAL7349>
+				<Ports> LAX </Ports>
+			</AAL7349>
+		</Flights>
+		<FeedKey> QFA93/081031 </FeedKey>
+		<ST> 20100812 111000 </ST>
+		<ET> 20100812 114500 </ET>
+		<AT> 20100812 115700 </AT>
+		<Rego> VHOEG </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+		<PaxJoin> 278 </PaxJoin>
+		<Fuel> 175200 </Fuel>
+		<Burn> 158000 </Burn>
+	</QFA93-1932>
+	<JST30-1933>
+		<Flights>
+			<JST30>
+				<Ports> SYD </Ports>
+			</JST30>
+		</Flights>
+		<FeedKey> JST30/081030 </FeedKey>
+		<ST> 20100812 114000 </ST>
+		<ET> 20100812 115900 </ET>
+		<AT> 20100812 121000 </AT>
+		<Gates> 5 </Gates>
+		<Rego> VHEBE </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 332 </AirCraft>
+		<PaxJoin> 258 </PaxJoin>
+	</JST30-1933>
+	<QFA2053-1934>
+		<Flights>
+			<QFA2053>
+				<Ports> DPO </Ports>
+			</QFA2053>
+		</Flights>
+		<FeedKey> QFA2053/081031 </FeedKey>
+		<ST> 20100812 114500 </ST>
+		<ET> 20100812 120300 </ET>
+		<AT> 20100812 120800 </AT>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> J31 </AirCraft>
+		<Pax> 36,0 </Pax>
+		<PaxJoin> 36 </PaxJoin>
+		<Fuel> 2180 </Fuel>
+		<Burn> 614 </Burn>
+	</QFA2053-1934>
+	<QFA850-1935>
+		<Flights>
+			<QFA850>
+				<Ports> CBR </Ports>
+			</QFA850>
+		</Flights>
+		<FeedKey> QFA850/081031 </FeedKey>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 120300 </ET>
+		<AT> 20100812 121400 </AT>
+		<Rego> VHTJO </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 62,0 </Pax>
+		<PaxJoin> 62 </PaxJoin>
+		<Fuel> 7000 </Fuel>
+		<Burn> 2100 </Burn>
+	</QFA850-1935>
+	<QFA430-1936>
+		<Flights>
+			<QFA430>
+				<Ports> SYD </Ports>
+			</QFA430>
+			<JST6430>
+				<Ports> SYD </Ports>
+			</JST6430>
+			<BAW7446>
+				<Ports> SYD </Ports>
+			</BAW7446>
+		</Flights>
+		<FeedKey> QFA430/081031 </FeedKey>
+		<ST> 20100812 120000 </ST>
+		<ET> 20100812 121100 </ET>
+		<AT> 20100812 122900 </AT>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 236,0 </Pax>
+		<PaxJoin> 236 </PaxJoin>
+		<Fuel> 10800 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA430-1936>
+	<QF143-1937>
+		<Flights>
+			<QF143>
+				<Ports> BNE </Ports>
+			</QF143>
+		</Flights>
+		<ST> 20100813 033000 </ST>
+		<ET> 20100813 033000 </ET>
+		<Gates> 5 </Gates>
+		<Bays/>
+	</QF143-1937>
+	<QFA616-1938>
+		<Flights>
+			<QFA616>
+				<Ports> BNE </Ports>
+			</QFA616>
+			<JST6616>
+				<Ports> BNE </Ports>
+			</JST6616>
+		</Flights>
+		<FeedKey> QFA616/081031 </FeedKey>
+		<ST> 20100812 120500 </ST>
+		<ET> 20100812 121100 </ET>
+		<AT> 20100812 122100 </AT>
+		<Rego> VHTJY </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 144,0 </Pax>
+		<PaxJoin> 144 </PaxJoin>
+		<Fuel> 8600 </Fuel>
+		<Burn> 5200 </Burn>
+	</QFA616-1938>
+	<QFA2080-1939>
+		<Flights>
+			<QFA2080>
+				<Ports> MQL </Ports>
+			</QFA2080>
+		</Flights>
+		<FeedKey> QFA2080/081031 </FeedKey>
+		<ST> 20100812 120000 </ST>
+		<ET> 20100812 121700 </ET>
+		<AT> 20100812 122200 </AT>
+		<Rego> VHTQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> J31 </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 2320 </Fuel>
+		<Burn> 801 </Burn>
+	</QFA2080-1939>
+	<QFA683-1940>
+		<Flights>
+			<QFA683>
+				<Ports> ADL </Ports>
+			</QFA683>
+			<JST6683>
+				<Ports> ADL </Ports>
+			</JST6683>
+		</Flights>
+		<FeedKey> QFA683/081031 </FeedKey>
+		<ST> 20100812 121000 </ST>
+		<ET> 20100812 121700 </ET>
+		<AT> 20100812 123100 </AT>
+		<Rego> VHTJR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 128,0 </Pax>
+		<PaxJoin> 128 </PaxJoin>
+		<Fuel> 6600 </Fuel>
+		<Burn> 3500 </Burn>
+	</QFA683-1940>
+	<QFA769-1941>
+		<Flights>
+			<QFA769>
+				<Ports> PER </Ports>
+			</QFA769>
+			<JST6769>
+				<Ports> PER </Ports>
+			</JST6769>
+		</Flights>
+		<FeedKey> QFA769/081031 </FeedKey>
+		<ST> 20100812 122500 </ST>
+		<ET> 20100812 123700 </ET>
+		<AT> 20100812 125400 </AT>
+		<Rego> VHOGQ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 246,0 </Pax>
+		<PaxJoin> 246 </PaxJoin>
+		<Fuel> 24600 </Fuel>
+		<Burn> 18300 </Burn>
+	</QFA769-1941>
+	<QFA432-1942>
+		<Flights>
+			<QFA432>
+				<Ports> SYD </Ports>
+			</QFA432>
+			<JST6432>
+				<Ports> SYD </Ports>
+			</JST6432>
+			<BAW7448>
+				<Ports> SYD </Ports>
+			</BAW7448>
+		</Flights>
+		<FeedKey> QFA432/081031 </FeedKey>
+		<ST> 20100812 123000 </ST>
+		<ET> 20100812 123800 </ET>
+		<AT> 20100812 125200 </AT>
+		<Rego> VHOGN </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 219,0 </Pax>
+		<PaxJoin> 219 </PaxJoin>
+		<Fuel> 10400 </Fuel>
+		<Burn> 5300 </Burn>
+	</QFA432-1942>
+	<ST1234-1943>
+		<Flights>
+			<ST1234>
+				<Ports> PER </Ports>
+			</ST1234>
+		</Flights>
+		<ST> 20100813 070000 </ST>
+		<ET> 20100813 070000 </ET>
+		<Gates> 13 </Gates>
+		<Bays/>
+	</ST1234-1943>
+	<JST442-1944>
+		<Flights>
+			<JST442>
+				<Ports> OOL </Ports>
+			</JST442>
+			<QFA5442>
+				<Ports> OOL </Ports>
+			</QFA5442>
+		</Flights>
+		<FeedKey> JST442/081031 </FeedKey>
+		<ST> 20100812 124000 </ST>
+		<ET> 20100812 124300 </ET>
+		<AT> 20100812 125800 </AT>
+		<Gates> 6 </Gates>
+		<Rego> VWY </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 321 </AirCraft>
+		<Pax> 210,0 </Pax>
+		<PaxJoin> 210 </PaxJoin>
+	</JST442-1944>
+	<QFA6125-1945>
+		<Flights>
+			<QFA6125>
+				<Ports> SYD </Ports>
+			</QFA6125>
+		</Flights>
+		<FeedKey> QFA6125/081031 </FeedKey>
+		<ST> 20100812 120000 </ST>
+		<ET> 20100812 124400 </ET>
+		<AT> 20100812 125700 </AT>
+		<Rego> VHOGU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 10400 </Fuel>
+		<Burn> 4700 </Burn>
+	</QFA6125-1945>
+	<ANZ842-1946>
+		<Flights>
+			<ANZ842>
+				<Ports> CHC,RAR </Ports>
+			</ANZ842>
+		</Flights>
+		<FeedKey> ANZ842/081031 </FeedKey>
+		<ST> 20100812 125000 </ST>
+		<ET> 20100812 125100 </ET>
+		<AT> 20100812 130000 </AT>
+		<Rego> ZKOJH </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<PaxJoin> 114 </PaxJoin>
+		<Fuel> 10600 </Fuel>
+		<Burn> 7000 </Burn>
+	</ANZ842-1946>
+	<JST707-1947>
+		<Flights>
+			<JST707>
+				<Ports> HBA </Ports>
+			</JST707>
+			<QFA5707>
+				<Ports> HBA </Ports>
+			</QFA5707>
+		</Flights>
+		<FeedKey> JST707/081031 </FeedKey>
+		<ST> 20100812 130000 </ST>
+		<ET> 20100812 130300 </ET>
+		<AT> 20100812 131100 </AT>
+		<Gates> 10 </Gates>
+		<Rego> VHVQH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 717 </AirCraft>
+		<Pax> 177,0 </Pax>
+		<PaxJoin> 177 </PaxJoin>
+	</JST707-1947>
+	<QFA618-1948>
+		<Flights>
+			<QFA618>
+				<Ports> BNE </Ports>
+			</QFA618>
+			<JST6618>
+				<Ports> BNE </Ports>
+			</JST6618>
+		</Flights>
+		<FeedKey> QFA618/081031 </FeedKey>
+		<ST> 20100812 130500 </ST>
+		<ET> 20100812 130900 </ET>
+		<AT> 20100812 131700 </AT>
+		<Rego> VHVYF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 169,0 </Pax>
+		<PaxJoin> 169 </PaxJoin>
+		<Fuel> 7400 </Fuel>
+		<Burn> 4700 </Burn>
+	</QFA618-1948>
+	<QFA1124-1949>
+		<Flights>
+			<QFA1124>
+				<Ports> SYD </Ports>
+			</QFA1124>
+		</Flights>
+		<FeedKey> QFA1124/081031 </FeedKey>
+		<ST> 20100812 131500 </ST>
+		<ET> 20100812 131700 </ET>
+		<AT> 20100812 132500 </AT>
+		<Rego> VHTJM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 137,0 </Pax>
+		<PaxJoin> 137 </PaxJoin>
+		<Fuel> 6100 </Fuel>
+		<Burn> 2800 </Burn>
+	</QFA1124-1949>
+	<QFA812-1950>
+		<Flights>
+			<QFA812>
+				<Ports> CBR </Ports>
+			</QFA812>
+		</Flights>
+		<FeedKey> QFA812/081031 </FeedKey>
+		<ST> 20100812 133000 </ST>
+		<ET> 20100812 132600 </ET>
+		<AT> 20100812 133300 </AT>
+		<Rego> VHVXH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 71,0 </Pax>
+		<PaxJoin> 71 </PaxJoin>
+		<Fuel> 5900 </Fuel>
+		<Burn> 2100 </Burn>
+	</QFA812-1950>
+	<QFA434-1951>
+		<Flights>
+			<QFA434>
+				<Ports> SYD </Ports>
+			</QFA434>
+			<JST6434>
+				<Ports> SYD </Ports>
+			</JST6434>
+			<BAW7444>
+				<Ports> SYD </Ports>
+			</BAW7444>
+		</Flights>
+		<FeedKey> QFA434/081031 </FeedKey>
+		<ST> 20100812 130000 </ST>
+		<ET> 20100812 135800 </ET>
+		<AT> 20100812 140300 </AT>
+		<Rego> VHOGL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 235,0 </Pax>
+		<PaxJoin> 235 </PaxJoin>
+		<Fuel> 14600 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA434-1951>
+	<QFA436-1952>
+		<Flights>
+			<QFA436>
+				<Ports> SYD </Ports>
+			</QFA436>
+			<JST6436>
+				<Ports> SYD </Ports>
+			</JST6436>
+			<BAW7454>
+				<Ports> SYD </Ports>
+			</BAW7454>
+		</Flights>
+		<FeedKey> QFA436/081031 </FeedKey>
+		<ST> 20100812 133000 </ST>
+		<ET> 20100812 135900 </ET>
+		<Rego> VHOGE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 242,0 </Pax>
+		<PaxJoin> 242 </PaxJoin>
+		<Fuel> 14900 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA436-1952>
+	<QFA620-1953>
+		<Flights>
+			<QFA620>
+				<Ports> BNE </Ports>
+			</QFA620>
+			<JST6620>
+				<Ports> BNE </Ports>
+			</JST6620>
+		</Flights>
+		<FeedKey> QFA620/081031 </FeedKey>
+		<ST> 20100812 140500 </ST>
+		<ET> 20100812 141200 </ET>
+		<AT> 20100812 142600 </AT>
+		<Rego> VHVZD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 170,0 </Pax>
+		<PaxJoin> 170 </PaxJoin>
+		<Fuel> 7400 </Fuel>
+		<Burn> 4600 </Burn>
+	</QFA620-1953>
+	<JST61-1954>
+		<Flights>
+			<JST61>
+				<Ports> DRW </Ports>
+			</JST61>
+			<QFA5061>
+				<Ports> DRW </Ports>
+			</QFA5061>
+		</Flights>
+		<FeedKey> JST61/081031 </FeedKey>
+		<ST> 20100812 133500 </ST>
+		<ET> 20100812 142600 </ET>
+		<Gates> 8 </Gates>
+		<Rego> VHJQE </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<PaxJoin> 159 </PaxJoin>
+	</JST61-1954>
+	<QFA685-1955>
+		<Flights>
+			<QFA685>
+				<Ports> ADL </Ports>
+			</QFA685>
+			<JST6685>
+				<Ports> ADL </Ports>
+			</JST6685>
+		</Flights>
+		<FeedKey> QFA685/081031 </FeedKey>
+		<ST> 20100812 141000 </ST>
+		<ET> 20100812 142900 </ET>
+		<AT> 20100812 144300 </AT>
+		<Rego> VHVYC </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 168,0 </Pax>
+		<PaxJoin> 168 </PaxJoin>
+		<Fuel> 6000 </Fuel>
+		<Burn> 3400 </Burn>
+	</QFA685-1955>
+	<QFA856-1956>
+		<Flights>
+			<QFA856>
+				<Ports> CBR </Ports>
+			</QFA856>
+		</Flights>
+		<FeedKey> QFA856/081031 </FeedKey>
+		<ST> 20100812 141500 </ST>
+		<ET> 20100812 143300 </ET>
+		<AT> 20100812 144500 </AT>
+		<Rego> VHTJG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 73,0 </Pax>
+		<PaxJoin> 73 </PaxJoin>
+		<Fuel> 9000 </Fuel>
+		<Burn> 2200 </Burn>
+	</QFA856-1956>
+	<QFA438-1957>
+		<Flights>
+			<QFA438>
+				<Ports> SYD </Ports>
+			</QFA438>
+			<JST6438>
+				<Ports> SYD </Ports>
+			</JST6438>
+			<BAW7442>
+				<Ports> SYD </Ports>
+			</BAW7442>
+		</Flights>
+		<FeedKey> QFA438/081031 </FeedKey>
+		<ST> 20100812 140000 </ST>
+		<ET> 20100812 143500 </ET>
+		<Rego> VHZXB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 204,0 </Pax>
+		<PaxJoin> 204 </PaxJoin>
+	</QFA438-1957>
+	<QFA440-1958>
+		<Flights>
+			<QFA440>
+				<Ports> SYD </Ports>
+			</QFA440>
+			<JST6440>
+				<Ports> SYD </Ports>
+			</JST6440>
+		</Flights>
+		<FeedKey> QFA440/081031 </FeedKey>
+		<ST> 20100812 143000 </ST>
+		<ET> 20100812 145100 </ET>
+		<AT> 20100812 150000 </AT>
+		<Rego> VHVYL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 158,0 </Pax>
+		<PaxJoin> 158 </PaxJoin>
+		<Fuel> 7600 </Fuel>
+		<Burn> 2700 </Burn>
+	</QFA440-1958>
+	<JST739-1959>
+		<Flights>
+			<JST739>
+				<Ports> LST </Ports>
+			</JST739>
+			<QFA5739>
+				<Ports> LST </Ports>
+			</QFA5739>
+		</Flights>
+		<FeedKey> JST739/081031 </FeedKey>
+		<ST> 20100812 150000 </ST>
+		<ET> 20100812 150000 </ET>
+		<Gates> 10 </Gates>
+		<Rego> VHJQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 175,0 </Pax>
+		<PaxJoin> 175 </PaxJoin>
+	</JST739-1959>
+	<QFA442-1960>
+		<Flights>
+			<QFA442>
+				<Ports> SYD </Ports>
+			</QFA442>
+			<JST6442>
+				<Ports> SYD </Ports>
+			</JST6442>
+		</Flights>
+		<FeedKey> QFA442/081031 </FeedKey>
+		<ST> 20100812 150000 </ST>
+		<ET> 20100812 150000 </ET>
+		<Rego> VHOGJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 214,0 </Pax>
+		<PaxJoin> 214 </PaxJoin>
+	</QFA442-1960>
+	<QFA777-1961>
+		<Flights>
+			<QFA777>
+				<Ports> PER </Ports>
+			</QFA777>
+		</Flights>
+		<FeedKey> QFA777/081031 </FeedKey>
+		<ST> 20100812 151000 </ST>
+		<ET> 20100812 151000 </ET>
+		<Rego> VHOGM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 229,0 </Pax>
+		<PaxJoin> 229 </PaxJoin>
+	</QFA777-1961>
+	<QFA689-1962>
+		<Flights>
+			<QFA689>
+				<Ports> ADL </Ports>
+			</QFA689>
+		</Flights>
+		<FeedKey> QFA689/081031 </FeedKey>
+		<ST> 20100812 151500 </ST>
+		<ET> 20100812 151500 </ET>
+		<Rego> VHTJI </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 134,0 </Pax>
+		<PaxJoin> 134 </PaxJoin>
+	</QFA689-1962>
+	<QFA2285-1963>
+		<Flights>
+			<QFA2285>
+				<Ports> LST </Ports>
+			</QFA2285>
+		</Flights>
+		<FeedKey> QFA2285/081031 </FeedKey>
+		<ST> 20100812 151500 </ST>
+		<ET> 20100812 151500 </ET>
+		<Rego> VHTQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2285-1963>
+	<QFA624-1964>
+		<Flights>
+			<QFA624>
+				<Ports> BNE </Ports>
+			</QFA624>
+		</Flights>
+		<FeedKey> QFA624/081031 </FeedKey>
+		<ST> 20100812 150500 </ST>
+		<ET> 20100812 151500 </ET>
+		<Rego> VHVYK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 172,0 </Pax>
+		<PaxJoin> 172 </PaxJoin>
+		<Fuel> 7400 </Fuel>
+		<Burn> 4700 </Burn>
+	</QFA624-1964>
+	<JST796-1965>
+		<Flights>
+			<JST796>
+				<Ports> MCY </Ports>
+			</JST796>
+			<QFA5796>
+				<Ports> MCY </Ports>
+			</QFA5796>
+		</Flights>
+		<FeedKey> JST796/081031 </FeedKey>
+		<ST> 20100812 152500 </ST>
+		<ET> 20100812 152500 </ET>
+		<Gates> 8 </Gates>
+		<Rego> VHVQG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 177,0 </Pax>
+		<PaxJoin> 177 </PaxJoin>
+	</JST796-1965>
+	<QFA818-1966>
+		<Flights>
+			<QFA818>
+				<Ports> CBR </Ports>
+			</QFA818>
+		</Flights>
+		<FeedKey> QFA818/081031 </FeedKey>
+		<ST> 20100812 152500 </ST>
+		<ET> 20100812 152500 </ET>
+		<Rego> VHTJJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 102,0 </Pax>
+		<PaxJoin> 102 </PaxJoin>
+		<Fuel> 8600 </Fuel>
+		<Burn> 2300 </Burn>
+	</QFA818-1966>
+	<QFA2084-1967>
+		<Flights>
+			<QFA2084>
+				<Ports> MQL </Ports>
+			</QFA2084>
+		</Flights>
+		<FeedKey> QFA2084/081031 </FeedKey>
+		<ST> 20100812 152500 </ST>
+		<ET> 20100812 152500 </ET>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 2270 </Fuel>
+		<Burn> 616 </Burn>
+	</QFA2084-1967>
+	<QFA444-1968>
+		<Flights>
+			<QFA444>
+				<Ports> SYD </Ports>
+			</QFA444>
+			<JST6444>
+				<Ports> SYD </Ports>
+			</JST6444>
+		</Flights>
+		<FeedKey> QFA444/081031 </FeedKey>
+		<ST> 20100812 153000 </ST>
+		<ET> 20100812 153000 </ET>
+		<Rego> VHOGD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 171,0 </Pax>
+		<PaxJoin> 171 </PaxJoin>
+	</QFA444-1968>
+	<QFA2057-1969>
+		<Flights>
+			<QFA2057>
+				<Ports> DPO </Ports>
+			</QFA2057>
+		</Flights>
+		<FeedKey> QFA2057/081031 </FeedKey>
+		<ST> 20100812 153500 </ST>
+		<ET> 20100812 153500 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2057-1969>
+	<CPA104-1970>
+		<Flights>
+			<CPA104>
+				<Ports> HKG </Ports>
+			</CPA104>
+		</Flights>
+		<FeedKey> CPA104/081031 </FeedKey>
+		<ST> 20100812 153500 </ST>
+		<ET> 20100812 153500 </ET>
+		<Rego> BLAD </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA104-1970>
+	<JST968-1971>
+		<Flights>
+			<JST968>
+				<Ports> PER </Ports>
+			</JST968>
+			<QFA5968>
+				<Ports> PER </Ports>
+			</QFA5968>
+		</Flights>
+		<FeedKey> JST968/081031 </FeedKey>
+		<ST> 20100812 155000 </ST>
+		<ET> 20100812 155000 </ET>
+		<Gates> 12 </Gates>
+		<Rego> VHVQP </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 164,0 </Pax>
+		<PaxJoin> 164 </PaxJoin>
+	</JST968-1971>
+	<JST918-1972>
+		<Flights>
+			<JST918>
+				<Ports> TSV </Ports>
+			</JST918>
+			<QFA5918>
+				<Ports> TSV </Ports>
+			</QFA5918>
+		</Flights>
+		<FeedKey> JST918/081031 </FeedKey>
+		<ST> 20100812 155500 </ST>
+		<ET> 20100812 155500 </ET>
+		<Gates> 6 </Gates>
+		<Rego> VHVQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 717 </AirCraft>
+		<Pax> 157,0 </Pax>
+		<PaxJoin> 157 </PaxJoin>
+	</JST918-1972>
+	<QFA446-1973>
+		<Flights>
+			<QFA446>
+				<Ports> SYD </Ports>
+			</QFA446>
+			<JST6446>
+				<Ports> SYD </Ports>
+			</JST6446>
+		</Flights>
+		<FeedKey> QFA446/081031 </FeedKey>
+		<ST> 20100812 160000 </ST>
+		<ET> 20100812 160000 </ET>
+		<Rego> VHZXG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 12000 </Fuel>
+		<Burn> 5300 </Burn>
+	</QFA446-1973>
+	<QFA626-1974>
+		<Flights>
+			<QFA626>
+				<Ports> BNE </Ports>
+			</QFA626>
+		</Flights>
+		<FeedKey> QFA626/081031 </FeedKey>
+		<ST> 20100812 160500 </ST>
+		<ET> 20100812 160500 </ET>
+		<Rego> VHVYE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 171,0 </Pax>
+		<PaxJoin> 171 </PaxJoin>
+	</QFA626-1974>
+	<QFA826-1975>
+		<Flights>
+			<QFA826>
+				<Ports> CBR </Ports>
+			</QFA826>
+		</Flights>
+		<FeedKey> QFA826/081031 </FeedKey>
+		<ST> 20100812 161000 </ST>
+		<ET> 20100812 161000 </ET>
+		<Rego> VHTJT </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 106,0 </Pax>
+		<PaxJoin> 106 </PaxJoin>
+	</QFA826-1975>
+	<QFA1126-1976>
+		<Flights>
+			<QFA1126>
+				<Ports> SYD </Ports>
+			</QFA1126>
+		</Flights>
+		<FeedKey> QFA1126/081031 </FeedKey>
+		<ST> 20100812 161500 </ST>
+		<ET> 20100812 161500 </ET>
+		<Rego> VHTJO </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 134,0 </Pax>
+		<PaxJoin> 134 </PaxJoin>
+		<Fuel> 7000 </Fuel>
+		<Burn> 2900 </Burn>
+	</QFA1126-1976>
+	<QFA693-1977>
+		<Flights>
+			<QFA693>
+				<Ports> ADL </Ports>
+			</QFA693>
+		</Flights>
+		<FeedKey> QFA693/081031 </FeedKey>
+		<ST> 20100812 162500 </ST>
+		<ET> 20100812 162500 </ET>
+		<Rego> VHVZB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 154,0 </Pax>
+		<PaxJoin> 154 </PaxJoin>
+		<Fuel> 6300 </Fuel>
+		<Burn> 3300 </Burn>
+	</QFA693-1977>
+	<THA982-1978>
+		<Flights>
+			<THA982>
+				<Ports> BKK </Ports>
+			</THA982>
+		</Flights>
+		<FeedKey> THA982/081031 </FeedKey>
+		<ST> 20100812 163000 </ST>
+		<ET> 20100812 163000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 773 </AirCraft>
+	</THA982-1978>
+	<QFA450-1979>
+		<Flights>
+			<QFA450>
+				<Ports> SYD </Ports>
+			</QFA450>
+			<JST6450>
+				<Ports> SYD </Ports>
+			</JST6450>
+		</Flights>
+		<FeedKey> QFA450/081031 </FeedKey>
+		<ST> 20100812 163000 </ST>
+		<ET> 20100812 163000 </ET>
+		<Rego> VHOGT </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA450-1979>
+	<JST709-1980>
+		<Flights>
+			<JST709>
+				<Ports> HBA </Ports>
+			</JST709>
+			<QFA5709>
+				<Ports> HBA </Ports>
+			</QFA5709>
+		</Flights>
+		<FeedKey> JST709/081031 </FeedKey>
+		<ST> 20100812 163500 </ST>
+		<ET> 20100812 163500 </ET>
+		<Gates> 12 </Gates>
+		<Rego> VHVQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 717 </AirCraft>
+		<Pax> 169,0 </Pax>
+		<PaxJoin> 169 </PaxJoin>
+	</JST709-1980>
+	<QFA602-1981>
+		<Flights>
+			<QFA602>
+				<Ports> BNE </Ports>
+			</QFA602>
+		</Flights>
+		<FeedKey> QFA602/081031 </FeedKey>
+		<ST> 20100812 163500 </ST>
+		<ET> 20100812 163500 </ET>
+		<Rego> VHVXM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA602-1981>
+	<QFA448-1982>
+		<Flights>
+			<QFA448>
+				<Ports> SYD </Ports>
+			</QFA448>
+		</Flights>
+		<FeedKey> QFA448/081031 </FeedKey>
+		<ST> 20100812 164500 </ST>
+		<ET> 20100812 164500 </ET>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 176,0 </Pax>
+		<PaxJoin> 176 </PaxJoin>
+		<Fuel> 12200 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA448-1982>
+	<QFA834-1983>
+		<Flights>
+			<QFA834>
+				<Ports> CBR </Ports>
+			</QFA834>
+		</Flights>
+		<FeedKey> QFA834/081031 </FeedKey>
+		<ST> 20100812 165000 </ST>
+		<ET> 20100812 165000 </ET>
+		<Rego> VHTJR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 111,0 </Pax>
+		<PaxJoin> 111 </PaxJoin>
+		<Fuel> 8000 </Fuel>
+		<Burn> 2300 </Burn>
+	</QFA834-1983>
+	<JST444-1984>
+		<Flights>
+			<JST444>
+				<Ports> OOL </Ports>
+			</JST444>
+			<QFA5444>
+				<Ports> OOL </Ports>
+			</QFA5444>
+		</Flights>
+		<FeedKey> JST444/081031 </FeedKey>
+		<ST> 20100812 165500 </ST>
+		<ET> 20100812 165500 </ET>
+		<Gates> 10 </Gates>
+		<Rego> VHVQH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 717 </AirCraft>
+		<Pax> 176,0 </Pax>
+		<PaxJoin> 176 </PaxJoin>
+	</JST444-1984>
+	<QFA452-1985>
+		<Flights>
+			<QFA452>
+				<Ports> SYD </Ports>
+			</QFA452>
+			<JST6452>
+				<Ports> SYD </Ports>
+			</JST6452>
+		</Flights>
+		<FeedKey> QFA452/081031 </FeedKey>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
+		<Rego> VHVXR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 145,0 </Pax>
+		<PaxJoin> 145 </PaxJoin>
+		<Fuel> 6600 </Fuel>
+		<Burn> 2800 </Burn>
+	</QFA452-1985>
+	<SIA228-1986>
+		<Flights>
+			<SIA228>
+				<Ports> SIN </Ports>
+			</SIA228>
+		</Flights>
+		<FeedKey> SIA228/081031 </FeedKey>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</SIA228-1986>
+	<JST476-1987>
+		<Flights>
+			<JST476>
+				<Ports> NTL </Ports>
+			</JST476>
+			<QFA5476>
+				<Ports> NTL </Ports>
+			</QFA5476>
+		</Flights>
+		<FeedKey> JST476/081031 </FeedKey>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
+		<Gates> 12 </Gates>
+		<Rego> VHVQS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 150,0 </Pax>
+		<PaxJoin> 150 </PaxJoin>
+	</JST476-1987>
+	<QFA9-1988>
+		<Flights>
+			<QFA9>
+				<Ports> SIN,LHR </Ports>
+			</QFA9>
+			<BAW7309>
+				<Ports> SIN,LHR </Ports>
+			</BAW7309>
+			<AFR8091>
+				<Ports> SIN </Ports>
+			</AFR8091>
+			<JAI4009>
+				<Ports> SIN </Ports>
+			</JAI4009>
+		</Flights>
+		<FeedKey> QFA9/081031 </FeedKey>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
+		<Rego> VHOJR </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA9-1988>
+	<QFA628-1989>
+		<Flights>
+			<QFA628>
+				<Ports> BNE </Ports>
+			</QFA628>
+			<JST6628>
+				<Ports> BNE </Ports>
+			</JST6628>
+		</Flights>
+		<FeedKey> QFA628/081031 </FeedKey>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
+		<Rego> VHVXH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 169,0 </Pax>
+		<PaxJoin> 169 </PaxJoin>
+	</QFA628-1989>
+	<QFA456-1990>
+		<Flights>
+			<QFA456>
+				<Ports> SYD </Ports>
+			</QFA456>
+			<JST6456>
+				<Ports> SYD </Ports>
+			</JST6456>
+		</Flights>
+		<FeedKey> QFA456/081031 </FeedKey>
+		<ST> 20100812 171500 </ST>
+		<ET> 20100812 171500 </ET>
+		<Rego> VHOGN </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA456-1990>
+	<QFA454-1991>
+		<Flights>
+			<QFA454>
+				<Ports> SYD </Ports>
+			</QFA454>
+			<AAL7344>
+				<Ports> SYD </Ports>
+			</AAL7344>
+			<JST6454>
+				<Ports> SYD </Ports>
+			</JST6454>
+		</Flights>
+		<FeedKey> QFA454/081031 </FeedKey>
+		<ST> 20100812 173000 </ST>
+		<Rego> VHVXC </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 157,0 </Pax>
+		<PaxJoin> 157 </PaxJoin>
+	</QFA454-1991>
+	<QFA742-1992>
+		<Flights>
+			<QFA742>
+				<Ports> CBR </Ports>
+			</QFA742>
+		</Flights>
+		<FeedKey> QFA742/081031 </FeedKey>
+		<ST> 20100812 173500 </ST>
+		<ET> 20100812 173500 </ET>
+		<Rego> VHVXJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 167,0 </Pax>
+		<PaxJoin> 167 </PaxJoin>
+		<Fuel> 7400 </Fuel>
+		<Burn> 2300 </Burn>
+	</QFA742-1992>
+	<JST446-1993>
+		<Flights>
+			<JST446>
+				<Ports> OOL </Ports>
+			</JST446>
+			<QFA5446>
+				<Ports> OOL </Ports>
+			</QFA5446>
+		</Flights>
+		<FeedKey> JST446/081031 </FeedKey>
+		<ST> 20100812 174500 </ST>
+		<ET> 20100812 174500 </ET>
+		<Gates> 6 </Gates>
+		<Rego> VHVQU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 167,0 </Pax>
+		<PaxJoin> 167 </PaxJoin>
+	</JST446-1993>
+	<JST171-1994>
+		<Flights>
+			<JST171>
+				<Ports> CHC </Ports>
+			</JST171>
+			<QFA203>
+				<Ports> CHC </Ports>
+			</QFA203>
+		</Flights>
+		<FeedKey> JST171/081031 </FeedKey>
+		<ST> 20100812 175000 </ST>
+		<ET> 20100812 175000 </ET>
+		<Gates> 7 </Gates>
+		<Rego> VHVQT </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<PaxJoin> 131 </PaxJoin>
+	</JST171-1994>
+	<QFA697-1995>
+		<Flights>
+			<QFA697>
+				<Ports> ADL </Ports>
+			</QFA697>
+			<JST6697>
+				<Ports> ADL </Ports>
+			</JST6697>
+		</Flights>
+		<FeedKey> QFA697/081031 </FeedKey>
+		<ST> 20100812 175500 </ST>
+		<ET> 20100812 175500 </ET>
+		<Rego> VHVYA </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 6000 </Fuel>
+		<Burn> 3400 </Burn>
+	</QFA697-1995>
+	<QFA458-1996>
+		<Flights>
+			<QFA458>
+				<Ports> SYD </Ports>
+			</QFA458>
+			<JST6458>
+				<Ports> SYD </Ports>
+			</JST6458>
+		</Flights>
+		<FeedKey> QFA458/081031 </FeedKey>
+		<ST> 20100812 180000 </ST>
+		<ET> 20100812 180000 </ET>
+		<Rego> VHOGL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 230,0 </Pax>
+		<PaxJoin> 230 </PaxJoin>
+		<Fuel> 12200 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA458-1996>
+	<QFA632-1997>
+		<Flights>
+			<QFA632>
+				<Ports> BNE </Ports>
+			</QFA632>
+			<JST6632>
+				<Ports> BNE </Ports>
+			</JST6632>
+		</Flights>
+		<FeedKey> QFA632/081031 </FeedKey>
+		<ST> 20100812 180500 </ST>
+		<ET> 20100812 180500 </ET>
+		<Rego> VHVYC </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA632-1997>
+	<JST743-1998>
+		<Flights>
+			<JST743>
+				<Ports> LST </Ports>
+			</JST743>
+			<QFA5743>
+				<Ports> LST </Ports>
+			</QFA5743>
+		</Flights>
+		<FeedKey> JST743/081031 </FeedKey>
+		<ST> 20100812 181500 </ST>
+		<ET> 20100812 181500 </ET>
+		<Gates> 10 </Gates>
+		<Rego> VHJQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 174,0 </Pax>
+		<PaxJoin> 174 </PaxJoin>
+	</JST743-1998>
+	<ANZ794-1999>
+		<Flights>
+			<ANZ794>
+				<Ports> CHC </Ports>
+			</ANZ794>
+		</Flights>
+		<FeedKey> ANZ794/081031 </FeedKey>
+		<ST> 20100812 182000 </ST>
+		<ET> 20100812 182000 </ET>
+		<Rego> ZKOJF </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ794-1999>
+	<QFA460-2000>
+		<Flights>
+			<QFA460>
+				<Ports> SYD </Ports>
+			</QFA460>
+			<JST6460>
+				<Ports> SYD </Ports>
+			</JST6460>
+		</Flights>
+		<FeedKey> QFA460/081031 </FeedKey>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
+		<Rego> VHOGE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 236,0 </Pax>
+		<PaxJoin> 236 </PaxJoin>
+		<Fuel> 13200 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA460-2000>
+	<ANZ126-2001>
+		<Flights>
+			<ANZ126>
+				<Ports> AKL </Ports>
+			</ANZ126>
+		</Flights>
+		<FeedKey> ANZ126/081031 </FeedKey>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
+		<Rego> ZKNCG </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 763 </AirCraft>
+	</ANZ126-2001>
+	<JST448-2002>
+		<Flights>
+			<JST448>
+				<Ports> OOL </Ports>
+			</JST448>
+			<QFA5448>
+				<Ports> OOL </Ports>
+			</QFA5448>
+		</Flights>
+		<FeedKey> JST448/081031 </FeedKey>
+		<ST> 20100812 184000 </ST>
+		<ET> 20100812 184000 </ET>
+		<Gates> 8 </Gates>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 321 </AirCraft>
+		<Pax> 204,0 </Pax>
+		<PaxJoin> 204 </PaxJoin>
+	</JST448-2002>
+	<ANZ758-2003>
+		<Flights>
+			<ANZ758>
+				<Ports> WLG </Ports>
+			</ANZ758>
+		</Flights>
+		<FeedKey> ANZ758/081031 </FeedKey>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
+		<Rego> ZKOJI </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ758-2003>
+	<QFA481-2004>
+		<Flights>
+			<QFA481>
+				<Ports> PER </Ports>
+			</QFA481>
+		</Flights>
+		<FeedKey> QFA481/081031 </FeedKey>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
+		<Rego> VHEBK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 332 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA481-2004>
+	<QFA701-2005>
+		<Flights>
+			<QFA701>
+				<Ports> ADL </Ports>
+			</QFA701>
+			<JST6701>
+				<Ports> ADL </Ports>
+			</JST6701>
+		</Flights>
+		<FeedKey> QFA701/081031 </FeedKey>
+		<ST> 20100812 185000 </ST>
+		<ET> 20100812 185000 </ET>
+		<Rego> VHVXQ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 137,0 </Pax>
+		<PaxJoin> 137 </PaxJoin>
+	</QFA701-2005>
+	<QFA2061-2006>
+		<Flights>
+			<QFA2061>
+				<Ports> DPO </Ports>
+			</QFA2061>
+		</Flights>
+		<FeedKey> QFA2061/081031 </FeedKey>
+		<ST> 20100812 185500 </ST>
+		<ET> 20100812 185500 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2061-2006>
+	<QFA2086-2007>
+		<Flights>
+			<QFA2086>
+				<Ports> MQL </Ports>
+			</QFA2086>
+		</Flights>
+		<FeedKey> QFA2086/081031 </FeedKey>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
+		<Rego> VHTQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 2450 </Fuel>
+		<Burn> 658 </Burn>
+	</QFA2086-2007>
+	<QFA462-2008>
+		<Flights>
+			<QFA462>
+				<Ports> SYD </Ports>
+			</QFA462>
+			<JST6462>
+				<Ports> SYD </Ports>
+			</JST6462>
+		</Flights>
+		<FeedKey> QFA462/081031 </FeedKey>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
+		<Rego> VHZXB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 222,0 </Pax>
+		<PaxJoin> 222 </PaxJoin>
+	</QFA462-2008>
+	<QFA822-2009>
+		<Flights>
+			<QFA822>
+				<Ports> CBR </Ports>
+			</QFA822>
+		</Flights>
+		<FeedKey> QFA822/081031 </FeedKey>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
+		<Rego> VHTJJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 141,0 </Pax>
+		<PaxJoin> 141 </PaxJoin>
+		<Fuel> 8600 </Fuel>
+		<Burn> 2300 </Burn>
+	</QFA822-2009>
+	<QFA634-2010>
+		<Flights>
+			<QFA634>
+				<Ports> BNE </Ports>
+			</QFA634>
+			<JST6634>
+				<Ports> BNE </Ports>
+			</JST6634>
+		</Flights>
+		<FeedKey> QFA634/081031 </FeedKey>
+		<ST> 20100812 190500 </ST>
+		<ET> 20100812 190500 </ET>
+		<Rego> VHVYF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 167,0 </Pax>
+		<PaxJoin> 167 </PaxJoin>
+		<Fuel> 7400 </Fuel>
+		<Burn> 4700 </Burn>
+	</QFA634-2010>
+	<QFA2289-2011>
+		<Flights>
+			<QFA2289>
+				<Ports> LST </Ports>
+			</QFA2289>
+		</Flights>
+		<FeedKey> QFA2289/081031 </FeedKey>
+		<ST> 20100812 191000 </ST>
+		<ET> 20100812 191000 </ET>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2289-2011>
+	<QFA133-2012>
+		<Flights>
+			<QFA133>
+				<Ports> AKL </Ports>
+			</QFA133>
+		</Flights>
+		<FeedKey> QFA133/081031 </FeedKey>
+		<ST> 20100812 193000 </ST>
+		<ET> 20100812 193000 </ET>
+		<Rego> VHVXP </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 73H </AirCraft>
+	</QFA133-2012>
+	<QFA464-2013>
+		<Flights>
+			<QFA464>
+				<Ports> SYD </Ports>
+			</QFA464>
+			<JST6464>
+				<Ports> SYD </Ports>
+			</JST6464>
+		</Flights>
+		<FeedKey> QFA464/081031 </FeedKey>
+		<ST> 20100812 193000 </ST>
+		<ET> 20100812 193000 </ET>
+		<Rego> VHOGP </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 221,0 </Pax>
+		<PaxJoin> 221 </PaxJoin>
+		<Fuel> 12200 </Fuel>
+		<Burn> 5400 </Burn>
+	</QFA464-2013>
+	<QFA1013-2014>
+		<Flights>
+			<QFA1013>
+				<Ports> HBA </Ports>
+			</QFA1013>
+		</Flights>
+		<FeedKey> QFA1013/081031 </FeedKey>
+		<ST> 20100812 195500 </ST>
+		<ET> 20100812 195500 </ET>
+		<Rego> VHVZD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+		<Fuel> 6800 </Fuel>
+		<Burn> 2900 </Burn>
+	</QFA1013-2014>
+	<QFA653-2015>
+		<Flights>
+			<QFA653>
+				<Ports> PER </Ports>
+			</QFA653>
+		</Flights>
+		<FeedKey> QFA653/081031 </FeedKey>
+		<ST> 20100812 200000 </ST>
+		<ET> 20100812 200000 </ET>
+		<Rego> VHOGH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA653-2015>
+	<QFA490-2016>
+		<Flights>
+			<QFA490>
+				<Ports> SYD </Ports>
+			</QFA490>
+			<JST6490>
+				<Ports> SYD </Ports>
+			</JST6490>
+		</Flights>
+		<FeedKey> QFA490/081031 </FeedKey>
+		<ST> 20100812 200000 </ST>
+		<ET> 20100812 200000 </ET>
+		<Rego> VHOGJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 213,0 </Pax>
+		<PaxJoin> 213 </PaxJoin>
+	</QFA490-2016>
+	<JST478-2017>
+		<Flights>
+			<JST478>
+				<Ports> NTL </Ports>
+			</JST478>
+			<QFA5478>
+				<Ports> NTL </Ports>
+			</QFA5478>
+		</Flights>
+		<FeedKey> JST478/081031 </FeedKey>
+		<ST> 20100812 200500 </ST>
+		<ET> 20100812 200500 </ET>
+		<Gates> 10 </Gates>
+		<Rego> VHVQZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 147,0 </Pax>
+		<PaxJoin> 147 </PaxJoin>
+	</JST478-2017>
+	<QFA636-2018>
+		<Flights>
+			<QFA636>
+				<Ports> BNE </Ports>
+			</QFA636>
+			<JST6636>
+				<Ports> BNE </Ports>
+			</JST6636>
+		</Flights>
+		<FeedKey> QFA636/081031 </FeedKey>
+		<ST> 20100812 200500 </ST>
+		<ET> 20100812 200500 </ET>
+		<Rego> VHVXT </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 171,0 </Pax>
+		<PaxJoin> 171 </PaxJoin>
+	</QFA636-2018>
+	<QFA699-2019>
+		<Flights>
+			<QFA699>
+				<Ports> ADL </Ports>
+			</QFA699>
+			<JST6699>
+				<Ports> ADL </Ports>
+			</JST6699>
+		</Flights>
+		<FeedKey> QFA699/081031 </FeedKey>
+		<ST> 20100812 201000 </ST>
+		<ET> 20100812 201000 </ET>
+		<Rego> VHVYI </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 161,0 </Pax>
+		<PaxJoin> 161 </PaxJoin>
+	</QFA699-2019>
+	<QFA492-2020>
+		<Flights>
+			<QFA492>
+				<Ports> SYD </Ports>
+			</QFA492>
+		</Flights>
+		<FeedKey> QFA492/081031 </FeedKey>
+		<ST> 20100812 203000 </ST>
+		<ET> 20100812 203000 </ET>
+		<Rego> VHOGD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 244,0 </Pax>
+		<PaxJoin> 244 </PaxJoin>
+	</QFA492-2020>
+	<QFA494-2021>
+		<Flights>
+			<QFA494>
+				<Ports> SYD </Ports>
+			</QFA494>
+		</Flights>
+		<FeedKey> QFA494/081031 </FeedKey>
+		<ST> 20100812 210000 </ST>
+		<ET> 20100812 210000 </ET>
+		<Rego> VHOGS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 232,0 </Pax>
+		<PaxJoin> 232 </PaxJoin>
+	</QFA494-2021>
+	<JST970-2022>
+		<Flights>
+			<JST970>
+				<Ports> PER </Ports>
+			</JST970>
+			<QFA5970>
+				<Ports> PER </Ports>
+			</QFA5970>
+		</Flights>
+		<FeedKey> JST970/081031 </FeedKey>
+		<ST> 20100812 210500 </ST>
+		<ET> 20100812 210500 </ET>
+		<Gates> 8 </Gates>
+		<Rego> VHVQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 717 </AirCraft>
+		<Pax> 161,0 </Pax>
+		<PaxJoin> 161 </PaxJoin>
+	</JST970-2022>
+	<JST715-2023>
+		<Flights>
+			<JST715>
+				<Ports> HBA </Ports>
+			</JST715>
+			<QFA5715>
+				<Ports> HBA </Ports>
+			</QFA5715>
+		</Flights>
+		<FeedKey> JST715/081031 </FeedKey>
+		<ST> 20100812 213000 </ST>
+		<ET> 20100812 213000 </ET>
+		<Gates> 8 </Gates>
+		<Rego> VHVQS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 174,0 </Pax>
+		<PaxJoin> 174 </PaxJoin>
+	</JST715-2023>
+	<JST678-2024>
+		<Flights>
+			<JST678>
+				<Ports> DRW </Ports>
+			</JST678>
+			<QFA5678>
+				<Ports> DRW </Ports>
+			</QFA5678>
+		</Flights>
+		<FeedKey> JST678/081031 </FeedKey>
+		<ST> 20100812 220500 </ST>
+		<ET> 20100812 220500 </ET>
+		<Gates> 6 </Gates>
+		<Rego> VHJQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 165,0 </Pax>
+		<PaxJoin> 165 </PaxJoin>
+	</JST678-2024>
+	<QFA29-2025>
+		<Flights>
+			<QFA29>
+				<Ports> HKG,LHR </Ports>
+			</QFA29>
+			<BAW7317>
+				<Ports> HKG,LHR </Ports>
+			</BAW7317>
+			<AFR8073>
+				<Ports> HKG </Ports>
+			</AFR8073>
+		</Flights>
+		<FeedKey> QFA29/081031 </FeedKey>
+		<ST> 20100812 235900 </ST>
+		<ET> 20100812 235900 </ET>
+		<Rego> VHOJN </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA29-2025>
+	<FJI930-2026>
+		<Flights>
+			<FJI930>
+				<Ports> NAN </Ports>
+			</FJI930>
+			<QFA395>
+				<Ports> NAN </Ports>
+			</QFA395>
+		</Flights>
+		<FeedKey> FJI930/081031 </FeedKey>
+		<ST> 20100812 235900 </ST>
+		<ET> 20100812 235900 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 763 </AirCraft>
+	</FJI930-2026>
+	<THA980-2027>
+		<Flights>
+			<THA980>
+				<Ports> BKK </Ports>
+			</THA980>
+		</Flights>
+		<FeedKey> THA980/081101 </FeedKey>
+		<ST> 20100813 004500 </ST>
+		<ET> 20100813 004500 </ET>
+		<Rego> HSTJV </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</THA980-2027>
+	<SIA218-2028>
+		<Flights>
+			<SIA218>
+				<Ports> SIN </Ports>
+			</SIA218>
+		</Flights>
+		<FeedKey> SIA218/081101 </FeedKey>
+		<ST> 20100813 010500 </ST>
+		<ET> 20100813 010500 </ET>
+		<Rego> 9VSWB </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 77W </AirCraft>
+	</SIA218-2028>
+	<CPA168-2029>
+		<Flights>
+			<CPA168>
+				<Ports> HKG </Ports>
+			</CPA168>
+		</Flights>
+		<FeedKey> CPA168/081101 </FeedKey>
+		<ST> 20100813 012000 </ST>
+		<ET> 20100813 012000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA168-2029>
+	<QFA7472-2030>
+		<Flights>
+			<QFA7472>
+				<Ports> LST,HBA </Ports>
+			</QFA7472>
+		</Flights>
+		<FeedKey> QFA7472/081101 </FeedKey>
+		<ST> 20100813 013000 </ST>
+		<ET> 20100813 013000 </ET>
+		<Rego> VHXML </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73F </AirCraft>
+		<Pax> 0 </Pax>
+		<NonPublic/>
+	</QFA7472-2030>
+	<QFA400-2031>
+		<Flights>
+			<QFA400>
+				<Ports> SYD </Ports>
+			</QFA400>
+		</Flights>
+		<FeedKey> QFA400/081101 </FeedKey>
+		<ST> 20100813 060000 </ST>
+		<ET> 20100813 060000 </ET>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA400-2031>
+	<QFA600-2032>
+		<Flights>
+			<QFA600>
+				<Ports> BNE </Ports>
+			</QFA600>
+			<BAW7468>
+				<Ports> BNE </Ports>
+			</BAW7468>
+		</Flights>
+		<FeedKey> QFA600/081101 </FeedKey>
+		<ST> 20100813 060000 </ST>
+		<ET> 20100813 060000 </ET>
+		<Rego> VHVYE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA600-2032>
+	<JST701-2033>
+		<Flights>
+			<JST701>
+				<Ports> HBA </Ports>
+			</JST701>
+			<QFA5701>
+				<Ports> HBA </Ports>
+			</QFA5701>
+		</Flights>
+		<FeedKey> JST701/081101 </FeedKey>
+		<ST> 20100813 060000 </ST>
+		<ET> 20100813 060000 </ET>
+		<Rego> VHVQU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 163,0 </Pax>
+		<PaxJoin> 163 </PaxJoin>
+	</JST701-2033>
+	<QFA775-2034>
+		<Flights>
+			<QFA775>
+				<Ports> PER </Ports>
+			</QFA775>
+		</Flights>
+		<FeedKey> QFA775/081101 </FeedKey>
+		<ST> 20100813 061000 </ST>
+		<ET> 20100813 061000 </ET>
+		<Rego> VHVXM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA775-2034>
+	<JST430-2035>
+		<Flights>
+			<JST430>
+				<Ports> OOL </Ports>
+			</JST430>
+			<QFA5430>
+				<Ports> OOL </Ports>
+			</QFA5430>
+		</Flights>
+		<FeedKey> JST430/081101 </FeedKey>
+		<ST> 20100813 061000 </ST>
+		<ET> 20100813 061000 </ET>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 321 </AirCraft>
+		<Pax> 182,0 </Pax>
+		<PaxJoin> 182 </PaxJoin>
+	</JST430-2035>
+	<QFA667-2036>
+		<Flights>
+			<QFA667>
+				<Ports> ADL </Ports>
+			</QFA667>
+		</Flights>
+		<FeedKey> QFA667/081101 </FeedKey>
+		<ST> 20100813 061500 </ST>
+		<ET> 20100813 061500 </ET>
+		<Rego> VHTJR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 92,0 </Pax>
+		<PaxJoin> 92 </PaxJoin>
+	</QFA667-2036>
+	<QFA404-2037>
+		<Flights>
+			<QFA404>
+				<Ports> SYD </Ports>
+			</QFA404>
+			<BAW7450>
+				<Ports> SYD </Ports>
+			</BAW7450>
+		</Flights>
+		<FeedKey> QFA404/081101 </FeedKey>
+		<ST> 20100813 063000 </ST>
+		<ET> 20100813 063000 </ET>
+		<Rego> VHTJL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA404-2037>
+	<JST774-2038>
+		<Flights>
+			<JST774>
+				<Ports> ADL </Ports>
+			</JST774>
+			<QFA5774>
+				<Ports> ADL </Ports>
+			</QFA5774>
+		</Flights>
+		<FeedKey> JST774/081101 </FeedKey>
+		<ST> 20100813 063000 </ST>
+		<ET> 20100813 063000 </ET>
+		<Rego> VHVQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 171,0 </Pax>
+		<PaxJoin> 171 </PaxJoin>
+	</JST774-2038>
+	<JST944-2039>
+		<Flights>
+			<JST944>
+				<Ports> CNS </Ports>
+			</JST944>
+			<QFA5944>
+				<Ports> CNS </Ports>
+			</QFA5944>
+		</Flights>
+		<FeedKey> JST944/081101 </FeedKey>
+		<ST> 20100813 064000 </ST>
+		<ET> 20100813 064000 </ET>
+		<Rego> VHVQP </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 161,0 </Pax>
+		<PaxJoin> 161 </PaxJoin>
+	</JST944-2039>
+	<QFA406-2040>
+		<Flights>
+			<QFA406>
+				<Ports> SYD </Ports>
+			</QFA406>
+		</Flights>
+		<FeedKey> QFA406/081101 </FeedKey>
+		<ST> 20100813 064500 </ST>
+		<ET> 20100813 064500 </ET>
+		<Rego> VHVXJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA406-2040>
+	<QFA408-2041>
+		<Flights>
+			<QFA408>
+				<Ports> SYD </Ports>
+			</QFA408>
+			<BAW7452>
+				<Ports> SYD </Ports>
+			</BAW7452>
+			<JST6408>
+				<Ports> SYD </Ports>
+			</JST6408>
+		</Flights>
+		<FeedKey> QFA408/081101 </FeedKey>
+		<ST> 20100813 070000 </ST>
+		<ET> 20100813 070000 </ET>
+		<Rego> VHOGQ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA408-2041>
+	<JST703-2042>
+		<Flights>
+			<JST703>
+				<Ports> HBA </Ports>
+			</JST703>
+			<QFA5703>
+				<Ports> HBA </Ports>
+			</QFA5703>
+		</Flights>
+		<FeedKey> JST703/081101 </FeedKey>
+		<ST> 20100813 070000 </ST>
+		<ET> 20100813 070000 </ET>
+		<Rego> VHJQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 150,0 </Pax>
+		<PaxJoin> 150 </PaxJoin>
+	</JST703-2042>
+	<QFA604-2043>
+		<Flights>
+			<QFA604>
+				<Ports> BNE </Ports>
+			</QFA604>
+			<JST6604>
+				<Ports> BNE </Ports>
+			</JST6604>
+		</Flights>
+		<FeedKey> QFA604/081101 </FeedKey>
+		<ST> 20100813 070500 </ST>
+		<ET> 20100813 070500 </ET>
+		<Rego> VHVYK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA604-2043>
+	<QFA671-2044>
+		<Flights>
+			<QFA671>
+				<Ports> ADL </Ports>
+			</QFA671>
+		</Flights>
+		<FeedKey> QFA671/081101 </FeedKey>
+		<ST> 20100813 071000 </ST>
+		<ET> 20100813 071000 </ET>
+		<Rego> VHVXQ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA671-2044>
+	<QFA412-2045>
+		<Flights>
+			<QFA412>
+				<Ports> SYD </Ports>
+			</QFA412>
+			<JST6412>
+				<Ports> SYD </Ports>
+			</JST6412>
+		</Flights>
+		<FeedKey> QFA412/081101 </FeedKey>
+		<ST> 20100813 073000 </ST>
+		<ET> 20100813 073000 </ET>
+		<Rego> VHVXH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA412-2045>
+	<JST464-2046>
+		<Flights>
+			<JST464>
+				<Ports> BNK </Ports>
+			</JST464>
+			<QFA5464>
+				<Ports> BNK </Ports>
+			</QFA5464>
+		</Flights>
+		<FeedKey> JST464/081101 </FeedKey>
+		<ST> 20100813 073000 </ST>
+		<ET> 20100813 073000 </ET>
+		<Rego> VHVQG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 166,0 </Pax>
+		<PaxJoin> 166 </PaxJoin>
+	</JST464-2046>
+	<QFA673-2047>
+		<Flights>
+			<QFA673>
+				<Ports> ADL </Ports>
+			</QFA673>
+		</Flights>
+		<FeedKey> QFA673/081101 </FeedKey>
+		<ST> 20100813 074000 </ST>
+		<ET> 20100813 074000 </ET>
+		<Rego> VHVYH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA673-2047>
+	<QFA414-2048>
+		<Flights>
+			<QFA414>
+				<Ports> SYD </Ports>
+			</QFA414>
+			<JST6414>
+				<Ports> SYD </Ports>
+			</JST6414>
+		</Flights>
+		<FeedKey> QFA414/081101 </FeedKey>
+		<ST> 20100813 080000 </ST>
+		<ET> 20100813 080000 </ET>
+		<Rego> VHTJJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 140,0 </Pax>
+		<PaxJoin> 140 </PaxJoin>
+	</QFA414-2048>
+	<QFA608-2049>
+		<Flights>
+			<QFA608>
+				<Ports> BNE </Ports>
+			</QFA608>
+			<JST6608>
+				<Ports> BNE </Ports>
+			</JST6608>
+		</Flights>
+		<FeedKey> QFA608/081101 </FeedKey>
+		<ST> 20100813 080500 </ST>
+		<ET> 20100813 080500 </ET>
+		<Rego> VHVZD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA608-2049>
+	<QFA675-2050>
+		<Flights>
+			<QFA675>
+				<Ports> ADL </Ports>
+			</QFA675>
+			<BAW7437>
+				<Ports> ADL </Ports>
+			</BAW7437>
+			<JST6675>
+				<Ports> ADL </Ports>
+			</JST6675>
+		</Flights>
+		<FeedKey> QFA675/081101 </FeedKey>
+		<ST> 20100813 081000 </ST>
+		<ET> 20100813 081000 </ET>
+		<Rego> VHVZB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 143,0 </Pax>
+		<PaxJoin> 143 </PaxJoin>
+	</QFA675-2050>
+	<QFA2051-2051>
+		<Flights>
+			<QFA2051>
+				<Ports> DPO </Ports>
+			</QFA2051>
+		</Flights>
+		<FeedKey> QFA2051/081101 </FeedKey>
+		<ST> 20100813 082500 </ST>
+		<ET> 20100813 082500 </ET>
+		<Rego> VHTQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2051-2051>
+	<JST735-2052>
+		<Flights>
+			<JST735>
+				<Ports> LST </Ports>
+			</JST735>
+			<QFA5735>
+				<Ports> LST </Ports>
+			</QFA5735>
+		</Flights>
+		<FeedKey> JST735/081101 </FeedKey>
+		<ST> 20100813 082500 </ST>
+		<ET> 20100813 082500 </ET>
+		<Rego> VHVQZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 169,0 </Pax>
+		<PaxJoin> 169 </PaxJoin>
+	</JST735-2052>
+	<QFA416-2053>
+		<Flights>
+			<QFA416>
+				<Ports> SYD </Ports>
+			</QFA416>
+			<JST6416>
+				<Ports> SYD </Ports>
+			</JST6416>
+		</Flights>
+		<FeedKey> QFA416/081101 </FeedKey>
+		<ST> 20100813 083000 </ST>
+		<ET> 20100813 083000 </ET>
+		<Rego> VHVYB </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 161,0 </Pax>
+		<PaxJoin> 161 </PaxJoin>
+	</QFA416-2053>
+	<QFA814-2054>
+		<Flights>
+			<QFA814>
+				<Ports> CBR </Ports>
+			</QFA814>
+			<BAW7418>
+				<Ports> CBR </Ports>
+			</BAW7418>
+		</Flights>
+		<FeedKey> QFA814/081101 </FeedKey>
+		<ST> 20100813 083000 </ST>
+		<ET> 20100813 083000 </ET>
+		<Rego> VHTJK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA814-2054>
+	<JST860-2055>
+		<Flights>
+			<JST860>
+				<Ports> HTI </Ports>
+			</JST860>
+			<QFA5860>
+				<Ports> HTI </Ports>
+			</QFA5860>
+		</Flights>
+		<FeedKey> JST860/081101 </FeedKey>
+		<ST> 20100813 083000 </ST>
+		<ET> 20100813 083000 </ET>
+		<Rego> VHVQX </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 149,0 </Pax>
+		<PaxJoin> 149 </PaxJoin>
+	</JST860-2055>
+	<QFA485-2056>
+		<Flights>
+			<QFA485>
+				<Ports> PER </Ports>
+			</QFA485>
+		</Flights>
+		<FeedKey> QFA485/081101 </FeedKey>
+		<ST> 20100813 083500 </ST>
+		<ET> 20100813 083500 </ET>
+		<Rego> VHOGM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA485-2056>
+	<QFA1011-2057>
+		<Flights>
+			<QFA1011>
+				<Ports> HBA </Ports>
+			</QFA1011>
+			<BAW7462>
+				<Ports> HBA </Ports>
+			</BAW7462>
+		</Flights>
+		<FeedKey> QFA1011/081101 </FeedKey>
+		<ST> 20100813 083500 </ST>
+		<ET> 20100813 083500 </ET>
+		<Rego> VHVYA </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA1011-2057>
+	<QFA2078-2058>
+		<Flights>
+			<QFA2078>
+				<Ports> MQL </Ports>
+			</QFA2078>
+		</Flights>
+		<FeedKey> QFA2078/081101 </FeedKey>
+		<ST> 20100813 083500 </ST>
+		<ET> 20100813 083500 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2078-2058>
+	<JST159-2059>
+		<Flights>
+			<JST159>
+				<Ports> CHC </Ports>
+			</JST159>
+			<QFA201>
+				<Ports> CHC </Ports>
+			</QFA201>
+		</Flights>
+		<FeedKey> JST159/081101 </FeedKey>
+		<ST> 20100813 084000 </ST>
+		<ET> 20100813 084000 </ET>
+		<Rego> VHVQF </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<PaxJoin> 113 </PaxJoin>
+	</JST159-2059>
+	<CPA134-2060>
+		<Flights>
+			<CPA134>
+				<Ports> HKG </Ports>
+			</CPA134>
+		</Flights>
+		<FeedKey> CPA134/081101 </FeedKey>
+		<ST> 20100813 085000 </ST>
+		<ET> 20100813 085000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA134-2060>
+	<QFA796-2061>
+		<Flights>
+			<QFA796>
+				<Ports> ASP </Ports>
+			</QFA796>
+		</Flights>
+		<FeedKey> QFA796/081101 </FeedKey>
+		<ST> 20100813 085500 </ST>
+		<ET> 20100813 085500 </ET>
+		<Rego> VHVXF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA796-2061>
+	<QFA418-2062>
+		<Flights>
+			<QFA418>
+				<Ports> SYD </Ports>
+			</QFA418>
+			<JST6418>
+				<Ports> SYD </Ports>
+			</JST6418>
+		</Flights>
+		<FeedKey> QFA418/081101 </FeedKey>
+		<ST> 20100813 090000 </ST>
+		<ET> 20100813 090000 </ET>
+		<Rego> VHVYI </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA418-2062>
+	<PAL209-2063>
+		<Flights>
+			<PAL209>
+				<Ports> SYD </Ports>
+			</PAL209>
+		</Flights>
+		<FeedKey> PAL209/081031 </FeedKey>
+		<ST> 20100813 090000 </ST>
+		<ET> 20100813 090000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</PAL209-2063>
+	<QFA610-2064>
+		<Flights>
+			<QFA610>
+				<Ports> BNE </Ports>
+			</QFA610>
+			<JST6610>
+				<Ports> BNE </Ports>
+			</JST6610>
+		</Flights>
+		<FeedKey> QFA610/081101 </FeedKey>
+		<ST> 20100813 090500 </ST>
+		<ET> 20100813 090500 </ET>
+		<Rego> VHVYC </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA610-2064>
+	<QFA677-2065>
+		<Flights>
+			<QFA677>
+				<Ports> ADL </Ports>
+			</QFA677>
+			<JST6677>
+				<Ports> ADL </Ports>
+			</JST6677>
+		</Flights>
+		<FeedKey> QFA677/081101 </FeedKey>
+		<ST> 20100813 091000 </ST>
+		<ET> 20100813 091000 </ET>
+		<Rego> VHTJU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 138,0 </Pax>
+		<PaxJoin> 138 </PaxJoin>
+	</QFA677-2065>
+	<QFA37-2066>
+		<Flights>
+			<QFA37>
+				<Ports> WLG </Ports>
+			</QFA37>
+			<BAW7358>
+				<Ports> WLG </Ports>
+			</BAW7358>
+		</Flights>
+		<FeedKey> QFA37/081101 </FeedKey>
+		<ST> 20100813 091000 </ST>
+		<ET> 20100813 091000 </ET>
+		<Rego> ZKJNN </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 733 </AirCraft>
+	</QFA37-2066>
+	<QFA702-2067>
+		<Flights>
+			<QFA702>
+				<Ports> CNS </Ports>
+			</QFA702>
+		</Flights>
+		<FeedKey> QFA702/081101 </FeedKey>
+		<ST> 20100813 092500 </ST>
+		<ET> 20100813 092500 </ET>
+		<Rego> VHZXA </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA702-2067>
+	<QFA420-2068>
+		<Flights>
+			<QFA420>
+				<Ports> SYD </Ports>
+			</QFA420>
+			<JST6420>
+				<Ports> SYD </Ports>
+			</JST6420>
+		</Flights>
+		<FeedKey> QFA420/081101 </FeedKey>
+		<ST> 20100813 093000 </ST>
+		<ET> 20100813 093000 </ET>
+		<Rego> VHOGE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA420-2068>
+	<QFA2132-2069>
+		<Flights>
+			<QFA2132>
+				<Ports> CBR </Ports>
+			</QFA2132>
+		</Flights>
+		<FeedKey> QFA2132/081101 </FeedKey>
+		<ST> 20100813 093500 </ST>
+		<ET> 20100813 093500 </ET>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2132-2069>
+	<JST436-2070>
+		<Flights>
+			<JST436>
+				<Ports> OOL </Ports>
+			</JST436>
+			<QFA5436>
+				<Ports> OOL </Ports>
+			</QFA5436>
+		</Flights>
+		<FeedKey> JST436/081101 </FeedKey>
+		<ST> 20100813 093500 </ST>
+		<ET> 20100813 093500 </ET>
+		<Rego> VHVQU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 154,0 </Pax>
+		<PaxJoin> 154 </PaxJoin>
+	</JST436-2070>
+	<ANZ792-2071>
+		<Flights>
+			<ANZ792>
+				<Ports> CHC </Ports>
+			</ANZ792>
+		</Flights>
+		<FeedKey> ANZ792/081101 </FeedKey>
+		<ST> 20100813 094500 </ST>
+		<ET> 20100813 094500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ792-2071>
+	<QFA422-2072>
+		<Flights>
+			<QFA422>
+				<Ports> SYD </Ports>
+			</QFA422>
+			<JST6422>
+				<Ports> SYD </Ports>
+			</JST6422>
+		</Flights>
+		<FeedKey> QFA422/081101 </FeedKey>
+		<ST> 20100813 100000 </ST>
+		<ET> 20100813 100000 </ET>
+		<Rego> VHZXF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA422-2072>
+	<QFA612-2073>
+		<Flights>
+			<QFA612>
+				<Ports> BNE </Ports>
+			</QFA612>
+			<JST6612>
+				<Ports> BNE </Ports>
+			</JST6612>
+		</Flights>
+		<FeedKey> QFA612/081101 </FeedKey>
+		<ST> 20100813 100500 </ST>
+		<ET> 20100813 100500 </ET>
+		<Rego> VHTJR </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 137,0 </Pax>
+		<PaxJoin> 137 </PaxJoin>
+	</QFA612-2073>
+	<QFA679-2074>
+		<Flights>
+			<QFA679>
+				<Ports> ADL </Ports>
+			</QFA679>
+			<JST6679>
+				<Ports> ADL </Ports>
+			</JST6679>
+		</Flights>
+		<FeedKey> QFA679/081101 </FeedKey>
+		<ST> 20100813 101000 </ST>
+		<ET> 20100813 101000 </ET>
+		<Rego> VHTJF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 140,0 </Pax>
+		<PaxJoin> 140 </PaxJoin>
+	</QFA679-2074>
+	<QFA424-2075>
+		<Flights>
+			<QFA424>
+				<Ports> SYD </Ports>
+			</QFA424>
+			<JST6424>
+				<Ports> SYD </Ports>
+			</JST6424>
+		</Flights>
+		<FeedKey> QFA424/081101 </FeedKey>
+		<ST> 20100813 103000 </ST>
+		<ET> 20100813 103000 </ET>
+		<Rego> VHOGN </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA424-2075>
+	<JST794-2076>
+		<Flights>
+			<JST794>
+				<Ports> MCY </Ports>
+			</JST794>
+			<QFA5794>
+				<Ports> MCY </Ports>
+			</QFA5794>
+		</Flights>
+		<FeedKey> JST794/081101 </FeedKey>
+		<ST> 20100813 103500 </ST>
+		<ET> 20100813 103500 </ET>
+		<Rego> VHJQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 172,0 </Pax>
+		<PaxJoin> 172 </PaxJoin>
+	</JST794-2076>
+	<QFA475-2077>
+		<Flights>
+			<QFA475>
+				<Ports> PER </Ports>
+			</QFA475>
+		</Flights>
+		<FeedKey> QFA475/081101 </FeedKey>
+		<ST> 20100813 104500 </ST>
+		<ET> 20100813 104500 </ET>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA475-2077>
+	<QFA426-2078>
+		<Flights>
+			<QFA426>
+				<Ports> SYD </Ports>
+			</QFA426>
+			<JST6426>
+				<Ports> SYD </Ports>
+			</JST6426>
+		</Flights>
+		<FeedKey> QFA426/081101 </FeedKey>
+		<ST> 20100813 110000 </ST>
+		<ET> 20100813 110000 </ET>
+		<Rego> VHTJZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 138,0 </Pax>
+		<PaxJoin> 138 </PaxJoin>
+	</QFA426-2078>
+	<QFA614-2079>
+		<Flights>
+			<QFA614>
+				<Ports> BNE </Ports>
+			</QFA614>
+			<JST6614>
+				<Ports> BNE </Ports>
+			</JST6614>
+		</Flights>
+		<FeedKey> QFA614/081101 </FeedKey>
+		<ST> 20100813 110500 </ST>
+		<ET> 20100813 110500 </ET>
+		<Rego> VHTJL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA614-2079>
+	<QFA93-2080>
+		<Flights>
+			<QFA93>
+				<Ports> LAX </Ports>
+			</QFA93>
+			<AAL7349>
+				<Ports> LAX </Ports>
+			</AAL7349>
+			<MXA3689>
+				<Ports> LAX </Ports>
+			</MXA3689>
+		</Flights>
+		<FeedKey> QFA93/081101 </FeedKey>
+		<ST> 20100813 111000 </ST>
+		<ET> 20100813 111000 </ET>
+		<Rego> VHOEI </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA93-2080>
+	<SIA238-2081>
+		<Flights>
+			<SIA238>
+				<Ports> SIN </Ports>
+			</SIA238>
+		</Flights>
+		<FeedKey> SIA238/081101 </FeedKey>
+		<ST> 20100813 112000 </ST>
+		<ET> 20100813 112000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</SIA238-2081>
+	<HVN780-2082>
+		<Flights>
+			<HVN780>
+				<Ports> SGN </Ports>
+			</HVN780>
+			<QFA359>
+				<Ports> SGN </Ports>
+			</QFA359>
+		</Flights>
+		<FeedKey> HVN780/081101 </FeedKey>
+		<ST> 20100813 112500 </ST>
+		<ET> 20100813 112500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</HVN780-2082>
+	<QFA428-2083>
+		<Flights>
+			<QFA428>
+				<Ports> SYD </Ports>
+			</QFA428>
+			<JST6428>
+				<Ports> SYD </Ports>
+			</JST6428>
+		</Flights>
+		<FeedKey> QFA428/081101 </FeedKey>
+		<ST> 20100813 113000 </ST>
+		<ET> 20100813 113000 </ET>
+		<Rego> VHVXJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 144,0 </Pax>
+		<PaxJoin> 144 </PaxJoin>
+	</QFA428-2083>
+	<JST474-2084>
+		<Flights>
+			<JST474>
+				<Ports> NTL </Ports>
+			</JST474>
+			<QFA5474>
+				<Ports> NTL </Ports>
+			</QFA5474>
+		</Flights>
+		<FeedKey> JST474/081101 </FeedKey>
+		<ST> 20100813 113500 </ST>
+		<ET> 20100813 113500 </ET>
+		<Rego> VHVQZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 158,0 </Pax>
+		<PaxJoin> 158 </PaxJoin>
+	</JST474-2084>
+	<ANZ124-2085>
+		<Flights>
+			<ANZ124>
+				<Ports> AKL </Ports>
+			</ANZ124>
+		</Flights>
+		<FeedKey> ANZ124/081101 </FeedKey>
+		<ST> 20100813 113500 </ST>
+		<ET> 20100813 113500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</ANZ124-2085>
+	<QFA25-2086>
+		<Flights>
+			<QFA25>
+				<Ports> AKL,LAX </Ports>
+			</QFA25>
+			<BAW7303>
+				<Ports> AKL,LAX </Ports>
+			</BAW7303>
+			<CES8905>
+				<Ports> AKL </Ports>
+			</CES8905>
+			<AAL7315>
+				<Ports> AKL,LAX </Ports>
+			</AAL7315>
+		</Flights>
+		<FeedKey> QFA25/081101 </FeedKey>
+		<ST> 20100813 113500 </ST>
+		<ET> 20100813 113500 </ET>
+		<Rego> VHEBW </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 743 </AirCraft>
+	</QFA25-2086>
+	<QFA2138-2087>
+		<Flights>
+			<QFA2138>
+				<Ports> CBR </Ports>
+			</QFA2138>
+		</Flights>
+		<FeedKey> QFA2138/081101 </FeedKey>
+		<ST> 20100813 115000 </ST>
+		<ET> 20100813 115000 </ET>
+		<Rego> VHTQL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2138-2087>
+	<QFA430-2088>
+		<Flights>
+			<QFA430>
+				<Ports> SYD </Ports>
+			</QFA430>
+			<BAW7446>
+				<Ports> SYD </Ports>
+			</BAW7446>
+			<JST6430>
+				<Ports> SYD </Ports>
+			</JST6430>
+		</Flights>
+		<FeedKey> QFA430/081101 </FeedKey>
+		<ST> 20100813 120000 </ST>
+		<ET> 20100813 120000 </ET>
+		<Rego> VHOGQ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA430-2088>
+	<QFA2053-2089>
+		<Flights>
+			<QFA2053>
+				<Ports> DPO </Ports>
+			</QFA2053>
+		</Flights>
+		<FeedKey> QFA2053/081101 </FeedKey>
+		<ST> 20100813 120000 </ST>
+		<ET> 20100813 120000 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2053-2089>
+	<QFA616-2090>
+		<Flights>
+			<QFA616>
+				<Ports> BNE </Ports>
+			</QFA616>
+			<JST6616>
+				<Ports> BNE </Ports>
+			</JST6616>
+		</Flights>
+		<FeedKey> QFA616/081101 </FeedKey>
+		<ST> 20100813 120500 </ST>
+		<ET> 20100813 120500 </ET>
+		<Rego> VHVYF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA616-2090>
+	<QFA683-2091>
+		<Flights>
+			<QFA683>
+				<Ports> ADL </Ports>
+			</QFA683>
+			<JST6683>
+				<Ports> ADL </Ports>
+			</JST6683>
+		</Flights>
+		<FeedKey> QFA683/081101 </FeedKey>
+		<ST> 20100813 121000 </ST>
+		<ET> 20100813 121000 </ET>
+		<Rego> VHVYH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA683-2091>
+	<QFA769-2092>
+		<Flights>
+			<QFA769>
+				<Ports> PER </Ports>
+			</QFA769>
+		</Flights>
+		<FeedKey> QFA769/081101 </FeedKey>
+		<ST> 20100813 122500 </ST>
+		<ET> 20100813 122500 </ET>
+		<Rego> VHZXC </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA769-2092>
+	<QFA85-2093>
+		<Flights>
+			<QFA85>
+				<Ports> HKG </Ports>
+			</QFA85>
+		</Flights>
+		<FeedKey> QFA85/081101 </FeedKey>
+		<ST> 20100813 122500 </ST>
+		<ET> 20100813 122500 </ET>
+		<Rego> VHOGO </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<PaxJoin> 173 </PaxJoin>
+	</QFA85-2093>
+	<QFA432-2094>
+		<Flights>
+			<QFA432>
+				<Ports> SYD </Ports>
+			</QFA432>
+			<JST6432>
+				<Ports> SYD </Ports>
+			</JST6432>
+		</Flights>
+		<FeedKey> QFA432/081101 </FeedKey>
+		<ST> 20100813 123000 </ST>
+		<ET> 20100813 123000 </ET>
+		<Rego> VHTJK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA432-2094>
+	<JST442-2095>
+		<Flights>
+			<JST442>
+				<Ports> OOL </Ports>
+			</JST442>
+			<QFA5442>
+				<Ports> OOL </Ports>
+			</QFA5442>
+		</Flights>
+		<FeedKey> JST442/081101 </FeedKey>
+		<ST> 20100813 124000 </ST>
+		<ET> 20100813 124000 </ET>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 321 </AirCraft>
+		<Pax> 181,0 </Pax>
+		<PaxJoin> 181 </PaxJoin>
+	</JST442-2095>
+	<SIA7294-2096>
+		<Flights>
+			<SIA7294>
+				<Ports> ADL </Ports>
+			</SIA7294>
+		</Flights>
+		<FeedKey> SIA7294/081101 </FeedKey>
+		<ST> 20100813 125500 </ST>
+		<ET> 20100813 125500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 74Y </AirCraft>
+	</SIA7294-2096>
+	<QFA434-2097>
+		<Flights>
+			<QFA434>
+				<Ports> SYD </Ports>
+			</QFA434>
+			<BAW7444>
+				<Ports> SYD </Ports>
+			</BAW7444>
+			<JST6434>
+				<Ports> SYD </Ports>
+			</JST6434>
+		</Flights>
+		<FeedKey> QFA434/081101 </FeedKey>
+		<ST> 20100813 130000 </ST>
+		<ET> 20100813 130000 </ET>
+		<Rego> VHVZA </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA434-2097>
+	<JST707-2098>
+		<Flights>
+			<JST707>
+				<Ports> HBA </Ports>
+			</JST707>
+			<QFA5707>
+				<Ports> HBA </Ports>
+			</QFA5707>
+		</Flights>
+		<FeedKey> JST707/081101 </FeedKey>
+		<ST> 20100813 130000 </ST>
+		<ET> 20100813 130000 </ET>
+		<Rego> VHVQS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 164,0 </Pax>
+		<PaxJoin> 164 </PaxJoin>
+	</JST707-2098>
+	<QFA618-2099>
+		<Flights>
+			<QFA618>
+				<Ports> BNE </Ports>
+			</QFA618>
+			<JST6618>
+				<Ports> BNE </Ports>
+			</JST6618>
+		</Flights>
+		<FeedKey> QFA618/081101 </FeedKey>
+		<ST> 20100813 130500 </ST>
+		<ET> 20100813 130500 </ET>
+		<Rego> VHVZE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA618-2099>
+	<QFA436-2100>
+		<Flights>
+			<QFA436>
+				<Ports> SYD </Ports>
+			</QFA436>
+			<JST6436>
+				<Ports> SYD </Ports>
+			</JST6436>
+		</Flights>
+		<FeedKey> QFA436/081101 </FeedKey>
+		<ST> 20100813 133000 </ST>
+		<ET> 20100813 133000 </ET>
+		<Rego> VHOGH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA436-2100>
+	<QFA812-2101>
+		<Flights>
+			<QFA812>
+				<Ports> CBR </Ports>
+			</QFA812>
+		</Flights>
+		<FeedKey> QFA812/081101 </FeedKey>
+		<ST> 20100813 133000 </ST>
+		<ET> 20100813 133000 </ET>
+		<Rego> VHTJU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 88,0 </Pax>
+		<PaxJoin> 88 </PaxJoin>
+	</QFA812-2101>
+	<JST61-2102>
+		<Flights>
+			<JST61>
+				<Ports> DRW </Ports>
+			</JST61>
+			<QFA5061>
+				<Ports> DRW </Ports>
+			</QFA5061>
+		</Flights>
+		<FeedKey> JST61/081101 </FeedKey>
+		<ST> 20100813 133500 </ST>
+		<ET> 20100813 133500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<PaxJoin> 143 </PaxJoin>
+	</JST61-2102>
+	<QFA2082-2103>
+		<Flights>
+			<QFA2082>
+				<Ports> MQL </Ports>
+			</QFA2082>
+		</Flights>
+		<FeedKey> QFA2082/081101 </FeedKey>
+		<ST> 20100813 135000 </ST>
+		<ET> 20100813 135000 </ET>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2082-2103>
+	<QFA438-2104>
+		<Flights>
+			<QFA438>
+				<Ports> SYD </Ports>
+			</QFA438>
+			<BAW7442>
+				<Ports> SYD </Ports>
+			</BAW7442>
+			<JST6438>
+				<Ports> SYD </Ports>
+			</JST6438>
+		</Flights>
+		<FeedKey> QFA438/081101 </FeedKey>
+		<ST> 20100813 140000 </ST>
+		<ET> 20100813 140000 </ET>
+		<Rego> VHTJS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA438-2104>
+	<QFA620-2105>
+		<Flights>
+			<QFA620>
+				<Ports> BNE </Ports>
+			</QFA620>
+			<JST6620>
+				<Ports> BNE </Ports>
+			</JST6620>
+		</Flights>
+		<FeedKey> QFA620/081101 </FeedKey>
+		<ST> 20100813 140500 </ST>
+		<ET> 20100813 140500 </ET>
+		<Rego> VHVZD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA620-2105>
+	<QFA685-2106>
+		<Flights>
+			<QFA685>
+				<Ports> ADL </Ports>
+			</QFA685>
+			<JST6685>
+				<Ports> ADL </Ports>
+			</JST6685>
+		</Flights>
+		<FeedKey> QFA685/081101 </FeedKey>
+		<ST> 20100813 141000 </ST>
+		<ET> 20100813 141000 </ET>
+		<Rego> VHTJM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA685-2106>
+	<QFA101-2107>
+		<Flights>
+			<QFA101>
+				<Ports> PVG </Ports>
+			</QFA101>
+		</Flights>
+		<FeedKey> QFA101/081101 </FeedKey>
+		<ST> 20100813 112500 </ST>
+		<ET> 20100813 141500 </ET>
+		<Rego> VHQPE </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+		<PaxJoin> 145 </PaxJoin>
+	</QFA101-2107>
+	<QFA442-2108>
+		<Flights>
+			<QFA442>
+				<Ports> SYD </Ports>
+			</QFA442>
+			<JST6442>
+				<Ports> SYD </Ports>
+			</JST6442>
+		</Flights>
+		<FeedKey> QFA442/081101 </FeedKey>
+		<ST> 20100813 150000 </ST>
+		<ET> 20100813 150000 </ET>
+		<Rego> VHTJG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 147,0 </Pax>
+		<PaxJoin> 147 </PaxJoin>
+	</QFA442-2108>
+	<JST739-2109>
+		<Flights>
+			<JST739>
+				<Ports> LST </Ports>
+			</JST739>
+			<QFA5739>
+				<Ports> LST </Ports>
+			</QFA5739>
+		</Flights>
+		<FeedKey> JST739/081101 </FeedKey>
+		<ST> 20100813 150000 </ST>
+		<ET> 20100813 150000 </ET>
+		<Rego> VHVQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 137,0 </Pax>
+		<PaxJoin> 137 </PaxJoin>
+	</JST739-2109>
+	<QFA624-2110>
+		<Flights>
+			<QFA624>
+				<Ports> BNE </Ports>
+			</QFA624>
+		</Flights>
+		<FeedKey> QFA624/081101 </FeedKey>
+		<ST> 20100813 150500 </ST>
+		<ET> 20100813 150500 </ET>
+		<Rego> VHVYE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA624-2110>
+	<ANZ6882-2111>
+		<Flights>
+			<ANZ6882>
+				<Ports> PVG,GYD,FRA </Ports>
+			</ANZ6882>
+		</Flights>
+		<FeedKey> ANZ6882/081101 </FeedKey>
+		<ST> 20100813 150500 </ST>
+		<ET> 20100813 150500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 74Y </AirCraft>
+	</ANZ6882-2111>
+	<QFA777-2112>
+		<Flights>
+			<QFA777>
+				<Ports> PER </Ports>
+			</QFA777>
+		</Flights>
+		<FeedKey> QFA777/081101 </FeedKey>
+		<ST> 20100813 151000 </ST>
+		<ET> 20100813 151000 </ET>
+		<Rego> VHOGN </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA777-2112>
+	<QFA689-2113>
+		<Flights>
+			<QFA689>
+				<Ports> ADL </Ports>
+			</QFA689>
+		</Flights>
+		<FeedKey> QFA689/081101 </FeedKey>
+		<ST> 20100813 151500 </ST>
+		<ET> 20100813 151500 </ET>
+		<Rego> VHVXD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA689-2113>
+	<QFA2285-2114>
+		<Flights>
+			<QFA2285>
+				<Ports> LST </Ports>
+			</QFA2285>
+		</Flights>
+		<FeedKey> QFA2285/081101 </FeedKey>
+		<ST> 20100813 152000 </ST>
+		<ET> 20100813 152000 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2285-2114>
+	<QFA818-2115>
+		<Flights>
+			<QFA818>
+				<Ports> CBR </Ports>
+			</QFA818>
+		</Flights>
+		<FeedKey> QFA818/081101 </FeedKey>
+		<ST> 20100813 152500 </ST>
+		<ET> 20100813 152500 </ET>
+		<Rego> VHTJF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 38,0 </Pax>
+		<PaxJoin> 38 </PaxJoin>
+	</QFA818-2115>
+	<JST796-2116>
+		<Flights>
+			<JST796>
+				<Ports> MCY </Ports>
+			</JST796>
+			<QFA5796>
+				<Ports> MCY </Ports>
+			</QFA5796>
+		</Flights>
+		<FeedKey> JST796/081101 </FeedKey>
+		<ST> 20100813 152500 </ST>
+		<ET> 20100813 152500 </ET>
+		<Rego> VHVQX </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 156,0 </Pax>
+		<PaxJoin> 156 </PaxJoin>
+	</JST796-2116>
+	<QFA2057-2117>
+		<Flights>
+			<QFA2057>
+				<Ports> DPO </Ports>
+			</QFA2057>
+		</Flights>
+		<FeedKey> QFA2057/081101 </FeedKey>
+		<ST> 20100813 153500 </ST>
+		<ET> 20100813 153500 </ET>
+		<Rego> SBI </Rego>
+		<Carrier> Domestic </Carrier>
+		<Pax> 32,0 </Pax>
+		<PaxJoin> 32 </PaxJoin>
+	</QFA2057-2117>
+	<CPA104-2118>
+		<Flights>
+			<CPA104>
+				<Ports> HKG </Ports>
+			</CPA104>
+		</Flights>
+		<FeedKey> CPA104/081101 </FeedKey>
+		<ST> 20100813 153500 </ST>
+		<ET> 20100813 153500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA104-2118>
+	<JST968-2119>
+		<Flights>
+			<JST968>
+				<Ports> PER </Ports>
+			</JST968>
+			<QFA5968>
+				<Ports> PER </Ports>
+			</QFA5968>
+		</Flights>
+		<FeedKey> JST968/081101 </FeedKey>
+		<ST> 20100813 155000 </ST>
+		<ET> 20100813 155000 </ET>
+		<Rego> VHVQP </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 133,0 </Pax>
+		<PaxJoin> 133 </PaxJoin>
+	</JST968-2119>
+	<JST444-2120>
+		<Flights>
+			<JST444>
+				<Ports> OOL </Ports>
+			</JST444>
+			<QFA5444>
+				<Ports> OOL </Ports>
+			</QFA5444>
+		</Flights>
+		<FeedKey> JST444/081101 </FeedKey>
+		<ST> 20100813 155500 </ST>
+		<ET> 20100813 155500 </ET>
+		<Rego> VHVQH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 130,0 </Pax>
+		<PaxJoin> 130 </PaxJoin>
+	</JST444-2120>
+	<QFA446-2121>
+		<Flights>
+			<QFA446>
+				<Ports> SYD </Ports>
+			</QFA446>
+			<JST6446>
+				<Ports> SYD </Ports>
+			</JST6446>
+		</Flights>
+		<FeedKey> QFA446/081101 </FeedKey>
+		<ST> 20100813 160000 </ST>
+		<ET> 20100813 160000 </ET>
+		<Rego> VHVXF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA446-2121>
+	<THA982-2122>
+		<Flights>
+			<THA982>
+				<Ports> BKK </Ports>
+			</THA982>
+		</Flights>
+		<FeedKey> THA982/081101 </FeedKey>
+		<ST> 20100813 163000 </ST>
+		<ET> 20100813 163000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</THA982-2122>
+	<JST709-2123>
+		<Flights>
+			<JST709>
+				<Ports> HBA </Ports>
+			</JST709>
+			<QFA5709>
+				<Ports> HBA </Ports>
+			</QFA5709>
+		</Flights>
+		<FeedKey> JST709/081101 </FeedKey>
+		<ST> 20100813 163500 </ST>
+		<ET> 20100813 163500 </ET>
+		<Rego> VHJQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 160,0 </Pax>
+		<PaxJoin> 160 </PaxJoin>
+	</JST709-2123>
+	<QFA452-2124>
+		<Flights>
+			<QFA452>
+				<Ports> SYD </Ports>
+			</QFA452>
+			<JST6452>
+				<Ports> SYD </Ports>
+			</JST6452>
+		</Flights>
+		<FeedKey> QFA452/081101 </FeedKey>
+		<ST> 20100813 170000 </ST>
+		<ET> 20100813 170000 </ET>
+		<Rego> VHTJU </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 128,0 </Pax>
+		<PaxJoin> 128 </PaxJoin>
+	</QFA452-2124>
+	<SIA228-2125>
+		<Flights>
+			<SIA228>
+				<Ports> SIN </Ports>
+			</SIA228>
+		</Flights>
+		<FeedKey> SIA228/081101 </FeedKey>
+		<ST> 20100813 170000 </ST>
+		<ET> 20100813 170000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</SIA228-2125>
+	<QFA628-2126>
+		<Flights>
+			<QFA628>
+				<Ports> BNE </Ports>
+			</QFA628>
+			<JST6628>
+				<Ports> BNE </Ports>
+			</JST6628>
+		</Flights>
+		<FeedKey> QFA628/081101 </FeedKey>
+		<ST> 20100813 170500 </ST>
+		<ET> 20100813 170500 </ET>
+		<Rego> VHTJZ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 145,0 </Pax>
+		<PaxJoin> 145 </PaxJoin>
+	</QFA628-2126>
+	<JST476-2127>
+		<Flights>
+			<JST476>
+				<Ports> NTL </Ports>
+			</JST476>
+			<QFA5476>
+				<Ports> NTL </Ports>
+			</QFA5476>
+		</Flights>
+		<FeedKey> JST476/081101 </FeedKey>
+		<ST> 20100813 170500 </ST>
+		<ET> 20100813 170500 </ET>
+		<Rego> VHVQS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 150,0 </Pax>
+		<PaxJoin> 150 </PaxJoin>
+	</JST476-2127>
+	<QFA9-2128>
+		<Flights>
+			<QFA9>
+				<Ports> SIN,LHR </Ports>
+			</QFA9>
+			<BAW7309>
+				<Ports> SIN,LHR </Ports>
+			</BAW7309>
+			<JAI4009>
+				<Ports> SIN </Ports>
+			</JAI4009>
+			<AFR8091>
+				<Ports> SIN </Ports>
+			</AFR8091>
+		</Flights>
+		<FeedKey> QFA9/081101 </FeedKey>
+		<ST> 20100813 170500 </ST>
+		<ET> 20100813 170500 </ET>
+		<Rego> VHOJT </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA9-2128>
+	<JST446-2129>
+		<Flights>
+			<JST446>
+				<Ports> OOL </Ports>
+			</JST446>
+			<QFA5446>
+				<Ports> OOL </Ports>
+			</QFA5446>
+		</Flights>
+		<FeedKey> JST446/081101 </FeedKey>
+		<ST> 20100813 174500 </ST>
+		<ET> 20100813 174500 </ET>
+		<Rego> VHVQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 159,0 </Pax>
+		<PaxJoin> 159 </PaxJoin>
+	</JST446-2129>
+	<QFA697-2130>
+		<Flights>
+			<QFA697>
+				<Ports> ADL </Ports>
+			</QFA697>
+			<JST6697>
+				<Ports> ADL </Ports>
+			</JST6697>
+		</Flights>
+		<FeedKey> QFA697/081101 </FeedKey>
+		<ST> 20100813 175500 </ST>
+		<ET> 20100813 175500 </ET>
+		<Rego> VHVXH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 117,0 </Pax>
+		<PaxJoin> 117 </PaxJoin>
+	</QFA697-2130>
+	<QFA458-2131>
+		<Flights>
+			<QFA458>
+				<Ports> SYD </Ports>
+			</QFA458>
+			<JST6458>
+				<Ports> SYD </Ports>
+			</JST6458>
+		</Flights>
+		<FeedKey> QFA458/081101 </FeedKey>
+		<ST> 20100813 180000 </ST>
+		<ET> 20100813 180000 </ET>
+		<Rego> VHZXA </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA458-2131>
+	<QFA632-2132>
+		<Flights>
+			<QFA632>
+				<Ports> BNE </Ports>
+			</QFA632>
+			<JST6632>
+				<Ports> BNE </Ports>
+			</JST6632>
+		</Flights>
+		<FeedKey> QFA632/081101 </FeedKey>
+		<ST> 20100813 180500 </ST>
+		<ET> 20100813 180500 </ET>
+		<Rego> VHTJM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA632-2132>
+	<JST743-2133>
+		<Flights>
+			<JST743>
+				<Ports> LST </Ports>
+			</JST743>
+			<QFA5743>
+				<Ports> LST </Ports>
+			</QFA5743>
+		</Flights>
+		<FeedKey> JST743/081101 </FeedKey>
+		<ST> 20100813 181500 </ST>
+		<ET> 20100813 181500 </ET>
+		<Rego> VHVQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 92,0 </Pax>
+		<PaxJoin> 92 </PaxJoin>
+	</JST743-2133>
+	<ANZ726-2134>
+		<Flights>
+			<ANZ726>
+				<Ports> AKL </Ports>
+			</ANZ726>
+		</Flights>
+		<FeedKey> ANZ726/081101 </FeedKey>
+		<ST> 20100813 183000 </ST>
+		<ET> 20100813 183000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ726-2134>
+	<JST448-2135>
+		<Flights>
+			<JST448>
+				<Ports> OOL </Ports>
+			</JST448>
+			<QFA5448>
+				<Ports> OOL </Ports>
+			</QFA5448>
+		</Flights>
+		<FeedKey> JST448/081101 </FeedKey>
+		<ST> 20100813 184000 </ST>
+		<ET> 20100813 184000 </ET>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 321 </AirCraft>
+		<Pax> 177,0 </Pax>
+		<PaxJoin> 177 </PaxJoin>
+	</JST448-2135>
+	<QFA481-2136>
+		<Flights>
+			<QFA481>
+				<Ports> PER </Ports>
+			</QFA481>
+			<JST6481>
+				<Ports> PER </Ports>
+			</JST6481>
+		</Flights>
+		<FeedKey> QFA481/081101 </FeedKey>
+		<ST> 20100813 184500 </ST>
+		<ET> 20100813 184500 </ET>
+		<Rego> VHOGM </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA481-2136>
+	<JST35-2137>
+		<Flights>
+			<JST35>
+				<Ports> DPS </Ports>
+			</JST35>
+			<QFA267>
+				<Ports> DPS </Ports>
+			</QFA267>
+		</Flights>
+		<FeedKey> JST35/081101 </FeedKey>
+		<ST> 20100813 184500 </ST>
+		<ET> 20100813 184500 </ET>
+		<Rego> VHEBF </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 332 </AirCraft>
+		<PaxJoin> 181 </PaxJoin>
+	</JST35-2137>
+	<ANZ758-2138>
+		<Flights>
+			<ANZ758>
+				<Ports> WLG </Ports>
+			</ANZ758>
+		</Flights>
+		<FeedKey> ANZ758/081101 </FeedKey>
+		<ST> 20100813 184500 </ST>
+		<ET> 20100813 184500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ758-2138>
+	<QFA701-2139>
+		<Flights>
+			<QFA701>
+				<Ports> ADL </Ports>
+			</QFA701>
+			<JST6701>
+				<Ports> ADL </Ports>
+			</JST6701>
+		</Flights>
+		<FeedKey> QFA701/081101 </FeedKey>
+		<ST> 20100813 185000 </ST>
+		<ET> 20100813 185000 </ET>
+		<Rego> VHTJL </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA701-2139>
+	<QFA2061-2140>
+		<Flights>
+			<QFA2061>
+				<Ports> DPO </Ports>
+			</QFA2061>
+		</Flights>
+		<FeedKey> QFA2061/081101 </FeedKey>
+		<ST> 20100813 185500 </ST>
+		<ET> 20100813 185500 </ET>
+		<Rego> VHTQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 21,0 </Pax>
+		<PaxJoin> 21 </PaxJoin>
+	</QFA2061-2140>
+	<QFA462-2141>
+		<Flights>
+			<QFA462>
+				<Ports> SYD </Ports>
+			</QFA462>
+			<JST6462>
+				<Ports> SYD </Ports>
+			</JST6462>
+		</Flights>
+		<FeedKey> QFA462/081101 </FeedKey>
+		<ST> 20100813 190000 </ST>
+		<ET> 20100813 190000 </ET>
+		<Rego> VHVYH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA462-2141>
+	<QFA822-2142>
+		<Flights>
+			<QFA822>
+				<Ports> CBR </Ports>
+			</QFA822>
+		</Flights>
+		<FeedKey> QFA822/081101 </FeedKey>
+		<ST> 20100813 190000 </ST>
+		<ET> 20100813 190000 </ET>
+		<Rego> VHTJF </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 734 </AirCraft>
+		<Pax> 59,0 </Pax>
+		<PaxJoin> 59 </PaxJoin>
+	</QFA822-2142>
+	<QFA2086-2143>
+		<Flights>
+			<QFA2086>
+				<Ports> MQL </Ports>
+			</QFA2086>
+		</Flights>
+		<FeedKey> QFA2086/081101 </FeedKey>
+		<ST> 20100813 190000 </ST>
+		<ET> 20100813 190000 </ET>
+		<Rego> VHTQK </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> DH3 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA2086-2143>
+	<QFA634-2144>
+		<Flights>
+			<QFA634>
+				<Ports> BNE </Ports>
+			</QFA634>
+			<JST6634>
+				<Ports> BNE </Ports>
+			</JST6634>
+		</Flights>
+		<FeedKey> QFA634/081101 </FeedKey>
+		<ST> 20100813 190500 </ST>
+		<ET> 20100813 190500 </ET>
+		<Rego> VHVXJ </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 92,0 </Pax>
+		<PaxJoin> 92 </PaxJoin>
+	</QFA634-2144>
+	<QFA2289-2145>
+		<Flights>
+			<QFA2289>
+				<Ports> LST </Ports>
+			</QFA2289>
+		</Flights>
+		<FeedKey> QFA2289/081101 </FeedKey>
+		<ST> 20100813 191500 </ST>
+		<ET> 20100813 191500 </ET>
+		<Rego> SBI </Rego>
+		<Carrier> Domestic </Carrier>
+		<Pax> 23,0 </Pax>
+		<PaxJoin> 23 </PaxJoin>
+	</QFA2289-2145>
+	<QFA133-2146>
+		<Flights>
+			<QFA133>
+				<Ports> AKL </Ports>
+			</QFA133>
+		</Flights>
+		<FeedKey> QFA133/081101 </FeedKey>
+		<ST> 20100813 193000 </ST>
+		<ET> 20100813 193000 </ET>
+		<Rego> VHVXM </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<PaxJoin> 111 </PaxJoin>
+	</QFA133-2146>
+	<QFA1013-2147>
+		<Flights>
+			<QFA1013>
+				<Ports> HBA </Ports>
+			</QFA1013>
+		</Flights>
+		<FeedKey> QFA1013/081101 </FeedKey>
+		<ST> 20100813 195500 </ST>
+		<ET> 20100813 195500 </ET>
+		<Rego> VHVZD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 73H </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA1013-2147>
+	<QFA490-2148>
+		<Flights>
+			<QFA490>
+				<Ports> SYD </Ports>
+			</QFA490>
+			<JST6490>
+				<Ports> SYD </Ports>
+			</JST6490>
+		</Flights>
+		<FeedKey> QFA490/081101 </FeedKey>
+		<ST> 20100813 200000 </ST>
+		<ET> 20100813 200000 </ET>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA490-2148>
+	<QFA653-2149>
+		<Flights>
+			<QFA653>
+				<Ports> PER </Ports>
+			</QFA653>
+		</Flights>
+		<FeedKey> QFA653/081101 </FeedKey>
+		<ST> 20100813 200000 </ST>
+		<ET> 20100813 200000 </ET>
+		<Rego> VHZXD </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 763 </AirCraft>
+		<Pax> 0 </Pax>
+	</QFA653-2149>
+	<JST478-2150>
+		<Flights>
+			<JST478>
+				<Ports> NTL </Ports>
+			</JST478>
+			<QFA5478>
+				<Ports> NTL </Ports>
+			</QFA5478>
+		</Flights>
+		<FeedKey> JST478/081101 </FeedKey>
+		<ST> 20100813 200500 </ST>
+		<ET> 20100813 200500 </ET>
+		<Rego> VHJQG </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 113,0 </Pax>
+		<PaxJoin> 113 </PaxJoin>
+	</JST478-2150>
+	<JST970-2151>
+		<Flights>
+			<JST970>
+				<Ports> PER </Ports>
+			</JST970>
+			<QFA5970>
+				<Ports> PER </Ports>
+			</QFA5970>
+		</Flights>
+		<FeedKey> JST970/081101 </FeedKey>
+		<ST> 20100813 210500 </ST>
+		<ET> 20100813 210500 </ET>
+		<Rego> VHJQE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 122,0 </Pax>
+		<PaxJoin> 122 </PaxJoin>
+	</JST970-2151>
+	<JST715-2152>
+		<Flights>
+			<JST715>
+				<Ports> HBA </Ports>
+			</JST715>
+			<QFA5715>
+				<Ports> HBA </Ports>
+			</QFA5715>
+		</Flights>
+		<FeedKey> JST715/081101 </FeedKey>
+		<ST> 20100813 213000 </ST>
+		<ET> 20100813 213000 </ET>
+		<Rego> VHVQS </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 151,0 </Pax>
+		<PaxJoin> 151 </PaxJoin>
+	</JST715-2152>
+	<JST678-2153>
+		<Flights>
+			<JST678>
+				<Ports> DRW </Ports>
+			</JST678>
+			<QFA5678>
+				<Ports> DRW </Ports>
+			</QFA5678>
+		</Flights>
+		<FeedKey> JST678/081101 </FeedKey>
+		<ST> 20100813 220500 </ST>
+		<ET> 20100813 220500 </ET>
+		<Rego> VHVQH </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 320 </AirCraft>
+		<Pax> 114,0 </Pax>
+		<PaxJoin> 114 </PaxJoin>
+	</JST678-2153>
+	<QFA29-2154>
+		<Flights>
+			<QFA29>
+				<Ports> HKG,LHR </Ports>
+			</QFA29>
+			<BAW7317>
+				<Ports> HKG,LHR </Ports>
+			</BAW7317>
+			<AFR8073>
+				<Ports> HKG </Ports>
+			</AFR8073>
+		</Flights>
+		<FeedKey> QFA29/081101 </FeedKey>
+		<ST> 20100813 235900 </ST>
+		<ET> 20100813 235900 </ET>
+		<Rego> VHOJH </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA29-2154>
+	<THA980-2155>
+		<Flights>
+			<THA980>
+				<Ports> BKK </Ports>
+			</THA980>
+		</Flights>
+		<FeedKey> THA980/081102 </FeedKey>
+		<ST> 20100814 004500 </ST>
+		<ET> 20100814 004500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</THA980-2155>
+	<SIA218-2156>
+		<Flights>
+			<SIA218>
+				<Ports> SIN </Ports>
+			</SIA218>
+		</Flights>
+		<FeedKey> SIA218/081102 </FeedKey>
+		<ST> 20100814 010500 </ST>
+		<ET> 20100814 010500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 77W </AirCraft>
+	</SIA218-2156>
+	<CPA168-2157>
+		<Flights>
+			<CPA168>
+				<Ports> HKG </Ports>
+			</CPA168>
+		</Flights>
+		<FeedKey> CPA168/081102 </FeedKey>
+		<ST> 20100814 012000 </ST>
+		<ET> 20100814 012000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA168-2157>
+	<CPA134-2158>
+		<Flights>
+			<CPA134>
+				<Ports> HKG </Ports>
+			</CPA134>
+		</Flights>
+		<FeedKey> CPA134/081102 </FeedKey>
+		<ST> 20100814 085000 </ST>
+		<ET> 20100814 085000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA134-2158>
+	<PAL209-2159>
+		<Flights>
+			<PAL209>
+				<Ports> SYD </Ports>
+			</PAL209>
+		</Flights>
+		<FeedKey> PAL209/081101 </FeedKey>
+		<ST> 20100814 090000 </ST>
+		<ET> 20100814 090000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</PAL209-2159>
+	<ANZ792-2160>
+		<Flights>
+			<ANZ792>
+				<Ports> CHC </Ports>
+			</ANZ792>
+		</Flights>
+		<FeedKey> ANZ792/081102 </FeedKey>
+		<ST> 20100814 091500 </ST>
+		<ET> 20100814 091500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ792-2160>
+	<GIA719-2161>
+		<Flights>
+			<GIA719>
+				<Ports> DPS </Ports>
+			</GIA719>
+		</Flights>
+		<FeedKey> GIA719/081102 </FeedKey>
+		<ST> 20100814 105500 </ST>
+		<ET> 20100814 105500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</GIA719-2161>
+	<SIA238-2162>
+		<Flights>
+			<SIA238>
+				<Ports> SIN </Ports>
+			</SIA238>
+		</Flights>
+		<FeedKey> SIA238/081102 </FeedKey>
+		<ST> 20100814 112000 </ST>
+		<ET> 20100814 112000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</SIA238-2162>
+	<QFA6026-2163>
+		<Flights>
+			<QFA6026>
+				<Ports> SYD </Ports>
+			</QFA6026>
+		</Flights>
+		<FeedKey> QFA6026/081102 </FeedKey>
+		<ST> 20100814 112000 </ST>
+		<ET> 20100814 112000 </ET>
+		<Rego> VHEBX </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 743 </AirCraft>
+	</QFA6026-2163>
+	<ANZ124-2164>
+		<Flights>
+			<ANZ124>
+				<Ports> AKL </Ports>
+			</ANZ124>
+		</Flights>
+		<FeedKey> ANZ124/081102 </FeedKey>
+		<ST> 20100814 113500 </ST>
+		<ET> 20100814 113500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</ANZ124-2164>
+	<QFA93-2165>
+		<Flights>
+			<QFA93>
+				<Ports> LAX </Ports>
+			</QFA93>
+		</Flights>
+		<FeedKey> QFA93/081102 </FeedKey>
+		<ST> 20100814 121000 </ST>
+		<ET> 20100814 121000 </ET>
+		<Rego> VHOEG </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA93-2165>
+	<QFA25-2166>
+		<Flights>
+			<QFA25>
+				<Ports> AKL,LAX </Ports>
+			</QFA25>
+			<CES8905>
+				<Ports> AKL </Ports>
+			</CES8905>
+			<AAL7315>
+				<Ports> AKL,LAX </Ports>
+			</AAL7315>
+			<BAW7303>
+				<Ports> AKL,LAX </Ports>
+			</BAW7303>
+		</Flights>
+		<FeedKey> QFA25/081102 </FeedKey>
+		<ST> 20100814 123500 </ST>
+		<ET> 20100814 123500 </ET>
+		<Rego> VHEBV </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 743 </AirCraft>
+	</QFA25-2166>
+	<JST61-2167>
+		<Flights>
+			<JST61>
+				<Ports> DRW,SIN </Ports>
+			</JST61>
+		</Flights>
+		<FeedKey> JST61/081102 </FeedKey>
+		<ST> 20100814 133500 </ST>
+		<ET> 20100814 133500 </ET>
+		<Rego> VHVQK </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</JST61-2167>
+	<JST29-2168>
+		<Flights>
+			<JST29>
+				<Ports> BKK </Ports>
+			</JST29>
+			<QFA265>
+				<Ports> BKK </Ports>
+			</QFA265>
+		</Flights>
+		<FeedKey> JST29/081102 </FeedKey>
+		<ST> 20100814 141000 </ST>
+		<ET> 20100814 141000 </ET>
+		<Rego> VHEBF </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 332 </AirCraft>
+	</JST29-2168>
+	<CPA104-2169>
+		<Flights>
+			<CPA104>
+				<Ports> HKG </Ports>
+			</CPA104>
+		</Flights>
+		<FeedKey> CPA104/081102 </FeedKey>
+		<ST> 20100814 153500 </ST>
+		<ET> 20100814 153500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 333 </AirCraft>
+	</CPA104-2169>
+	<THA982-2170>
+		<Flights>
+			<THA982>
+				<Ports> BKK </Ports>
+			</THA982>
+		</Flights>
+		<FeedKey> THA982/081102 </FeedKey>
+		<ST> 20100814 163000 </ST>
+		<ET> 20100814 163000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 772 </AirCraft>
+	</THA982-2170>
+	<SIA228-2171>
+		<Flights>
+			<SIA228>
+				<Ports> SIN </Ports>
+			</SIA228>
+		</Flights>
+		<FeedKey> SIA228/081102 </FeedKey>
+		<ST> 20100814 170000 </ST>
+		<ET> 20100814 170000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</SIA228-2171>
+	<QFA9-2172>
+		<Flights>
+			<QFA9>
+				<Ports> SIN,LHR </Ports>
+			</QFA9>
+			<JAI4009>
+				<Ports> SIN </Ports>
+			</JAI4009>
+			<AFR8091>
+				<Ports> SIN </Ports>
+			</AFR8091>
+			<BAW7309>
+				<Ports> SIN,LHR </Ports>
+			</BAW7309>
+		</Flights>
+		<FeedKey> QFA9/081102 </FeedKey>
+		<ST> 20100814 170500 </ST>
+		<ET> 20100814 170500 </ET>
+		<Rego> VHOJP </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA9-2172>
+	<JST171-2173>
+		<Flights>
+			<JST171>
+				<Ports> CHC </Ports>
+			</JST171>
+			<QFA203>
+				<Ports> CHC </Ports>
+			</QFA203>
+		</Flights>
+		<FeedKey> JST171/081102 </FeedKey>
+		<ST> 20100814 175000 </ST>
+		<ET> 20100814 175000 </ET>
+		<Rego> VHVQF </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</JST171-2173>
+	<QFA37-2174>
+		<Flights>
+			<QFA37>
+				<Ports> WLG </Ports>
+			</QFA37>
+			<BAW7358>
+				<Ports> WLG </Ports>
+			</BAW7358>
+		</Flights>
+		<FeedKey> QFA37/081102 </FeedKey>
+		<ST> 20100814 183000 </ST>
+		<ET> 20100814 183000 </ET>
+		<Rego> ZKJTQ </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 734 </AirCraft>
+	</QFA37-2174>
+	<ANZ726-2175>
+		<Flights>
+			<ANZ726>
+				<Ports> AKL </Ports>
+			</ANZ726>
+		</Flights>
+		<FeedKey> ANZ726/081102 </FeedKey>
+		<ST> 20100814 183000 </ST>
+		<ET> 20100814 183000 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ726-2175>
+	<ANZ758-2176>
+		<Flights>
+			<ANZ758>
+				<Ports> WLG </Ports>
+			</ANZ758>
+		</Flights>
+		<FeedKey> ANZ758/081102 </FeedKey>
+		<ST> 20100814 184500 </ST>
+		<ET> 20100814 184500 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 320 </AirCraft>
+	</ANZ758-2176>
+	<QFA133-2177>
+		<Flights>
+			<QFA133>
+				<Ports> AKL </Ports>
+			</QFA133>
+		</Flights>
+		<FeedKey> QFA133/081102 </FeedKey>
+		<ST> 20100814 193000 </ST>
+		<ET> 20100814 193000 </ET>
+		<Rego> VHVXM </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 73H </AirCraft>
+	</QFA133-2177>
+	<FJI930-2178>
+		<Flights>
+			<FJI930>
+				<Ports> NAN </Ports>
+			</FJI930>
+			<QFA395>
+				<Ports> NAN </Ports>
+			</QFA395>
+		</Flights>
+		<FeedKey> FJI930/081102 </FeedKey>
+		<ST> 20100814 235900 </ST>
+		<ET> 20100814 235900 </ET>
+		<Carrier> International </Carrier>
+		<AirCraft> 763 </AirCraft>
+	</FJI930-2178>
+	<QFA29-2179>
+		<Flights>
+			<QFA29>
+				<Ports> HKG,LHR </Ports>
+			</QFA29>
+			<AFR8073>
+				<Ports> HKG </Ports>
+			</AFR8073>
+			<BAW7317>
+				<Ports> HKG,LHR </Ports>
+			</BAW7317>
+		</Flights>
+		<FeedKey> QFA29/081102 </FeedKey>
+		<ST> 20100814 235900 </ST>
+		<ET> 20100814 235900 </ET>
+		<Rego> VHOJO </Rego>
+		<Carrier> International </Carrier>
+		<AirCraft> 744 </AirCraft>
+	</QFA29-2179>
+	<GT4444-2180>
+		<Flights>
+			<GT4444>
+				<Ports> PER </Ports>
+			</GT4444>
+		</Flights>
+		<ST> 20100813 170000 </ST>
+		<ET> 20100813 170000 </ET>
+		<Gates> 13 </Gates>
+		<Bays> 5 </Bays>
+	</GT4444-2180>
+	<LT4444-2181>
+		<Flights>
+			<LT4444>
+				<Ports> MEL </Ports>
+			</LT4444>
+		</Flights>
+		<ST> 20100813 183000 </ST>
+		<ET> 20100813 183000 </ET>
+		<Gates> 3 </Gates>
+		<Bays/>
+	</LT4444-2181>
+	<GT4444-2182>
+		<Flights>
+			<GT4444>
+				<Ports> PER </Ports>
+			</GT4444>
+		</Flights>
+		<ST> 20101215 170000 </ST>
+		<ET> 20101215 170000 </ET>
+		<Gates> 13 </Gates>
+		<Bays> 5 </Bays>
+	</GT4444-2182>
+	<LT4444-2183>
+		<Flights>
+			<LT4444>
+				<Ports> MEL </Ports>
+			</LT4444>
+		</Flights>
+		<ST> 20101215 183000 </ST>
+		<ET> 20101215 183000 </ET>
+		<Gates> 3 </Gates>
+		<Bays/>
+	</LT4444-2183>
+	<NEW123-2184>
+		<Flights>
+			<NEW123>
+				<CheckIns/>
+			</NEW123>
+			<SHR999/>
+		</Flights>
+		<ST> 20110301 101600 </ST>
+		<Gates/>
+		<ET> 20110301 105000 </ET>
+	</NEW123-2184>
+</Departures>

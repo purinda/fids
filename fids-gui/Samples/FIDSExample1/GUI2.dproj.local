@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010/04/13 21:35:49.171.pas,C:\Usr\Tools\DelphiLib\Unit1.pas=C:\Usr\FIDSxml\GUI2\uMain.pas</Transaction>
+    <Transaction>2010/04/13 21:35:49.171.dfm,C:\Usr\Tools\DelphiLib\Unit1.dfm=C:\Usr\FIDSxml\GUI2\uMain.dfm</Transaction>
+    <Transaction>2010/04/13 21:35:54.687.dproj,C:\Usr\Tools\DelphiLib\Project1.dproj=C:\Usr\FIDSxml\GUI2\GUI2.dproj</Transaction>
+    <Transaction>2010/04/15 10:16:08.500.pas,C:\Usr\FIDSxml\GUI\uEdit.pas=</Transaction>
+    <Transaction>2010/04/15 10:16:08.500.dfm,C:\Usr\FIDSxml\GUI\uEdit.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,2111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<IATAPort KeyTag="true">
+	<ABH>
+		Alpha,Alfa
+		<Arab> الالفا </Arab>
+	</ABH>
+	<ABM> Bamaga,Bama </ABM>
+	<ABX>
+		Albury,Alby
+		<Arab> البوري </Arab>
+	</ABX>
+	<ADL>
+		Adelaide,Adel
+		<Arab> اديلايد الدوليه </Arab>
+	</ADL>
+	<AKL>
+		Auckland,Auck
+		<Ch> 奥克兰 </Ch>
+		<Arab> اوكلاند </Arab>
+		<Kurd> ئۆکلاند </Kurd>
+	</AKL>
+	<ALH>
+		Albany,Alby
+		<Arab> الباني </Arab>
+	</ALH>
+	<ALR>
+		Alexandra,Alex
+		<Arab> الكساندرا </Arab>
+	</ALR>
+	<AMS>
+		Amsterdam,Amst
+		<Arab> أمستردام </Arab>
+		<Kurd> ﺌﺔﻤﺴﺘﺮدام </Kurd>
+	</AMS>
+	<APW>
+		Apia
+		<Arab> ابيا </Arab>
+	</APW>
+	<ARK>
+		Arkaroola,Ark.
+		<Arab> اروشا </Arab>
+	</ARK>
+	<ARM>
+		Armidale,Armi
+		<Arab> انجلاند </Arab>
+	</ARM>
+	<ASP>
+		Alice Springs,Alice Sp.,A.Sp
+		<Arab> اليس سبرينغز </Arab>
+	</ASP>
+	<ATH>
+		Athens,Athn
+		<Arab> اثينا </Arab>
+		<Kurd> ﺌﺔﺴﻴﻨﺎ </Kurd>
+	</ATH>
+	<AUH>
+		Abu Dhabi,Abu.
+		<Arab> ابو ظبي </Arab>
+	</AUH>
+	<AUR>
+		AURUKUN,AUR
+		<Arab> اوريلاس </Arab>
+	</AUR>
+	<AVV>
+		Avalon,Avln
+		<Arab> غيلونغ </Arab>
+		<Kurd> ڤیكتۆریا </Kurd>
+	</AVV>
+	<AYQ>
+		Ayers Rock,Ayers Rok,Ayrs
+		<Arab> صخره ايرز </Arab>
+	</AYQ>
+	<BAH>
+		Bahraih,Bahrain,Bahr
+		<Arab> المنامه </Arab>
+		<Kurd> مه نا مه </Kurd>
+	</BAH>
+	<BCI>
+		Barcaldine,Barcaldin,Barc
+		<Arab> باركالدين </Arab>
+	</BCI>
+	<BCM>
+		BACAU ROMANIA,BACAU,BCM
+		<Arab> باكاو </Arab>
+	</BCM>
+	<BDB>
+		Bundaberg,Bund
+		<Arab> بوندابرغ </Arab>
+	</BDB>
+	<BEH>
+		Beihai,Beih
+		<Ch> 北海 </Ch>
+		<Arab> بينتون هاربور </Arab>
+	</BEH>
+	<BEI>
+		Beijing,Beij
+		<Ch> 北京 </Ch>
+		<Arab> بيكا </Arab>
+	</BEI>
+	<BEO>
+		Belmont,Blmt
+		<Arab> نيوكاسل </Arab>
+	</BEO>
+	<BEY>
+		Beirut, Beirt, Bei
+		<Arab> بيروت </Arab>
+		<Kurd> ﺒﺔﻴﺮﻮﺖ </Kurd>
+	</BEY>
+	<BHE>
+		Blenheim,Blen
+		<Arab> بلينهيم </Arab>
+	</BHE>
+	<BHQ>
+		Broken Hill,Brok.Hill,B.Hl
+		<Arab> هيل </Arab>
+	</BHQ>
+	<BHS>
+		Bathurst,Bath
+		<Arab> باثرست </Arab>
+	</BHS>
+	<BKK>
+		Bangkok,Bkok
+		<Ch> 曼谷 </Ch>
+		<Arab> بانكوك </Arab>
+		<Kurd> بانگکۆک </Kurd>
+	</BKK>
+	<BKQ>
+		Blackall,Blac
+		<Arab> بلاكال </Arab>
+	</BKQ>
+	<BLT>
+		Blackwater,Blackwter,Blac
+		<Arab> بلاكواتر </Arab>
+	</BLT>
+	<BME>
+		Broome,Brme
+		<Arab> برومي </Arab>
+	</BME>
+	<BMP>
+		Brampton Island,Bramption Is.,Brampton,BMP
+		<Arab> الجيل الجزيره </Arab>
+	</BMP>
+	<BNE>
+		Brisbane,Bris
+		<Arab> بريسبين </Arab>
+		<Kurd> بریسبه ن </Kurd>
+	</BNE>
+	<BNK>
+		Ballina,Blna
+		<Arab> بالينا </Arab>
+	</BNK>
+	<BOM>
+		Bombay,Bbay
+		<Arab> مومباي </Arab>
+		<Kurd> مومبای </Kurd>
+	</BOM>
+	<BRU>
+		Brussels,Brus
+		<Arab> بروكسل </Arab>
+		<Kurd> برۆسلس </Kurd>
+	</BRU>
+	<BUA>
+		Buka
+		<Arab> بوكا </Arab>
+	</BUA>
+	<BUC>
+		Burketown,BUC
+		<Arab> بوركيتاون </Arab>
+	</BUC>
+	<BUE> Buenos Aires,Bue.aires,B.ai </BUE>
+	<BUY>
+		Bunbury,Bunb
+		<Arab> بونبوري </Arab>
+	</BUY>
+	<BVI>
+		Birdsville,Birdsvil.,Bird
+		<Arab> بيردسفيلي </Arab>
+	</BVI>
+	<BWB>
+		Barrow Island,Barrow Is,B.is
+		<Arab> بارو الجزيره </Arab>
+	</BWB>
+	<BWN>
+		Brunei,Brun
+		<Arab> بندر سري بيغاوان </Arab>
+		<Kurd> برونای </Kurd>
+	</BWN>
+	<BWT>
+		Burnie,Burn
+		<Arab> بورني </Arab>
+	</BWT>
+	<BWU>
+		Bankston,Bank
+		<Arab> سدني </Arab>
+	</BWU>
+	<BXG>
+		Bendigo,Bend
+		<Arab> بنديغو </Arab>
+	</BXG>
+	<CAI>
+		Cairo,Cair
+		<Arab> قاهرة </Arab>
+		<Kurd> ﻘﺎھﻴﺮة </Kurd>
+	</CAI>
+	<CAZ>
+		Cobar,Cobr
+		<Arab> كوبار </Arab>
+	</CAZ>
+	<CBR>
+		Canberra,Canb
+		<Arab> كانبرا </Arab>
+	</CBR>
+	<CBX>
+		Condobolin,Condoboln,Cond
+		<Arab> كوندوبولين </Arab>
+	</CBX>
+	<CCK>
+		Cocos Island,Cocos Is.,Ccos
+		<Arab> جزر جوز الهند </Arab>
+	</CCK>
+	<CCW>
+		Cowell,Cowl
+		<Arab> كوويل </Arab>
+	</CCW>
+	<CDG>
+		Paris - De Gaulle,Paris-de Gaull,Paris-dg,Pari
+		<Arab> باريس </Arab>
+		<Kurd> پاریس </Kurd>
+	</CDG>
+	<CED>
+		Ceduna,Cdna
+		<Arab> سيدونا </Arab>
+	</CED>
+	<CES>
+		Cessnock,Csnk
+		<Arab> سيسنوك </Arab>
+	</CES>
+	<CFS>
+		Coffs Harbour,Coffs Hbr,Coff
+		<Arab> كوففس الميناء </Arab>
+	</CFS>
+	<CGK>
+		Jakarta,Jkta
+		<Arab> جاكارتا </Arab>
+		<Kurd> جاكارته </Kurd>
+	</CGK>
+	<CHC>
+		Christchurch,Christch.,Chch
+		<Arab> كرايستشيرش </Arab>
+		<Kurd> كرایستكێرك </Kurd>
+	</CHC>
+	<CHE>
+		Chengdu,Chng
+		<Ch> 成都 </Ch>
+		<Arab> كاهرسيفين </Arab>
+	</CHE>
+	<CHO>
+		Chongqing,Chqg
+		<Ch> 重庆 </Ch>
+		<Arab> تشارلوتيسفيل </Arab>
+	</CHO>
+	<CIX>
+		Chiclayo, Chic
+		<Arab> تشيكلايو </Arab>
+	</CIX>
+	<CMA>
+		Cunnamulla,Cunnamull,Cmla
+		<Arab> كونامولا </Arab>
+	</CMA>
+	<CMB>
+		Colombo,Cmbo
+		<Arab> كولومبو </Arab>
+		<Kurd> كۆلۆمبۆ </Kurd>
+	</CMB>
+	<CMD>
+		Cootamundra,C/mundra,Coot
+		<Arab> كووتاموندرا </Arab>
+	</CMD>
+	<CMQ>
+		Clermont,Cler
+		<Arab> كليرمونت </Arab>
+	</CMQ>
+	<CMU>
+		Kundiawa,Kun.
+		<Arab> كوندياوا </Arab>
+	</CMU>
+	<CNB>
+		Coonamble,Cble
+		<Arab> كوونامبلي </Arab>
+	</CNB>
+	<CNJ>
+		Cloncurry,Clon
+		<Arab> كلونكوري </Arab>
+	</CNJ>
+	<CNS>
+		Cairns,Cns.
+		<Arab> العلامات </Arab>
+		<Kurd> كێرنز </Kurd>
+	</CNS>
+	<CNX>
+		CHANG MIA THAI,CHIANGMAI,CNX
+		<Arab> شيانغ ماي </Arab>
+		<Kurd> كیانگمای </Kurd>
+	</CNX>
+	<COJ>
+		Coonabarabran,Coonabara,Conn
+		<Arab> كوونابارابران </Arab>
+	</COJ>
+	<CPD>
+		Coober Pedy,Coob.pedy,Coob
+		<Arab> كووبر بيدي </Arab>
+	</CPD>
+	<CSI>
+		Casino,Csno
+		<Arab> الكازينو </Arab>
+	</CSI>
+	<CST>
+		Castaway,Cast
+		<Arab> المنبوذ </Arab>
+	</CST>
+	<CTK>
+		Cockatoo Island,Cockatoo Isle,Cockatoo,Ctoo
+		<Arab> الاقليم </Arab>
+	</CTK>
+	<CTL>
+		Charleville,Charlevil,Char
+		<Arab> شارليفيلي </Arab>
+	</CTL>
+	<CTN>
+		Cooktown,Cook
+		<Arab> كووكتون </Arab>
+	</CTN>
+	<CTS>
+		Sapporo-Shin-Chitos,Sapporo-S,Sapporo
+		<Arab> سابورو </Arab>
+	</CTS>
+	<CTS2> Chitose,Chit </CTS2>
+	<CUD>
+		Caloundra,Cdra
+		<Arab> كالوندرا </Arab>
+	</CUD>
+	<CUG>
+		Cudal,Cudl
+		<Arab> كودال </Arab>
+	</CUG>
+	<CUQ>
+		Coen
+		<Arab> احتجز كووين </Arab>
+	</CUQ>
+	<CUY>
+		Cue
+		<Arab> الاشاره </Arab>
+	</CUY>
+	<CVC>
+		Cleve,Clve
+		<Arab> كليفي </Arab>
+	</CVC>
+	<CVQ>
+		Carnarvon,Carn
+		<Arab> كارنارفون </Arab>
+	</CVQ>
+	<CWT>
+		Cowra,Cwra
+		<Arab> كوورا </Arab>
+	</CWT>
+	<CXT>
+		Charters Towers,Charters Twrs,Char.twrs,Chtr
+		<Arab> مواثيق ابراج </Arab>
+	</CXT>
+	<DAU>
+		Daru
+		<Arab> دارو </Arab>
+	</DAU>
+	<DBO>
+		Dubbo,Dubo
+		<Arab> دوبو </Arab>
+	</DBO>
+	<DBY>
+		Dalby,Dlby
+		<Arab> دالبي </Arab>
+	</DBY>
+	<DDI>
+		Daydream Island,Daydream Isle,Daydream,Dayd
+		<Arab> هو حلم اليقظه </Arab>
+	</DDI>
+	<DEN>
+		Denver,Dnvr
+		<Arab> دينفير </Arab>
+	</DEN>
+	<DFW>
+		Dallas - Fort Worth,Dallas-ft Wrth,Dallas-fw,D-fw
+		<Arab> دالاس </Arab>
+		<Kurd> دالاس </Kurd>
+	</DFW>
+	<DGE>
+		Mudgee,Mgee
+		<Arab> مودجي </Arab>
+	</DGE>
+	<DJJ>
+		Jayapura,Jayp
+		<Arab> جايابورا </Arab>
+	</DJJ>
+	<DKI>
+		Dunk Island,Dunk Isl,Dunk
+		<Arab> غمس الجزيره </Arab>
+	</DKI>
+	<DMD>
+		Doomadgee,dmd
+		<Arab> دومادجي </Arab>
+	</DMD>
+	<DNM>
+		Denham,Dnhm
+		<Arab> دنهام </Arab>
+	</DNM>
+	<DNQ>
+		Deniliquin,Deniliqun,Deni
+		<Arab> دينيليكين </Arab>
+	</DNQ>
+	<DOH>
+		Dohai Qatar,Dohai Qat,Doha
+		<Arab> الدوحه </Arab>
+		<Kurd> ﺪﻮﺤﺔ </Kurd>
+	</DOH>
+	<DPO>
+		Devonport,Devn
+		<Arab> ديفونبورت </Arab>
+	</DPO>
+	<DPS>
+		Denpasar,Dpsr
+		<Kurd> بالی </Kurd>
+	</DPS>
+	<DPW> Dampier,Damp </DPW>
+	<DRB>
+		Derby,Drby
+		<Arab> الدربي </Arab>
+	</DRB>
+	<DRN>
+		Dirranbandi,Dirranban,Dirn
+		<Arab> ديرانباندي </Arab>
+	</DRN>
+	<DRW>
+		Darwin,Dwin
+		<Arab> داروين </Arab>
+		<Kurd> داروین </Kurd>
+	</DRW>
+	<DUD>
+		Dunedin,Dun.
+		<Arab> دنيدن </Arab>
+		<Kurd> ده‌نێدن </Kurd>
+	</DUD>
+	<DUS>
+		Dusseldorf,Dusseldor,Duss
+		<Arab> دسلدورف </Arab>
+		<Kurd> ﺪۆﺴﻠﺪﻮﺮﻒ </Kurd>
+	</DUS>
+	<DXB>
+		Dubai,Dubi
+		<Arab> دبي </Arab>
+		<Kurd> ﺪﻮﺒﺔى </Kurd>
+	</DXB>
+	<DYA>
+		Dysart,Dyst
+		<Arab> ديسارت </Arab>
+	</DYA>
+	<EDR>
+		Edward River,Edward R.,EDR
+		<Arab> ادوارد النهر </Arab>
+	</EDR>
+	<EMD>
+		Emerald,Emer
+		<Arab> الزمرده </Arab>
+	</EMD>
+	<EPR>
+		Esperance,Esp.
+		<Arab> الامل </Arab>
+	</EPR>
+	<FCO>
+		Rome
+		<Arab> روما </Arab>
+		<Kurd> ڕۆما </Kurd>
+	</FCO>
+	<FLS>
+		Flinders Island,Flinders Isle,Flinders,Flin
+		<Arab> فليندرس الجزيره </Arab>
+	</FLS>
+	<FOT>
+		Forster,Fstr
+		<Arab> فورستر </Arab>
+	</FOT>
+	<FRA>
+		Frankfurt,Ffrt
+		<Arab> فرانكفورت </Arab>
+		<Kurd> ﻔﺮاﻨﻜﻔۆﺮﺖ </Kurd>
+	</FRA>
+	<FRB>
+		Forbes,Frbs
+		<Arab> فوربز </Arab>
+	</FRB>
+	<FUK>
+		Fukuoka,Fkka
+		<Arab> فوكووكا </Arab>
+		<Kurd> فوكواكه‌ </Kurd>
+	</FUK>
+	<GAH>
+		Gayndah,Gayn
+		<Arab> غاينداه </Arab>
+	</GAH>
+	<GET>
+		Geraldton,Gton
+		<Arab> غيرالدتون </Arab>
+	</GET>
+	<GEX>
+		Geelong,Geel
+		<Arab> غيلونغ </Arab>
+	</GEX>
+	<GFF>
+		Griffith,Grif
+		<Arab> جريفيث </Arab>
+	</GFF>
+	<GFL>
+		Grenfell,Grfl
+		<Arab> يقع الوديان </Arab>
+	</GFL>
+	<GFN>
+		Grafton,Graf
+		<Arab> جرافتون </Arab>
+	</GFN>
+	<GIS>
+		Gisborne,Gisb
+		<Arab> الواقعه </Arab>
+	</GIS>
+	<GKA>
+		Goroka,Gor.
+		<Arab> غوروكا </Arab>
+	</GKA>
+	<GLA>
+		Glasgow,Glas
+		<Arab> غلاسكو </Arab>
+	</GLA>
+	<GLI>
+		Glen Innes,Gl. Innes,G.in
+		<Arab> غلين بارلتا </Arab>
+	</GLI>
+	<GLT>
+		Gladstone,Glad
+		<Arab> الحقيبه </Arab>
+	</GLT>
+	<GLY>
+		Goldsworthy,Goldswthy,Gold
+		<Arab> غولدسوورثي </Arab>
+	</GLY>
+	<GMN>
+		Greymouth,Gmth
+		<Arab> غريموث </Arab>
+	</GMN>
+	<GNY> NEW GUINEA,GURNEY,GNY </GNY>
+	<GOO>
+		Goodiwindi,Goonwindi,Goon
+		<Arab> غونديويندي </Arab>
+	</GOO>
+	<GOV>
+		Gove
+		<Arab> الوزارات </Arab>
+	</GOV>
+	<GRN>
+		Melville Island,Melville Isle,Melville,M.is
+		<Arab> جوردن </Arab>
+	</GRN>
+	<GTE>
+		Groote Eylandt,Groote Is,Grte
+		<Arab> غروت يلاندت </Arab>
+	</GTE>
+	<GUA>
+		Guangzhou,Gzhu
+		<Ch> 广州 </Ch>
+		<Arab> غواتيمالا سيتي </Arab>
+	</GUA>
+	<GUH>
+		Gunnedah,Gunn
+		<Arab> غونيداه </Arab>
+	</GUH>
+	<GUM> Guam </GUM>
+	<GUR>
+		Alotau,Alot
+		<Arab> الوتو </Arab>
+	</GUR>
+	<GYL>
+		Argyle Diamond,Argyle,Agyl
+		<Arab> ارغيلي </Arab>
+	</GYL>
+	<GYP>
+		Gympie,Gymp
+		<Arab> غيمبي </Arab>
+	</GYP>
+	<HAE>
+		Haerbin,HAER
+		<Ch> 哈尔滨 </Ch>
+		<Arab> المقدس </Arab>
+	</HAE>
+	<HAI>
+		Haikou,Haik
+		<Ch> 海口 </Ch>
+		<Arab> الانهار الثلاثه </Arab>
+	</HAI>
+	<HAM>
+		Hamburg,Hamb
+		<Arab> هامبورغ </Arab>
+		<Kurd> ھﺎﻤﺒۆﺮﮓ </Kurd>
+	</HAM>
+	<HAN>
+		Hanoi,Hano
+		<Ch> 河内 </Ch>
+		<Arab> هانوي </Arab>
+		<Kurd> هانۆی </Kurd>
+	</HAN>
+	<HAP>
+		Kontiki Resort,Kontiki,Ktki
+		<Arab> لونغ ايلاند </Arab>
+	</HAP>
+	<HBA>
+		Hobart,Hob.
+		<Arab> هوبارت </Arab>
+	</HBA>
+	<HBR>
+		Hobart,Hobt
+		<Arab> هوبارت </Arab>
+	</HBR>
+	<HEL>
+		Helsinki,Hels
+		<Arab> فانتا </Arab>
+		<Kurd> هێلسینكی </Kurd>
+	</HEL>
+	<HGD>
+		Hughenden,Hugh
+		<Arab> هوغيندين </Arab>
+	</HGD>
+	<HGU>
+		Mt Hagen,Hagn
+		<Arab> جبل هاغن </Arab>
+	</HGU>
+	<HID>
+		Horn Island,Horn Is.,HID
+		<Arab> القرن الجزيره </Arab>
+	</HID>
+	<HIR>
+		Honiara,Honi
+		<Arab> هونيارا </Arab>
+	</HIR>
+	<HIS>
+		Hayman Island,Hayman Is,Haym
+		<Arab> هايمان الجزيره </Arab>
+	</HIS>
+	<HKG>
+		Hong Kong,Hkng
+		<Ch> 香港 </Ch>
+		<Arab> هونغ كونغ </Arab>
+		<Kurd> هۆنگ کۆنگ </Kurd>
+	</HKG>
+	<HKN>
+		Hoskins,Hosk
+		<Arab> تكلم </Arab>
+	</HKN>
+	<HKT>
+		Phuket,Phkt
+		<Arab> فوكيت </Arab>
+		<Kurd> پوكێت </Kurd>
+	</HKT>
+	<HLZ>
+		Hamilton,Hmtn
+		<Arab> هاملتن </Arab>
+	</HLZ>
+	<HND>
+		HANEDA/TOKYO,HANEDA,HND
+		<Arab> طوكيو </Arab>
+	</HND>
+	<HNK>
+		Hinchinbrook Isle,Hinchinbrook,Hinchnbrk,Hinc
+		<Arab> هينشينبروك الجزيره </Arab>
+	</HNK>
+	<HNL>
+		Honolulu,Hono
+		<Arab> هونولولو </Arab>
+	</HNL>
+	<HOU>
+		Houston - Hobby,Houston - Hobb,Houston-h,Hous
+		<Arab> هيوستن </Arab>
+	</HOU>
+	<HRE>
+		HARARE,HRE
+		<Arab> هراري </Arab>
+		<Kurd> هه‌راری </Kurd>
+	</HRE>
+	<HRN>
+		e,Heron Isl,HRN
+		<Arab> مالك الحزين الجزيره </Arab>
+	</HRN>
+	<HSM>
+		Horsham,Hshm
+		<Arab> هورشام </Arab>
+	</HSM>
+	<HTI>
+		Hamilton Island,Hamilton Isle,Hamltn Is,Hm.I
+		<Arab> هاملتون الجزيره </Arab>
+	</HTI>
+	<HVB>
+		Hervey Bay,Hervey B.,Hrvy
+		<Arab> هرفي الخليج </Arab>
+	</HVB>
+	<HXX>
+		Hay
+		<Arab> القش </Arab>
+	</HXX>
+	<IAH>
+		Houston - Internat,Houston - Inte,Houston-i,Hous
+		<Arab> هيوستن </Arab>
+	</IAH>
+	<ICI>
+		CICIA,ICI
+		<Arab> سيسيا </Arab>
+	</ICI>
+	<ICN>
+		INCHEON KOREA,INCHEON,ICN
+		<Arab> سيءول </Arab>
+		<Kurd> سیۆڵ ئینچیۆن </Kurd>
+	</ICN>
+	<IFL>
+		Innisfail,Inis
+		<Arab> ينيسفيل </Arab>
+	</IFL>
+	<IGH>
+		Ingham,Ingh
+		<Arab> ينغام </Arab>
+	</IGH>
+	<INU>
+		Nauru,Naru
+		<Arab> جزيره ناورو </Arab>
+	</INU>
+	<IRG>
+		Lockhart River,Lockhart,Iron
+		<Arab> نهر لوكهارت </Arab>
+	</IRG>
+	<ISA>
+		Mount Isa,Mt.isa,Isa
+		<Arab> جبل عيسي </Arab>
+	</ISA>
+	<ISB>
+		Islamabad,ISAB
+		<Ch> ُẮẑآمℜ </Ch>
+		<Arab> اسلام اباد </Arab>
+		<Kurd> ﺌﺔﺴﺘﺔﻨﺒﻮﻞ </Kurd>
+	</ISB>
+	<IST>
+		Istambul,Ist.
+		<Arab> استنبول </Arab>
+		<Kurd> ئه‌سته‌مبول </Kurd>
+	</IST>
+	<IVC>
+		Invercargill,Invergill,Invl
+		<Arab> ينفيركارغيل </Arab>
+	</IVC>
+	<IVR>
+		Inverell,Invl
+		<Arab> ينفيريل </Arab>
+	</IVR>
+	<JAD>
+		Jandakot,Jkot
+		<Arab> بيرث </Arab>
+	</JAD>
+	<JAX>
+		Jacksonville,Jacksonvl,Jack
+		<Arab> جاكسونفيل </Arab>
+	</JAX>
+	<JCK>
+		Julia Creek,Julia Ck.,J.ck
+		<Arab> جوليا الجدول </Arab>
+	</JCK>
+	<JFK>
+		New York - Jfk,New York,N.y.
+		<Arab> نيويورك </Arab>
+		<Kurd> نیویۆرك </Kurd>
+	</JFK>
+	<JIL>
+		Jilin,JILN
+		<Ch> 吉林 </Ch>
+		<Arab> خو </Arab>
+	</JIL>
+	<JIN>
+		Jinan,JIN
+		<Ch> 济南 </Ch>
+		<Arab> جينجا </Arab>
+	</JIN>
+	<JKT>
+		Jakarta,Jkta
+		<Ch> 雅加达 </Ch>
+		<Arab> جاكارتا </Arab>
+		<Kurd> جه کارتا </Kurd>
+	</JKT>
+	<JNB>
+		Johannesburg,Joh'burg,J'burg,Jbrg
+		<Arab> جوهانسبيرغ </Arab>
+		<Kurd> جۆهانسبێرگ </Kurd>
+	</JNB>
+	<KAH>
+		Yarrabank Heliport,Yarrabank Heli,Yarrabank,City
+		<Arab> ميلبورن </Arab>
+	</KAH>
+	<KAX>
+		Kalbarri,Kalb
+		<Arab> كالباري </Arab>
+	</KAX>
+	<KBY>
+		Streaky Bay,Streaky,Stky
+		<Arab> مقلم الخليج </Arab>
+	</KBY>
+	<KCE>
+		Collinsville,Colinsvil,Coll
+		<Arab> كولينسفيلي </Arab>
+	</KCE>
+	<KDA>
+		KADENA U.S.A.,KADENA,KDA
+		<Arab> كولدا </Arab>
+	</KDA>
+	<KDB>
+		Kambalda,Kamb
+		<Arab> كامبالدا </Arab>
+	</KDB>
+	<KDV>
+		Kandavu,Kand
+		<Arab> كاندافو </Arab>
+	</KDV>
+	<KFG>
+		Kalkurang,Kalk
+		<Arab> كالكورونغ </Arab>
+	</KFG>
+	<KGC>
+		Kingscote,King
+		<Arab> كينغسكوتي </Arab>
+	</KGC>
+	<KGI>
+		Kalgoorlie,Kalgoorli,Kalg
+		<Arab> كالغورلي </Arab>
+	</KGI>
+	<KGY>
+		Kingaroy,King
+		<Arab> كينغاروي </Arab>
+	</KGY>
+	<KHI>
+		Karachi,Kchi
+		<Arab> كراتشي </Arab>
+		<Kurd> كه‌راچی </Kurd>
+	</KHI>
+	<KIE>
+		PAPUA NEW GUINEA,KIETA,kieta,KIE
+		<Arab> كييتا </Arab>
+	</KIE>
+	<KIX>
+		Osaka,Osak
+		<Arab> اوساكا </Arab>
+		<Kurd> ئۆساكا كه‌نسای </Kurd>
+	</KIX>
+	<KMQ>
+		KOMATSU,KMQ
+		<Arab> كوماتسو </Arab>
+	</KMQ>
+	<KNI>
+		Katanning,Katn
+		<Arab> كاتانينغ </Arab>
+	</KNI>
+	<KNL>
+		Koolan Island,Koolan Is,Kool
+		<Arab> كيلانوا </Arab>
+	</KNL>
+	<KNS>
+		King Island,King Is.,King
+		<Arab> ملك الجزيره </Arab>
+	</KNS>
+	<KNX>
+		Kununurra,Knra
+		<Arab> كونونورا </Arab>
+	</KNX>
+	<KOE>
+		Kupang,Kpng
+		<Arab> كوبانغ </Arab>
+	</KOE>
+	<KPB>
+		Point Baker,Pt Baker,P.Bk
+		<Arab> النقطه بيكر </Arab>
+	</KPB>
+	<KPS>
+		Kempsey,Kemp
+		<Arab> كيمبسي </Arab>
+	</KPS>
+	<KRB>
+		Karumba,KRB
+		<Arab> كارومبا </Arab>
+	</KRB>
+	<KTA>
+		Karratha,Ktha
+		<Arab> كاراثا </Arab>
+	</KTA>
+	<KTR>
+		Katherine,Kath
+		<Arab> كاثرين </Arab>
+	</KTR>
+	<KUL>
+		Kuala Lumpur,K.Lumpur,Kul.
+		<Arab> كوالالمبور </Arab>
+		<Kurd> كوالاله‌مپور </Kurd>
+	</KUL>
+	<KUM>
+		Kunming,Kunm
+		<Ch> 昆明 </Ch>
+		<Arab> صنفت </Arab>
+	</KUM>
+	<KVG>
+		PAPUA NEW GUINEA,NEW GUINEA,Kavieng,Kav.
+		<Arab> كافينغ </Arab>
+	</KVG>
+	<KWA>
+		KWA.MARSHALL ISLAND,KWAJALEIN,KWA
+		<Arab> القاتله </Arab>
+	</KWA>
+	<KWI>
+		Kuwait,Kuwt
+		<Arab> كويت </Arab>
+		<Kurd> کوێت </Kurd>
+	</KWI>
+	<KWM>
+		Kowanyama,KWM
+		<Arab> كووانياما </Arab>
+	</KWM>
+	<KXF>
+		Koro Island,Koro Is,Koro
+		<Arab> كورو الجزيره </Arab>
+	</KXF>
+	<KYF>
+		Yeelirrie,Ylri
+		<Arab> ييليري </Arab>
+	</KYF>
+	<LAB>
+		Labasa,Laba
+		<Arab> لابلاب </Arab>
+	</LAB>
+	<LAE>
+		Lae
+		<Arab> لاي </Arab>
+	</LAE>
+	<LAH>
+		Lahore,LAHR
+		<Ch> رℎℋऍ </Ch>
+		<Arab> لابوها </Arab>
+	</LAH>
+	<LAN>
+		Lanzhou,LAN
+		<Ch> 兰州 </Ch>
+		<Arab> لانسينج </Arab>
+	</LAN>
+	<LAX>
+		Los Angeles,L.Angeles,L.A.
+		<Ch> 洛杉矶 </Ch>
+		<Arab> لوس انجليس </Arab>
+		<Kurd> لۆس ئه‌نجلس </Kurd>
+	</LAX>
+	<LCA>
+		Larnaca,Lrca
+		<Arab> لارنكا </Arab>
+	</LCA>
+	<LCL>
+		Local Flight,Local Flt,Locl
+		<Arab> مدينه لوس انجلوس كولوما </Arab>
+	</LCL>
+	<LDH>
+		Lord Howe Island,Lord Howe Isle,Lord Howe,Howe
+		<Arab> الرب هو الجزيره </Arab>
+	</LDH>
+	<LEA>
+		Learmonth,Lear
+		<Arab> ليرمونث </Arab>
+	</LEA>
+	<LER>
+		Leinster,Lein
+		<Arab> مقاطعه </Arab>
+	</LER>
+	<LEV>
+		Levuka,Levu
+		<Arab> بوريتا </Arab>
+	</LEV>
+	<LGH>
+		Leigh Creek,Leigh Ck.,L.ck
+		<Arab> لاي الجدول </Arab>
+	</LGH>
+	<LGN>
+		London-Eatwick,London,Lond
+		<Arab> لنجه لنجه </Arab>
+	</LGN>
+	<LGW>
+		London - Gatwick,London - Gatw,London-gt,Lond
+		<Arab> لندن </Arab>
+		<Kurd> له‌نده‌ن گاتویك </Kurd>
+	</LGW>
+	<LHR>
+		London - Heathrow,London-Heath,London,Lond
+		<Ch> 伦敦 </Ch>
+		<Arab> لندن </Arab>
+		<Kurd> ﻠﺔﻨﺪةن </Kurd>
+	</LHR>
+	<LIU>
+		Liuzhou,LIUZ
+		<Ch> 柳州 </Ch>
+		<Arab> لينوسا </Arab>
+	</LIU>
+	<LKB>
+		Lakeba,Lake
+		<Arab> لاكيبا </Arab>
+	</LKB>
+	<LNO>
+		Leonora,Lnra
+		<Arab> ليونورا </Arab>
+	</LNO>
+	<LNV>
+		PAPUA NEW GUINEA,LIHIR IS.,LNV
+		<Arab> بوغان الجزيره </Arab>
+	</LNV>
+	<LOC>
+		Lock
+		<Arab> القفل </Arab>
+	</LOC>
+	<LON>
+		London,Lond
+		<Ch> 伦敦 </Ch>
+		<Arab> لندن </Arab>
+	</LON>
+	<LRE> Longreach,Long </LRE>
+	<LST>
+		Launceston,Launcestn,Laun
+		<Arab> لاونسيستون </Arab>
+	</LST>
+	<LSY>
+		Lismore,Lism
+		<Arab> ليسموري </Arab>
+	</LSY>
+	<LTN>
+		Luton,Lutn
+		<Arab> لندن </Arab>
+	</LTN>
+	<LUO>
+		Luoyang,LUO
+		<Ch> 洛阳 </Ch>
+		<Arab> لوينا </Arab>
+	</LUO>
+	<LVO>
+		Laverton,Lvtn
+		<Arab> لافيرتون </Arab>
+	</LVO>
+	<LZR>
+		Lizard Island,Lizard Is,Liz.
+		<Arab> السحليه الجزيره </Arab>
+	</LZR>
+	<MAG>
+		Madang,MAG
+		<Arab> مادان </Arab>
+	</MAG>
+	<MAJ>
+		MARSHALL ISLANDS.,MAJURO,MAJ
+		<Arab> ماجورو </Arab>
+	</MAJ>
+	<MAN>
+		Manchester,Manchestr,Man.
+		<Arab> مانشستر </Arab>
+		<Kurd> مانكێسته‌ر </Kurd>
+	</MAN>
+	<MAS> Manus Island,Manus Is,Mans </MAS>
+	<MBB>
+		Marble Bar,Marb. Bar,Marb
+		<Arab> الرخام بار </Arab>
+	</MBB>
+	<MBH>
+		Maryborough,Marybor.,Mary
+		<Arab> ماريبوروغ </Arab>
+	</MBH>
+	<MBW>
+		Moorabbin,Mrbn
+		<Arab> منتون </Arab>
+	</MBW>
+	<MCT>
+		Muscat,Musc
+		<Arab> مسقط </Arab>
+		<Kurd> مه سقه ت </Kurd>
+	</MCT>
+	<MCY>
+		Maroochydore,Maroochy,Mchy
+		<Arab> ساحل الشمس </Arab>
+	</MCY>
+	<MDU>
+		Mendi,Mndi
+		<Arab> مندي </Arab>
+	</MDU>
+	<MEB>
+		Essendon,Essn
+		<Arab> ميلبورن </Arab>
+	</MEB>
+	<MEL>
+		Melbourne,Melb
+		<Ch> 墨尔本 </Ch>
+		<Arab> ميلبورن </Arab>
+		<Kurd> میڵبۆرن </Kurd>
+	</MEL>
+	<MER>
+		MERAUKE,MER
+		<Arab> مرسيد </Arab>
+	</MER>
+	<MFJ>
+		Moala,Moal
+		<Arab> موالا </Arab>
+	</MFJ>
+	<MFN>
+		Milford Sound,Milford,Milf
+		<Arab> ميلفورد الصوت </Arab>
+	</MFN>
+	<MGB>
+		Mount Gambier,Mt. Gambier,M.gambier,Gamb
+		<Arab> جبل غامبيير </Arab>
+	</MGB>
+	<MIM>
+		Merimbula,Meri
+		<Arab> ميريمبولا </Arab>
+	</MIM>
+	<MIS>
+		Misima Island,Misima I.,Misi
+		<Arab> ميسيما الجزيره </Arab>
+	</MIS>
+	<MKR>
+		Meekatharra,Meekthara,Meek
+		<Arab> ميكاثارا </Arab>
+	</MKR>
+	<MKY>
+		Mackay,Mack
+		<Arab> ماكاي </Arab>
+	</MKY>
+	<MLA>
+		Malta,Mlta
+		<Arab> غودجا </Arab>
+	</MLA>
+	<MLE>
+		Male
+		<Arab> ذكر </Arab>
+		<Kurd> مالی </Kurd>
+	</MLE>
+	<MLR>
+		Millicent,Mcnt
+		<Arab> ميليسينت </Arab>
+	</MLR>
+	<MMG>
+		Mount Magnet,Mt. Magnet,Mt.magnet,Mt.m
+		<Arab> جبل المغناطيس </Arab>
+	</MMG>
+	<MMM>
+		Middlemount,Middlemnt,Mmmt
+		<Arab> ميدليمونت </Arab>
+	</MMM>
+	<MNL>
+		Manila,Mnla
+		<Arab> مانيلا </Arab>
+		<Kurd> مانیللا </Kurd>
+	</MNL>
+	<MNQ>
+		Monto,Mont
+		<Arab> مونتو </Arab>
+	</MNQ>
+	<MNY>
+		Mono
+		<Arab> احادي </Arab>
+	</MNY>
+	<MON>
+		Mount Cook,Mt. Cook,Mt.c
+		<Arab> جبل كوك </Arab>
+	</MON>
+	<MOO>
+		Moomba,Mmba
+		<Arab> مومبا </Arab>
+	</MOO>
+	<MOV>
+		Moranbah,Mora
+		<Arab> مورانباه </Arab>
+	</MOV>
+	<MOW>
+		Moscow,Mosc
+		<Kurd> مۆسکۆ </Kurd>
+	</MOW>
+	<MQL>
+		Mildura,Mild
+		<Arab> ميلدورا </Arab>
+	</MQL>
+	<MRO>
+		Masterton,Mast
+		<Arab> ماسترتون </Arab>
+	</MRO>
+	<MRP>
+		Marla,Mrla
+		<Arab> مارلا </Arab>
+	</MRP>
+	<MRU>
+		Mauritius,Maur
+		<Arab> بلايسانس </Arab>
+		<Kurd> مۆریشیز </Kurd>
+	</MRU>
+	<MRZ>
+		Moree,Mree
+		<Arab> موري </Arab>
+	</MRZ>
+	<MTL>
+		MAITLAND,MTL
+		<Arab> ميتلاند </Arab>
+	</MTL>
+	<MUA>
+		SOLOMON ISLANDS.,MUNDA,MUA
+		<Arab> موندا </Arab>
+	</MUA>
+	<MUC>
+		Munich,Muni
+		<Arab> ميونخ </Arab>
+		<Kurd> ﻤﻴﻮﻨﻴﺦ </Kurd>
+	</MUC>
+	<MWB>
+		Morawa,Mrwa
+		<Arab> موراوا </Arab>
+	</MWB>
+	<MXH>
+		MORO,Moro
+		<Arab> مورو </Arab>
+	</MXH>
+	<MXP>
+		Milan-Malpensa,Milan,Mila
+		<Arab> ميلان </Arab>
+		<Kurd> میلان مه ڵپێنزا </Kurd>
+	</MXP>
+	<MXV>
+		Macksville,Macksvil,Mcks
+		<Arab> البليد </Arab>
+	</MXV>
+	<MYA>
+		Moruya,Moru
+		<Arab> مورويا </Arab>
+	</MYA>
+	<NAA>
+		Narrabri,Nbri
+		<Arab> نارابري </Arab>
+	</NAA>
+	<NAC>
+		Narracoorte,Naracourt,Narr
+		<Arab> ناراكوورتي </Arab>
+	</NAC>
+	<NAN>
+		Nadi
+		<Ch> 匷宁 </Ch>
+		<Arab> النادي </Arab>
+	</NAN>
+	<NBH>
+		Nambucca,Namb
+		<Arab> رءساء نامبوكا </Arab>
+	</NBH>
+	<NGA>
+		Young,Yung
+		<Arab> صغير </Arab>
+	</NGA>
+	<NGI>
+		Gau Island,Gau Is,Gau
+		<Arab> نغاو الجزيره </Arab>
+	</NGI>
+	<NGO>
+		Nagoya,Nago
+		<Arab> ناجويا </Arab>
+		<Kurd> ناگۆیه‌ </Kurd>
+	</NGO>
+	<NLK>
+		Norfolk Island,Norfolk,Norf
+		<Arab> جزيره نورفولك </Arab>
+	</NLK>
+	<NLL>
+		Nullagine,Null
+		<Arab> نولاغين </Arab>
+	</NLL>
+	<NNJ>
+		Nanjing,NANJ
+		<Ch> 南京 </Ch>
+	</NNJ>
+	<NNY>
+		Nanyang,NANY
+		<Ch> 匷阳 </Ch>
+		<Arab> ماليزيا </Arab>
+	</NNY>
+	<NOU>
+		Noumea,Nmea
+		<Arab> نوميا </Arab>
+	</NOU>
+	<NPE>
+		Napier,Napr
+		<Arab> نابيير - هاستينغز </Arab>
+	</NPE>
+	<NPL>
+		New Plymouth,New Plmth,Newp
+		<Arab> بليموث جديده </Arab>
+		<Kurd> نیوپلایمۆس </Kurd>
+	</NPL>
+	<NRA>
+		Narrandera,Narandera,Narr
+		<Arab> ناراندرا </Arab>
+	</NRA>
+	<NRG>
+		Narrogin,Narr
+		<Arab> ناروجين </Arab>
+	</NRG>
+	<NRT>
+		Tokyo - Narita,Tokyo-nar,Tokyo,Tkyo
+		<Arab> طوكيو </Arab>
+	</NRT>
+	<NSA>
+		Noosa,Noos
+		<Arab> نوسا </Arab>
+	</NSA>
+	<NSI>
+		Suva
+		<Arab> ياوندي </Arab>
+	</NSI>
+	<NSM>
+		Norseman,Nors
+		<Arab> نورسيمان </Arab>
+	</NSM>
+	<NSN>
+		Nelson,Nlsn
+		<Arab> نيلسن </Arab>
+	</NSN>
+	<NSO>
+		Scone,Scon
+		<Arab> الكعكه </Arab>
+	</NSO>
+	<NTL>
+		Newcastle,Newc
+		<Arab> نيوكاسل </Arab>
+	</NTL>
+	<NTN>
+		Normanton,Norm
+		<Arab> نورمانتون </Arab>
+	</NTN>
+	<NUB>
+		Numbulwar,Numb
+		<Arab> نومبولوار </Arab>
+	</NUB>
+	<NYC>
+		New York,N.Y.
+		<Ch> 紐約 </Ch>
+		<Kurd> نیویۆرک </Kurd>
+	</NYC>
+	<OAG>
+		Orange,Oran
+		<Arab> البرتقال </Arab>
+	</OAG>
+	<OAM>
+		Oamaru,Omru
+		<Arab> وامارو </Arab>
+	</OAM>
+	<OFF> Omaha,Omah </OFF>
+	<OKA>
+		OKINAWA JAPAN,OKINAWA,OKA
+		<Arab> اوكيناوا </Arab>
+	</OKA>
+	<OKD>
+		Sapporo-O,Sapporo,OKD
+		<Arab> سابورو </Arab>
+	</OKD>
+	<OKR>
+		York Island,Yorke Is.,Yrke
+		<Arab> يوركي الجزيره </Arab>
+	</OKR>
+	<OLP>
+		Olympic Dam,Olymp.dam,Olym
+		<Arab> الاولمبي السد </Arab>
+	</OLP>
+	<ONG>
+		Mornington Island,Mornington Is.,Morningtn,Morn
+		<Arab> مورنينغتون </Arab>
+	</ONG>
+	<ONS>
+		Onslow,Ons.
+		<Arab> اونسلو </Arab>
+	</ONS>
+	<OOD> Oodnadatta,Ood.datta,Odta </OOD>
+	<OOL>
+		Gold Coast,Goldcoast,Gold
+		<Arab> ساحل الذهب </Arab>
+	</OOL>
+	<OOM>
+		Cooma,Coom
+		<Arab> كووما </Arab>
+	</OOM>
+	<ORS>
+		Orpheus Island,Orpheus,Orph
+		<Arab> منتجع جزيره اورفيس </Arab>
+	</ORS>
+	<ORY>
+		Paris,Pari
+		<Arab> باريس </Arab>
+	</ORY>
+	<OSA>
+		Osaka,Oska
+		<Ch> 大阪 </Ch>
+	</OSA>
+	<PAR>
+		Paris,Pari
+		<Arab> باريس </Arab>
+	</PAR>
+	<PBO>
+		Paraburdoo,Paraburdo,Para
+		<Arab> بارابوردو </Arab>
+	</PBO>
+	<PDN>
+		Parndana,Parn
+		<Arab> بارندانا </Arab>
+	</PDN>
+	<PEA>
+		Penneshaw,Penn
+		<Arab> بينيشاو </Arab>
+	</PEA>
+	<PEK>
+		Beijing,Bjng
+		<Arab> بكين </Arab>
+		<Kurd> په کین </Kurd>
+	</PEK>
+	<PER>
+		Perth,Per
+		<Arab> بيرث </Arab>
+		<Kurd> پێرث </Kurd>
+	</PER>
+	<PHE>
+		Port Hedland,P.hedland,Pt.h
+		<Arab> بورت هيدلاند </Arab>
+	</PHE>
+	<PHR>
+		Pacific Harbour,Pacific Hb,Pacific,Paci
+		<Arab> شاطيء المحيط الهادء </Arab>
+	</PHR>
+	<PKE>
+		Parkes,Park
+		<Arab> باركس </Arab>
+	</PKE>
+	<PLO>
+		Port Lincoln,P.lincoln,Linc
+		<Arab> بورت لينكولن </Arab>
+	</PLO>
+	<PMR>
+		Palmerston North,Palmerston Nth,Palm.nth.,Pnth
+		<Arab> بالمرستون نورث </Arab>
+		<Kurd> پالمه‌رستۆنس </Kurd>
+	</PMR>
+	<PNH>
+		PHNOM PENH,PNH
+		<Arab> بنوم بنه </Arab>
+		<Kurd> پنۆم پنێ </Kurd>
+	</PNH>
+	<PNP>
+		Popondetta,Popondeta,Podt
+		<Arab> بوبونديتا </Arab>
+	</PNP>
+	<POM>
+		Port Moresby,P.Moresby,Msby
+		<Arab> بورت مورسبي </Arab>
+	</POM>
+	<PPG>
+		Pago Pago,Pago
+		<Arab> باغو باغو </Arab>
+	</PPG>
+	<PPI>
+		Port Pirie,Pt. Pirie,Piri
+		<Arab> ميناء بيري </Arab>
+	</PPI>
+	<PPP>
+		Proserpine,Proserpne,Pros
+		<Arab> بروسيربيني </Arab>
+	</PPP>
+	<PPQ>
+		Paraparaumu,Parapara.,Para
+		<Arab> باراباراومو </Arab>
+	</PPQ>
+	<PPT>
+		Papeete,Ppte
+		<Arab> بابيتي </Arab>
+	</PPT>
+	<PQQ>
+		Port Macquarie,P.macquar,P.mc
+		<Arab> ميناء ماكواري </Arab>
+	</PQQ>
+	<PTF>
+		Molololailai,Molololai,Mololo,Molo
+		<Arab> مالولولايلاي </Arab>
+	</PTF>
+	<PTJ>
+		Portland,Port
+		<Arab> بورتلند </Arab>
+	</PTJ>
+	<PUG>
+		Port Augusta,P.augusta,P.au
+		<Arab> ميناء اوجستا </Arab>
+	</PUG>
+	<PVG>
+		SHANGHAI-PV SHANGHA,SHANGHAI,PUDONG,PVG
+		<Ch/>
+		<Arab> شنغهاي </Arab>
+		<Kurd> شه نگهای پودۆنگ </Kurd>
+	</PVG>
+	<QBE> Bega </QBE>
+	<QBW> Batemans Bay,Batemans,Bate </QBW>
+	<QCT> Bacita,Baci </QCT>
+	<QDN> Eden </QDN>
+	<QIN>
+		Qingdao,QIN
+		<Ch> 青岘 </Ch>
+	</QIN>
+	<QIQ>
+		Qiqihaer,QIQ
+		<Ch> 齐齐哈尔 </Ch>
+	</QIQ>
+	<QJD> Jindabyne,Jind </QJD>
+	<QRM> Narromine,Nrme </QRM>
+	<QRR> Warren,Warr </QRR>
+	<QRX> Narooma,Nrma </QRX>
+	<QTH> Thredbo,Thbo </QTH>
+	<RAB>
+		Rabaul,Rab.
+		<Arab> رابول </Arab>
+	</RAB>
+	<RAR>
+		Rarotonga,Rtga
+		<Arab> راروتونغا </Arab>
+	</RAR>
+	<RCM>
+		Richmond,Rich
+		<Arab> ريتشموند </Arab>
+	</RCM>
+	<RCN>
+		American River,Amer.riv.,A.rv
+		<Arab> نهر الاميركيه </Arab>
+	</RCN>
+	<RMA>
+		Roma
+		<Arab> روما </Arab>
+	</RMA>
+	<RMK>
+		Renmark,Remk
+		<Arab> رينمارك </Arab>
+	</RMK>
+	<ROE> Roebourne,Roe. </ROE>
+	<ROK>
+		Rockhampton,Rockhampt,Rock
+		<Arab> روكهامبتون </Arab>
+	</ROK>
+	<ROM> Rome </ROM>
+	<ROT>
+		Rotorua,Roto
+		<Arab> روتوروا </Arab>
+		<Kurd> رۆتۆروا </Kurd>
+	</ROT>
+	<RPM>
+		Ngukurr,Nguk
+		<Arab> نغوكور </Arab>
+	</RPM>
+	<RTA>
+		Rotuma Island,Rotuma Is,Rotuma,Rotu
+		<Arab> روتوما الجزيره </Arab>
+	</RTA>
+	<RTS>
+		Rottnest Island,Rottnest Isle,Rottnest,Rott
+		<Arab> روتنست الجزيره </Arab>
+	</RTS>
+	<SCZ>
+		SOLOMON ISLANDS.,SANTA CRUZ,SANTACRUZ,SCZ
+		<Arab> هل سانتا كروز </Arab>
+	</SCZ>
+	<SEA>
+		Seattle,Stle
+		<Arab> سياتل </Arab>
+		<Kurd> سییاتڵ </Kurd>
+	</SEA>
+	<SEL> Seoul,SEL </SEL>
+	<SFJ>
+		Kangerlussuaq,Kangerlus,SFJ
+		<Arab> كانغيرلوسواك </Arab>
+	</SFJ>
+	<SFO>
+		San Francisco,San Fran.,Sfo.
+		<Arab> سان فرانسيسكو </Arab>
+		<Kurd> سان فرانسیسكۆ </Kurd>
+	</SFO>
+	<SGN>
+		HO CHI MINH CITY.,HO CHI MINH,SGN
+		<Arab> مدينه هوشي </Arab>
+		<Kurd> هۆچیمین </Kurd>
+	</SGN>
+	<SGO>
+		Saint George,St.george,St.g
+		<Arab> القديس جورج </Arab>
+	</SGO>
+	<SGP>
+		Shay Gap,Shay
+		<Arab> الفجوه الحنطور </Arab>
+	</SGP>
+	<SHA>
+		Shanghai,Shgi
+		<Ch> 上海 </Ch>
+		<Arab> شنغهاي </Arab>
+		<Kurd> شانگه‌های </Kurd>
+	</SHA>
+	<SHE>
+		Shenyang,SHEN
+		<Ch> 沈阳 </Ch>
+		<Arab> شنيانغ </Arab>
+	</SHE>
+	<SHJ>
+		Sharjah,Shar
+		<Ch> 沙迦 </Ch>
+		<Arab> الشارقه </Arab>
+		<Kurd> شاریجه </Kurd>
+	</SHJ>
+	<SHN>
+		Shantou,SHAN
+		<Ch> 汕头 </Ch>
+		<Arab> شيلتن </Arab>
+	</SHN>
+	<SHQ>
+		Southport,S.pt
+		<Arab> سوثبورت </Arab>
+	</SHQ>
+	<SHZ>
+		Shenzhen,Shen
+		<Ch> 深圳 </Ch>
+		<Arab> سيشوتيس </Arab>
+	</SHZ>
+	<SIN>
+		Singapore,Sing
+		<Ch> 新加坡 </Ch>
+		<Arab> سنغافوره </Arab>
+		<Kurd> سه نگاپوور </Kurd>
+	</SIN>
+	<SIO>
+		Smithton,Smit
+		<Arab> سميثتون </Arab>
+	</SIO>
+	<SIX>
+		Singleton,Sing
+		<Arab> الورقه الوحيده </Arab>
+	</SIX>
+	<SOI>
+		South Molle Island,South Molle,Sth.molle,Moll
+		<Arab> جنوب الجزيره مول </Arab>
+	</SOI>
+	<SQC>
+		Southern Cross,Sthn.cros,Sthx
+		<Arab> الصليب الجنوبي </Arab>
+	</SQC>
+	<SRN>
+		Strahan,Strn
+		<Arab> ستراهان </Arab>
+	</SRN>
+	<SUB>
+		Surabaya,S'baya,Sura
+		<Arab> سورابايا </Arab>
+		<Kurd> سوره‌بایا </Kurd>
+	</SUB>
+	<SVU>
+		Savu Savu,Savu
+		<Arab> سافوسافو </Arab>
+	</SVU>
+	<SWN>
+		Swan Hill,S.hl
+		<Arab> ساهيوال </Arab>
+	</SWN>
+	<SXE>
+		Sale
+		<Arab> البيع </Arab>
+	</SXE>
+	<SXF>
+		Berlin East,Berlin Ea,Berl
+		<Arab> برلين </Arab>
+		<Kurd> به‌رلین </Kurd>
+	</SXF>
+	<SYD>
+		Sydney,Syd
+		<Ch> 悉尼 </Ch>
+		<Arab> سدني </Arab>
+		<Kurd> سیدنی </Kurd>
+	</SYD>
+	<SZS>
+		Stewart Island,Stewart I,Stew
+		<Arab> ستيوارت الجزيره </Arab>
+	</SZS>
+	<TAI>
+		Taiyuan,TAIY
+		<Ch> 太原 </Ch>
+		<Arab> تعز </Arab>
+	</TAI>
+	<TAU>
+		Taupo,Taup
+		<Arab> تاورامينا </Arab>
+	</TAU>
+	<TBG>
+		Tabubil,Tab.
+		<Arab> تابوبيل </Arab>
+	</TBG>
+	<TBU2> TONGA  S.PACIFIC.,TONGA ISLAND,TONGA,TBU </TBU2>
+	<TBU> Tongatapu,Tnga </TBU>
+	<TCA>
+		Tennant Creek,Tennant,Tenn
+		<Arab> الجدول تينانت </Arab>
+	</TCA>
+	<TCW>
+		Tocumwal,Twal
+		<Arab> توكوموال </Arab>
+	</TCW>
+	<TEF>
+		Telfer,Telf
+		<Arab> تيلفر </Arab>
+	</TEF>
+	<TEM>
+		Temora,Tmra
+		<Arab> تيمورا </Arab>
+	</TEM>
+	<TEU>
+		Te Anau,Te.a
+		<Arab> كوت انو </Arab>
+	</TEU>
+	<TGN>
+		Traralgon,Trar
+		<Arab> ترارالغون </Arab>
+	</TGN>
+	<THG>
+		Thangool,Than
+		<Arab> ثانغول </Arab>
+	</THG>
+	<THU>
+		Thule,THU
+		<Arab> بيتوفيك </Arab>
+	</THU>
+	<THZ>
+		Thames,Tham
+		<Arab> تاهوا </Arab>
+	</THZ>
+	<TIL>
+		TINDAL,TIL
+		<Arab> ينفرلاكي </Arab>
+	</TIL>
+	<TIM>
+		Timika,Timi
+		<Arab> تيمباغابورا </Arab>
+	</TIM>
+	<TIS>
+		Thursday Island,Thursday Isle,Thurs. Is,Thur
+		<Arab> الخميس الجزيره </Arab>
+	</TIS>
+	<TIZ>
+		Tari
+		<Arab> الطري </Arab>
+	</TIZ>
+	<TKK>
+		PACIFIC OCEAN.,CAROLINE IS.,TRUK.,TKK
+		<Arab> تراك </Arab>
+	</TKK>
+	<TMW>
+		Tamworth,Tamw
+		<Arab> تامويرث </Arab>
+	</TMW>
+	<TNT>
+		TONTOUTA,TNT
+		<Arab> ميامي </Arab>
+	</TNT>
+	<TOK>
+		NEW GUINEA,TOKUA,TOK
+		<Arab> توروكينا </Arab>
+	</TOK>
+	<TPE>
+		Taipei,Taip
+		<Arab> تايبيه </Arab>
+		<Kurd> تایپی </Kurd>
+	</TPE>
+	<TPR>
+		Tom Price,Tom.
+		<Arab> توم السعر </Arab>
+	</TPR>
+	<TRG>
+		Tauranga,Taur
+		<Arab> تورانغا </Arab>
+	</TRG>
+	<TRO>
+		Taree,Tare
+		<Arab> دوبلايا </Arab>
+	</TRO>
+	<TRV>
+		Trivandrum,Trivandru,Triv
+		<Arab> ثيروفانانثابورام </Arab>
+		<Kurd> تریڤاندره‌م </Kurd>
+	</TRV>
+	<TST> Test Dest.,Test Dest,Test </TST>
+	<TSV>
+		Townsville,Townsvil.,Tsvl
+		<Arab> تاونزفيل </Arab>
+		<Kurd> تاونزڤیل </Kurd>
+	</TSV>
+	<TVU>
+		Tavenui,Tave
+		<Arab> تافوني </Arab>
+	</TVU>
+	<TWB>
+		Toowoomba,Toow
+		<Arab> تووومبا </Arab>
+	</TWB>
+	<TYO>
+		Tokyo,Tkyo
+		<Kurd> تۆکیۆ </Kurd>
+	</TYO>
+	<UEE>
+		Queenstown Tas,Queenstwn,Qtwn
+		<Arab> كينستون </Arab>
+	</UEE>
+	<ULP>
+		Quilpie,Quil
+		<Arab> كيلبي </Arab>
+	</ULP>
+	<UMR>
+		Woomera,Wmra
+		<Arab> وميرا </Arab>
+	</UMR>
+	<USL>
+		Useless Loop,Useless L,Usel
+		<Arab> نفع الحلقه </Arab>
+	</USL>
+	<VAI>
+		Vanimo,Vani
+		<Arab> فانيمو </Arab>
+	</VAI>
+	<VBV>
+		Vanuabalavu,Vanuaba,Vanu
+		<Arab> فانوابالافو </Arab>
+	</VBV>
+	<VCD>
+		Victoria River,Vic. Riv.,Vic.
+		<Arab> فيكتوريا نهر الهبوط </Arab>
+	</VCD>
+	<VIE>
+		Vienna,Vien
+		<Arab> فينا </Arab>
+		<Kurd> ﻈﻴﻨﺎ </Kurd>
+	</VIE>
+	<VLI>
+		Vila,Port Vila,Vila
+		<Arab> بورت فيلا </Arab>
+	</VLI>
+	<WAG>
+		Wanganui,Wang
+		<Arab> وانغانوي </Arab>
+	</WAG>
+	<WAU>
+		Wauchope,Wauc
+		<Arab> واوشوبي </Arab>
+	</WAU>
+	<WAV>
+		Wave Hill,Wave
+		<Arab> موجه هيل </Arab>
+	</WAV>
+	<WBM>
+		Wapenamanda,Wapenaman,Wape
+		<Arab> وابيناماندا </Arab>
+	</WBM>
+	<WEI>
+		Weipa,Weip
+		<Arab> ويبا </Arab>
+	</WEI>
+	<WGA>
+		Wagga Wagga,Wagga,Waga
+		<Arab> الطب الطب </Arab>
+	</WGA>
+	<WGE>
+		Walgett,Walg
+		<Arab> والغيت </Arab>
+	</WGE>
+	<WGN>
+		Waitangi,Wait
+		<Arab> ايتانغي </Arab>
+	</WGN>
+	<WHK>
+		Whakatane,Whak
+		<Arab> واكاتاني </Arab>
+	</WHK>
+	<WHM> Wickham,Wick </WHM>
+	<WIN>
+		Winton,Wint
+		<Arab> وينتون </Arab>
+	</WIN>
+	<WIP> Hawker,Hawk </WIP>
+	<WIT>
+		Wittenoom,Witt
+		<Arab> ويتينوم </Arab>
+	</WIT>
+	<WKA>
+		Wanaka,Wana
+		<Arab> واناكا </Arab>
+	</WKA>
+	<WLG>
+		Wellington,Wellingtn,Wgtn
+		<Arab> ولينغتون </Arab>
+		<Kurd> وه ڵینگتۆن </Kurd>
+	</WLG>
+	<WMB>
+		Warrnambool,Warrnbool,Warn
+		<Arab> وارنامبول </Arab>
+	</WMB>
+	<WMT> Williamtown,Will/town,Will </WMT>
+	<WNR>
+		Windorah,Wind
+		<Arab> ويندوراه </Arab>
+	</WNR>
+	<WOL>
+		Wollongong,Wollngong,Woll
+		<Arab> ياوندي </Arab>
+	</WOL>
+	<WRE>
+		Whangarei,Wrei
+		<Arab> وهانغاري </Arab>
+	</WRE>
+	<WSY>
+		Airlie Beach,Airlie B.,Airl
+		<Arab> ايرلي الشاطء </Arab>
+	</WSY>
+	<WSZ>
+		Westport,W.pt
+		<Arab> ويستبورت </Arab>
+	</WSZ>
+	<WUD>
+		Wudinna,Wdna
+		<Arab> وودينا </Arab>
+	</WUD>
+	<WUH>
+		Wuhan,Wuhn
+		<Ch> 武汉 </Ch>
+		<Arab> ووهان </Arab>
+	</WUH>
+	<WUN>
+		Wiluna,Wlna
+		<Arab> ويلونا </Arab>
+	</WUN>
+	<WUZ>
+		Wuzhou,WUZH
+		<Ch> 梧州 </Ch>
+		<Arab> ووزهو </Arab>
+	</WUZ>
+	<WWK>
+		Wewak,Wewk
+		<Arab> يواك </Arab>
+	</WWK>
+	<WWY>
+		West Wyalong,W.wyalong,W.wy
+		<Arab> الغرب ويالونغ </Arab>
+	</WWY>
+	<WYA>
+		Whyalla,Why.
+		<Arab> وهيالا </Arab>
+	</WYA>
+	<WYN>
+		Wyndham,Wynd
+		<Arab> ويندام </Arab>
+	</WYN>
+	<XAN> Nadi </XAN>
+	<XCH>
+		Christmas Island,Christmas Isle,Xmas Is.,Xmas
+		<Arab> جزيره كريسماس </Arab>
+	</XCH>
+	<XCO>
+		Corryong,Corr
+		<Arab> طور </Arab>
+	</XCO>
+	<XIA>
+		Xiamen,XIA
+		<Ch> 厦门 </Ch>
+	</XIA>
+	<XKI> Kimba,Kimb </XKI>
+	<XML>
+		Minlaton,Mltn
+		<Arab> مينلاتون </Arab>
+	</XML>
+	<XTG>
+		Thagomindah,Tharminda,Thar
+		<Arab> ثارغومينداه </Arab>
+	</XTG>
+	<XXX> Charter Flight,Charter,Chtr </XXX>
+	<YAB>
+		Arctic Bay,ArcticBay,Arct
+		<Arab> القطب الشمالي الخليج </Arab>
+	</YAB>
+	<YAN>
+		Yantai,YAN
+		<Ch> 烟台 </Ch>
+		<Arab> الكونغوليين </Arab>
+	</YAN>
+	<YCY>
+		Clyde River,Clyde Rvr,Clyd
+		<Arab> نهر كلايد </Arab>
+	</YCY>
+	<YEG>
+		Edmonton,Edmt
+		<Arab> ادمنتون </Arab>
+	</YEG>
+	<YFB>
+		Iqaluit,Iqlt
+		<Arab> الميدان </Arab>
+	</YFB>
+	<YGT>
+		Igloolik,Iglo
+		<Arab> يغلوليك </Arab>
+	</YGT>
+	<YGZ>
+		Grise Fiord,Grise Frd,Gris
+		<Arab> فيورد غريسي </Arab>
+	</YGZ>
+	<YIO>
+		Pond Inlet,Pond Inlt,Pond
+		<Arab> المدخل بركه </Arab>
+	</YIO>
+	<YLC>
+		Kimmirut,Kimm
+		<Arab> كيميروت / بحيره الميناء </Arab>
+	</YLC>
+	<YMX>
+		Montreal - Mirabel,Montreal-mira.,Montreal,Mont
+		<Arab> مونتريال </Arab>
+	</YMX>
+	<YOW>
+		Ottawa,Otta
+		<Arab> اوتاوا </Arab>
+	</YOW>
+	<YRB>
+		Resolute Bay,ResoluteB,Resl
+		<Arab> حازم </Arab>
+	</YRB>
+	<YRT>
+		Rankin Inlet,Rankin In,Rank
+		<Arab> بارا المنافذ </Arab>
+	</YRT>
+	<YSK>
+		Sanikiluaq,Sanikiluq,Sani
+		<Arab> سانيكيلواك </Arab>
+	</YSK>
+	<YSR>
+		Nanisivik,Nani
+		<Arab> نانيسيفيك </Arab>
+	</YSR>
+	<YTE>
+		Cape Dorset,Cp Dorset,CpDo
+		<Arab> الراس نوع من الخراف </Arab>
+	</YTE>
+	<YUL>
+		Montreal - Dorval,Montreal-Dorv.,Montreal,Mont
+		<Arab> مونتريال </Arab>
+	</YUL>
+	<YUX>
+		Hall Beach,HallBeach,Hall
+		<Arab> قاعه الشاطء </Arab>
+	</YUX>
+	<YVM>
+		Qikiqtarjuaq,Qikiqtarj,Qiki
+		<Arab> كيكيكتارجواك </Arab>
+	</YVM>
+	<YVP>
+		Kuujjuaq,Kuuj
+		<Arab> كووججواك </Arab>
+	</YVP>
+	<YVR>
+		Vancouver,Vcvr
+		<Arab> ريتشموند </Arab>
+		<Kurd> ڤانکۆڤه ر </Kurd>
+	</YVR>
+	<YXP>
+		Pangnirtung,Pangnirtg,Pang
+		<Arab> بانغنيرتونغ </Arab>
+	</YXP>
+	<YYY> Charter Flight,Charter,Chtr </YYY>
+	<YZF>
+		Yellowknife,YellowKfe,Yell
+		<Arab> يلو نايف </Arab>
+	</YZF>
+	<ZHA>
+		Zhanjiang,ZHAN
+		<Ch> 湛江 </Ch>
+		<Arab> فضيحه </Arab>
+	</ZHA>
+	<ZHU>
+		Zhuhai,Zhuh
+		<Ch> 珠海 </Ch>
+	</ZHU>
+	<ZNE>
+		Newman,Newm
+		<Arab> نيومان </Arab>
+	</ZNE>
+	<ZQN>
+		Queenstown Nz,Queenstwn,Qtwn
+		<Arab> كينستون </Arab>
+		<Kurd> کوینستاون </Kurd>
+	</ZQN>
+	<ZRH>
+		Zurich,Zur.
+		<Arab> زيوريخ </Arab>
+		<Kurd> زیورخ </Kurd>
+	</ZRH>
+	<ZZZ> Charter Flight,Charter,Chtr </ZZZ>
+</IATAPort>

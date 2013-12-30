@@ -1,0 +1,24 @@
+<TimeStamp> 20131230 134150 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131230 134150  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 134150 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131230 140121 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131230 140121  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>

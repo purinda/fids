@@ -1,0 +1,140 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Alphasoft Pty Ltd</title>
+	<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8"/>
+	<link href="style1.css" rel="stylesheet" type="text/css"/>
+  	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+	  <script>
+	  	$(document).ready(function() {
+	    	$("#datepicker").datepicker();
+	  	});
+	  </script>
+
+	</script>
+</head>
+<body>
+	<div id="header">
+		<#DB SystemConfig|JobName>
+		<div id="tagline">
+			<p>FIDS control home</p>
+		</div>
+	</div> <!-- end of header div -->
+
+	<#Include MainNav.html>
+
+	<div id = "bodycontent">
+		<p/><img src="Digital-Logo.png" width="329" height="305" alt="DII logo"/>
+	<div type="text" id="datepicker"></div>
+	</div>
+
+</body>
+</html>
+
+
+
+	<!script type="text/javascript" src="jquery.js"></script>
+
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Alphasoft Pty Ltd</title>
+	<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8"/>
+	<link href="style1.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div id="mainnavigation">
+		<h3>FLIGHTS</h3>
+		<p><a href="Arrivals"> Arrivals</a></p>
+		<p><a href="Departures">Departures</a></p>
+		<p><a href="LC/LCmain.html">Check In Control</a></p>
+		<h3>SUMMARY</h3>
+		<p><a href="Custom/Development.html">Gates</a></p>
+		<p><a href="Downloads.html"> Check Ins</a></p>
+		<p><a href="ContactUs.html"> Belts</a></p>
+	</div>
+
+
+form  {
+  width: 40em;
+  }
+  
+form label.w50 { 
+  display: block;   
+  width: 16em;   
+  float: leftt; 
+  text-align: right;
+}
+
+form.contact label.fixedwidth {   
+  display: block;   
+  width: 14em;   
+  float: left; 
+}
+form.contact input.fixedwidth {   
+  display: block;   
+  width: 30em;   
+  float: left; 
+}
+
+form.contact .buttonarea input {   
+  background: blue;
+  color: white;   
+  font-weight: bold;   
+  padding: 5px;   
+  margin-top: 12px;
+  border: 3px outset blue;
+}
+
+form.contact .buttonarea {   
+  text-align: center;   
+  padding: 4px; 
+  /*width:  $$$ */ 
+}
+
+	
+form.contact fieldset {   
+  border: 2px solid navy;   
+  padding: 10px;
+  width: 40em;
+}  
+
+form.contact legend {   
+  font-weight: bold;   
+  font-size: small;   
+  color: navy;   
+  padding: 5px; 
+}
+
+form.contact {   
+  padding: 0;   
+  margin: 0;   
+  /*margin-top: -15px; */
+  line-height: 150%;
+}
+
+form.contact label {
+  font-weight: bold;
+  font-size: small;
+  color: blue;
+}
+
+
+{<SELECT NAME="Favorite_Color" SIZE="1">
+<OPTION SELECTED>Blue
+<OPTION>Red
+<OPTION>Yellow
+<OPTION>Green
+<OPTION>Black
+<OPTION>Orange
+<OPTION>Purple
+</SELECT>}

@@ -1,0 +1,82 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Alphasoft Pty Ltd</title>
+	<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8"/>
+	<link href="style1.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div id="header">
+		<#DB SystemConfig|JobName>
+		<div id="tagline">
+			<p>Edit Flight <#Data Flight></p>
+		</div>
+	</div> <!-- end of header div -->
+
+
+	<div id = "bodycontent">
+		<h3><#heading/></h3> 
+		<form action="" method="post">
+			<fieldset>
+				<legend>Flight Details &nbsp</legend>
+				<div>
+					<label for="Flight" class="w50">Flight name</label>
+					<input type="text" name="Flight" id="Flight" class="fixedwidth" value="<#Data Flight>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="Ports" class="w50">Ports</label>
+					<input type="text" name="Ports" id="Ports" class="fixedwidth" value="<#Data Ports>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="Status" class="w50">Status</label>
+					<select name="DStatus" id="Status" >
+						<#DBoptions SystemSettings|Strings|StatusD DStatus> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="ST" class="w50">Scheduled Time of Departure</label>
+					<input type="text" name="ST" id="ST" class="fixedwidth" value="<#Data ST>" /><br/>
+				</div>
+				<div>
+					<label for="STdate" class="w50">date</label>
+					<input type="text" name="STdate" id="STdate" class="fixedwidth" value="<#Data STdate>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="ET" class="w50">Estimated Time of Departure</label>
+					<input type="text" name="ET" id="ET" class="fixedwidth" value="<#Data ET>" /><br/>
+				</div>
+				<div>
+					<label for="ETdate" class="w50">date</label>
+					<input type="text" name="ETdate" id="ETdate" class="fixedwidth" value="<#Data ETdate>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="CheckIn" class="w50">CheckIn</label>
+					<input type="text" name="CheckIns" id="CheckIn" class="fixedwidth" value="<#Data CheckIns>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="Gate" class="w50">Gate</label>
+					<input type="text" name="Gates" id="Gate" class="fixedwidth" value="<#Data Gates>" /><br/>
+				</div> <p/>
+				<div>
+					<label for="Comment" class="w50">Comment</label>
+					<input type="text" name="Comment" id="Comment" class="fixedwidth" value="<#Data Comment>" /><br/>
+				</div> <p/> <p/>
+				<div class="buttonarea">
+					<input type="submit" name="Record" value="Record Changes"/>
+				</div>			
+				<div class="buttonarea">
+					<input type="submit" name="Delete" value="Delete Flight"/>
+				</div>			
+				<div class="buttonarea">
+					<input type="submit" name="NewFlight" value="NewFlight"/>
+				</div>			
+				<div class="buttonarea">
+					<input type="submit" name="AddSubflight" value="Add Subflight"/>
+				</div>			
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

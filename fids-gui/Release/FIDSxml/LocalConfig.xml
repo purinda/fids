@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LocalConfig>
+	<! read only, per machine, machine local, ini >
+	<Machine>
+		<GT10>
+			<notClient/>
+			<SingleServer/>
+			<UserName> FIDS2 </UserName>
+			<Password> _DII_password_ </Password>
+		</GT10>
+		<Linda>
+			<Client/>
+			<UserName> LT </UserName>
+			<Password> alpha </Password>
+		</Linda>
+		<GT-Laptop>
+			<StandAlone/>
+			<UserName> LT </UserName>
+			<Password> alpha </Password>
+		</GT-Laptop>
+		<Else>
+			<SingleServer/>
+			<UserName> FIDS2 </UserName>
+			<Password> _DII_password_ </Password>
+		</Else>
+	</Machine>
+	<Mirror> SystemSettings, Departures, Arrivals, Timetable, CheckIns, Comments, Sensors </Mirror>
+	<Server>
+		<Port> 5666 </Port>
+		<Name> FIDSxml </Name>
+		<Attended/>
+	</Server>
+	<nXmlDirectory> C:\COM\AS Accounts\ </nXmlDirectory>
+    <RegistryBase> \DII\FIDS2\ </RegistryBase>
+</LocalConfig>

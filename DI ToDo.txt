@@ -1,0 +1,101 @@
+DI TODO LIST  Version	14 May 2011
+
+Format	n<tab>n<tab>item description
+
+-Pr	negative priority = 1 do first, 9/blank may do one day
+
+Done	rough progress index as :- 
+	0 "oh that ?"
+	1 thought about it / designed
+	2 peer/DI design approved
+	3 started coding
+	5 working
+	6 pointer checking and exception handled, integrated into configuration and instrumentation
+	7 auto (DUnit etc) tested, load tested, leak tested (FastMM debug)
+	8 peer reviewed
+	9 documented and production ready
+
+TO RESOLVE
+	map flight code -> ailine -> logo name  eg 5Jnnn, QFnnn QFAnnn   djp230x60.gif
+
+
+TODO FIDSxml.exe (GT)
+-Pr	Done	Item
+1	1	redundant destinations bug
+	1	multi core formatter support
+2	0	init formatter message blanks higher pages  BUG
+5	1	tidier faster dest text fit - only calc width once
+
+	1	decouple formatter
+	1	decouple file downloads
+3	1	formatter restart on change of displayconfig.
+	0	tidy multi fields
+4	1	UDC pkt size optimization
+	5	login stats
+3	2	refine journal/autosave
+	1	refactor huge uFormatter.pas - separate formatter parts, UDC drive
+2	3	adjust IP format in DisplayConfig.xml to simplify IP reassignment by GUI
+2		reverse flash, ie flash FG white/grey  $$$
+2		extraneous vertical leading line  $$$
+3		display time window control
+		red box for clock
+5	4	develop and test multiple host and IP address allocation tasks (linked with testing on Windows7 below) 
+
+		expanded grouping logic
+		stable test setup	
+		internet update
+		multiple sites to try
+		connection fail warning
+		multi thread/core formatter
+		easy red box clock
+		dest list merge fix
+		odd side bar on images
+		DisplayConfig.xml ':' -> '|'
+		timetabled adds/graphics
+		logo/font download ?
+		formatter conditional primary flight/secondary shares
+
+
+TODO Feeds.exe (GT)
+-Pr	Done	Item
+	3	Qantas packet handler, collect test data, live test
+		BLine feed
+		Sanya feed (MG)
+9		Refinement of browser interface
+	1	XML export - Web FIDS
+		real testing on Windows7
+		misc feeds, fire etc
+	1	Historic flight reports DB.
+		IATA airline code rationalization GT to incorporate in his application - ie use updated uFlight from 
+		moved gate ~ 1hr, bottom 3rd flight moved tp gate - see MG
+		summer time/date control, bl idea
+
+GUI
+		
+TODO GUI FIDS.exe (PG)
+-Pr	Done	Item
+	1	late gate change - goto new gate - user control - part of expanded group logic
+		Gant chart / resource control (PJ)
+		Timetable control (PG/PJ)
+		User control - password, access mgt
+		SystemSettings mgt - control of status appearance, timing rules etc
+		Dictionary mgt - IATA lists, translations, etc
+		Historic flight reports UI.
+		login / logout
+		mssages - flight - all arrivals - special evac etc
+		hardware mgt - UDC assign, feed status, etc
+		refine uFlight.pas data validation {used by all}
+		user defined CI content
+		Graphic dispay editor
+		
+
+TODO PRODUCTION ( Sam and other DI staff)
+-Pr	Done	Item
+		DisplayConfig.xml - screen formats in various sizes.
+		Installer builder
+	1	IP assignment manager / DisplayConfig builder (GT)
+		simple DB/directory of contract specials, install files, contract, other job tech info
+		backup up procedure
+		product and job (build) procedure documentation
+		maintain test site - host PC, UDCs, keypads, feed test rig, etc
+		select a specialized XML editor for production use (Sam)

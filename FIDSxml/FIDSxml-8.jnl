@@ -1,0 +1,75 @@
+<TimeStamp> 20131026 152831 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131026 152831  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 152831 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 152843 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131026 152843  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 153121 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131026 153121  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 153243 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> SIN,ADL,AUK </ReqEdit>
+		<Prev> SIN,ADL,SYD </Prev>
+		<Path> |Departures|SIA238-1923|Flights|NTL238|Ports| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 153256 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> SIN,ADL,AUC </ReqEdit>
+		<Prev> SIN,ADL,AUK </Prev>
+		<Path> |Departures|SIA238-1923|Flights|NTL238|Ports| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 153322 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Departed </ReqEdit>
+		<Prev> Boarding </Prev>
+		<Path> |Departures|SIA238-1923|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 153918 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131026 153918  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131026 160450 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 577 </ReqEdit>
+		<Path> |SystemSettings|MainForm|Top| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>

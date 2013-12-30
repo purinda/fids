@@ -1,0 +1,271 @@
+unit FMain;
+
+interface
+
+uses
+  Windows,  Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, uFlight, uFidsTags, uCommon, uController, FWindow,
+  FSearch, Menus, ExtCtrls, ImgList, VrControls, VrLcd, siComp;
+
+type
+  TfrmMain = class(TForm)
+    cmdArrivals: TButton;
+    cmdDepartures: TButton;
+    mnuMain: TMainMenu;
+    File1: TMenuItem;
+    Edit1: TMenuItem;
+    Undo1: TMenuItem;
+    Redo1: TMenuItem;
+    N1: TMenuItem;
+    Cut1: TMenuItem;
+    Copy1: TMenuItem;
+    Past1: TMenuItem;
+    N2: TMenuItem;
+    Delete1: TMenuItem;
+    Modify1: TMenuItem;
+    Find1: TMenuItem;
+    Find2: TMenuItem;
+    FindNext1: TMenuItem;
+    View1: TMenuItem;
+    N3: TMenuItem;
+    Preferences1: TMenuItem;
+    View2: TMenuItem;
+    mnuHelp: TMenuItem;
+    Index1: TMenuItem;
+    N4: TMenuItem;
+    About1: TMenuItem;
+    mnuNavigate: TMenuItem;
+    Arrivals1: TMenuItem;
+    Departures1: TMenuItem;
+    Gates1: TMenuItem;
+    Bays1: TMenuItem;
+    Baggages1: TMenuItem;
+    imetable1: TMenuItem;
+    Arrivals2: TMenuItem;
+    Departures2: TMenuItem;
+    panelSensors: TFlowPanel;
+    tmrBackground: TTimer;
+    tmrContinuous: TTimer;
+    imlSensors: TImageList;
+    cmdCheckins: TButton;
+    cmdGates: TButton;
+    cmdBays: TButton;
+    cmdBelts: TButton;
+    cmdSchedules: TButton;
+    imlMain: TImageList;
+    Checkins1: TMenuItem;
+    mnuShedules: TPopupMenu;
+    Arrivals3: TMenuItem;
+    Departures3: TMenuItem;
+    Panel1: TPanel;
+    VrClock1: TVrClock;
+    Label1: TLabel;
+    siLangDispatcher: TsiLangDispatcher;
+    cmbLanguageSelection: TComboBox;
+    procedure cmdArrivalsClick(Sender: TObject);
+    procedure cmdDeparturesClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure tmrContinuousTimer(Sender: TObject);
+    procedure cmdCheckinsClick(Sender: TObject);
+    procedure cmdGatesClick(Sender: TObject);
+    procedure cmdBaysClick(Sender: TObject);
+    procedure cmdBeltsClick(Sender: TObject);
+    procedure tmrBackgroundTimer(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Arrivals3Click(Sender: TObject);
+    procedure Departures3Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+  private
+    { Private declarations }
+    fcWindow : CFlightController;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+  frmWindows : array  [0..7]  of TfrmWindow;
+  frmX	: TfrmWindow;
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMain.cmdArrivalsClick(Sender: TObject);
+begin
+  {Set arrival window}
+  if (assigned(frmWindows[0])) then
+    frmWindows[0].Show
+  else
+  begin
+    frmWindows[0] := TfrmWindow.Create(nil);
+    frmWindows[0].ControllerType := FIDSVerticallyPopulated;
+    frmWindows[0].ControllerID := FIDSArrivals;
+    frmWindows[0].SetController('Arrivals - ' + Caption, fkArrivals, uCommon.ArrivalFields, uCommon.ArrivalColumns );
+    frmWindows[0].Show;
+  end;
+
+end;
+
+
+procedure TfrmMain.cmdCheckinsClick(Sender: TObject);
+begin
+    {Set checkkins window}
+    if (assigned(frmWindows[2])) then
+        frmWindows[2].Show
+    else
+    begin
+        frmWindows[2] := TfrmWindow.Create(nil);
+        frmWindows[2].ControllerType := FIDSHorizontallyPopulated;
+        frmWindows[2].ControllerID := FIDSCheckins;
+        frmWindows[2].SetController('Checkins - '+ Caption, fkDepartures, uCommon.CheckinsFields, uCommon.CheckinsColumns );
+        frmWindows[2].Show;
+    end;
+end;
+
+procedure TfrmMain.cmdDeparturesClick(Sender: TObject);
+begin
+
+    {Set arrival window}
+    if (assigned(frmWindows[1])) then
+        frmWindows[1].Show
+    else
+    begin
+        frmWindows[1] := TfrmWindow.Create(nil);
+        frmWindows[1].ControllerType := FIDSVerticallyPopulated;
+        frmWindows[1].ControllerID := FIDSDepartures;
+        frmWindows[1].SetController('Departures - '+ Caption, fkDepartures, uCommon.DeparturesFields, uCommon.DeparturesColumns );
+        frmWindows[1].Show;
+    end;
+
+end;
+
+procedure TfrmMain.cmdGatesClick(Sender: TObject);
+begin
+    {Set checkkins window}
+    if (assigned(frmWindows[3])) then
+        frmWindows[3].Show
+    else
+    begin
+        frmWindows[3] := TfrmWindow.Create(nil);
+        frmWindows[3].ControllerType := FIDSHorizontallyPopulated;
+        frmWindows[3].ControllerID := FIDSGates;
+        frmWindows[3].SetController('Gates - '+ Caption, fkDepartures, uCommon.GatesFields, uCommon.GatesColumns );
+        frmWindows[3].Show;
+    end;
+end;
+
+procedure TfrmMain.Departures3Click(Sender: TObject);
+begin
+    {Set arrival window}
+    if (assigned(frmWindows[7])) then
+        frmWindows[7].Show
+    else
+    begin
+        frmWindows[7] := TfrmWindow.Create(nil);
+        frmWindows[7].ControllerType := FIDSVerticallyPopulated;
+        frmWindows[7].ControllerID := FIDSTDepartures;
+        frmWindows[7].SetController('Timetable Departures - '+ Caption, fkDepartures, uCommon.TDeparturesFields, uCommon.TDeparturesColumns );
+        frmWindows[7].Show;
+    end;
+
+end;
+
+procedure TfrmMain.cmdBaysClick(Sender: TObject);
+begin
+    {Set checkkins window}
+    if (assigned(frmWindows[4])) then
+        frmWindows[4].Show
+    else
+    begin
+        frmWindows[4] := TfrmWindow.Create(nil);
+        frmWindows[4].ControllerType := FIDSHorizontallyPopulated;
+        frmWindows[4].ControllerID := FIDSBays;
+        frmWindows[4].SetController('Bays - '+ Caption, fkArrivals, uCommon.BaysFields, uCommon.BaysColumns );
+        frmWindows[4].Show;
+    end;
+end;
+
+procedure TfrmMain.cmdBeltsClick(Sender: TObject);
+begin
+    {Set checkkins window}
+    if (assigned(frmWindows[5])) then
+        frmWindows[5].Show
+    else
+    begin
+        frmWindows[5] := TfrmWindow.Create(nil);
+        frmWindows[5].ControllerType := FIDSHorizontallyPopulated;
+        frmWindows[5].ControllerID := FIDSBelts;
+        frmWindows[5].SetController('Belts - '+ Caption, fkArrivals, uCommon.BeltsFields, uCommon.BeltsColumns );
+        frmWindows[5].Show;
+    end;
+end;
+
+procedure TfrmMain.Arrivals3Click(Sender: TObject);
+begin
+    {Set arrival window}
+    if (assigned(frmWindows[6])) then
+        frmWindows[6].Show
+    else
+    begin
+        frmWindows[6] := TfrmWindow.Create(nil);
+        frmWindows[6].ControllerType := FIDSVerticallyPopulated;
+        frmWindows[6].ControllerID := FIDSTArrivals;
+        frmWindows[6].SetController('Timetable Arrivals - '+ Caption, fkArrivals, uCommon.TArrivalFields, uCommon.TArrivalColumns  );
+        frmWindows[6].Show;
+    end;
+
+end;
+
+procedure TfrmMain.Button9Click(Sender: TObject);
+begin
+	//fcWindow.NewConnection();
+        //fcWindow.InitSensors(panelSensors);
+        //fcWindow.ImplementSensors(self, imlSensors);
+end;
+
+procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+    if MessageDlg('Please confirm your request to Terminate FIDS GUI?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+    begin
+    	CanClose:= True;
+      Application.Terminate;
+    end
+    else
+    	CanClose:= False;
+
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+    uCommon.RHSMenu(Self, mnuNavigate);
+    fcWindow := CFlightController.Create(fkArrivals, ArrivalFields);
+
+    //WindowState := wsMinimized;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+    VrClock1.Color := rgb(0,5,5);
+    Vrclock1.Palette.Low := rgb(0,20,20);
+    Vrclock1.Palette.High := rgb(0,255,255);
+    Panel1.Color := rgb(0,0,0);
+
+end;
+
+procedure TfrmMain.tmrBackgroundTimer(Sender: TObject);
+begin
+    fcWindow.NewConnection(FIDSArrivals);
+    Caption := fcWindow.JobName;
+    {Init sensors}
+    fcWindow.InitSensors(panelSensors);
+    tmrBackground.Enabled := false;
+
+end;
+
+procedure TfrmMain.tmrContinuousTimer(Sender: TObject);
+begin
+    {Redraw Sensors}
+    fcWindow.ImplementSensors(self, imlSensors);
+end;
+
+end.

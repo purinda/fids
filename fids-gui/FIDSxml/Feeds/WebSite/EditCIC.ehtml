@@ -1,0 +1,89 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Alphasoft Pty Ltd</title>
+	<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8"/>
+	<link href="style1.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<#Context Departures>
+	<div id="header">
+		<#DB SystemConfig|JobName>
+		<div id="tagline">
+			<p>Edit Check In <#Data CIC></p>
+		</div>
+	</div> <!-- end of header div -->
+
+	<#Include MainNav.html>
+
+	<div id = "bodycontent">
+		<h3> Check In <#Heading CIC></h3> 
+		<form action="" method="post">
+			<fieldset>
+				<legend>Check In Details &nbsp</legend>
+				<div>
+					<label for="Airline">Airline</label>
+					<select name="Airline" id="Airline" >
+						<#DBoptions SystemSettings|Strings|Airlines Airline> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="Flight1">Flight</label>
+					<select name="Flight1" id="Flight1" >
+						<#Flight CIC 1> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="Flight2">Flight</label>
+					<select name="Flight2" id="Flight2" >
+						<#Flight CIC 2> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="Flight3">Flight</label>
+					<select name="Flight3" id="Flight3" >
+						<#Flight CIC 3> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="Flight4">Flight</label>
+					<select name="Flight4" id="Flight4" >
+						<#Flight CIC 4> 
+					</select><p/>
+				</div>
+				
+				<div>
+					<label for="CheckInClasses">Check In Class</label>
+					<select name="Class" id="CheckInClasses" >
+						<#DBoptions SystemSettings|Strings|CheckInClasses Class> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="CheckInServices">Check In Service</label>
+					<select name="Service" id="CheckInServices" >
+						<#DBoptions SystemSettings|Strings|CheckInServices Service> 
+					</select><p/>
+				</div>
+
+				<div>
+					<label for="FullScreenGraphic">Full Screen Graphic</label>
+					<select name="FullGraphic" id="FullScreenGraphic" >
+					<#DBoptions SystemSettings|Graphics|FullScr FullGraphic> 
+					</select><p/>
+				</div>
+				<div>
+					<label for="DefaultGraphic">Default Graphic</label>
+					<select name="DefaultGraphic" id="DefaultGraphic" >
+						<#DBoptions SystemSettings|Graphics|Default DefaultGraphic> 
+					</select><p/>
+				</div>
+				<div class="buttonarea">
+					<input type="submit" name="Record" value="Record Changes"/>
+				</div>			
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

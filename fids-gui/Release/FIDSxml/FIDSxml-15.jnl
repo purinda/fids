@@ -1,0 +1,312 @@
+<TimeStamp> 20131126 235243 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131126 235243  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131126 235243 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131126 235517 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131126 235515  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131126 235600 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131126 235600  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 000031 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 000031  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 000059 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 000059  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213047 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 213047  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213119 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Gates </ReqNewTag>
+		<Content> txtGate2 </Content>
+		<Path> |Arrivals|QFA421-646| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213134 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> AStatus </ReqNewTag>
+		<Content> Cancelled </Content>
+		<Path> |Arrivals|QFA421-646| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213134 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Belts </ReqNewTag>
+		<Content> txtBelt1,txtBelt2 </Content>
+		<Path> |Arrivals|QFA421-646| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213136 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Landed </ReqEdit>
+		<Prev> Cancelled </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213138 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Cancelled </ReqEdit>
+		<Prev> Landed </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213139 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Diverted </ReqEdit>
+		<Prev> Cancelled </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213147 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> On Blocks </ReqEdit>
+		<Prev> Diverted </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213150 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Diverted </ReqEdit>
+		<Prev> On Blocks </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213152 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> On Blocks </ReqEdit>
+		<Prev> Diverted </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213214 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Cancelled </ReqEdit>
+		<Prev> On Blocks </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213214 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 1 </ReqEdit>
+		<Prev> txtGate2 </Prev>
+		<Path> |Arrivals|QFA421-646|Gates| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 213214 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 1,1 </ReqEdit>
+		<Prev> txtBelt1,txtBelt2 </Prev>
+		<Path> |Arrivals|QFA421-646|Belts| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215826 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 215825  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215842 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Cancelled </Content>
+		<Path> |Departures|ANZ726-2175| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215844 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Boarding </Content>
+		<Path> |Departures|ANZ758-2176| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215848 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Cancelled </Content>
+		<Path> |Departures|FJI930-2178| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215851 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Boarding </Content>
+		<Path> |Departures|QFA29-2179| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215858 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Departed </ReqEdit>
+		<Prev> Cancelled </Prev>
+		<Path> |Departures|FJI930-2178|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215858 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Gates </ReqNewTag>
+		<Content> txtGate2 </Content>
+		<Path> |Departures|FJI930-2178| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215905 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Departed </Content>
+		<Path> |Departures|JQ171-2173| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215936 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Cancelled </ReqEdit>
+		<Prev> Departed </Prev>
+		<Path> |Departures|JQ171-2173|DStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215937 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Gates </ReqNewTag>
+		<Content> txtGate2 </Content>
+		<Path> |Departures|JQ171-2173| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215941 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> DStatus </ReqNewTag>
+		<Content> Boarding </Content>
+		<Path> |Departures|QFA9-2172| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 215942 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Gates </ReqNewTag>
+		<Content> txtGate2 </Content>
+		<Path> |Departures|QFA9-2172| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 220026 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 220026  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 220044 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 1,4 </ReqEdit>
+		<Prev> 1 </Prev>
+		<Path> |Arrivals|QFA421-646|Gates| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 220051 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 220051  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 221023 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20131127 221023  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20131127 223155 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 592 </ReqEdit>
+		<Path> |SystemSettings|MainForm|Top| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>

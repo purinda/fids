@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/04/07 14:39:30.078.pas,C:\Temp\DI\FIDS\SDK\FIDSxml\ExampleGUI\uDataTreeView.pas=</Transaction>
+    <Transaction>2011/04/07 14:39:55.218.pas,C:\Temp\DI\FIDS\SDK\FIDSxml\ExampleGUI\ufRuleEdit.pas=</Transaction>
+    <Transaction>2011/04/07 14:39:59.671.pas,C:\Temp\DI\FIDS\SDK\Tools\DelphiLib\ufStringEntry.pas=</Transaction>
+    <Transaction>2011/04/07 14:39:59.671.dfm,C:\Temp\DI\FIDS\SDK\Tools\DelphiLib\ufStringEntry.dfm=</Transaction>
+    <Transaction>2011/04/07 14:40:03.796.dfm,C:\Temp\DI\FIDS\SDK\FIDSxml\ExampleGUI\uGUIMain.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

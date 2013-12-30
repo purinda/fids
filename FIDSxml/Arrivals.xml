@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Arrivals KeyTag="true" AutoInc="647">
+	<QFA421-646>
+		<Flights>
+			<QFA421>
+				<Ports> SYD </Ports>
+			</QFA421>
+		</Flights>
+		<FeedKey> QFA421/081031 </FeedKey>
+		<ST> 20100812 110000 </ST>
+		<ET> 20100812 111500 </ET>
+		<AT> 20100812 110700 </AT>
+		<Corresponding> Arrivals|QFA421-646|Flights|QFA421 </Corresponding>
+		<Rego> VHZXE </Rego>
+		<Carrier> Domestic </Carrier>
+		<AirCraft> 766 </AirCraft>
+		<Pax> 216,17 </Pax>
+		<PaxDisembark> 216 </PaxDisembark>
+		<Gates> 1,4 </Gates>
+		<AStatus> Cancelled </AStatus>
+		<Belts> 1,1 </Belts>
+	</QFA421-646>
+</Arrivals>

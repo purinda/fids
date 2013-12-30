@@ -1,0 +1,433 @@
+unit FEdit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, uCommon, uGlobalDefs, uFlight, uFidsTags,
+  ComCtrls, VrControls, VrBlinkLed;
+
+type
+  TfrmEdit = class(TForm)
+    pnlButtons: TPanel;
+    btnClose: TButton;
+    Button3: TButton;
+    tmrBackground: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure tmrBackgroundTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    {Lists}
+    lstStatuses : TStringList;
+    lstGates : TStringList;
+    lstBays : TStringList;
+    lstBelts : TStringList;
+    lstCheckin : TStringList;
+    lstCarrierTypes : TStringList;
+    lstAircrafts : TStringList;
+    lstTerminals : TStringList;
+
+    { Public declarations }
+    procedure SetFields (IffFields : array of aFlightField; strFields : array of string);
+    procedure SetData (InData : PTreeData);
+  end;
+
+var
+  frmEdit: TfrmEdit;
+  FieldNames :array of String;
+  ffFields : array of aFlightField;
+  FlightData : PTreeData;
+
+  lblField : array of TLabel;
+  inpField : array of TControl;
+
+implementation
+{$R *.dfm}
+
+procedure TfrmEdit.FormDestroy(Sender: TObject);
+begin
+  lstGates.Free;
+  lstStatuses.Free;
+  lstBays.Free;
+  lstBelts.Free;
+  lstCheckin.Free;
+  lstCarrierTypes.Free;
+  lstAircrafts.Free;
+  lstTerminals.Free;
+end;
+
+procedure TfrmEdit.SetData (InData : PTreeData);
+begin
+  FlightData := InData;
+end;
+
+procedure TfrmEdit.SetFields (IffFields : array of aFlightField; strFields : array of string);
+Var
+	I : Integer;
+  FieldName : String;
+  ffField : aFlightField;
+begin
+
+  SetLength( FieldNames, length(strFields) );
+  SetLength( ffFields, length(IffFields) );
+
+  I:=0;
+  for ffField in IffFields do
+  begin
+    ffFields[I] := ffField;
+    Inc(I);
+  end;
+
+  I:=0;
+  for FieldName in strFields do
+  begin
+    FieldNames[I] := FieldName;
+    Inc(I);
+  end;
+
+end;
+
+procedure TfrmEdit.tmrBackgroundTimer(Sender: TObject);
+var
+	I : smallint;
+begin
+
+  for I:=0 to 	self.ComponentCount -1 do
+  begin
+    if (Components[i].Name = 'cmbStatus') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstStatuses);
+    if (Components[i].Name = 'cmbGates') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstGates);
+    if (Components[i].Name = 'cmbBays') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstBays);
+    if (Components[i].Name = 'cmbCheckins') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstCheckin);
+    if (Components[i].Name = 'cmbBelts') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstBelts);
+    if (Components[i].Name = 'cmbAirCrafts') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstAircrafts);
+    if (Components[i].Name = 'cmbCarrierTypes') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstCarrierTypes);
+    if (Components[i].Name = 'cmbTerminals') then
+    	TComboBox( Components[i] ).Items.AddStrings(lstTerminals);
+
+  end;
+
+	tmrBackground.Enabled := false;
+end;
+
+procedure TfrmEdit.FormCreate(Sender: TObject);
+var
+  FieldName	: string;
+  FieldVal	: string;
+  ffField : aFlightField;
+
+  I, PTop, PLeft, PWidth : smallint;
+  MaxLabelWidth, FormHeight : smallint;
+
+  SameLevel : Boolean;
+begin
+
+  lstGates := TStringList.Create;
+  lstStatuses := TStringList.Create;
+  lstBays := TStringList.Create;
+  lstBelts := TStringList.Create;
+  lstCarrierTypes := TStringList.Create;
+  lstCheckin := TStringList.Create;
+  lstAircrafts := TStringList.Create;
+  lstTerminals := TStringList.Create;
+
+	SetLength(lblField, length(FieldNames));
+	SetLength(inpField, length(ffFields));
+
+  I := 0;
+  MaxLabelWidth :=0;
+  FormHeight := 0;
+
+  for FieldName in FieldNames do
+  begin
+
+  	//This ignores date(ETA, ETA[date]) fields displaying as labels in the edit window.
+    if (Pos('date', lowercase(FieldName)) = 0) then
+    begin
+
+        {Positioning Labels}
+        lblField[i] := TLabel.Create(Self);
+        lblField[i].SetParentComponent(self);
+        lblField[i].Caption := FieldName + ':';
+        lblField[i].AutoSize := true;
+
+        //if (MaxLabelWidth <= ucommon.MeasureTextLengthInPixels(lblField[i].caption, Self.Font) ) then
+        if (MaxLabelWidth <= lblField[i].Width) then
+          MaxLabelWidth := lblField[i].Width;
+
+        {Only 10 vertically}
+        if ((I mod Length(FieldNames)-1) = 0) AND NOT (I = 0) then
+        begin
+          PTop := uCommon.ComponentTop;
+          PLeft :=	280;
+        end
+        else
+        begin
+          PLeft := uCommon.ComponentLeft;
+          {Calculate TOP Pixel}
+          if (I=0) then
+            PTop := uCommon.ComponentTop
+          else
+            PTop := PTop + (lblField[i].Height * 2);
+        end;
+
+        {position labels}
+        lblField[i].Top := PTop;
+        lblField[i].Left := PLeft;
+
+        {Set form height}
+        if (FormHeight <= PTop) then
+          FormHeight := PTop;
+
+        Inc(i);
+      end;
+
+  end;
+
+  I:=0;
+  PTop:=0;
+  PLeft := 0;
+
+  for ffField in ffFields do
+  begin
+  	SameLevel := false;
+  	//ShowMessage(inttostr(I));
+    case ffField of
+    	{TextFields}
+      ffStaffNote: 		begin
+      									inpField[i] := TEdit.Create(Self);
+                        inpField[i].Name := 'txtNote';
+                        inpField[i].SetParentComponent(self);
+                      end;
+
+      ffStaffComment: begin
+      									inpField[i] := TEdit.Create(Self);
+                        inpField[i].Name := 'txtStaffComment';
+                        inpField[i].SetParentComponent(self);
+                      end;
+
+      ffPorts: 				begin
+      									inpField[i] := TEdit.Create(Self);
+                        inpField[i].Name := 'txtPorts';
+                        inpField[i].SetParentComponent(self);
+                        TEdit(inpField[i]).Text := flightdata.Ports;
+                      end;
+
+      ffRego: 				begin
+      									inpField[i] := TEdit.Create(Self);
+                        inpField[i].Name := 'txtRego';
+                        inpField[i].SetParentComponent(self);
+                        TEdit(inpField[i]).Text := flightdata.Rego;
+                      end;
+      {Date&Time Components}
+      ffSTime: 				begin
+                        inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtSTTime';
+                        inpField[i].Tag := 1;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Kind := dtkTime;
+                        TDateTimePicker(inpField[i]).Format := fidsGUITimeFormat;
+                        TDateTimePicker(inpField[i]).Width := 60;
+                        TDateTimePicker(inpField[i]).Time := flightdata.STime;
+      								end;
+
+      ffSTdate: 			begin
+      									SameLevel := true;
+    										inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtSTDate';
+                        TDateTimePicker(inpField[i]).Kind := dtkDate;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Width := 100;
+                        TDateTimePicker(inpField[i]).Date := flightdata.STDate;
+      								end;
+
+      ffETime: 				begin
+
+                        inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtETTime';
+                        inpField[i].Tag := 1;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Kind := dtkTime;
+                        TDateTimePicker(inpField[i]).Format := fidsGUITimeFormat;
+                        TDateTimePicker(inpField[i]).Width := 60;
+                        TDateTimePicker(inpField[i]).Time := flightdata.ETime;
+      								end;
+
+      ffETdate: 			begin
+      									SameLevel := true;
+                        inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtETDate';
+                        TDateTimePicker(inpField[i]).Kind := dtkDate;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Width := 100;
+                        TDateTimePicker(inpField[i]).Date := flightdata.ETDate;
+      								end;
+      ffATime: 				begin
+
+                        inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtATTime';
+                        inpField[i].Tag := 1;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Kind := dtkTime;
+                        TDateTimePicker(inpField[i]).Format := fidsGUITimeFormat;
+                        TDateTimePicker(inpField[i]).Width := 60;
+                        TDateTimePicker(inpField[i]).Time := flightdata.ATime;
+      								end;
+
+      ffATdate: 			begin
+      									SameLevel := true;
+                        inpField[i] := TDateTimePicker.Create(Self);
+                        inpField[i].Name := 'dtATDate';
+                        TDateTimePicker(inpField[i]).Kind := dtkDate;
+                        inpField[i].SetParentComponent(self);
+                        TDateTimePicker(inpField[i]).Width := 100;
+                        TDateTimePicker(inpField[i]).Date := flightdata.ATDate;
+      								end;
+      {Static Field, Not-editable}
+      ffFlight: 			begin
+      									inpField[i] := TEdit.Create(Self);
+                        inpField[i].Name := 'txtFlight';
+                        inpField[i].SetParentComponent(self);
+                        TEdit(inpField[i]).Text := flightdata.Flight;
+      								end;
+
+      {Dropdowns}
+      ffAStatus: 			begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbStatus';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Status;
+      								end;
+
+      ffDStatus: 			begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbStatus';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Status;
+      								end;
+
+      ffGates: 				begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbGates';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Gates;
+                      end;
+
+      ffBays: 				begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbBays';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Bays;
+                      end;
+
+      ffBelts: 				begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbBelts';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Belts;
+                      end;
+
+      ffCheckIns: 		begin
+      									inpField[i] := TComboBox.Create(Self);
+      									inpField[i].Name := 'cmbCheckins';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Checkins;
+                      end;
+
+      ffAirCraft: 		begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbAircrafts';
+                        inpField[i].SetParentComponent(self);
+                      end;
+
+      ffTerminal: 		begin
+      									inpField[i] := TComboBox.Create(Self);
+                      	inpField[i].Name := 'cmbTerminals';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Terminal;
+                      end;
+
+      ffCarrier: 		 begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbCarrierTypes';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Carrier;
+                      end;
+      ffComment: 		 begin
+      									inpField[i] := TComboBox.Create(Self);
+                        inpField[i].Name := 'cmbComment';
+                        inpField[i].SetParentComponent(self);
+                        TComboBox(inpField[i]).Text := flightdata.Comment;
+                        TComboBox(inpField[i]).Width := 380;
+                      end;
+      {Checkboxes}
+      ffNonPublic:	begin
+      									inpField[i] := TCheckBox.Create(Self);
+                        inpField[i].Name := 'chkNonPublic';
+                        inpField[i].SetParentComponent(self);
+                        TCheckBox(inpField[i]).Caption := '';
+//ShowMessage(flightdata.NonPublic);
+                        if (Trim( flightdata.NonPublic ) = '1' ) then
+                        	TCheckBox(inpField[i]).Checked := True;
+
+                        if (Trim( flightdata.NonPublic ) = '0' ) then
+                        	TCheckBox(inpField[i]).Checked := false;
+
+                      end;
+    end;
+
+
+
+    {Only 10 vertically}
+    if ((I mod Length(ffFields)-1) = 0) AND NOT (I = 0) then
+    begin
+      PTop := uCommon.ComponentTop;
+    end
+    else
+    begin
+      {Calculate TOP Pixel}
+      if not SameLevel then   {ST/ET/AT should be in the same level and never split}
+      	if (I=0) then
+        	PTop := uCommon.ComponentTop
+      	else
+        	PTop := PTop + (lblField[0].Height * 2);
+    end;
+
+    {position labels}
+    inpField[i].Top := PTop;
+
+    Inc(i);
+  end;
+
+  {assigning left value for components}
+  I := 0;
+  Pleft := 0;
+  for ffField in ffFields do
+  begin
+  	if ((I mod Length(ffFields)-1) = 0) AND NOT (I = 0) then
+    	PLeft :=	320
+    Else
+      if inpField[i].Tag = 1 then
+        PLeft := uCommon.ComponentLeft + uCommon.ComponentLeft + MaxLabelWidth + inpField[i].width + 40 {Gap | Associated with Splitfield onlt, ET, ETA, etc}
+      else
+        PLeft := uCommon.ComponentLeft + uCommon.ComponentLeft + MaxLabelWidth;
+
+    //ShowMessage(inttostr(PLeft));
+    inpField[i].Left := PLeft;
+    inc(i);
+  end;
+
+	{Positioning Bottom Panel}
+  self.Height := PTop + uCommon.ComponentAndButtonsGap + pnlButtons.Height;
+
+end;
+
+end.

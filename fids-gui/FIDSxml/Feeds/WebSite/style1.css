@@ -1,0 +1,224 @@
+/*
+CSS for alphasoft1.com site   thanks http://www.sitepoint.com/books/html2/
+*/
+
+body {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	background-color: #e8f0ff;
+	line-height: 125%;
+	padding: 0px;
+	margin: 0;
+	}
+
+h1 {
+	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-size: x-large;
+	background-color: navy;
+	color: white;
+	padding-top: 2em;
+	padding-bottom: .2em;
+	padding-left: .4em;
+	margin: 0;
+	}
+h2 {
+	color: blue;
+	font-size: 130%;
+	font-weight: normal;
+	}
+p {
+	font-size: small;
+	color: navy;
+	padding-right: 0.7em;
+	}
+p.big {
+	font-weight: bold;
+	font-size: 120%;
+	font-style: normal;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	}
+p.small {
+	font-size: 70%;
+	font-style: normal;
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+p.line {
+	padding-top: 0.0em;
+	padding-bottom: 0.0em;
+	}
+
+h1, h2, h3 {
+	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	background-color: navy;
+	color: white;
+	width: 100%;
+	}
+li {
+	font-size: small;
+	color: navy;
+	}
+em {
+	font-weight: bold;
+	}
+
+img {
+	border-width: 0;
+	}
+ul.plain  {
+	list-style-type: none;
+	}
+
+table  {
+	border: 2px solid black;
+	border-collapse: collapse;
+	}
+
+			
+th  {
+	border: 1px solid gray;
+	background-color: #8080e0;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	}	
+	
+th.CICwideCol  {
+	width: 9em;
+	}	
+	
+th.CIC  {
+	padding-left: 1em;
+	padding-right: 1em;
+	}	
+	
+td  {
+	border: 1px solid gray;
+	padding-left: 1em;
+	padding-right: 1em;
+	}	
+	
+tr.odd {
+	background-color: #e0e0d0
+	}
+	
+fieldset  {
+	width: 35em;
+	}
+
+		
+.highlight {  /* class */
+	font-size: 125%;
+	font-weight: bold;
+	}
+	
+.indented {
+	padding-left: 2em;
+	text-indent: 0;
+	line-height: 80%;
+	padding-top: 0;
+	padding-bottom: 0;
+	}	
+.indent1 {
+	text-indent: 1em;
+	}
+.indent0 {
+	text-indent: 0;
+	}
+	
+.buttonarea  {
+	margin: 2em;
+	}
+	
+.button  {
+	padding-right: 8em;
+	}
+	
+form  {
+  width: 60em;
+  }
+form label { 
+  width: 16em;   
+  float: left; 
+  text-align: right;
+}
+	
+input.fixedwidth  {
+	width: 20em;
+	}
+
+
+
+#header {	/* unique id */
+	text-indent: 20px;
+	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-size: 2em;
+	font-weight: bolder;
+	color: white;
+	line-height: 150%;
+	padding-top: 0.5em;
+	margin: 0;
+	border-top: 3px solid #7da5d8;
+	background: navy; /*url(alpha-long-wh.gif) no-repeat;*/
+	background-position: 100% 20%;
+	}
+#tagline p {
+	font-size: small;
+	font-style: italic;
+	font-family: Georgia, Times, serif;
+	line-height: 100%;
+	background-color: #bed8f3;
+	border-top: 3px solid #7da5d8;
+	border-bottom: 3px solid #7da5d8;
+	padding-top: .2em;
+	padding-bottom: .2em;
+	margin: 0;
+	}
+	
+#mainnavigation {
+	border: 1px solid black;
+	background-color: #ffcc33;
+	text-indent: 1em;
+	color: navy;
+	font-weight: bold;
+	width: 10em;
+	height: 25em;
+	}
+#mainnavigation p {
+	font-size: small;
+	line-height: 80%;
+	}  /* list items */
+	
+#bodycontent {
+	text-indent: 1em;
+	}
+	
+#cornerpic {
+	border: 1px solid black;
+	background: #c09060 url(Sunset.png) no-repeat;
+	background-position: top right;
+	padding: 68px;
+	padding-right: 100px;
+	}
+
+	
+/*	POSITIONING */
+/*   temp layout design border
+#header, #sitebranding, #tagline, #mainnavigation, #bodycontent, #listpart {
+	border: 1px solid red;
+	}
+*/
+#header, #mainnavigation, #bodycontent {
+	position: absolute;
+	}
+#mainnavigation, #bodycontent {
+	top: 5.7em;
+	/* top: 107px; */
+	}	
+#bodycontent {
+	left: 10.5em;
+	}
+#header {
+	width: 100%;
+	}
+
+	
