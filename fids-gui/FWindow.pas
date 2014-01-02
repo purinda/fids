@@ -83,7 +83,6 @@ type
         procedure tbDummyButtonClick(Sender: TObject);
         procedure Find2Click(Sender: TObject);
         procedure tbClearSearchClick(Sender: TObject);
-        procedure FormShow(Sender: TObject);
         procedure tbbModifyClick(Sender: TObject);
         procedure tbbAddClick(Sender: TObject);
         procedure VSTPaintText(Sender: TBaseVirtualTree;
@@ -485,9 +484,7 @@ begin
     tbBasic.Left := ControlBar1.Width - 90;
 end;
 
-procedure TfrmWindow.FormShow(Sender: TObject);
-begin
-    Caption := ControllerName;
+:= ControllerName;
     ControllerMode := FIDSListingMode;
 
     VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
@@ -596,7 +593,6 @@ var
 begin
     VST.Clear;
 
-    { ===========START = THIS CAN BE A DIFFERENT FUNCTION================ }
     I := 0;
 
     SplitCaption := TStringList.Create;

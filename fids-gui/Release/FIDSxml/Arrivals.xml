@@ -17,7 +17,7 @@
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
 		<Gates> 1,4 </Gates>
-		<AStatus> Cancelled </AStatus>
+		<AStatus> Landed </AStatus>
 		<Belts> 1,1 </Belts>
 	</QFA421-646>
 </Arrivals>

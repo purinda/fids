@@ -172,9 +172,9 @@ begin
             // LogIn( FeedID, SysPW, FeedID );
             // FXml.oDataTree.RegisterReader( PopulateGrid );
             // oRule := oRule.Create( fxml.oDataTree, 'Feed' );   // need a logged in id ('EgGUI') to update DB
-            oRule := cTTRule.Create( DB, FXml.GetUserName);
-            // need a logged in id ('EgGUI') to update DB;
-            // oRule.oTemplate.Kind := afKind;
+            oRule := cTTRule.Create( DB, 'Feed');
+            // need a logged in id ('EgGUI') to update DsB;
+            oRule.oTemplate.Kind := afKind;
             PopulateTTGrid();
         end;
 
@@ -434,7 +434,6 @@ begin
                         break;
                     end; // end of sensorcount = 5 if
 
-                    // SensorGroup[J].Items[I].OnClick := SensorClick;
                     Sensor.OnClick := SensorClick;
 
                     // if () then
@@ -584,6 +583,7 @@ begin
 
     oTTRulesList := cTTRulesList.Create(FXml.GetDataTree);
     oTTRulesList.Build(tfNone, '');
+
     setlength(Table, oTTRulesList.Count + exRows);
 
     if (ControllerID = FIDSTArrivals) then
@@ -596,11 +596,15 @@ begin
         strKind := 'Departures';
     end;
 
-    // ShowMessage('before foreach');
+    oRule := cTTRule.Create( DB, 'Feed');
+    // need a logged in id ('EgGUI') to update DsB;
+    oRule.oTemplate.Kind := afKind;
+
     i := 0;
     for r := 0 to oTTRulesList.Count - 1 do
     begin
         oRule.DbNode := oTTRulesList[r];
+
         // need own object since vst calls GetText a lot
         oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
 
@@ -611,7 +615,6 @@ begin
             Table[i].Flight := oRule.Presentation[tfRuleName];
             Table[i].Ports := oRule.oTemplate.Presentation[ffPorts];
 
-            // ShowMessage(oFlight.Presentation[ffFlight]);
             Table[r].STDate := uCommon.FIDS_StrToDT
               (oRule.oTemplate.Presentation[ffSTdate]);
             Table[r].STime := uCommon.FIDS_StrTOTime
@@ -655,49 +658,7 @@ begin
     end;
 
     setlength(Table, i + exRows);
-
     oTTRulesList.Free;
-
-    {
-      if Node.Index < Cardinal( oTTRulesList.Count ) then
-      begin
-      oRule.DbNode := oTTRulesList[ Node.Index ];  // link oRule to vst row
-      case Column of // flight, kind, time, ports, days
-      0 : CellText := oRule.Presentation[ tfRuleName ];
-      //1 : CellText := fcWindow.oRule.Presentation[ tfPath ];
-      1 : CellText := oRule.Presentation[ tfPath ];
-      2 : CellText := oRule.Presentation[ tfTime ];
-      3 : CellText := oRule.oTemplate.Presentation[ ffPorts ];
-      4 : CellText := oRule.Presentation[ tfDays ];
-      end;
-      end;
-
-
-      for p in flights do
-      begin
-      oFlight.DbNode := p;
-      table[r].Flight := oFlight.Presentation[ffFlight];
-      table[r].Ports := oFlight.Presentation[ffPorts];
-      table[r].ScheduledTime := oFlight.Presentation[ffSTdate] + ' ' + oFlight.Presentation[ffSTime];
-      table[r].EstimatedTime := oFlight.Presentation[ffETdate] + ' ' + oFlight.Presentation[ffETime];
-      if (afKind = fkArrivals) then
-      table[r].Status := oFlight.Presentation[ffAStatus];
-      if (afKind = fkDepartures) then
-      table[r].Status := oFlight.Presentation[ffDStatus];
-
-      table[r].Gates := oFlight.Presentation[ffGates];
-      table[r].Bays := oFlight.Presentation[ffBays];
-      table[r].CheckIns := oFlight.Presentation[ffCheckIns];
-      table[r].Belts := oFlight.Presentation[ffBelts];
-      table[r].Carrier := oFlight.Presentation[ffCarrier];
-      table[r].Terminal := oFlight.Presentation[ffTerminal];
-      table[r].Rego := oFlight.Presentation[ffRego];
-      table[r].CodeShare := oFlight.CodeShare;
-      table[r].DBPath := oFlight.DBpath;
-
-      Inc( r );
-      end;
-    }
 end;
 
 procedure CFlightController.PopulateGrid();

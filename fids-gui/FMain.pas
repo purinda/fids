@@ -327,7 +327,6 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
     fcWindow := CFlightController.Create(fkArrivals, ArrivalFields);
     Connect;
-    //WindowState := wsMinimized;
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
@@ -371,7 +370,6 @@ var
 begin
     if not (fcWindow.isHostRunning) then
     begin
-        // ShowMessage('host closed');
 
         for i := 0 to panelSensors.ControlCount-1 do
         begin
@@ -390,10 +388,6 @@ begin
 
         end;
     end;
-
-
-    //tmrContinuous.Enabled := false;
-
 
 end;
 
