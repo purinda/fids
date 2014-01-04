@@ -331,8 +331,8 @@ object frmWindow: TfrmWindow
   end
   object tmrBackground: TTimer
     OnTimer = tmrBackgroundTimer
-    Left = 389
-    Top = 376
+    Left = 381
+    Top = 384
   end
   object tmrContinuous: TTimer
     Enabled = False

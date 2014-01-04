@@ -1,4 +1,4 @@
-unit VirtualTrees;
+﻿unit VirtualTrees;
 
 // Version 4.8.7
 //
@@ -20267,7 +20267,7 @@ procedure TBaseVirtualTree.DoAfterItemErase(Canvas: TCanvas; Node: PVirtualNode;
 begin
   if Assigned(FOnAfterItemErase) then
     FOnAfterItemErase(Self, Canvas, Node, ItemRect);
-end;
+ end;
 
 //----------------------------------------------------------------------------------------------------------------------
 

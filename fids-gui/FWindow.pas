@@ -83,6 +83,7 @@ type
         procedure tbDummyButtonClick(Sender: TObject);
         procedure Find2Click(Sender: TObject);
         procedure tbClearSearchClick(Sender: TObject);
+        procedure FormShow(Sender: TObject);
         procedure tbbModifyClick(Sender: TObject);
         procedure tbbAddClick(Sender: TObject);
         procedure VSTPaintText(Sender: TBaseVirtualTree;
@@ -484,7 +485,10 @@ begin
     tbBasic.Left := ControlBar1.Width - 90;
 end;
 
-:= ControllerName;
+procedure TfrmWindow.FormShow(Sender: TObject);
+begin
+
+    Caption := ControllerName;
     ControllerMode := FIDSListingMode;
 
     VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
@@ -1935,16 +1939,6 @@ begin
         { Build status change buttons }
         for Status in Statuses do
         begin
-            { Adding in a separator to separate last three status buttons }
-            if (I = (Statuses.Count - (Statuses.Count - 3))) then
-            begin
-                Separator := TToolButton.Create(tbExtended);
-                Separator.Style := tbsSeparator;
-                Separator.Width := 50;
-                Separator.SetParentComponent(tbExtended);
-                tbExtended.Width := tbExtended.Width + 50;
-            end;
-
             Button := TToolButton.Create(tbExtended);
 
             if LowerCase(Status) = 'cancelled' then

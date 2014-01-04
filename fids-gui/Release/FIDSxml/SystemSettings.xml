@@ -62,8 +62,8 @@
 			AC50,ATR42,ATR72,B200,B350,B1900,BE90,C550,C130,C130J,C160,C208,CNA,C310,C402,C404,C421,C550,CL601,CL604,DA90,DH3,DH8,DHT,E110,E120,F27,F28,F100,G3,G4,G5,PA31,SC5,SW3,SWM,330,333,340,717,727,733,734,738,73H,763,764,742,743,744,747B,757,737,747,767,AR7,BA146,DC10
 		</Aircraft>
 		<CarrierTypes> Domestic, International, Dom Cargo, Int Cargo </CarrierTypes>
-		<StatusA> ,Cancelled,Landed,Diverted,On Blocks </StatusA>
-		<StatusD> ,Cancelled, Boarding, Final Call, Closed, Departed, Off Blocks </StatusD>
+		<StatusA> ,Landed, On Blocks, Delayed </StatusA>
+		<StatusD> ,Boarding, Final Call, Closed, Off Blocks, Departed, Delayed </StatusD>
 	</Strings>
 	<Keypad>
 		<Status> ,Closed,Boarding,Departed,Final Call </Status>
@@ -117,7 +117,7 @@
 		</OffBlocks>
 	</DepartureStatus>
 	<MainForm>
-		<Top> 533 </Top>
+		<Top> 489 </Top>
 		<Left> 800 </Left>
 	</MainForm>
 </SystemSettings>
