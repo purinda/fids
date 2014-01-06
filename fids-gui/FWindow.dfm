@@ -40,6 +40,7 @@ object frmWindow: TfrmWindow
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnResize = FormResize
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object stMain: TStatusBar
@@ -329,11 +330,6 @@ object frmWindow: TfrmWindow
       end
     end
   end
-  object tmrBackground: TTimer
-    OnTimer = tmrBackgroundTimer
-    Left = 381
-    Top = 384
-  end
   object tmrContinuous: TTimer
     Enabled = False
     Interval = 2000
@@ -349,7 +345,7 @@ object frmWindow: TfrmWindow
     Left = 464
     Top = 320
     Bitmap = {
-      494C01010200D800DC0118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010200D800E00118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -567,7 +563,7 @@ object frmWindow: TfrmWindow
     Left = 536
     Top = 320
     Bitmap = {
-      494C01011A00B8014C0220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A00B801500220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -4464,12 +4460,5 @@ object frmWindow: TfrmWindow
     MenuColor = clMenu
     Left = 392
     Top = 256
-  end
-  object timerExpanded: TTimer
-    Enabled = False
-    Interval = 1
-    OnTimer = timerExpandedTimer
-    Left = 168
-    Top = 296
   end
 end

@@ -1,0 +1,40 @@
+<TimeStamp> 20140102 231410 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140102 231410  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140102 231410 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140102 231415 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140102 231415  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140103 230954 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140103 230954  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140103 231005 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 556 </ReqEdit>
+		<Path> |SystemSettings|MainForm|Top| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>

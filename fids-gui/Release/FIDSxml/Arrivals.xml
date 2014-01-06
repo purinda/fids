@@ -12,12 +12,13 @@
 		<AT> 20100812 110700 </AT>
 		<Corresponding> Arrivals|QFA421-646|Flights|QFA421 </Corresponding>
 		<Rego> VHZXE </Rego>
-		<Carrier> Domestic </Carrier>
+		<Carrier> International </Carrier>
 		<AirCraft> 766 </AirCraft>
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
 		<Gates> 1,4 </Gates>
 		<AStatus> Landed </AStatus>
 		<Belts> 1,1 </Belts>
+		<Comment> xzc </Comment>
 	</QFA421-646>
 </Arrivals>

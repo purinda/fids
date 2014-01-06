@@ -1,0 +1,84 @@
+<TimeStamp> 20140104 225321 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140104 225321  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140104 225321 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140104 225330 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140104 225330  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140104 231712 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140104 231712  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140104 232710 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> International </ReqEdit>
+		<Prev> Domestic </Prev>
+		<Path> |Arrivals|QFA421-646|Carrier| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140104 232711 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> Comment </ReqNewTag>
+		<Content> xzc </Content>
+		<Path> |Arrivals|QFA421-646| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140105 000327 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140105 000327  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140105 000335 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> On Blocks </ReqEdit>
+		<Prev> Landed </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140105 000341 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> Landed </ReqEdit>
+		<Prev> On Blocks </Prev>
+		<Path> |Arrivals|QFA421-646|AStatus| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140105 183612 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 543 </ReqEdit>
+		<Path> |SystemSettings|MainForm|Top| </Path>
+		<ReqID> windowsapps </ReqID>
+	</Result>
+</EditReply>

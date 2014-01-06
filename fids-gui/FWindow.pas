@@ -14,7 +14,6 @@ uses
 
 type
     TfrmWindow = class(TForm)
-        tmrBackground: TTimer;
         tmrContinuous: TTimer;
         stMain: TStatusBar;
         panelSensors: TFlowPanel;
@@ -57,7 +56,6 @@ type
         tbbAdd: TToolButton;
         tbbDelete: TToolButton;
         ToolButton1: TToolButton;
-    timerExpanded: TTimer;
     amnuCrawlingLines: TAction;
     lblHostUnavailable: TLabel;
 
@@ -78,7 +76,6 @@ type
           var Result: Integer);
         procedure VSTHeaderClick(Sender: TVTHeader; Column: TColumnIndex;
           Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-        procedure tmrBackgroundTimer(Sender: TObject);
         procedure tmrContinuousTimer(Sender: TObject);
         procedure tbDummyButtonClick(Sender: TObject);
         procedure Find2Click(Sender: TObject);
@@ -107,7 +104,6 @@ type
     procedure VSTAfterItemErase(Sender: TBaseVirtualTree; TargetCanvas: TCanvas;
       Node: PVirtualNode; ItemRect: TRect);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-    procedure timerExpandedTimer(Sender: TObject);
     procedure amnuCrawlingLinesExecute(Sender: TObject);
 
     private
@@ -486,6 +482,14 @@ begin
 end;
 
 procedure TfrmWindow.FormShow(Sender: TObject);
+var
+    I: SmallInt;
+    { Statuses related }
+    Status: String;
+    Button, Separator: TToolButton;
+    Statuses: TStringList;
+
+    icon: TIcon;
 begin
 
     Caption := ControllerName;
@@ -527,6 +531,136 @@ begin
     VrClock1.Palette.Low := rgb(0, 20, 20);
     VrClock1.Palette.High := rgb(0, 255, 255);
     pnlClock.Color := rgb(0, 0, 0);
+
+    // -------------------
+
+    // Set Icon Dynamically
+    icon := TIcon.Create;
+    if (ControllerID = FIDSArrivals) then
+    begin
+        colorMapMenu.Color := rgb(0, 180, 235);
+        panelSensors.Color := colorMapMenu.Color;
+        // pnlClock.Color := colorMapMenu.Color;
+        imlMain.GetIcon(2, icon);
+    end;
+
+    if (ControllerID = FIDSDepartures) then
+    begin
+        colorMapMenu.Color := rgb(140, 200, 120);
+        panelSensors.Color := colorMapMenu.Color;
+        // pnlClock.Color := colorMapMenu.Color;
+        imlMain.GetIcon(12, icon);
+    end;
+
+    if (ControllerID = FIDSCheckins) then
+    begin
+        colorMapMenu.Color := rgb(255, 80, 102);
+        panelSensors.Color := colorMapMenu.Color;
+
+        imlMain.GetIcon(7, icon);
+    end;
+
+    if (ControllerID = FIDSBays) then
+    begin
+        colorMapMenu.Color := rgb(0, 160, 130);
+        panelSensors.Color := colorMapMenu.Color;
+
+        imlMain.GetIcon(3, icon);
+    end;
+
+    if (ControllerID = FIDSBelts) then
+    begin
+        colorMapMenu.Color := rgb(255, 255, 180);
+        panelSensors.Color := colorMapMenu.Color;
+
+        imlMain.GetIcon(4, icon);
+    end;
+
+    if (ControllerID = FIDSGates) then
+    begin
+        colorMapMenu.Color := rgb(230, 230, 180);
+        panelSensors.Color := colorMapMenu.Color;
+
+        imlMain.GetIcon(19, icon);
+    end;
+
+    self.icon := icon;
+    // END - Set Icon Dynamically
+
+    I := 0;
+    oRule := cTTRule.Create(DB, fcWindow.FXml.GetUserName);
+    fcWindow.NewConnection(ControllerID);
+
+    Statuses := fcWindow.GetStatuses;
+    if ControllerType = FIDSVerticallyPopulated then
+    begin
+        { Build status change buttons }
+        for Status in Statuses do
+        begin
+            Button := TToolButton.Create(tbExtended);
+
+            if LowerCase(Status) = 'cancelled' then
+                if (afkWindowKind = fkArrivals) then
+                    Button.ImageIndex := 1
+                else
+                    Button.ImageIndex := 14;
+
+            if LowerCase(Status) = 'landed' then
+                Button.ImageIndex := 20;
+            if LowerCase(Status) = 'diverted' then
+                Button.ImageIndex := 16;
+            if LowerCase(Status) = 'on blocks' then
+                Button.ImageIndex := 22;
+            if LowerCase(Status) = 'boarding' then
+                Button.ImageIndex := 5;
+            if LowerCase(Status) = 'final call' then
+                Button.ImageIndex := 17;
+            if LowerCase(Status) = 'closed' then
+                Button.ImageIndex := 9;
+            if LowerCase(Status) = 'departed' then
+                Button.ImageIndex := 13;
+            if LowerCase(Status) = 'off blocks' then
+                Button.ImageIndex := 21;
+            if LowerCase(Status) = 'take off' then
+                Button.ImageIndex := 23;
+            if LowerCase(Status) = 'pre landed' then
+                Button.ImageIndex := 2;
+            if LowerCase(Status) = 'delayed' then
+                Button.ImageIndex := 10;
+
+            Button.SetParentComponent(tbExtended);
+            Button.AutoSize := True;
+            Button.Caption := Status;
+            Button.OnClick := tbDummyButton.OnClick;
+            tbExtended.Width := tbExtended.Width + Button.Width;
+            Inc(I);
+        end;
+
+        // Adding the clear Button on both Arrivals and Departures
+        if (ControllerID = FIDSArrivals) OR (ControllerID = FIDSDepartures) then
+        begin
+            Button := TToolButton.Create(tbExtended);
+            Button.ImageIndex := 8;
+            Button.SetParentComponent(tbExtended);
+            Button.AutoSize := True;
+            Button.Caption := 'Clear';
+            Button.OnClick := tbDummyButton.OnClick;
+        end;
+
+    end
+    else
+    begin
+        { Static set of buttons for }
+        tbExtended.Visible := false;
+    end;
+
+    { Init sensors }
+    fcWindow.InitSensors(panelSensors);
+    //fcWindow.ImplementSensors(self, imlSensors);
+
+    PopulateGrid();
+
+    tbClearSearch.Caption := 'Back to "' + ControllerName + '" view';
 
 end;
 
@@ -1682,24 +1816,31 @@ begin
     begin
 
         if (ControllerID = FIDSArrivals) then
+        begin
             frmEditAnD.SetFields(uCommon.ArrivalFields, uCommon.ArrivalColumns);
+        end;
 
         if (ControllerID = FIDSDepartures) then
+        begin
             frmEditAnD.SetFields(uCommon.DeparturesFields,
               uCommon.DeparturesColumns);
+        end;
 
         if (ControllerID = FIDSCheckins) OR (ControllerID = FIDSGates) OR
           (ControllerID = FIDSBays) OR (ControllerID = FIDSBelts) then
-//frmEdit.SetFields(FlightFields, ColumnNames);
+        begin
             frmEditAnD.SetFields(FlightFields, ColumnNames);
+        end;
 
 
         if (self.ControllerID =FIDSArrivals) OR (self.ControllerID = FIDSDepartures) then
+        begin
             Application.CreateForm(TfrmEditAnD, frmEdit)
+        end
         else
-//Application.CreateForm(TfrmEdit, frmEdit);
+        begin
             Application.CreateForm(TfrmEditAnD, frmEdit);
-
+        end;
 
 
         { Load dropdown box values }
@@ -1788,9 +1929,6 @@ begin
     end
     else
         ShowMessage('No flight chosen');
-
-    // Expand all nodes
-    timerExpanded.Enabled := true;
 end;
 
 procedure TfrmWindow.tbClearSearchClick(Sender: TObject);
@@ -1818,9 +1956,8 @@ begin
         else
             self.SetDetail(ffAStatus, TToolButton(Sender).Caption);
 
-    end;
-
-    if (afkWindowKind = fkDepartures) then
+    end
+    else if (afkWindowKind = fkDepartures) then
     begin
         if (LowerCase(TToolButton(Sender).Caption) = 'clear') then
             self.SetDetail(ffDStatus, '')
@@ -1830,12 +1967,6 @@ begin
     end;
 
     VST.Repaint;
-end;
-
-procedure TfrmWindow.timerExpandedTimer(Sender: TObject);
-begin
-    ExpandNodes();
-    timerExpanded.Enabled := false;
 end;
 
 function TfrmWindow.ExpandNodes():Integer;
@@ -1863,148 +1994,6 @@ begin
     //VST.Show;
 end;
 
-procedure TfrmWindow.tmrBackgroundTimer(Sender: TObject);
-var
-    I: SmallInt;
-    { Statuses related }
-    Status: String;
-    Button, Separator: TToolButton;
-    Statuses: TStringList;
-
-    icon: TIcon;
-begin
-
-    // Set Icon Dynamically
-    icon := TIcon.Create;
-    if (ControllerID = FIDSArrivals) then
-    begin
-        colorMapMenu.Color := rgb(0, 180, 235);
-        panelSensors.Color := colorMapMenu.Color;
-        // pnlClock.Color := colorMapMenu.Color;
-        imlMain.GetIcon(2, icon);
-    end;
-
-    if (ControllerID = FIDSDepartures) then
-    begin
-        colorMapMenu.Color := rgb(140, 200, 120);
-        panelSensors.Color := colorMapMenu.Color;
-        // pnlClock.Color := colorMapMenu.Color;
-        imlMain.GetIcon(12, icon);
-    end;
-
-    if (ControllerID = FIDSCheckins) then
-    begin
-        colorMapMenu.Color := rgb(255, 80, 102);
-        panelSensors.Color := colorMapMenu.Color;
-
-        imlMain.GetIcon(7, icon);
-    end;
-
-    if (ControllerID = FIDSBays) then
-    begin
-        colorMapMenu.Color := rgb(0, 160, 130);
-        panelSensors.Color := colorMapMenu.Color;
-
-        imlMain.GetIcon(3, icon);
-    end;
-
-    if (ControllerID = FIDSBelts) then
-    begin
-        colorMapMenu.Color := rgb(255, 255, 180);
-        panelSensors.Color := colorMapMenu.Color;
-
-        imlMain.GetIcon(4, icon);
-    end;
-
-    if (ControllerID = FIDSGates) then
-    begin
-        colorMapMenu.Color := rgb(230, 230, 180);
-        panelSensors.Color := colorMapMenu.Color;
-
-        imlMain.GetIcon(19, icon);
-    end;
-
-    self.icon := icon;
-    // END - Set Icon Dynamically
-
-    I := 0;
-    tmrBackground.Enabled := false;
-
-    oRule := cTTRule.Create(DB, fcWindow.FXml.GetUserName);
-    fcWindow.NewConnection(ControllerID);
-
-    Statuses := fcWindow.GetStatuses;
-    if ControllerType = FIDSVerticallyPopulated then
-    begin
-        { Build status change buttons }
-        for Status in Statuses do
-        begin
-            Button := TToolButton.Create(tbExtended);
-
-            if LowerCase(Status) = 'cancelled' then
-                if (afkWindowKind = fkArrivals) then
-                    Button.ImageIndex := 1
-                else
-                    Button.ImageIndex := 14;
-
-            if LowerCase(Status) = 'landed' then
-                Button.ImageIndex := 20;
-            if LowerCase(Status) = 'diverted' then
-                Button.ImageIndex := 16;
-            if LowerCase(Status) = 'on blocks' then
-                Button.ImageIndex := 22;
-            if LowerCase(Status) = 'boarding' then
-                Button.ImageIndex := 5;
-            if LowerCase(Status) = 'final call' then
-                Button.ImageIndex := 17;
-            if LowerCase(Status) = 'closed' then
-                Button.ImageIndex := 9;
-            if LowerCase(Status) = 'departed' then
-                Button.ImageIndex := 13;
-            if LowerCase(Status) = 'off blocks' then
-                Button.ImageIndex := 21;
-            if LowerCase(Status) = 'take off' then
-                Button.ImageIndex := 23;
-            if LowerCase(Status) = 'pre landed' then
-                Button.ImageIndex := 2;
-            if LowerCase(Status) = 'delayed' then
-                Button.ImageIndex := 10;
-
-            Button.SetParentComponent(tbExtended);
-            Button.AutoSize := True;
-            Button.Caption := Status;
-            Button.OnClick := tbDummyButton.OnClick;
-            tbExtended.Width := tbExtended.Width + Button.Width;
-            Inc(I);
-        end;
-
-        // Adding the clear Button on both Arrivals and Departures
-        if (ControllerID = FIDSArrivals) OR (ControllerID = FIDSDepartures) then
-        begin
-            Button := TToolButton.Create(tbExtended);
-            Button.ImageIndex := 8;
-            Button.SetParentComponent(tbExtended);
-            Button.AutoSize := True;
-            Button.Caption := 'Clear';
-            Button.OnClick := tbDummyButton.OnClick;
-        end;
-
-    end
-    else
-    begin
-        { Static set of buttons for }
-        tbExtended.Visible := false;
-    end;
-
-    { Init sensors }
-    fcWindow.InitSensors(panelSensors);
-    //fcWindow.ImplementSensors(self, imlSensors);
-
-    PopulateGrid();
-
-    tbClearSearch.Caption := 'Back to "' + ControllerName + '" view';
-end;
-
 procedure TfrmWindow.tmrContinuousTimer(Sender: TObject);
 var
     _control : TControl;
@@ -2012,10 +2001,7 @@ var
 begin
     if not (fcWindow.isHostRunning) then
     begin
-        // ShowMessage('host closed');
-
         // Disable user operation
-//        vst.Enabled := false;
         ControlBar1.Enabled := false;
 
         for i := 0 to panelSensors.ControlCount-1 do
@@ -2162,6 +2148,8 @@ procedure TfrmWindow.VSTAfterPaint(Sender: TBaseVirtualTree;
 begin
     VSTIndex := 0;
     RowHighlight := false;
+
+    ExpandNodes();
 end;
 
 procedure TfrmWindow.VSTChange(Sender: TBaseVirtualTree; Node: PVirtualNode);
