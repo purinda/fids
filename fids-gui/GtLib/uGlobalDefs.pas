@@ -8,9 +8,6 @@ uses
 	SysUtils, Messages, uGT;
 
 const
-	LogFile = 'FIDSxml.log';
-	AdminPassword = '_DII';
-	MiscGraphicsPath = '|Graphics|GIFs|Misc|';
 
 	Attrib_Key 		= 'KeyTag="true"'; // SPECIAL XML ATTRIBUTES
 	Attrib_AutoInc 	= 'AutoInc="';    	// eg <Departures KeyTag="true" AutoInc="765">
@@ -28,7 +25,8 @@ const
     MesgLogin		= '<' + TagLoginReply + '>';
 	TagAcess		= 'Access';
 	TagReqID        = 'ReqID';
-	SystemPassword	= '_DI_system_';
+	TagShutDown		= 'ShutDown';
+    MesgShutDown	= '<'+ TagShutDown + '/>';
 
 	TagRead			= 'ReqRead';     // TagRead     single level
 	TagScan			= 'ReqScan';
@@ -48,14 +46,7 @@ const
 	TagPassWord     = 'PassWord';
 	TagUserName     = 'UserName';
 	TagLogout		= 'LogOut';
-	TagShutDown		= 'ShutDown';
-    MesgShutDown	= '<'+ TagShutDown + '/>';
     TagConnect		= 'Connect';
-
-	// Location IDs     typically TT, Feed, DI_System, CC3, etc  (check in counter #3)
-	RandomFeedID = '9901';    // static feed ids
-	TimeTableID  = '9902';    // todo dynamic
-    LocalIP = '127.0.0.1';
 
 	LSep = '|';  // tree path and list separator                 // SPECIAL AS CHARS in XML content
 	SubNodeBracket = '[';
@@ -68,10 +59,13 @@ const
 type
 	// int = integer;   // typing shortcut
 
-    aLogProc = procedure ( ErrorNo : integer; const s : string ) of object;
-    aBytes = TBytes; // array of byte;
     aConnectionEvent = ( ceNone, ceConnected, ceDbReady, ceLogin, ceEdit, ceDisconnected, ceShutdown );
     apConnectionEventReader = procedure( event : aConnectionEvent; param : string ) of object;
+
+    aLogProc = procedure ( ErrorNo : integer; const s : string ) of object;
+    aBytes = TBytes; // array of byte;
+//    aConnectionEvent = ( ceNone, ceConnected, ceDbReady, ceLogin, ceEdit, ceDisconnected, ceShutdown );
+//    apConnectionEventReader = procedure( event : aConnectionEvent; param : string ) of object;
 
 const                      // error severity and id
 	erNone = 0;
@@ -114,15 +108,18 @@ const                      // error severity and id
 		erUndefinedEditOp = 202;
 		erUnmatchedXMLEndTag = 203;
 		erInvalidXML = 204;
-		erLoadFSfailure = 205;
-		erFormatName = 206;
-		erInvalidIP = 207;
-		erNonUniqueNewKeyNode = 208;
-		erAttemptToCreateNonuniqueKeyNode = 209;
-        erRevertingToBackupFile = 210;
-        erInvalidNewNodeNameOnAutoInc = 211;
-        erBadReqNew = 212;
-        erInvalidDataFormat = 213;
+		erLoadXMLfailure = 205;
+		erLoadStreamFailure = 206;
+		erFormatName = 207;
+		erInvalidIP = 208;
+		erNonUniqueNewKeyNode = 209;
+		erAttemptToCreateNonuniqueKeyNode = 210;
+        erRevertingToBackupFile = 211;
+        erInvalidNewNodeNameOnAutoInc = 212;
+        erBadReqNew = 213;
+        erInvalidDataFormat = 214;
+        erXmlFileNotFound = 215;
+        erUserNotLoggedIn = 216;
 
 	erFatal = 300;
 		erFailedToLoadBackupFile = 301;
@@ -166,13 +163,6 @@ function  FormatDay( day : int = 0 ) : string;
 	result := FormatInt( yr, 4 ) + FormatInt( mo, 2 ) + FormatInt( dy, 2 );
 
 	end;
-
-
-//function  CreateFlightKey( const flightName : string; day : int = 0 ) : string;  deprecated;
-//
-//	begin            // deprecated - use autoint attribute ?
-//	result := flightname + '-' + FormatDay( day );
-//	end;
 
 
 end.

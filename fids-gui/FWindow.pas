@@ -1635,7 +1635,7 @@ begin
             AddNewFlight(false, Flight.DbNode);
 
         // retrieve data and redraw grid
-        fcWindow.PopulateGrid;
+        Delay(2000);
         PopulateGrid;
         VST.Repaint;
     end;
@@ -1742,8 +1742,6 @@ begin
         exit();
     end;
 
-    // ShowMessage(inttostr(VST.GetFirstSelected().Index));
-
     if (self.ControllerType = FIDSHorizontallyPopulated) then
     begin
         if (ErrorOccuredVSTMouseUP) then
@@ -1756,19 +1754,13 @@ begin
 
         for I := 0 to length(fcWindow.Table) - 1 do
         begin
-
             if fcWindow.Table[I].DBPath = SelectedFlightPath then
             begin
                 PDataItem := @fcWindow.Table[I];
                 SelectedFlightPath := PDataItem.DBPath;
             end;
-
-            // if (I >= length(fcWindow.Table)-1) then
-            // exit;
-
         end;
 
-//frmEdit.SetData(PDataItem);
         frmEditAnD.SetData(PDataItem);
         FlightFound := True;
     end;
@@ -1920,10 +1912,8 @@ begin
               UpdateFlightData('txtPorts', TEdit.ClassName, ffPorts);
             }
             // retrieve data and redraw grid
-
-            fcWindow.PopulateGrid;
             PopulateGrid;
-            //VST.Repaint;
+            VST.Repaint;
         end;
 
     end

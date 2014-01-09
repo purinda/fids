@@ -235,7 +235,7 @@ function   cTTRule.New : boolean;
                       // generate a complete rule into the global db tree
     var
         pRulekey, prim, sec : apNode;
-        path, name : string;
+        path, name, r : string;
         ruleBranch : cDbTree;
         field, f : aTimeTableField;
     label
@@ -276,9 +276,9 @@ function   cTTRule.New : boolean;
             end;
     	end;
     path := tagTimeTable;
-    StartRequestNew( pRulekey.NodeName );
-    AddToRequestNew( FormatAllSubNodes( pRulekey, 2 ) );
-    mDB.Broadcast( EndRequestNew(  path, '', '', mReqID ) );
+    r := StartRequestNew( pRulekey.NodeName );
+    r := AddToRequestNew( r, FormatAllSubNodes( pRulekey, 2 ) );
+    mDB.Broadcast( EndRequestNew( r, path, '', '', mReqID ) );
     result := true;
 
 DontBother :

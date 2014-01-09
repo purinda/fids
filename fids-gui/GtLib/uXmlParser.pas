@@ -4,7 +4,7 @@ unit uXmlParser;
 interface      // AllocMem/FreeMem    Main Thread only
 
 uses
-	Classes, uGlobalDefs, uDbTree, uGT;
+	Classes, uGlobalDefs, uDbTree, uGT, uUtils;
 
 //  define GLOBAL if using Global.Log etc
 
@@ -31,7 +31,7 @@ type
 			mScanTagXML    : string;
 			mScanAttributes : string;
 
-            oIn				:TStream;    // parse from file or string
+            oIn				: cCharStream;    // parse from file or string
 			//mStringX : int;      // string as stream stuff  todo fix stream i/f
 			//mStringBuffer : string;
 			mLoadBase : apNode;
@@ -67,9 +67,9 @@ type
 	function    FormatAllSubNodes( pNode : apNode; indent : integer ) : string;
 	function    FormatAllNodes( pNode : apNode; indent : integer ) : string;
 	function    TimeStamp : string;
-	procedure   StartRequestNew( const name : string );
-	procedure   AddToRequestNew( const add : string );
-	function    EndRequestNew( const path, attrib, cont : string; id : string ) : string;
+	function	StartRequestNew( const name : string ) : string;
+	function	AddToRequestNew( const req, add : string ) : string;  // build up any sub tags to add
+	function    EndRequestNew( const req, path, attrib, cont : string; id : string ) : string;
 	function    FormatDelete( const path : string; id : string ) : string;
 	//procedure   FormatDelete( const path : string; id : int );
 	function	FormatEditRequest( path, new, old, id : string ) : string;
@@ -91,13 +91,13 @@ type
 implementation
 
 uses
-	uUtils, Windows, ASCII, Dialogs, SysUtils, StrUtils;
+	Windows, ASCII, Dialogs, SysUtils, StrUtils;
 
 const
     CharNumericPrefix = 'ñ';  // 0xF1 to make numeric tag names leading alpha and therfore legal xml
 
-var
-	sXML : string;  // request building buffer
+//var
+	//sXML : string;  // request building buffer
 
 
 // _____________________________ utilities _____________________________________
@@ -180,33 +180,33 @@ function  TimeStamp : string;
     end;
 
 
-procedure  StartRequestNew( const name : string );
+function	StartRequestNew( const name : string ) : string;
 
 	var
 		tagName : string;
 	begin
 	tagName := MakeTagNameLegal( name, true );
-	sXML := BracketATag( TagEditRequest, ttStart ) + EOL;
-	sXML := sXML + BracketATag( TagNewTag, ttStart, 1 ) + ' ' + tagName + EOL;
+	result := BracketATag( TagEditRequest, ttStart ) + EOL;
+	result := result + BracketATag( TagNewTag, ttStart, 1 ) + ' ' + tagName + EOL;
 	end;
 
 
-procedure  AddToRequestNew( const add : string );  // build up any sub tags to add
+function	AddToRequestNew( const req, add : string ) : string;  // build up any sub tags to add
 
 	begin
-	sXML := sXML + add;
+	result := req + add;
 	end;
 
 
-function  EndRequestNew( const path, attrib, cont : string; id : string ) : string;
+function  EndRequestNew( const req, path, attrib, cont : string; id : string ) : string;
 	begin
-	sXML := sXML + BracketATag( TagNewTag, ttEnd, 1 ) + EOL;
-	if attrib <> '' then  sXML := sXML + FmtTerminalTag( 'Attributes', attrib, 1 ) + EOL;
-    if cont <> '' then  sXML := sXML + FmtTerminalTag( 'Content', Escape( cont ), 1 ) + EOL;
- 	sXML := sXML + FmtTerminalTag( TagPath, PutDelimiters( path ), 1 ) + EOL;
-	sXML := sXML + FmtTerminalTag( TagReqID, id, 1 ) + EOL;
-	sXML := sXML + BracketATag( TagEditRequest, ttEnd );
-	result := sXML;     // and return the whole accummulation
+	result := req + BracketATag( TagNewTag, ttEnd, 1 ) + EOL;
+	if attrib <> '' then  result := result + FmtTerminalTag( 'Attributes', attrib, 1 ) + EOL;
+    if cont <> '' then  result := result + FmtTerminalTag( 'Content', Escape( cont ), 1 ) + EOL;
+ 	result := result + FmtTerminalTag( TagPath, PutDelimiters( path ), 1 ) + EOL;
+	result := result + FmtTerminalTag( TagReqID, id, 1 ) + EOL;
+	result := result + BracketATag( TagEditRequest, ttEnd );
+	// result := sXML;     // and return the whole accummulation
 	end;
 {	eg
     StartRequestNew( pFlt.NodeName, '', '' );
@@ -930,7 +930,7 @@ function   cXmlParser.NextChar() : char;
 //		mEOF := true
 //	else  Result := mStringBuffer[ mStringX ];
 //	Inc( mStringX );
-	mEOF := 0 = oIn.Read( result, sizeof( char ) );
+	mEOF := not oIn.Read( result );
 	end;
 
 
@@ -1218,7 +1218,7 @@ function   cXmlParser.LoadFromStream : boolean;
 		Load;
 		end;
 	except
-		LogEr( erLoadFSfailure, ' invalid XML input in ' + mFileName );  // Slice( source, 1, 50  ) );
+		LogEr( erLoadStreamFailure, ' invalid XML input in ' + mFileName );  // Slice( source, 1, 50  ) );
 		end;
 	Result := mEr = 0;
     end;
@@ -1231,20 +1231,21 @@ procedure cXmlParser.LoadFromFile_( fil : string );
 		fn : string;
 
 	begin
-    if FileExists( Directory + fil ) then  fn := Directory + fil  else  fn := fil;
+    if FileExists( Directory + fil ) then  begin
+    	fn := Directory + fil;  //  else  mEr := erXmlFileNotFound;// fn := fil;
     // if not FileExists( fil ) then  fil := Directory + fil;
-	if FileExists( fn ) then  begin      // todo D2009 proly does all this   ( fil <> '' ) and
+	//if FileExists( fn ) then  begin      // todo D2009 proly does all this   ( fil <> '' ) and
 		mFileName := fn;
 		try  begin
             //fs := aTextFileStream.Create( fil );
-            oIn := aTextFileStream.Create( fn );
+            oIn := cTextFileStream.Create( fn );
             if not LoadFromStream then  ShowMessage( 'Falied to load ' + fn );
         	end;
         finally
             FreeAndNil( oIn );
         	end;
         end
-    else  LogEr( erLoadFSfailure, fn + ' file not found.' );
+    else  LogEr( erXmlFileNotFound, fn + ' file not found. ' + Directory + fil );
 	end;
 
 
@@ -1360,14 +1361,14 @@ function  cXmlParser.LoadFromFile( fil : string ) : apNode;
 function   cXmlParser.LoadFromString( const source : string ) : boolean;
 
 	begin
-    oIn := aStringStream.Create( source );
+    oIn := cStringStream.Create( source );
 	mEOF := false;
     mEr := 0;
 	try  begin
 		Load;
 		end;
 	except
-		LogEr( erLoadFSfailure, ' invalid XML input in ' + Slice( source, 1, 50  ) );
+		LogEr( erLoadStreamFailure, ' invalid XML input in ' + Slice( source, 1, 50  ) );
 		end;
 	Result := mEr = 0;
     FreeAndNil( oIn );

@@ -568,6 +568,9 @@ function isDateEmpty(inp: TDate): Boolean;
 function IsStrANumber(s: string): Boolean;
 function BubbleSort( list: TStringList ): TStringList;
 
+// Used for delaying a command without hogging the app
+procedure Delay(dwMilliseconds: Longint);
+
 // function MessageDlg(const Msg: WideString; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HelpCtx: Longint; DefaultBtn: TMsgDlgBtn = mbNone; Bitmap: TBitmap = nil): Integer; overload;
 
 implementation
@@ -1088,6 +1091,19 @@ end;
   Result := t1;
   end;
 }
+
+procedure Delay(dwMilliseconds: Longint);
+var
+  iStart, iStop: DWORD;
+begin
+  iStart := GetTickCount;
+  repeat
+    iStop := GetTickCount;
+    Application.ProcessMessages;
+    Sleep(1); // addition from Christian Scheffler to avoid high CPU last
+  until ((iStop - iStart) >= dwMilliseconds);
+end;
+
 
 function IntToBin(value: LongInt; digits: integer): string;
 begin

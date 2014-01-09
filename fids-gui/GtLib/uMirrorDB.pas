@@ -12,11 +12,11 @@ for instance, where something like a graph database would be a vastly better fit
 interface
 
 uses
-   uGlobalDefs, uMessageHub, uXmlParser, uDbTree, uGT, Classes, SyncObjs;
+   uGlobalDefs, uMessageHub, uXmlParser, uDbTree, uGT, Classes, SyncObjs, Generics.Collections, SysUtils;
 
 const
-	msInit = 0;   // 0..path count - 1
-	msDone = 1000;
+	msInit = 0;   // mirror state constants  0..path count - 1
+	msDone = MaxInt;
 type
 
 	aDeltaNotify = procedure( const xml : string ) of object;
@@ -29,34 +29,10 @@ type
 	aDBEditop = ( opEdNone, opNew, opRename, opDelete, opEdit );
 
 	cMirrorDB = class( cXmlParser )
-        constructor  Create( hub : cMessageHub; id : string; canMaster : boolean = false;
-            isKey : boolean = true; treeID : word = 0; log : aLogProc = nil );
-        destructor		Destroy;  override;
-		public
-        	ErrorHandler	: procedure ( reply : string; rep : cXmlParser; id : string; er : int ) of object;
-			WaitForCompletion: Boolean;
-			procedure  InitMirror( paths : TStringList );
-			procedure  CancelMirror;
-			function   RegisterReader( const rdr : aDeltaNotify ) : integer;
-			function   DeRegisterReader( const rdr : aDeltaNotify ) : integer;
-			procedure	ClearAllReaders;
-			function   LocalRequestHandler( const request : string; link : apLinkID ) : string;
-			procedure  RequestHandler( const request : string; link : apLinkID );   // aReader - all net DBreq comes via here
-			//function   SendRequest( const mesg : string;  wait : boolean = false;  lid : apLinkID = nil ) : integer;
-			function   Master : boolean;
-			function   Ready : boolean;
-			function   BroadcastRequest( r : string; id : string = '' ) : int;   // now can block
-			procedure  GlobalEdit( pBase : apNode;  NodeName, val : string; id : string = '' );   overload;
-			procedure	GlobalEdit( basePath : string;  NodeName, val : string; id : string = '' );    overload;
-
-			// procedure  GlobalEdit( pBase : apNode;  NodeName, val, old : string; id : string = '' );   overload;
-			procedure  GlobalRename( pBase : apNode;  newName : string; id : string = '' );
-			procedure  GlobalDelete( pBase : apNode; id : string = '' );
-			procedure  GlobalFlag( basePath : string; name : string; state : boolean; id : string = '' );  overload;
-            procedure  GlobalFlag( pBase : apNode; name : string; state : boolean; id : string = '' );     overload;
-			procedure  InitJournal;
-			procedure  FlushJournal;
-			function   Broadcast( const xml : string ) : integer;
+        constructor  Create( hub : cMessageHub; id : string; pCanMaster : boolean = false;
+            isKey : boolean = true; treeID : word = 0; log : aLogProc = nil );  overload;
+        constructor	Create;  overload;
+        destructor	Destroy;  override;
 		private
 			mHub : cMessageHub;
 			oMirrorList : TStringList;
@@ -74,7 +50,6 @@ type
             mJournalDir : string;
             mID, mLastID : string;
             mLastResult : int;
-			mCanMaster : boolean;
             mLoadingFromJournal: Boolean;
             mBlockRequests: Boolean;
             mWaitingUpdate : boolean;
@@ -99,15 +74,47 @@ type
 			procedure  SlaveHandler( const reply : string );
 			procedure  ProcessJournal;
 			procedure  AddToJournal( request : string );
-
-        public
+            procedure	SetHub( hub : cMessageHub );
+			function	GetReady : boolean;
+            procedure	SetReady( rdy : boolean );
+		public
+        	ErrorHandler	: procedure ( reply : string; rep : cXmlParser; id : string; er : int ) of object;
+			WaitForCompletion: Boolean;
+			CanMaster : boolean;
         	OnEvent	: apConnectionEventReader;
+
         	property	OnMasterEdit : aOnEditNotify  read mOnMasterEdit  write mOnMasterEdit;
             property	ID : string  read mID  write mID;
+            property	Hub : cMessageHub  read mHub  write SetHub;
+            property	Ready : boolean  read GetReady  write SetReady;
+
+			procedure	InitMirror( paths : TStringList );
+			procedure	CancelMirror;
+			procedure   RegisterReader( const rdr : aDeltaNotify );
+			function	DeRegisterReader( const rdr : aDeltaNotify ) : integer;
+			procedure	ClearAllReaders;
+			function	LocalRequestHandler( const request : string; link : apLinkID ) : string;
+			procedure	RequestHandler( const request : string; link : apLinkID );   // aReader - all net DBreq comes via here
+			// function   SendRequest( const mesg : string;  wait : boolean = false;  lid : apLinkID = nil ) : integer;
+			function	Master : boolean;
+			procedure   BroadcastRequest( r : string; id : string = '' );  virtual; // now can block
+			procedure	GlobalEdit( pBase : apNode;  NodeName, val : string; id : string = '' );   overload;
+			procedure	GlobalEdit( basePath : string;  NodeName, val : string; id : string = '' );    overload;
+
+			// procedure  GlobalEdit( pBase : apNode;  NodeName, val, old : string; id : string = '' );   overload;
+			procedure	GlobalRename( pBase : apNode;  newName : string; id : string = '' );
+			procedure	GlobalDelete( pBase : apNode; id : string = '' );
+			procedure	GlobalFlag( basePath : string; name : string; state : boolean; id : string = '' );  overload;
+            procedure	GlobalFlag( pBase : apNode; name : string; state : boolean; id : string = '' );     overload;
+			procedure	InitJournal;
+			procedure	FlushJournal;
+			function	Broadcast( const xml : string ) : integer;    // local result distribution
             procedure	LoadObject( obj : TObject; baseNode : apNode );    overload;
 			procedure	LoadObject( obj : TObject; basePath : string );    overload;
             procedure	PersistObject( obj : TObject; baseNode : apNode );    overload;
 			procedure	PersistObject( obj : TObject; basePath : string );    overload;
+
+            procedure	SaveFiles;
 		end;
 
     ifDB = record           // light weight interface generic connect to tree DB stuff
@@ -120,19 +127,50 @@ type
 //        function	GetID() : string;
 //    	end;
 
+	cMultiThreadMirrorDB = class;
+	apWorkTrigger = procedure( sender : cMultiThreadMirrorDB ) of object;
+
+    aUpdate	= record
+        mID : string;
+        mRequest : string;
+    	end;
+    apUpdate = ^ aUpdate;
+
+	cMultiThreadMirrorDB = class( cMirrorDB )   // DB cach - for multi thread readers like http server and formatter
+        constructor	Create;
+        destructor	Destroy;  override;
+        private
+            oUpdateQ	: TQueue< string >;
+            oOutgoingUpdates	: TQueue<aUpdate>;  // StringList;   // reader thread deferred updates
+            oOutgoingLock		: TCriticalSection;
+            mDB			: cMirrorDB;
+			procedure	UpdateRequest( const xml : string );   // aDeltaNotify
+            function	GetOutgoingUpdates : int;
+        public
+            Mode		: ( modLocked, modSync );
+            State		: ( staIdle, staBusy );
+        	oLock		: TMultiReadExclusiveWriteSynchronizer;
+            OnStartWork	: apWorkTrigger;
+			procedure	BroadcastRequest( req, id : string );  override;  // worker threads directs updates into queue
+			procedure	FlushOutgoingUpdates;     // main thread
+        	procedure	FlushUpdateQ;
+        	procedure	CopyDB( db : cMirrorDB );
+        property     	OutgoingUpdates : int  read  GetOutgoingUpdates;
+    	end;
 
 var
 	OpReadTagName : array [ aDBReadop ] of string = ( '????', TagRead, TagScan );
 	OpEditTagName : array [ aDBEditop ] of string = ( '????', TagNewTag, TagRenameTag, TagDelete, TagEdit );
 
 
-function   CollectList( pt : apNode ) : TStringList;
+function	CollectList( pt : apNode ) : TStringList;
+function	DbDateToStr( dt : string ) : string;
 
 
 implementation
 
 uses
-	Forms, SysUtils, Windows, Dialogs, TypInfo, uUtils, uPoller, uPacket, ASCII;
+	Forms, Windows, Dialogs, TypInfo, uUtils, uPoller, uPacket, ASCII;
 
 
 const
@@ -143,20 +181,174 @@ const
 	//		if mPipeLogins[ mp.mesgPipeID ] <> '' then  begin
 
 
-constructor  cMirrorDB.Create( hub : cMessageHub; id : string; canMaster : boolean = false;
+
+function	DbDateToStr( dt : string ) : string;
+
+	begin
+    if Length( dt ) >= 8 then  begin
+    	if dt[ 7 ] = '0' then  result := Copy( dt, 8, 1 )  else  result := Copy( dt, 7, 2 );
+		result := result + '/';
+        if dt[ 5 ] = '0' then  result := result + Copy( dt, 6, 1 ) else  result := result + Copy( dt, 5, 2 );   // can be 'TBA' etc
+		result := result + '/' + Copy( dt, 1, 4 );
+    	end
+    else  result := dt;
+    end;
+
+
+constructor	cMultiThreadMirrorDB.Create;        // for multi thread readers like http server and formatter
+
+	begin
+    inherited;
+    oLock := TMultiReadExclusiveWriteSynchronizer.Create;
+    oUpdateQ := TQueue< string >.Create;
+    oOutgoingUpdates := TQueue< aUpdate >.Create;   // reader thread deferred updates
+    oOutgoingLock := TCriticalSection.Create;
+    CanMaster := false;
+    end;
+
+
+destructor	cMultiThreadMirrorDB.Destroy;
+
+	begin
+    oLock.Free;
+    oUpdateQ.Free;
+    oOutgoingUpdates.Free;
+    oOutgoingLock.Free;
+    inherited;
+    end;
+
+
+procedure	cMultiThreadMirrorDB.CopyDB( db : cMirrorDB );
+
+	begin
+    CopySubs( db.GetRoot );
+    mDB := db;
+    mDB.RegisterReader( UpdateRequest );   // call update request on deltas
+    end;
+
+
+procedure	cMultiThreadMirrorDB.FlushUpdateQ;  // main thread updates MT data here
+
+	var
+    	req : string;
+	begin
+    oLock.BeginWrite;
+    try  begin
+        while oUpdateQ.Count > 0 do  begin
+            req := oUpdateQ.Dequeue;
+            LocalRequestHandler( req, nil );
+            end;
+    	end;
+    finally
+        oLock.EndWrite;
+    	end;
+    end;
+
+
+procedure	cMultiThreadMirrorDB.BroadcastRequest( req, id : string );  // override
+
+	var
+    	request : aUpdate;     // so global edit etc will work
+    begin
+    request.mID := id;
+    request.mRequest := req;
+    oOutgoingLock.Acquire;
+    try  oOutgoingUpdates.Enqueue( request );
+    finally  oOutgoingLock.Release;   end;
+    end;
+
+
+procedure	cMultiThreadMirrorDB.FlushOutgoingUpdates;    // typicaly called by main thread to batch update
+
+	var
+    	request : aUpdate;     // so global edit etc will work
+        wfc : boolean;
+	begin
+    wfc := mDB.WaitForCompletion;
+    mDB.WaitForCompletion := true;
+    try  begin
+        // updates will trickle through to MT copy of DB via  cMultiThreadMirrorDB.UpdateRequest
+        while oOutgoingUpdates.Count > 0 do   begin
+            oOutgoingLock.Acquire;
+            try  request := oOutgoingUpdates.Dequeue;
+            finally  oOutgoingLock.Release;  end;
+            mDB.BroadcastRequest( request.mRequest, request.mID );
+            end;
+        end;
+    finally
+        mDB.WaitForCompletion := wfc;
+    	end;
+    end;
+
+
+procedure	cMultiThreadMirrorDB.UpdateRequest( const xml : string );  // aDeltaNotify called in response to global db updates to copy updates into copy MT db
+
+	var
+    	prevReq : string;
+	begin
+    if Mode = modSync then  begin
+    	if State = staIdle then  begin
+            while oUpdateQ.Count > 0 do  begin
+                prevReq := oUpdateQ.Dequeue;
+                LocalRequestHandler( prevReq, nil );
+                end;
+            LocalRequestHandler( xml, nil );
+            State := staBusy;
+            if Assigned( OnStartWork ) then  OnStartWork( self );
+        	end
+        else  oUpdateQ.Enqueue( xml );
+     	end
+
+    else  begin  // modLock    locking mode so lock out reader threads during updates
+        oLock.BeginWrite;
+        try  SlaveHandler( xml );
+        finally  oLock.EndWrite;  end;
+    	end;
+    end;
+
+
+function	cMultiThreadMirrorDB.GetOutgoingUpdates : int;
+
+	begin
+    result := oOutgoingUpdates.Count;
+    end;
+
+//______________________________________ SINGLE THREAD __________________________________________
+
+
+constructor  cMirrorDB.Create( hub : cMessageHub; id : string; pCanMaster : boolean = false;
 				isKey : boolean = true; treeID : word = 0; log : aLogProc = nil );
 
 	begin
 	inherited Create( treeID, isKey, log );
-	mHub := hub;    if hub <> nil then  mHubID := hub.RegisterReader( RequestHandler );
-	mCanMaster := canMaster;
+	mHub := hub;
+    if hub <> nil then  mHubID := hub.RegisterReader( RequestHandler )
+    else  mMirrorState := msDone;  // stand alone loaded
+	CanMaster := pCanMaster;
 	mRequesterID := id;
 	oMirrorList := TStringList.Create;
-	mMirrorState := msDone;
+	// mMirrorState := msDone;
 	oLoggedIn := TStringList.Create;
 	oLoggedIn.Sorted := true;
 	oDeltaNotify := TList.Create;
 	// MessageHub.mMirrorDB := self;
+	end;
+
+
+constructor	cMirrorDB.Create;      // overload;  copy/slave version
+
+	begin
+	inherited Create( 69, true );
+	oDeltaNotify := TList.Create;
+    CanMaster := true;
+    end;
+
+
+procedure	cMirrorDB.SetHub( hub : cMessageHub );
+
+	begin
+	mHub := hub;
+    if hub <> nil then  mHubID := hub.RegisterReader( RequestHandler );
 	end;
 
 
@@ -194,14 +386,16 @@ procedure	cMirrorDB.ClearAllReaders;
     end;
 
 
-function	cMirrorDB.RegisterReader( const rdr : aDeltaNotify ) : integer;  // to catch 'local' DB deltas
+procedure	cMirrorDB.RegisterReader( const rdr : aDeltaNotify );  // to catch 'local' DB deltas   : integer
 
 	var
 		rp : apDeltaNotify;
+        //p : pointer;
 	begin
-	New( rp );  //  := AllocMem( SizeOf( aDeltaNotify ) );
+    New( rp );  //  := AllocMem( SizeOf( aDeltaNotify ) );
 	rp^ := rdr;
- 	Result := oDeltaNotify.Add( rp );
+    // was result := oDeltaNotify.Add( rp );
+ 	oDeltaNotify.Insert( 0, rp );  // build reverse list to allow for reverse reading order
 	end;
 
 
@@ -271,7 +465,8 @@ procedure  cMirrorDB.InitMirror( paths : TStringList );
         path : string;
 	begin
 	Clear;
-	oMirrorList.Clear;
+    if oMirrorList = nil then  oMirrorList := TStringList.Create
+	else  oMirrorList.Clear;
     // oMirrorList.Sort;
 	if Assigned( paths ) then  begin
 		for path in paths do  begin
@@ -304,7 +499,7 @@ procedure  cMirrorDB.NextMirrorRequest;
 
     if mMirrorState >= oMirrorList.Count then  begin
     	mMirrorState := msDone;
-        InitJournal;
+        InitJournal;     // slaves have db now
     	end;
 	end;
 
@@ -652,16 +847,12 @@ procedure  cMirrorDB.NewOp( req : cDbTree; pBase : apNode; lPath : TStringList; 
 
 	var
 		atrib, nam, cont : string;
-		pNew, pDest, pName : apNode; //  , pPath
-        //list : TStringList;
+		pNew, pDest, pName : apNode;
 	begin
     if pBase <> nil then  begin
-        //pPath := FindName( pBase, TagPath );
         pName := FindName( pBase, TagNewTag );
         if NodeContent( pName ) <> '' then  begin   //  ( pPath <> nil ) and (   )
-        	//list := CollectList( pPath );
         	pDest := ForcePath( lPath );
-            //list.Free;
             nam := MakeTagNameLegal( ReadContent( pBase, TagNewTag ), true );
             if ( pDest <> nil ) and ( nam <> '' ) then  begin
                 atrib := ReadContent( pBase, 'Attributes' );
@@ -676,7 +867,6 @@ procedure  cMirrorDB.NewOp( req : cDbTree; pBase : apNode; lPath : TStringList; 
                         end;
                     pNew.Content := cont;
                     Inc( mNewOpNodeCount );
-                    // pr := req.mCur;          // and replicate all sub tags from request
                     CopySubs( pName, pNew );  	//  Replicate( request tree to new );
                     end;
                 end;
@@ -848,7 +1038,7 @@ procedure  cMirrorDB.HandleAEditRequest( req : cDbTree );
 	pr := req.GetRoot;                      // handle either a request or result mesg
     pbase := FindName( pr, TagEditRequest );
     if pbase = nil then  begin
-        pbase := FollowPath( '|EditReply|Result|', pr );
+        pbase := FollowPath( '|EditReply|Result|', pr );   // adapt to result format
     	end;
 
     if pbase <> nil then  begin   // despatch to appropriate handler
@@ -884,44 +1074,49 @@ function   cMirrorDB.ValidateUser( req : cXmlParser ) : boolean;  // todo
 		x : int;
 	begin
 	result := false;
-	pNode := FindNodeMulti( req.GetRoot, TagReqID );
-	if pNode <> nil then  begin
-    	if pNode.Content = SysID then  result := true
-		else result := oLoggedIn.Find( pNode.Content, x );
-		end;
+    pNode := FindNodeMulti( req.GetRoot, TagReqID );
+    if pNode <> nil then  begin
+        if pNode.Content = SysID then  result := true
+    	else if oLoggedIn <> nil then  begin
+            result := oLoggedIn.Find( pNode.Content, x );
+            end
+    	else  result := true;  // $$$ todo debug bypass login
+    	end;
+    if not result then  mEr := erUserNotLoggedIn;
 	end;
 
 
-function   cMirrorDB.BroadcastRequest( r : string; id : string = '' ) : int;
+procedure   cMirrorDB.BroadcastRequest( r : string; id : string = '' );
 
     var
         tick : int;
 	begin
-    if not mBlockRequests then  begin
-    	result := 0;   mLastID := '';
-        mHub.Broadcast( r, nil );  // broadcast response to all
-        if not self.Master and WaitForCompletion then  begin
-            tick := 0;
-            if id = '' then  id := mID;
-            mBlockRequests := true;
-            while mLastID <> id do  begin
-                Sleep( 10 );
-                Application.ProcessMessages;
-                Inc( tick );
-                if tick > 500 then  begin
-                    mLastResult := erConnectionTimeOut;
-                    LogEr( erConnectionTimeOut, 'Connection TimeOut' );
-                    break;
-                	end;
+    if mHub <> nil then  begin
+        if not mBlockRequests then  begin
+            mLastID := '';
+            mHub.Broadcast( r, nil );  // broadcast response to all
+            if not self.Master and WaitForCompletion then  begin
+                tick := 0;
+                if id = '' then  id := mID;
+                mBlockRequests := true;
+                while mLastID <> id do  begin
+                    Sleep( 10 );
+                    Application.ProcessMessages;
+                    Inc( tick );
+                    if tick > 500 then  begin
+                        mLastResult := erConnectionTimeOut;
+                        LogEr( erConnectionTimeOut, 'Connection TimeOut' );
+                        break;
+                        end;
+                    end;
+                mBlockRequests := false;
                 end;
-            mBlockRequests := false;
-            result := mLastResult;
+            end
+        else  begin
+            ShowMessage( 'DB still busy !' );
             end;
     	end
-    else  begin
-    	ShowMessage( 'DB still busy !' );
-        result := -1;
-    	end;
+    else  LocalRequestHandler( r, nil );  // stand alone mode
     end;
 
 
@@ -940,8 +1135,8 @@ procedure	cMirrorDB.GlobalEdit( basePath : string;  NodeName, val : string; id :
             end;
     	end
     else  begin
-    	StartRequestNew( NodeName );
-        r := EndRequestNew( basePath, '', val, id ); // SysID
+    	r := StartRequestNew( NodeName );
+        r := EndRequestNew( r, basePath, '', val, id ); // SysID
     	end;
     if r <> ''  then  BroadcastRequest( r, id );  // mHub.Broadcast( r, nil );  // broadcast response to all
     end;
@@ -961,8 +1156,8 @@ procedure	cMirrorDB.GlobalEdit( pBase : apNode;  NodeName, val : string; id : st
             end;
     	end
     else  begin
-    	StartRequestNew( NodeName );
-        r := EndRequestNew( ResolvePathStr( pBase ), '', val, id ); // SysID
+    	r := StartRequestNew( NodeName );
+        r := EndRequestNew( r, ResolvePathStr( pBase ), '', val, id ); // SysID
     	end;
     if r <> ''  then  BroadcastRequest( r, id );  // mHub.Broadcast( r, nil );  // broadcast response to all
     end;
@@ -1022,11 +1217,11 @@ procedure  cMirrorDB.GlobalFlag( basePath : string; name : string; state : boole
     begin
     if ( basePath <> '' )  then  begin
     	if id = '' then  id := mID;
-        path := basePath + '|' + name + '|';
+        path := basePath + name + '|';
         if state then  begin
         	if FollowPath_( path ) = nil then  begin    // one flag is enough
-            	StartRequestNew( Name );
-            	r := EndRequestNew( basePath, '', '', id );
+            	r := StartRequestNew( Name );
+            	r := EndRequestNew( r, basePath, '', '', id );
             	end;
             end
         else  begin
@@ -1048,8 +1243,8 @@ procedure  cMirrorDB.GlobalFlag( pBase : apNode; name : string; state : boolean;
     	if id = '' then  id := mID;
         if state then  begin
         	if FindName( pBase, name ) = nil then  begin    // one flag is enough
-            	StartRequestNew( Name );
-            	r := EndRequestNew( ResolvePathStr( pBase ), '', '', id );
+            	r := StartRequestNew( Name );
+            	r := EndRequestNew( r, ResolvePathStr( pBase ), '', '', id );
             	end;
             end
         else  begin
@@ -1161,7 +1356,7 @@ procedure  cMirrorDB.ProcessLogin( const fromNet : string );
 		x, er : int;
         me : aLinkID;
 	begin         //       process <LoginRequest> .....
-	if ( mHub.Master ) and ( fromNet <> '' ) then  begin
+	if Master and ( fromNet <> '' ) then  begin  // mHub.
 		//hd := '';
         accept := false;
 		req := cXmlParser.Create;
@@ -1223,10 +1418,13 @@ procedure  cMirrorDB.ProcessLogin( const fromNet : string );
 						end
 					else  begin
 						er := erNone;
+                        if oLoggedIn = nil then  begin  oLoggedIn := TStringList.Create;  oLoggedIn.Sorted := true;  end;
 						if not oLoggedIn.Find( id, x ) then  oLoggedIn.Add( id );
 						end;
-                    me.fLink := alLocal;  me.fID := mHubID;
-                    mHub.Broadcast( FormatLogInReply( id, access, er ), @ me );  // broadcast response to all but me
+                    if mHub <> nil then  begin
+                    	me.fLink := alLocal;  me.fID := mHubID;
+                    	mHub.Broadcast( FormatLogInReply( id, access, er ), @ me );  // broadcast response to all but me
+                        end;
 					end;
 				end;
 			end;
@@ -1257,16 +1455,24 @@ procedure  cMirrorDB.ProcessLogin( const fromNet : string );
 function   cMirrorDB.Master : boolean;
 
 	begin
-	if Assigned( mHub ) then  result := mHub.Master and mCanMaster
-	else  result := mCanMaster;
+	if Assigned( mHub ) then  result := mHub.Master and CanMaster
+	else  result := true; // mCanMaster;
 	end;
 
 
-function   cMirrorDB.Ready : boolean;
+function   cMirrorDB.GetReady : boolean;
 
 	begin
-	result := mHub.Master or mHub.Connected and ( oMirrorList.Count > 0 ) and ( mMirrorState = msDone );   // finished initial scans
+	// result := mHub.Master or mHub.Connected and ( oMirrorList.Count > 0 ) and ( mMirrorState = msDone );   // finished initial scans
+    result := mMirrorState = msDone;
 	end;
+
+
+procedure	cMirrorDB.SetReady( rdy : boolean );
+
+	begin
+    if rdy then   mMirrorState := msDone;  // typically loaded from files - master or standalone
+    end;
 
 
 procedure cMirrorDB.RequestHandler( const request : string; link : apLinkID );   // all DBreq comes via here
@@ -1277,7 +1483,7 @@ procedure cMirrorDB.RequestHandler( const request : string; link : apLinkID );  
 	begin
 	if Master then  begin
 		reply := LocalRequestHandler( request, link );
-		if reply <> '' then  begin
+		if ( mHub <> nil ) and ( reply <> '' ) then  begin
             me.fLink := alLocal;  me.fID := mHubID;
         	mHub.Broadcast( reply, @ me );  // broadcast response to all but me
             end;
@@ -1323,7 +1529,7 @@ procedure  cMirrorDB.SlaveHandler( const reply : string );
 			end
 		else  if mMirrorState < msDone then  begin    // load up initial scans ie <DataReply> messages
 			if PosN( TagDataReply, reply, 60 ) > 0 then  begin
-				rep := cXmlParser.Create( GetRoot.ID, false, mLog );
+				rep := cXmlParser.Create( GetRoot.ID, false, Log );
 				if rep.LoadFromString( reply ) then  begin
                     if ResultOK( rep.GetRoot ) then  begin
 						AddABranch( rep );
@@ -1351,7 +1557,7 @@ function  cMirrorDB.LocalRequestHandler( const request : string; link : apLinkID
 		intro := Slice( request, 1, Length( TagDataRequest ) * 2 );
 
 		if Pos( TagDataRequest, intro ) > 0 then  begin
-			req := cXmlParser.Create( 10, false, mLog );
+			req := cXmlParser.Create( 10, false, Log );
 			req.LoadFromString( request );    ed := false;
             mEr := req.mEr;
 			pr := req.GetRoot;
@@ -1363,20 +1569,21 @@ function  cMirrorDB.LocalRequestHandler( const request : string; link : apLinkID
 				end;
 			end
 		else if Pos( TagEditRequest, intro ) > 0 then  begin
-			req := cXmlParser.Create( 11, false, mLog );
+			req := cXmlParser.Create( 11, false, Log );
 			req.LoadFromString( request );
             mEr := req.mEr;
+            ed := true;
 			if ( mEr = 0 ) and ValidateUser( req ) then  begin
-				pr := req.GetRoot;
-				if ( pr <> nil ) and ( pr.SubNodes <> nil ) and ( pr.SubNodes.Count > 0 ) then  begin
-					pNode := pr.SubNodes[ 0 ];
-					if pNode.NodeName = TagEditRequest then  begin
-						ed := true;
-						HandleAEditRequest( req );
-                        if Assigned( mOnMasterEdit ) then  mOnMasterEdit( req );
-						end;
-					end;
-				end;
+				//pr := req.GetRoot;
+				//if ( pr <> nil ) and ( pr.SubNodes <> nil ) and ( pr.SubNodes.Count > 0 ) then  begin
+					//pNode := pr.SubNodes[ 0 ];
+                pNode := FindName( req.GetRoot, TagEditRequest );
+                if pNode <> nil then  begin
+                    HandleAEditRequest( req );
+                    if Assigned( mOnMasterEdit ) then  mOnMasterEdit( req );
+                    end;
+                end;
+            if mEr <> 0 then  Log( mEr, 'EditRequest : ' + NodeContent( req.FollowPath_( '|EditRequest|ReqID|' ) ) );
 			end
 		else  if Pos( TagLoginRequest, intro ) > 0 then  begin
 			ProcessLogin( request );
@@ -1399,6 +1606,24 @@ function  cMirrorDB.LocalRequestHandler( const request : string; link : apLinkID
 			end;
 		end;
 	end;
+
+
+procedure	cMirrorDB.SaveFiles;
+
+	var
+    	saves : TStringList;
+        s, name : string;
+        x : int;
+	begin
+    if HasContent( '|SystemConfig|Save|', s ) then  begin
+    	x := 1;
+        saves := BuildParamsL( s, x );
+        for name in saves do  begin
+            SaveDBToFile( FindName( GetRoot, name ) );
+        	end;
+    	end
+    else  SaveDBToFiles( '*' );
+    end;
 
 {   sample traffic
 

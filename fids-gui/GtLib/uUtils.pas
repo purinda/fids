@@ -3,7 +3,7 @@ unit uUtils;
 interface
 
 uses
-	uGT, Classes, TypInfo, Types;  //  Graphics, Controls,
+	uGT, Classes, TypInfo, Types, SysUtils;  //  Graphics, Controls,
 
 const
 	ListSep = ',';   // formatter content list separator
@@ -11,29 +11,39 @@ const
 
 type
 	aStreamDirection = ( sdNone, sdRead, sdWrite );
+    cCharStream = class // ( TStream )
+        public
+        	//constructor Create( name : string );   abstract;
+            //destructor	Destroy;   abstract;
+            function    Read( var ch : char ) : boolean;   virtual;  abstract;// override;   // next char
+            function	Write( ch : char ) : boolean;   virtual;  abstract;// override;
+    	end;
 
-	aTextFileStream = class ( TStream )
+	cTextFileStream = class( cCharStream ) // ( TStream )
         public
         	constructor Create( name : string );
             destructor	Destroy;  override;
-            function    Read( var buf; count : longint ) : longint;   override;   // next char
-            function	Write( const Buffer; Count: Longint ) : Longint;  override;
+            function    Read( var ch : char ) : boolean;  override;   // next char
+            function	Write( ch : char ) : boolean;   override;
         private
         	mTF : textfile;
             mBuf : string;
-    		mX: Integer;
+    		oFile : TFileStream;
+    		//mX: Integer;
+        	mEncoding : ( enNone, enUTF8, enUTF16 );   // type of read file
             mDirection : aStreamDirection;
+    		mName: string;
     	end;
 
-	aStringStream = class ( TStream )
+	cStringStream = class ( cCharStream )
         public
         	constructor Create( source : string );
             destructor	Destroy;  override;
-            function    Read( var buf; count : longint ) : longint;   override;   // next char
-            function	Write( const Buffer; Count: Longint ) : Longint;  override;
+            function    Read( var ch : char ) : boolean;  override;   // next char
+            function	Write( ch : char ) : boolean;   override;
         private
             mBuf : string;
-    		mX: Integer;
+    		mX	: Integer;
             //mDirection : aStreamDirection;
     	end;
      aKeyState = ( ksShift, ksControl, ksAlt );
@@ -41,8 +51,8 @@ type
 
 
 
-function   Min( a, b : int ) : int;
-function   Max( a, b : int ) : int;
+function	Min( a, b : int ) : int;   // use System.Math
+function	Max( a, b : int ) : int;
 function    CountBits( val : card ) : card;
 function	RectWH( ALeft, ATop, w, h : Integer): TRect;
 
@@ -57,6 +67,7 @@ function   Slice( const src : string; index : integer; count : integer ) : strin
 procedure  WindowsPath( var s : string );
 function   PosN( const substr, src : string; limit : integer ) : int;
 function   IsAlpha( c : char ) : boolean;
+function   IsAlphaN( c : char ) : boolean;   inline;
 function   IsDecimal( c : char ) : boolean;  overload;
 function   IsLowerCase( c : char ) : boolean;
 function   IsUpperCase( c : char ) : boolean;
@@ -64,13 +75,17 @@ function   IsAlphaNumeric( c : char ) : boolean;
 function   StrIndex( s : string; x : int = -1 ) : char;
 function   Gap( const s : string ) : string;
 function   GetAlphas( const s : string; var index : integer ) : string;
+function	GetHexNibble( ch : char; out val : int ) : boolean;
+function	GetHexByte( const s : string; var x : int ) : byte;
 function   GetHex( const s : string; var index  : integer ) : int;  //  F00BAA or , $F00BAA
 function   GetInt( const s : string; var index : integer ) : integer;
 function   GetBin( const s : string; var index  : integer ) : int;  //  F00BAA or , $F00BAA
 function   Decimal( const s : string; var index : cardinal ) : cardinal;  overload;
 function   Decimal( const s : string; var index : int ) : int;  overload;
 function	StrX( const s : string; const x : int ) : char;  inline;  // safe string indexing
+function	PosLast( ch : char;  const s : string ) : int;
 function	IntToStrN( val, n : int ) : string;   // eg 007
+function	UTF8toChars( fs : TStream; out ch : char ) : boolean;   // UTF8 convertion on byte stream
 
 function	Cash( amt : currency; show0 : boolean = false ) : string;
 function	TryCashToCurr( txt : string; var amt : currency ) : boolean;
@@ -82,7 +97,8 @@ function   ListIndex( const item, list : string ) : integer;
 function   ListItem( const list : TStringList; index : int ) : string;    overload;
 function   ListItem( const list : string; index : int ) : string;         overload;
 function   BuildParamsL( const params : string; var index : int; sep : char = ListSep ) : TStringList;
-function   ListToStr( const list : TStringList ) : string;
+function   ListToStr( const list : TStringList ) : string;   overload;
+function   ListToStr( const vals : array of int ) : string;   overload;
 function   ListsEqual( const listA, listB : TStrings ) : boolean;
 function   IncludeInList( const item, list : string ) : string;
 function   ExcludeFromList( const item, list : string ) : string;
@@ -94,7 +110,7 @@ function   UnCamel( const n : string; gapChar : char = ' ' ) : string;
 function   EnumToStr( val : Integer; pEnumTypePtr : PTypeInfo; unCaml : boolean = true ) : string;  // eg TypeInfo( aSortPref )
 function   EnumToSL( pEnumTypePtr : PTypeInfo ) : TStringList;
 function   FindEnum( nam : string; pEnumTypePtr : PTypeInfo ) : int;
-function   Trim( const s : string ) : string;
+//function   Trim( const s : string ) : string;  use SysUtils
 procedure  TrimThis( var s : string );
 
 procedure  CopyStrList( const src : TStringList; dest : TStringList );
@@ -133,6 +149,7 @@ type
 
 function	CharsToStr( const buf : array of char ) : string;
 function	NewestFile( directory, match : string; numbered : boolean = false  ) : string;
+function	SlashDirectory( directory : string ) : string;
 function	OldestFile( directory, match : string; numbered : boolean = false ) : string;
 function	CountFiles( directory, match : string; numbered : boolean = false ) : int;
 procedure	ScanDirectory( directory, match : string; OnEachFile : aOnEachFile; subs : boolean = true );
@@ -143,7 +160,7 @@ procedure	EndSlashPath( dir : string );
 function	PathList( path : string ) : TStringList;
 function	PathFromList( path : TStringList ) : string;
 function    GetExePath() : string;
-procedure	WindowsOpenFile( name : string );
+procedure	WindowsOpenFile( name : string );  // shellexecute
 
 type
 {$POINTERMATH ON}
@@ -158,71 +175,98 @@ implementation
 
 
 uses
-	Windows, SysUtils, ShellAPI, Character, Winsock, ShlObj, Registry, ASCII; // Forms,
+	Windows, ShellAPI, Character, Winsock, ShlObj, Registry, ASCII, Dialogs; // Forms,
 
 
 // _______________________________ S T R E A M __________________________________
 
-constructor aTextFileStream.Create( name : string );
+constructor cTextFileStream.Create( name : string );
 
 	begin
-    AssignFile( mTF, name );
+    mName := name;
+    //AssignFile( mTF, name );
     // Reset( mTF );
-    mX := 1;
+    //mX := 1;
+
     end;
 
 
-destructor	aTextFileStream.Destroy;
+destructor	cTextFileStream.Destroy;
 
 	begin
-    if mDirection = sdWrite  then  WriteLn( mTF, mBuf );
-    CloseFile( mTF );
+    if mDirection = sdWrite  then  begin
+    	WriteLn( mTF, mBuf );
+    	CloseFile( mTF );
+    	end;
+    oFile.Free;
     end;
 
 
-function    aTextFileStream.Read( var buf; count : longint ) : longint;
-
-	begin
-    if mDirection <> sdRead  then  begin  Reset( mTF );  mDirection := sdRead;  end;
-
-    result := 0;
-	if not EOF( mTF ) and ( mX > Length( mBuf ) ) then  begin
-        ReadLn( mTF, mBuf );
-        mBuf := mBuf + EOL;
-        mX := 1;
-        end;
-
-    if mX <= Length( mBuf ) then  begin
-        result := SizeOf( char );
-        Move( mBuf[ mX ], buf, Result);  // buf := mBuf[ mX ];
-        Inc( mX );
-        end
-    end;
-
-
-
-function    aTextFileStream.Write( const Buffer; Count: Longint ) : Longint;    // not tested
+function    cTextFileStream.Read( var ch : char ) : boolean;
 
 	var
-    	ch : char;
-        x : int;
+    	h  : THandle;
+        buf : array [ 0..3 ] of byte;
+        skip, c : integer;
 	begin
-    if mDirection <> sdWrite  then  begin  Rewrite( mTF );  mDirection := sdWrite;  end;
+    if mDirection <> sdRead  then  begin        // self initialize     InStream := TStringStream.Create(S, TEncoding.UTF8);
+        mDirection := sdRead;
+        h := FileOpenRead( mName );                       // check header for clues of file type
+        skip := 0;
+        try
+        	try
+                c := FileRead( h, buf[ 0 ], SizeOf( buf ) );
 
-    result := count;    x := 0;
-    while x < count do  begin
-        Move( ( PByte( int( buffer ) + x ) )^, ch, Sizeof( ch ) );  // ch from buffer
-        mBuf := mBuf + ch;
-        if ch = lf then  begin
-            WriteLn( mTF, mBuf );
-            mBuf := '';
+                mEncoding := enUTF8;
+                if ( c >= 2 ) and ( buf[ 0 ] = $FF ) and ( buf[ 1 ] = $FE ) then  begin  // BOM = U+FEFF
+                    skip := 2;
+                    mEncoding := enUTF16;
+                    end
+                else if ( c >= 2 ) and ( buf[ 0 ] >= Ord( ' ' ) ) and ( buf[ 1 ] = 0 ) and ( buf[ 3 ] = 0 ) then  begin  // '<?xml.....    ( buf[ 0 ] = Ord( '<' ) ) and
+                    mEncoding := enUTF16;
+                    end
+                else if ( c >= 3 ) and ( buf[ 0 ] = $EF ) and ( buf[ 1 ] = $BB ) and ( buf[ 2 ] = $BF ) then  begin  // BOM = U+FEFF
+                    skip := 3;
+                    mEncoding := enUTF8;
+                    end;
+            except  ShowMessage( 'could not open ' + mName );  // $$$
+
+            end;
+        finally
+        	CloseHandle( h );
         	end;
-        x := x + 2;
+
+        oFile := TFileStream.Create( mName, fmOpenRead );
+        oFile.Read( buf, skip );  // skip BOM
+        end;
+
+    case mEncoding of
+    	enUTF16 : begin
+        	result := oFile.Read( ch, SizeOf( char ) ) = SizeOf( char );
+        	end
+        else  begin  //  enUTF8
+            result := UTF8toChars( oFile, ch );
+        	end;
     	end;
     end;
 
 
-constructor aStringStream.Create( source : string );
+
+function    cTextFileStream.Write( ch : char ) : boolean;   // not tested
+
+	begin
+    if mDirection <> sdWrite  then  begin  AssignFile( mTF, mName );  Rewrite( mTF );  mDirection := sdWrite;  end;
+
+    result := true;
+    mBuf := mBuf + ch;
+    if ch = lf then  begin
+        WriteLn( mTF, mBuf );
+        mBuf := '';
+        end;
+    end;
+
+
+constructor cStringStream.Create( source : string );
 
 	begin
     mBuf := source;
@@ -230,36 +274,29 @@ constructor aStringStream.Create( source : string );
     end;
 
 
-destructor	aStringStream.Destroy;
+destructor	cStringStream.Destroy;
 
 	begin
     end;
 
 
-function    aStringStream.Read( var buf; count : longint ) : longint;
+function    cStringStream.Read( var ch : char ) : boolean;
 
 	begin
     if mX <= Length( mBuf ) then  begin
-        result := SizeOf( char );
-        Move( mBuf[ mX ], buf, Result );  // buf := mBuf[ mX ];
+        result := true;
+        ch := mBuf[ mX ];
         Inc( mX );
         end
-    else   result := 0;
+    else   result := false;
     end;
 
 
-function    aStringStream.Write( const Buffer; Count: Longint ) : Longint;    // not tested
+function    cStringStream.Write( ch : char ) : boolean;   //override;   // not tested
 
-	var
-    	ch : char;
-        x : int;
 	begin
-    result := count;    x := 0;
-    while x < count do  begin
-        Move( ( PByte( int( buffer ) + x ) )^, ch, Sizeof( ch ) );  // ch from buffer
-        mBuf := mBuf + ch;
-        x := x + 2;
-    	end;
+    result := true;
+    mBuf := mBuf + ch;
     end;
 
 // _______________________________ A R I T H M E T I C __________________________
@@ -411,24 +448,24 @@ function   WithoutSpaces( const s : string ) : string;
 	end;
 
 
-function   Trim( const s : string ) : string;
-
-	var
-		x : int;
-	begin
-	result := s;
-	x := 1;
-	SkipSpace( result, x );
-	if x > 1 then  Delete( result, 1, x - 1 );
-	for x := Length( result ) downto 1 do  begin
-		if result[ x ] > ' ' then  begin
-			if x < Length( result ) then  begin
-				Delete( result, x + 1, Length( result ) - x );
-				end;
-			break;
-			end;
-		end;
-	end;
+//function   Trim( const s : string ) : string;
+//
+//	var
+//		x : int;
+//	begin
+//	result := s;
+//	x := 1;
+//	SkipSpace( result, x );
+//	if x > 1 then  Delete( result, 1, x - 1 );
+//	for x := Length( result ) downto 1 do  begin
+//		if result[ x ] > ' ' then  begin
+//			if x < Length( result ) then  begin
+//				Delete( result, x + 1, Length( result ) - x );
+//				end;
+//			break;
+//			end;
+//		end;
+//	end;
 
 
 procedure  TrimThis( var s : string );
@@ -582,6 +619,16 @@ function   IsAlpha( c : char ) : boolean;
 	end;
 
 
+function   IsAlphaN( c : char ) : boolean;
+
+	begin
+	Result := false;
+	if ( c >= 'a' ) and ( c <= 'z' ) then   Result := true
+	else if ( c >= 'A' ) and ( c <= 'Z' ) then   Result := true
+    else if ( c >= '0' ) and ( c <= '9' ) then  result := true;
+	end;
+
+
 function   IsDecimal( c : char ) : boolean;
 
   begin
@@ -659,11 +706,38 @@ function   Gap( const s : string ) : string;
 	end;
 
 
+function	GetHexNibble( ch : char; out val : int ) : boolean;
+
+	begin
+    result := true;
+    if ( ch >= '0' ) and ( ch <= '9' ) then  val := Ord( ch ) - Ord( '0' )
+    else if ( ch >= 'A' ) and ( ch <= 'F' ) then  val := Ord( ch ) - Ord( 'A' ) + $A
+    else if ( ch >= 'a' ) and ( ch <= 'f' ) then  val := Ord( ch ) - Ord( 'a' ) + $A
+    else  result := false;
+    end;
+
+
+function	GetHexByte( const s : string; var x : int ) : byte;
+
+	var
+    	val : int;
+	begin
+    result := 0;
+    if GetHexNibble( StrX( s, x ), val ) then  begin
+    	result := val;
+    	Inc( x );
+        if GetHexNibble( StrX( s, x ), val ) then  begin
+            result := result * 16 + val;
+    		Inc( x );
+        	end;
+    	end;
+    end;
+
+
 function   GetHex( const s : string; var index  : integer ) : int;  //  F00BAA or , $F00BAA
 
 	var
-		x : int;
-		c : char;
+		x, val : int;
 	begin
 	Result := 0;    x := index;
 	while ( x <= Length( s ) ) and
@@ -671,16 +745,17 @@ function   GetHex( const s : string; var index  : integer ) : int;  //  F00BAA o
 		Inc( x );
 		end;
 	while ( x <= Length( s ) ) and ( s[ x ] <> ListSep ) do  begin
-		if ( s[ x ] >= '0' ) and ( s[ x ] <= '9' )  then  begin
-			Result := Result * 16 + ord( s[ x ] ) - ord( '0' );
-			end
-		else  begin
-			c := ToUpper( s[ x ] );
-			if ( c >= 'A' ) and ( c <= 'F' ) then  begin
-				Result := Result * 16 + ord( c ) + 10 - ord( 'A' );
-				end
-			else  break;
-			end;
+        if GetHexNibble( s[ x ], val ) then  Result := Result * 16 + val
+//		if ( s[ x ] >= '0' ) and ( s[ x ] <= '9' )  then  begin
+//			Result := Result * 16 + ord( s[ x ] ) - ord( '0' );
+//			end
+//		else  begin
+//			c := ToUpper( s[ x ] );
+//			if ( c >= 'A' ) and ( c <= 'F' ) then  begin
+//				Result := Result * 16 + ord( c ) + 10 - ord( 'A' );
+//				end
+		else  break;
+			//end;
 		Inc( x );
 		end;
 	index := x;
@@ -781,6 +856,21 @@ function	StrX( const s : string; const x : int ) : char;
     end;
 
 
+function	PosLast( ch : char;  const s : string ) : int;
+
+	var
+    	x : int;
+	begin
+    result := 0;
+    for x := Length( s ) downto 1 do  begin
+    	if s[ x ] = ch then  begin
+        	result := x;
+            break;
+            end;
+    	end;
+    end;
+
+
 function	Cash( amt : currency; show0 : boolean = false ) : string;
 
 	begin
@@ -814,6 +904,57 @@ function	IntToStrN( val, n : int ) : string;   // eg 007
 	begin
     result := IntToStr( val );
     while Length( result ) < n do  Insert( '0', result, 1 );
+    end;
+
+
+function	UTF8toChars( fs : TStream; out ch : char ) : boolean;
+
+	var
+        b : byte;
+        val : int;                  // http://en.wikipedia.org/wiki/UTF-8
+	begin
+    result := true;
+    if fs.Read( b, 1 ) = 1 then  begin
+    	if b and $80 = 0 then  begin   // top bit zero so just 7 bit ascii
+        	ch := Char( b );
+        	end
+        else if b and $E0 = $C0 then  begin  // 2 byte form   11 bits
+            val := ( b and $1F ) shl 6;
+            if fs.Read( b, 1 ) = 1 then  begin
+                ch := Char( val or b and $3F );
+                end
+            else  result := false;
+        	end
+        else if b and $F0 = $E0 then  begin  // 3 byte form   goes up to 16 bits
+            val := ( b and $0F ) shl 12;
+            if fs.Read( b, 1 ) = 1 then  begin
+                val := val or (( b and $3F ) shl 6 );
+                if fs.Read( b, 1 ) = 1 then  begin
+                    ch := Char( val or b and $3F );
+                    end
+                else  result := false;
+                end
+            else  result := false;
+        	end
+
+//        else if b and $F8 = $F0 then  begin  // 4 byte form - makes 21 bits - not interested
+//            val := ( b and $07 ) shl 18;     // limited to 21 bits ie 4 bytes to match UTF16 RFC3629
+//            if fs.Read( b, 1 ) = 1 then  begin
+//                val := val or (( b and $3F ) shl 12 );
+//                if fs.Read( b, 1 ) = 1 then  begin
+//                    val := val or (( b and $3F ) shl 6 );
+//                    if fs.Read( b, 1 ) = 1 then  begin
+//                        ch := Char( val or b and $3F );
+//                        end
+//                    else  result := false;
+//                    end
+//                else  result := false;
+//                end
+//            else  result := false;
+//        	end
+        else  result := false;  // illegal 4/5 byte form   ie EOF
+    	end
+    else  result := false;
     end;
 
 
@@ -920,17 +1061,17 @@ function   BuildParamsL( const params : string; var index : int; sep : char = Li
 	pl := TStringList.Create;    x := index;
 	if params <> '' then  begin
 		p := params;
-		if p[ Length( p ) ] = ')' then  p[ Length( p ) ] := sep
-		else if p[ Length( p ) ] <> sep then   p := p + sep;
+		// if p[ Length( p ) ] = ')' then  p[ Length( p ) ] := sep    else
+		if p[ Length( p ) ] <> sep then   p := p + sep;
 
 		SkipSpace( p, x );
 		while x <= Length( p )  do  begin
 			if p[ x ] = sep then  begin
                 nam := Trim( nam );
-				if ( nam <> '' ) or ( sep = ListSep ) then  begin   // , lists allow empty item
+				//if ( nam <> '' ) or ( sep = ListSep ) then  begin   // , lists allow empty item
 					pl.Add( nam );
 					nam := '';
-					end;
+				   //	end;
 				Inc( x );
 				SkipSpace( p, x );
 				end
@@ -939,6 +1080,7 @@ function   BuildParamsL( const params : string; var index : int; sep : char = Li
 				Inc( x );
 				end;
 			end;
+        //if nam <> '' then  pl.Add( nam );
 		end;
 	Result := pl;   index := x;
 	end;
@@ -953,6 +1095,7 @@ function   StrToList( const s : string ) : TStringList;
 	result := BuildParamsL( s, x );
 	end;
 
+
 function   ListToStr( const list : TStringList ) : string;
 
 	var
@@ -965,6 +1108,19 @@ function   ListToStr( const list : TStringList ) : string;
         else            result := result + ',' + list[ x ]
 		end;
 	end;
+
+
+function   ListToStr( const vals : array of int ) : string;   // overload;
+
+	var
+    	x : int;
+	begin
+    result := '';
+    for x := 0 to High( vals ) do  begin
+    	result := result + IntToStr( vals[ x ] );
+        if x < High( vals ) then  result := result + ', ';
+    	end;
+    end;
 
 
 function	ListsEqual( const listA, listB : TStrings ) : boolean;
@@ -1006,20 +1162,30 @@ function    IncludeInList( const item, list : string ) : string;
     var
         x : int;
         l : TStringList;
+        found : boolean;
 	begin
     x := 1;
     l := BuildParamsL( list, x );
-    x := 0;
-    while true do  begin
-        if x = l.Count then  begin
-            l.Add( item );
+    x := 0;   found := false;
+    for x := 0 to l.Count - 1 do  begin
+        if l[ x ] = item then  begin
+            found := true;
             break;
         	end;
-        if l[ x ] > item then  begin
-            l.Insert( x, item );
-            break;
-        	end;
-        Inc( x );
+    	end;
+    if not found then  begin
+         while true do  begin
+            if x = l.Count then  begin
+                l.Add( item );
+                break;
+                end;
+            if l[ x ] = item then  break;
+            if l[ x ] > item then  begin   // alpha sorted
+                l.Insert( x, item );
+                break;
+                end;
+            Inc( x );
+            end;
     	end;
     result := ListToStr( l );
     l.Free;
@@ -1487,8 +1653,8 @@ function   ListFiles( const path, ext : string ) : TStringList;
 	if SysUtils.FindFirst( p, FileAttrs, sr) = 0 then  begin
 		repeat
 			if sr.Attr and faDirectory = 0 then  result.Add( sr.Name );
-			until FindNext(sr) <> 0;
-		FindClose(sr);
+			until SysUtils.FindNext(sr) <> 0;
+		SysUtils.FindClose(sr);
 		end;
 	end;
 
@@ -1522,7 +1688,7 @@ function  FileOpenRead( name : string ) : THandle;
 	begin
 	Result := CreateFile( PChar( name ), GENERIC_READ,
 						FILE_SHARE_READ, Nil, OPEN_EXISTING, 0, 0);
-	end;                  // use CloseHandle
+	end;                  // FileSeek( h, skip, 0 );   c := FileRead( h, mStr[ 1 ], size );  CloseHandle( h );
 
 
 function  FileOpenWrite( name : string ) : THandle;
@@ -1564,7 +1730,7 @@ function	NewestFile( directory, match : string; numbered : boolean = false ) : s
         fil : TSearchRec;    // TimeStamp: TDateTime
         newest : TDateTime;
     begin
-    if FindFirst( directory + '\' + match, $80, fil ) = 0  then  begin // faNormal
+    if FindFirst( SlashDirectory( directory ) + match, $80, fil ) = 0  then  begin // faNormal
     	newest := 0;
         repeat
             if fil.TimeStamp > newest then  begin
@@ -1586,7 +1752,7 @@ function	OldestFile( directory, match : string; numbered : boolean = false ) : s
         fil : TSearchRec;
         oldest : TDateTime;
     begin
-    if FindFirst( directory + '\' + match, $80, fil ) = 0  then  begin // faNormal
+    if FindFirst( SlashDirectory( directory ) + match, $80, fil ) = 0  then  begin // faNormal
     	oldest := 1E99;    // maxint
         repeat
             if fil.TimeStamp < oldest then  begin
@@ -1608,7 +1774,7 @@ function	NewestFile( directory, match : string; numbered : boolean = false ) : s
         fil : TSearchRec;    // TimeStamp: TDateTime
         newest : int;
     begin
-    if FindFirst( directory + '\' + match, $80, fil ) = 0  then  begin // faNormal
+    if SysUtils.FindFirst( SlashDirectory( directory ) + match, $80, fil ) = 0  then  begin // faNormal
     	newest := 0;
         repeat
             if fil.Time > newest then  begin
@@ -1617,8 +1783,8 @@ function	NewestFile( directory, match : string; numbered : boolean = false ) : s
                     result := fil.Name;
                 	end;
             	end;
-            until ( FindNext( fil ) <> 0 );
-        FindClose( fil );
+            until ( SysUtils.FindNext( fil ) <> 0 );
+        SysUtils.FindClose( fil );
     	end;
     end;
 
@@ -1629,7 +1795,7 @@ function	OldestFile( directory, match : string; numbered : boolean = false ) : s
         fil : TSearchRec;
         oldest : int;
     begin
-    if FindFirst( directory + '\' + match, $80, fil ) = 0  then  begin // faNormal
+    if SysUtils.FindFirst( SlashDirectory( directory ) + match, $80, fil ) = 0  then  begin // faNormal
     	oldest := maxint;    // maxint
         repeat
             if fil.Time < oldest then  begin
@@ -1638,13 +1804,24 @@ function	OldestFile( directory, match : string; numbered : boolean = false ) : s
                     result := fil.Name;
                 	end;
             	end;
-            until ( FindNext( fil ) <> 0 );
-        FindClose( fil );
+            until ( SysUtils.FindNext( fil ) <> 0 );
+        SysUtils.FindClose( fil );
     	end;
     end;
 
 
 {$endif }
+
+
+function	SlashDirectory( directory : string ) : string;
+
+    begin
+    result := directory;
+    if result <> '' then  begin
+        if result[ Length( result ) ] <> '\' then  result := result + '\' ;
+        end;
+    end;
+
 
 function	CountFiles( directory, match : string; numbered : boolean = false ) : int;
 
@@ -1652,14 +1829,14 @@ function	CountFiles( directory, match : string; numbered : boolean = false ) : i
         fil : TSearchRec;
     begin
     result := 0;
-    if FindFirst( directory + '\' + match, $80, fil ) = 0  then  begin // faNormal
+    if SysUtils.FindFirst( SlashDirectory( directory ) + match, faNormal, fil ) = 0  then  begin // faNormal = $80
         repeat
-        	if not numbered or FileNameHasDecimal( fil.Name ) then  begin
+            if not numbered or FileNameHasDecimal( fil.Name ) then  begin
                 Inc( result );
-            	end;
-            until ( FindNext( fil ) <> 0 );
-        FindClose( fil );
-    	end;
+                end;
+            until ( SysUtils.FindNext( fil ) <> 0 );
+        SysUtils.FindClose( fil );
+        end;
     end;
 
 
@@ -1667,15 +1844,23 @@ procedure	ScanDirectory( directory, match : string; OnEachFile : aOnEachFile; su
 
     var
         fil : TSearchRec;
+        dir : string;
     begin
-    if FindFirst( directory + '\' + match, faDirectory or faNormal, fil ) = 0  then  begin // $80 faNormal
+    dir := SlashDirectory( directory );
+    if SysUtils.FindFirst( dir + match, faNormal, fil ) = 0  then  begin // $80 faNormal
         repeat
-        	if subs and ( fil.Attr = faDirectory ) then  begin
-                ScanDirectory( directory + '\' + fil.Name, match, OnEachFile, true );
-            	end
-            else if fil.Attr = faNormal then  OnEachFile( fil.Name );
-            until ( FindNext( fil ) <> 0 );
-        FindClose( fil );
+            OnEachFile( dir + fil.Name );  //  if fil.Attr = faNormal then
+            until ( SysUtils.FindNext( fil ) <> 0 );
+        SysUtils.FindClose( fil );
+    	end;
+    if subs then  begin
+    	if SysUtils.FindFirst( dir + '*.*', faDirectory, fil ) = 0  then  begin
+            repeat
+            	if ( fil.Name <> '.' ) and ( fil.Name <> '..' ) then  begin
+                	ScanDirectory( dir + fil.Name, match, OnEachFile, subs );  //  if fil.Attr = faNormal then
+                    end;
+                until ( SysUtils.FindNext( fil ) <> 0 );
+        	end;
     	end;
     end;
 {$warnings on }

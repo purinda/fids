@@ -54,6 +54,7 @@ const
     pathNotResponding = '|SystemSettings|NotResponding|';
 
 	pathFormats = '|DisplayConfig|Formats|';
+	pathGroups = '|DisplayConfig|Groups|';
 
 	pathAirlines = '\Graphics\GIFs\Airlines\';       // NOTE file (sub) paths
 	pathClasses = '\Graphics\GIFs\Classes\';
@@ -67,8 +68,10 @@ type
 
 var
     tagFlightKind : array [ aFlightKind ] of string = ( '', tagArrivals, tagDepartures, tagGround );
+    pathFlightKind : array [ aFlightKind ] of string = ( '', '|Arrivals', '|Departures|', '' );
 
 
+function  StrGetDD ( const St : string; p : int ) : int;
 function   StrToDT (St: string): TDateTime;
 function	DTtoStr( dt : TDateTime ) : string;
 function   StrGetD( c : char ) : int;

@@ -75,7 +75,7 @@ type
 implementation
 
 
-uses	Math, uGlobal, ASCII, uXmlParser, uFeedMain, uPoller, uUtils;
+uses	Math, uGlobal, ASCII, uXmlParser, uFeedMain, uPoller, uUtils, uConnection;
 
 const
 
@@ -543,7 +543,8 @@ procedure  cTimeTable.FlushFlights;
             f := -1;
             while EachSubNode( pArrDep, f, pFlt ) do  begin  // each timetables flight
                 if oFlush.Execute( pFlt, fk ) then  begin
-                    if mHub <> nil then  mHub.Broadcast( FormatDelete( ResolvePathStr( pFlt ), TimeTableID ) );
+                    // if mHub <> nil then  mHub.Broadcast( FormatDelete( ResolvePathStr( pFlt ), TimeTableID ) );
+                    mDB.GlobalDelete( pFlt, TimeTableID );
                     fFeedMain.Display( 'Timetable', 'delete flight', NodeName( FollowPath( '|Flights|[0]|', pFlt ) ),
                         ReadContent( pFlt, 'STD' ) );
                 	end;
@@ -601,10 +602,12 @@ function   cTimeTable.CheckConstraints( pRules : apNode; day : int ) : bool;
 
 procedure  cTimeTable.GenerateNewFlight( pArrDep, pFlt : apNode );
 
+	var
+    	r : string;
 	begin
-    StartRequestNew( pFlt.NodeName );
-    AddToRequestNew( FormatAllSubNodes( pFlt, 2 ) );
-    Hub.Broadcast( EndRequestNew( pArrDep.NodeName, '', '', TimeTableID ) );
+    r := StartRequestNew( pFlt.NodeName );
+    r := AddToRequestNew( r, FormatAllSubNodes( pFlt, 2 ) );
+    Hub.Broadcast( EndRequestNew( r, pArrDep.NodeName, '', '', TimeTableID ) );
     fFeedMain.Display( 'Timetable', 'new flight', NodeName( FollowPath( '|Flights|[0]|', pFlt ) ),
     	ReadContent( pFlt, 'STD' ) );
     end;
@@ -754,33 +757,38 @@ procedure  cTimeTable.Initialize( re : boolean = false );
 	var
 		pt : apNode;
 		lookah : int;
+        r : string;
 	begin
     if DataTree <> nil then  begin
         if DataTree.GetNode( '|SystemConfig|TimeTable|' ) <> nil then  begin
             fFeedMain.Display( 'Timetable', 'enabled', '', '' );
-            fFeedMain.LogIn( 'TimeTable', SysPW, TimeTableID );
+            // fFeedMain.LogIn( 'TimeTable', SysPW, TimeTableID );
+            Xml_Connection.UserName := 'TimeTable';
+            Xml_Connection.Password := SysPW;
+            Xml_Connection.LocationID := TimeTableID;
+            Xml_Connection.LogIn;
             mLoggedIn := true;
             mTTEnabled := true;
-        	oFlight.Error := 0;  // allow new error reporting
+        	oFlight.Error := feNone;  // allow new error reporting
         	mInit := false;
 
             // kick start DB if empty
             if FindName( DataTree.GetRoot, tagDepartures ) = nil then  begin
             	fFeedMain.Display( 'Timetable', 'create empty Departures DB', '', '' );
-                StartRequestNew( tagDepartures );
-                Hub.Broadcast( EndRequestNew( '', 'KeyTag="true" AutoInc="1"', '', TimeTableID ) );
+                r := StartRequestNew( tagDepartures );
+                Hub.Broadcast( EndRequestNew( r, '', 'KeyTag="true" AutoInc="1"', '', TimeTableID ) );
             	end;
             if FindName( DataTree.GetRoot, tagArrivals ) = nil then  begin
             	fFeedMain.Display( 'Timetable', 'create empty Arrivals DB', '', '' );
-                StartRequestNew( tagArrivals );
-                Hub.Broadcast( EndRequestNew( '', 'KeyTag="true" AutoInc="1"', '', TimeTableID ) );
+                r := StartRequestNew( tagArrivals );
+                Hub.Broadcast( EndRequestNew( r, '', 'KeyTag="true" AutoInc="1"', '', TimeTableID ) );
             	end;
             if FindName( DataTree.GetRoot, tagTimeTable ) = nil then  begin
             	fFeedMain.Display( 'Timetable', 'create empty Timetable Rules DB', '', '' );
-                StartRequestNew( tagTimeTable );
-                AddToRequestNew( '	<Departures KeyTag="true"/> ' + EOL );
-                AddToRequestNew( '	<Arrivals KeyTag="true"/> ' + EOL );
-                Hub.Broadcast( EndRequestNew( '', 'KeyTag="true"', '', TimeTableID ) );
+                r := StartRequestNew( tagTimeTable );
+                r := AddToRequestNew( r, '	<Departures KeyTag="true"/> ' + EOL );
+                r := AddToRequestNew( r, '	<Arrivals KeyTag="true"/> ' + EOL );
+                Hub.Broadcast( EndRequestNew( r, '', 'KeyTag="true"', '', TimeTableID ) );
             	end;
 
             lookah := 16;   // 16 hour default
@@ -797,11 +805,11 @@ procedure  cTimeTable.Initialize( re : boolean = false );
             	oFlush := cFlush.Create( mLog, mDB );
 	            end;
             // mFlushEnabled := true;
-            if not mLoggedIn then  begin
-                fFeedMain.LogIn( 'TimeTable', SysPW, TimeTableID );
-                mLoggedIn := true;
-            	end;
-            if not mTTEnabled then  Poller.PollMe( PollEntry );
+//            if not mLoggedIn then  begin
+//                fFeedMain.LogIn( 'TimeTable', SysPW, TimeTableID );
+//                mLoggedIn := true;
+//            	end;
+            if not mTTEnabled then  Poller.PollMe( PollEntry );   // ie flush but not timetable
         	end;
     	end;
     end;

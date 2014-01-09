@@ -7,7 +7,7 @@ interface
 // (C) ALphasoft Pty Ltd
 
 uses
-	uUDP, uTCP, uGT, uPacket, uGlobalDefs { logging stuff }, // uPipe,
+	uUDP, uTCP, uGT, uPacket, uGlobalDefs,  //  logging stuff, uPipe,
 	Forms, Classes, Messages, Windows;
     {$DESCRIPTION '(C) Alphasoft'}
 

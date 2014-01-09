@@ -42,7 +42,7 @@ type
 			mNodeCount : integer;       // stats
 			mEditCount : integer;
 			mNewOpNodeCount : integer;
-			//mCur : apNode;
+			Log : aLogProc;
 
 			constructor  Create( treeID : word = 0; isKey : boolean = false; log : aLogProc = nil );  // 1 for global.data to do statistics
 			procedure  Clear;
@@ -89,7 +89,6 @@ type
 
 		protected
             // mState : ( tsNone, tsLoading, tsNew );
-			mLog : aLogProc;  // readonly
 			mRootNode : aNode; // root of the xml tree
 			procedure  LogEr( er : int; const s : string );
 			function   CanAdd( const nam : string; parent : apNode ) : boolean;
@@ -121,6 +120,8 @@ type
 	function	SubNode( pt : apNode; n : int ) : apNode;    // n is 0 .. count -1
 	function	ReadContent( pt : apNode; const name : string ) : string;
 	function	ReadFloat( pt : apNode; const name : string; var ok : boolean ) : currency;
+    function	ReadInt( pt : apNode; const name : string; var ok : boolean ) : int;   overload;
+    function	ReadInt( pt : apNode; const name : string ) : int;   overload;
 	function	PathCoincides( p1, p2 : TStringList ) : boolean;  // is a change to p1 relevant to p2
     function	PathToStr( path : TStringList ) : string;
     function	StrToPath( path : string ) : TStringList;
@@ -330,6 +331,28 @@ function	ReadFloat( pt : apNode; const name : string; var ok : boolean ) : curre
     end;
 
 
+function	ReadInt( pt : apNode; const name : string; var ok : boolean ) : int;   overload;
+
+	begin
+	result := 0;  ok := false;
+	pt := FindName( pt, name );
+	if pt <> nil then  begin
+ 		ok := TryStrToInt( NodeContent( pt ), result );
+        end;
+    end;
+
+
+function	ReadInt( pt : apNode; const name : string ) : int;   overload;
+
+	begin
+	result := 0;
+	pt := FindName( pt, name );
+	if pt <> nil then  begin
+ 		TryStrToInt( NodeContent( pt ), result );
+        end;
+    end;
+
+
 function   SplitOffAttributes( var nam : string ) : string;
 
 	var
@@ -363,7 +386,7 @@ constructor  cDbTree.Create( treeID : word = 0; isKey : boolean = false; log : a
 
 	begin
 	mUseCount := 1;
-	mLog := log;
+	Log := log;
 	mRootNode.NodeName := RootNodeName;
     mRootNode.ID := treeID;    // debug and stats use
     if isKey then  begin
@@ -376,7 +399,7 @@ procedure  cDbTree.LogEr( er : int; const s : string );
 
 	begin
 	if er > mEr then  mEr := er;
-	if Assigned( mLog ) then  mLog( er, s );
+	if Assigned( Log ) then  Log( er, s );
 	end;
 
 

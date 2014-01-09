@@ -86,7 +86,6 @@ const
     // Extra numbers to extend row and field capacity of Table
     exRows = 1;
 
-    // Implement the TPolygon constructor
 constructor CFlightController.Create(afkInput: aFlightKind;
   affFields: array of aFlightField);
 var
