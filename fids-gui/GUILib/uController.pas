@@ -689,14 +689,14 @@ begin
         { table[r].ScheduledTime := oFlight.Presentation[ffSTime] + ' ' + oFlight.Presentation[ffST];
           table[r].EstimatedTime := oFlight.Presentation[ffET] + ' ' + oFlight.Presentation[ffETdate]; }
 
-        Table[r].STDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffSTdate]);
-        Table[r].STime := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffSTime]);
+        Table[r].STDate := StrToDate(oFlight.Presentation[ffSTdate]);
+        Table[r].STime  := FIDS_StrTOTime(oFlight.Presentation[ffSTime]);
 
-        Table[r].ETDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffETdate]);
-        Table[r].ETime := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffETime]);
+        Table[r].ETDate := StrToDate(oFlight.Presentation[ffETdate]);
+        Table[r].ETime  := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffETime]);
 
         Table[r].ATDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffATdate]);
-        Table[r].ATime := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffATime]);
+        Table[r].ATime  := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffATime]);
 
         if (afKind = fkArrivals) then
             Table[r].Status := oFlight.Presentation[ffAStatus];

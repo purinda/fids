@@ -3,22 +3,24 @@
 	<QFA421-646>
 		<Flights>
 			<QFA421>
-				<Ports> SYD </Ports>
+				<Ports> MEL SYD </Ports>
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>
-		<ST> 20100812 110000 </ST>
+		<ST> 20101208 110000 </ST>
 		<ET> 20100812 111500 </ET>
-		<AT> 20100812 110700 </AT>
+		<AT> 21110201 000000 </AT>
 		<Corresponding> Arrivals|QFA421-646|Flights|QFA421 </Corresponding>
 		<Rego> VHZXE </Rego>
-		<Carrier> International </Carrier>
+		<Carrier> Domestic </Carrier>
 		<AirCraft> 766 </AirCraft>
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
-		<Gates> 1,2 </Gates>
+		<Gates> 2,1 </Gates>
 		<AStatus> On Blocks </AStatus>
 		<Belts> 3,1 </Belts>
 		<Comment> xzc </Comment>
+		<Terminal> 4 </Terminal>
+		<NonPublic/>
 	</QFA421-646>
 </Arrivals>

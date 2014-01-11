@@ -869,7 +869,7 @@ begin
     if (c >= '0') and (c <= '9') then
         Result := Ord(c) - Ord('0')
     else
-        raise Exception.Create('Time table invalid decimal');
+        raise Exception.Create('Time table invalid decimal (' + c + ')');
 end;
 
 function StrGetDD(const St: string; p: Int): Int;
@@ -897,6 +897,7 @@ var
     p: integer;
 begin
     Result := 0.0;
+
     if St <> '' then
     begin
         p := 1;
@@ -907,25 +908,11 @@ begin
         dy := StrGetDD(St, p);
         p := p + 2; // skip space
 
-        // ShowMessage(inttostr(yr) + '|'+ inttostr(mo) + '|'+ inttostr(dy));
         try
             Result := EncodeDate(yr, mo, dy);
         except
-
         end;
     end;
-    {
-      if Length (St) > p then   // IsDigit (St [p]) then
-      begin
-      hr := StrGetDD (St, p);     p := p + 2;
-      mn := StrGetDD (St, p);     p := p + 2;
-      se := StrGetDD (St, p);     //p := p + 2;
-      try
-      Result := Result + EncodeTime (hr, mn, se, 0);
-      except
-      end;
-      end; }
-
 end;
 
 function FIDS_DtTOStr(St: TDateTime): String; // ST

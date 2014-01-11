@@ -568,6 +568,7 @@ function    cFlight.MakeValidTime( var time : string; field : aFlightField ) : T
         original : string;
         hr, min : card;
 	begin
+
     result := -1;   original := time;   time := Trim( time );
     if ( not ( field in RequiredField ) ) and ( time = '' ) then  result := 0
     else  begin
