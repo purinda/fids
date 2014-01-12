@@ -7,9 +7,9 @@
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>
-		<ST> 20101208 110000 </ST>
+		<ST> 20100812 110000 </ST>
 		<ET> 20100812 111500 </ET>
-		<AT> 21110201 000000 </AT>
+		<AT> 21110201 211100 </AT>
 		<Corresponding> Arrivals|QFA421-646|Flights|QFA421 </Corresponding>
 		<Rego> VHZXE </Rego>
 		<Carrier> Domestic </Carrier>
@@ -22,5 +22,6 @@
 		<Comment> xzc </Comment>
 		<Terminal> 4 </Terminal>
 		<NonPublic/>
+		<Bays> 5 </Bays>
 	</QFA421-646>
 </Arrivals>

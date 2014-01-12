@@ -7,14 +7,15 @@
 			</NTL238>
 		</Flights>
 		<FeedKey> SIA238/081031 </FeedKey>
-		<ST> 20100812 112700 </ST>
+		<ST> 20100914 112700 </ST>
 		<ET> 20100812 113000 </ET>
-		<AT> 20100812 113100 </AT>
+		<AT> 18991230 000000 </AT>
 		<Rego> 9VSPNA </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<Gates> 5 </Gates>
 		<DStatus> Departed </DStatus>
+		<NonPublic/>
 	</SIA238-1923>
 	<QFA614-1924>
 		<Flights>
@@ -271,8 +272,8 @@
 				<Ports> BNE </Ports>
 			</QF143>
 		</Flights>
-		<ST> 20100813 033000 </ST>
-		<ET> 20100813 033000 </ET>
+		<ST> 20100812 033000 </ST>
+		<ET> 20100812 033000 </ET>
 		<Gates> 5 </Gates>
 		<Bays/>
 	</QF143-1937>
@@ -386,8 +387,8 @@
 				<Ports> PER </Ports>
 			</ST1234>
 		</Flights>
-		<ST> 20100813 070000 </ST>
-		<ET> 20100813 070000 </ET>
+		<ST> 20100812 070000 </ST>
+		<ET> 20100812 070000 </ET>
 		<Gates> 13 </Gates>
 		<Bays/>
 	</ST1234-1943>
@@ -1849,8 +1850,8 @@
 			</THA980>
 		</Flights>
 		<FeedKey> THA980/081101 </FeedKey>
-		<ST> 20100813 004500 </ST>
-		<ET> 20100813 004500 </ET>
+		<ST> 20100812 004500 </ST>
+		<ET> 20100812 004500 </ET>
 		<Rego> HSTJV </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
@@ -1862,8 +1863,8 @@
 			</SIA218>
 		</Flights>
 		<FeedKey> SIA218/081101 </FeedKey>
-		<ST> 20100813 010500 </ST>
-		<ET> 20100813 010500 </ET>
+		<ST> 20100812 010500 </ST>
+		<ET> 20100812 010500 </ET>
 		<Rego> 9VSWB </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 77W </AirCraft>
@@ -1875,8 +1876,8 @@
 			</CPA168>
 		</Flights>
 		<FeedKey> CPA168/081101 </FeedKey>
-		<ST> 20100813 012000 </ST>
-		<ET> 20100813 012000 </ET>
+		<ST> 20100812 012000 </ST>
+		<ET> 20100812 012000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA168-2029>
@@ -1887,8 +1888,8 @@
 			</QFA7472>
 		</Flights>
 		<FeedKey> QFA7472/081101 </FeedKey>
-		<ST> 20100813 013000 </ST>
-		<ET> 20100813 013000 </ET>
+		<ST> 20100812 013000 </ST>
+		<ET> 20100812 013000 </ET>
 		<Rego> VHXML </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73F </AirCraft>
@@ -1902,8 +1903,8 @@
 			</QFA400>
 		</Flights>
 		<FeedKey> QFA400/081101 </FeedKey>
-		<ST> 20100813 060000 </ST>
-		<ET> 20100813 060000 </ET>
+		<ST> 20100812 060000 </ST>
+		<ET> 20100812 060000 </ET>
 		<Rego> VHZXE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -1919,8 +1920,8 @@
 			</BA7468>
 		</Flights>
 		<FeedKey> QFA600/081101 </FeedKey>
-		<ST> 20100813 060000 </ST>
-		<ET> 20100813 060000 </ET>
+		<ST> 20100812 060000 </ST>
+		<ET> 20100812 060000 </ET>
 		<Rego> VHVYE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -1936,8 +1937,8 @@
 			</QFA5701>
 		</Flights>
 		<FeedKey> JQ701/081101 </FeedKey>
-		<ST> 20100813 060000 </ST>
-		<ET> 20100813 060000 </ET>
+		<ST> 20100812 060000 </ST>
+		<ET> 20100812 060000 </ET>
 		<Rego> VHVQU </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -1951,8 +1952,8 @@
 			</QFA775>
 		</Flights>
 		<FeedKey> QFA775/081101 </FeedKey>
-		<ST> 20100813 061000 </ST>
-		<ET> 20100813 061000 </ET>
+		<ST> 20100812 061000 </ST>
+		<ET> 20100812 061000 </ET>
 		<Rego> VHVXM </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -1968,8 +1969,8 @@
 			</QFA5430>
 		</Flights>
 		<FeedKey> JQ430/081101 </FeedKey>
-		<ST> 20100813 061000 </ST>
-		<ET> 20100813 061000 </ET>
+		<ST> 20100812 061000 </ST>
+		<ET> 20100812 061000 </ET>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 321 </AirCraft>
 		<Pax> 182,0 </Pax>
@@ -1982,8 +1983,8 @@
 			</QFA667>
 		</Flights>
 		<FeedKey> QFA667/081101 </FeedKey>
-		<ST> 20100813 061500 </ST>
-		<ET> 20100813 061500 </ET>
+		<ST> 20100812 061500 </ST>
+		<ET> 20100812 061500 </ET>
 		<Rego> VHTJR </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2000,8 +2001,8 @@
 			</BA7450>
 		</Flights>
 		<FeedKey> QFA404/081101 </FeedKey>
-		<ST> 20100813 063000 </ST>
-		<ET> 20100813 063000 </ET>
+		<ST> 20100812 063000 </ST>
+		<ET> 20100812 063000 </ET>
 		<Rego> VHTJL </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2017,8 +2018,8 @@
 			</QFA5774>
 		</Flights>
 		<FeedKey> JQ774/081101 </FeedKey>
-		<ST> 20100813 063000 </ST>
-		<ET> 20100813 063000 </ET>
+		<ST> 20100812 063000 </ST>
+		<ET> 20100812 063000 </ET>
 		<Rego> VHVQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2035,8 +2036,8 @@
 			</QFA5944>
 		</Flights>
 		<FeedKey> JQ944/081101 </FeedKey>
-		<ST> 20100813 064000 </ST>
-		<ET> 20100813 064000 </ET>
+		<ST> 20100812 064000 </ST>
+		<ET> 20100812 064000 </ET>
 		<Rego> VHVQP </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2050,8 +2051,8 @@
 			</QFA406>
 		</Flights>
 		<FeedKey> QFA406/081101 </FeedKey>
-		<ST> 20100813 064500 </ST>
-		<ET> 20100813 064500 </ET>
+		<ST> 20100812 064500 </ST>
+		<ET> 20100812 064500 </ET>
 		<Rego> VHVXJ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2070,8 +2071,8 @@
 			</JQ6408>
 		</Flights>
 		<FeedKey> QFA408/081101 </FeedKey>
-		<ST> 20100813 070000 </ST>
-		<ET> 20100813 070000 </ET>
+		<ST> 20100812 070000 </ST>
+		<ET> 20100812 070000 </ET>
 		<Rego> VHOGQ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2087,8 +2088,8 @@
 			</QFA5703>
 		</Flights>
 		<FeedKey> JQ703/081101 </FeedKey>
-		<ST> 20100813 070000 </ST>
-		<ET> 20100813 070000 </ET>
+		<ST> 20100812 070000 </ST>
+		<ET> 20100812 070000 </ET>
 		<Rego> VHJQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2105,8 +2106,8 @@
 			</JQ6604>
 		</Flights>
 		<FeedKey> QFA604/081101 </FeedKey>
-		<ST> 20100813 070500 </ST>
-		<ET> 20100813 070500 </ET>
+		<ST> 20100812 070500 </ST>
+		<ET> 20100812 070500 </ET>
 		<Rego> VHVYK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2119,8 +2120,8 @@
 			</QFA671>
 		</Flights>
 		<FeedKey> QFA671/081101 </FeedKey>
-		<ST> 20100813 071000 </ST>
-		<ET> 20100813 071000 </ET>
+		<ST> 20100812 071000 </ST>
+		<ET> 20100812 071000 </ET>
 		<Rego> VHVXQ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2136,8 +2137,8 @@
 			</JQ6412>
 		</Flights>
 		<FeedKey> QFA412/081101 </FeedKey>
-		<ST> 20100813 073000 </ST>
-		<ET> 20100813 073000 </ET>
+		<ST> 20100812 073000 </ST>
+		<ET> 20100812 073000 </ET>
 		<Rego> VHVXH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2153,8 +2154,8 @@
 			</QFA5464>
 		</Flights>
 		<FeedKey> JQ464/081101 </FeedKey>
-		<ST> 20100813 073000 </ST>
-		<ET> 20100813 073000 </ET>
+		<ST> 20100812 073000 </ST>
+		<ET> 20100812 073000 </ET>
 		<Rego> VHVQG </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2168,8 +2169,8 @@
 			</QFA673>
 		</Flights>
 		<FeedKey> QFA673/081101 </FeedKey>
-		<ST> 20100813 074000 </ST>
-		<ET> 20100813 074000 </ET>
+		<ST> 20100812 074000 </ST>
+		<ET> 20100812 074000 </ET>
 		<Rego> VHVYH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2185,8 +2186,8 @@
 			</JQ6414>
 		</Flights>
 		<FeedKey> QFA414/081101 </FeedKey>
-		<ST> 20100813 080000 </ST>
-		<ET> 20100813 080000 </ET>
+		<ST> 20100812 080000 </ST>
+		<ET> 20100812 080000 </ET>
 		<Rego> VHTJJ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2203,8 +2204,8 @@
 			</JQ6608>
 		</Flights>
 		<FeedKey> QFA608/081101 </FeedKey>
-		<ST> 20100813 080500 </ST>
-		<ET> 20100813 080500 </ET>
+		<ST> 20100812 080500 </ST>
+		<ET> 20100812 080500 </ET>
 		<Rego> VHVZD </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2223,8 +2224,8 @@
 			</JQ6675>
 		</Flights>
 		<FeedKey> QFA675/081101 </FeedKey>
-		<ST> 20100813 081000 </ST>
-		<ET> 20100813 081000 </ET>
+		<ST> 20100812 081000 </ST>
+		<ET> 20100812 081000 </ET>
 		<Rego> VHVZB </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2238,8 +2239,8 @@
 			</QFA2051>
 		</Flights>
 		<FeedKey> QFA2051/081101 </FeedKey>
-		<ST> 20100813 082500 </ST>
-		<ET> 20100813 082500 </ET>
+		<ST> 20100812 082500 </ST>
+		<ET> 20100812 082500 </ET>
 		<Rego> VHTQL </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -2255,8 +2256,8 @@
 			</QFA5735>
 		</Flights>
 		<FeedKey> JQ735/081101 </FeedKey>
-		<ST> 20100813 082500 </ST>
-		<ET> 20100813 082500 </ET>
+		<ST> 20100812 082500 </ST>
+		<ET> 20100812 082500 </ET>
 		<Rego> VHVQZ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2273,8 +2274,8 @@
 			</JQ6416>
 		</Flights>
 		<FeedKey> QFA416/081101 </FeedKey>
-		<ST> 20100813 083000 </ST>
-		<ET> 20100813 083000 </ET>
+		<ST> 20100812 083000 </ST>
+		<ET> 20100812 083000 </ET>
 		<Rego> VHVYB </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2291,8 +2292,8 @@
 			</BA7418>
 		</Flights>
 		<FeedKey> QFA814/081101 </FeedKey>
-		<ST> 20100813 083000 </ST>
-		<ET> 20100813 083000 </ET>
+		<ST> 20100812 083000 </ST>
+		<ET> 20100812 083000 </ET>
 		<Rego> VHTJK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2308,8 +2309,8 @@
 			</QFA5860>
 		</Flights>
 		<FeedKey> JQ860/081101 </FeedKey>
-		<ST> 20100813 083000 </ST>
-		<ET> 20100813 083000 </ET>
+		<ST> 20100812 083000 </ST>
+		<ET> 20100812 083000 </ET>
 		<Rego> VHVQX </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2323,8 +2324,8 @@
 			</QFA485>
 		</Flights>
 		<FeedKey> QFA485/081101 </FeedKey>
-		<ST> 20100813 083500 </ST>
-		<ET> 20100813 083500 </ET>
+		<ST> 20100812 083500 </ST>
+		<ET> 20100812 083500 </ET>
 		<Rego> VHOGM </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2340,8 +2341,8 @@
 			</BA7462>
 		</Flights>
 		<FeedKey> QFA1011/081101 </FeedKey>
-		<ST> 20100813 083500 </ST>
-		<ET> 20100813 083500 </ET>
+		<ST> 20100812 083500 </ST>
+		<ET> 20100812 083500 </ET>
 		<Rego> VHVYA </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2354,8 +2355,8 @@
 			</QFA2078>
 		</Flights>
 		<FeedKey> QFA2078/081101 </FeedKey>
-		<ST> 20100813 083500 </ST>
-		<ET> 20100813 083500 </ET>
+		<ST> 20100812 083500 </ST>
+		<ET> 20100812 083500 </ET>
 		<Rego> VHTQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -2371,8 +2372,8 @@
 			</QFA201>
 		</Flights>
 		<FeedKey> JQ159/081101 </FeedKey>
-		<ST> 20100813 084000 </ST>
-		<ET> 20100813 084000 </ET>
+		<ST> 20100812 084000 </ST>
+		<ET> 20100812 084000 </ET>
 		<Rego> VHVQF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2385,8 +2386,8 @@
 			</CPA134>
 		</Flights>
 		<FeedKey> CPA134/081101 </FeedKey>
-		<ST> 20100813 085000 </ST>
-		<ET> 20100813 085000 </ET>
+		<ST> 20100812 085000 </ST>
+		<ET> 20100812 085000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA134-2060>
@@ -2397,8 +2398,8 @@
 			</QFA796>
 		</Flights>
 		<FeedKey> QFA796/081101 </FeedKey>
-		<ST> 20100813 085500 </ST>
-		<ET> 20100813 085500 </ET>
+		<ST> 20100812 085500 </ST>
+		<ET> 20100812 085500 </ET>
 		<Rego> VHVXF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2414,8 +2415,8 @@
 			</JQ6418>
 		</Flights>
 		<FeedKey> QFA418/081101 </FeedKey>
-		<ST> 20100813 090000 </ST>
-		<ET> 20100813 090000 </ET>
+		<ST> 20100812 090000 </ST>
+		<ET> 20100812 090000 </ET>
 		<Rego> VHVYI </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2428,8 +2429,8 @@
 			</PAL209>
 		</Flights>
 		<FeedKey> PAL209/081031 </FeedKey>
-		<ST> 20100813 090000 </ST>
-		<ET> 20100813 090000 </ET>
+		<ST> 20100812 090000 </ST>
+		<ET> 20100812 090000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</PAL209-2063>
@@ -2443,8 +2444,8 @@
 			</JQ6610>
 		</Flights>
 		<FeedKey> QFA610/081101 </FeedKey>
-		<ST> 20100813 090500 </ST>
-		<ET> 20100813 090500 </ET>
+		<ST> 20100812 090500 </ST>
+		<ET> 20100812 090500 </ET>
 		<Rego> VHVYC </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2460,8 +2461,8 @@
 			</JQ6677>
 		</Flights>
 		<FeedKey> QFA677/081101 </FeedKey>
-		<ST> 20100813 091000 </ST>
-		<ET> 20100813 091000 </ET>
+		<ST> 20100812 091000 </ST>
+		<ET> 20100812 091000 </ET>
 		<Rego> VHTJU </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2478,8 +2479,8 @@
 			</BA7358>
 		</Flights>
 		<FeedKey> QFA37/081101 </FeedKey>
-		<ST> 20100813 091000 </ST>
-		<ET> 20100813 091000 </ET>
+		<ST> 20100812 091000 </ST>
+		<ET> 20100812 091000 </ET>
 		<Rego> ZKJNN </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 733 </AirCraft>
@@ -2491,8 +2492,8 @@
 			</QFA702>
 		</Flights>
 		<FeedKey> QFA702/081101 </FeedKey>
-		<ST> 20100813 092500 </ST>
-		<ET> 20100813 092500 </ET>
+		<ST> 20100812 092500 </ST>
+		<ET> 20100812 092500 </ET>
 		<Rego> VHZXA </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2508,8 +2509,8 @@
 			</JQ6420>
 		</Flights>
 		<FeedKey> QFA420/081101 </FeedKey>
-		<ST> 20100813 093000 </ST>
-		<ET> 20100813 093000 </ET>
+		<ST> 20100812 093000 </ST>
+		<ET> 20100812 093000 </ET>
 		<Rego> VHOGE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2522,8 +2523,8 @@
 			</QFA2132>
 		</Flights>
 		<FeedKey> QFA2132/081101 </FeedKey>
-		<ST> 20100813 093500 </ST>
-		<ET> 20100813 093500 </ET>
+		<ST> 20100812 093500 </ST>
+		<ET> 20100812 093500 </ET>
 		<Rego> VHTQK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -2539,8 +2540,8 @@
 			</QFA5436>
 		</Flights>
 		<FeedKey> JQ436/081101 </FeedKey>
-		<ST> 20100813 093500 </ST>
-		<ET> 20100813 093500 </ET>
+		<ST> 20100812 093500 </ST>
+		<ET> 20100812 093500 </ET>
 		<Rego> VHVQU </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2554,8 +2555,8 @@
 			</ANZ792>
 		</Flights>
 		<FeedKey> ANZ792/081101 </FeedKey>
-		<ST> 20100813 094500 </ST>
-		<ET> 20100813 094500 </ET>
+		<ST> 20100812 094500 </ST>
+		<ET> 20100812 094500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 	</ANZ792-2071>
@@ -2569,8 +2570,8 @@
 			</JQ6422>
 		</Flights>
 		<FeedKey> QFA422/081101 </FeedKey>
-		<ST> 20100813 100000 </ST>
-		<ET> 20100813 100000 </ET>
+		<ST> 20100812 100000 </ST>
+		<ET> 20100812 100000 </ET>
 		<Rego> VHZXF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2586,8 +2587,8 @@
 			</JQ6612>
 		</Flights>
 		<FeedKey> QFA612/081101 </FeedKey>
-		<ST> 20100813 100500 </ST>
-		<ET> 20100813 100500 </ET>
+		<ST> 20100812 100500 </ST>
+		<ET> 20100812 100500 </ET>
 		<Rego> VHTJR </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2604,8 +2605,8 @@
 			</JQ6679>
 		</Flights>
 		<FeedKey> QFA679/081101 </FeedKey>
-		<ST> 20100813 101000 </ST>
-		<ET> 20100813 101000 </ET>
+		<ST> 20100812 101000 </ST>
+		<ET> 20100812 101000 </ET>
 		<Rego> VHTJF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2622,8 +2623,8 @@
 			</JQ6424>
 		</Flights>
 		<FeedKey> QFA424/081101 </FeedKey>
-		<ST> 20100813 103000 </ST>
-		<ET> 20100813 103000 </ET>
+		<ST> 20100812 103000 </ST>
+		<ET> 20100812 103000 </ET>
 		<Rego> VHOGN </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2639,8 +2640,8 @@
 			</QFA5794>
 		</Flights>
 		<FeedKey> JQ794/081101 </FeedKey>
-		<ST> 20100813 103500 </ST>
-		<ET> 20100813 103500 </ET>
+		<ST> 20100812 103500 </ST>
+		<ET> 20100812 103500 </ET>
 		<Rego> VHJQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2654,8 +2655,8 @@
 			</QFA475>
 		</Flights>
 		<FeedKey> QFA475/081101 </FeedKey>
-		<ST> 20100813 104500 </ST>
-		<ET> 20100813 104500 </ET>
+		<ST> 20100812 104500 </ST>
+		<ET> 20100812 104500 </ET>
 		<Rego> VHZXE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2671,8 +2672,8 @@
 			</JQ6426>
 		</Flights>
 		<FeedKey> QFA426/081101 </FeedKey>
-		<ST> 20100813 110000 </ST>
-		<ET> 20100813 110000 </ET>
+		<ST> 20100812 110000 </ST>
+		<ET> 20100812 110000 </ET>
 		<Rego> VHTJZ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2689,8 +2690,8 @@
 			</JQ6614>
 		</Flights>
 		<FeedKey> QFA614/081101 </FeedKey>
-		<ST> 20100813 110500 </ST>
-		<ET> 20100813 110500 </ET>
+		<ST> 20100812 110500 </ST>
+		<ET> 20100812 110500 </ET>
 		<Rego> VHTJL </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2709,8 +2710,8 @@
 			</TG3689>
 		</Flights>
 		<FeedKey> QFA93/081101 </FeedKey>
-		<ST> 20100813 111000 </ST>
-		<ET> 20100813 111000 </ET>
+		<ST> 20100812 111000 </ST>
+		<ET> 20100812 111000 </ET>
 		<Rego> VHOEI </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -2722,8 +2723,8 @@
 			</SIA238>
 		</Flights>
 		<FeedKey> SIA238/081101 </FeedKey>
-		<ST> 20100813 112000 </ST>
-		<ET> 20100813 112000 </ET>
+		<ST> 20100812 112000 </ST>
+		<ET> 20100812 112000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 	</SIA238-2081>
@@ -2737,8 +2738,8 @@
 			</QFA359>
 		</Flights>
 		<FeedKey> HVN780/081101 </FeedKey>
-		<ST> 20100813 112500 </ST>
-		<ET> 20100813 112500 </ET>
+		<ST> 20100812 112500 </ST>
+		<ET> 20100812 112500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
 	</HVN780-2082>
@@ -2752,8 +2753,8 @@
 			</JQ6428>
 		</Flights>
 		<FeedKey> QFA428/081101 </FeedKey>
-		<ST> 20100813 113000 </ST>
-		<ET> 20100813 113000 </ET>
+		<ST> 20100812 113000 </ST>
+		<ET> 20100812 113000 </ET>
 		<Rego> VHVXJ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2770,8 +2771,8 @@
 			</QFA5474>
 		</Flights>
 		<FeedKey> JQ474/081101 </FeedKey>
-		<ST> 20100813 113500 </ST>
-		<ET> 20100813 113500 </ET>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113500 </ET>
 		<Rego> VHVQZ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -2785,8 +2786,8 @@
 			</ANZ124>
 		</Flights>
 		<FeedKey> ANZ124/081101 </FeedKey>
-		<ST> 20100813 113500 </ST>
-		<ET> 20100813 113500 </ET>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 	</ANZ124-2085>
@@ -2806,8 +2807,8 @@
 			</KE7315>
 		</Flights>
 		<FeedKey> QFA25/081101 </FeedKey>
-		<ST> 20100813 113500 </ST>
-		<ET> 20100813 113500 </ET>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113500 </ET>
 		<Rego> VHEBW </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
@@ -2819,8 +2820,8 @@
 			</QFA2138>
 		</Flights>
 		<FeedKey> QFA2138/081101 </FeedKey>
-		<ST> 20100813 115000 </ST>
-		<ET> 20100813 115000 </ET>
+		<ST> 20100812 115000 </ST>
+		<ET> 20100812 115000 </ET>
 		<Rego> VHTQL </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -2839,8 +2840,8 @@
 			</JQ6430>
 		</Flights>
 		<FeedKey> QFA430/081101 </FeedKey>
-		<ST> 20100813 120000 </ST>
-		<ET> 20100813 120000 </ET>
+		<ST> 20100812 120000 </ST>
+		<ET> 20100812 120000 </ET>
 		<Rego> VHOGQ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2853,8 +2854,8 @@
 			</QFA2053>
 		</Flights>
 		<FeedKey> QFA2053/081101 </FeedKey>
-		<ST> 20100813 120000 </ST>
-		<ET> 20100813 120000 </ET>
+		<ST> 20100812 120000 </ST>
+		<ET> 20100812 120000 </ET>
 		<Rego> VHTQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -2870,8 +2871,8 @@
 			</JQ6616>
 		</Flights>
 		<FeedKey> QFA616/081101 </FeedKey>
-		<ST> 20100813 120500 </ST>
-		<ET> 20100813 120500 </ET>
+		<ST> 20100812 120500 </ST>
+		<ET> 20100812 120500 </ET>
 		<Rego> VHVYF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2887,8 +2888,8 @@
 			</JQ6683>
 		</Flights>
 		<FeedKey> QFA683/081101 </FeedKey>
-		<ST> 20100813 121000 </ST>
-		<ET> 20100813 121000 </ET>
+		<ST> 20100812 121000 </ST>
+		<ET> 20100812 121000 </ET>
 		<Rego> VHVYH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2901,8 +2902,8 @@
 			</QFA769>
 		</Flights>
 		<FeedKey> QFA769/081101 </FeedKey>
-		<ST> 20100813 122500 </ST>
-		<ET> 20100813 122500 </ET>
+		<ST> 20100812 122500 </ST>
+		<ET> 20100812 122500 </ET>
 		<Rego> VHZXC </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2915,8 +2916,8 @@
 			</QFA85>
 		</Flights>
 		<FeedKey> QFA85/081101 </FeedKey>
-		<ST> 20100813 122500 </ST>
-		<ET> 20100813 122500 </ET>
+		<ST> 20100812 122500 </ST>
+		<ET> 20100812 122500 </ET>
 		<Rego> VHOGO </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -2932,8 +2933,8 @@
 			</JQ6432>
 		</Flights>
 		<FeedKey> QFA432/081101 </FeedKey>
-		<ST> 20100813 123000 </ST>
-		<ET> 20100813 123000 </ET>
+		<ST> 20100812 123000 </ST>
+		<ET> 20100812 123000 </ET>
 		<Rego> VHTJK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -2949,8 +2950,8 @@
 			</QFA5442>
 		</Flights>
 		<FeedKey> JQ442/081101 </FeedKey>
-		<ST> 20100813 124000 </ST>
-		<ET> 20100813 124000 </ET>
+		<ST> 20100812 124000 </ST>
+		<ET> 20100812 124000 </ET>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 321 </AirCraft>
 		<Pax> 181,0 </Pax>
@@ -2963,8 +2964,8 @@
 			</SIA7294>
 		</Flights>
 		<FeedKey> SIA7294/081101 </FeedKey>
-		<ST> 20100813 125500 </ST>
-		<ET> 20100813 125500 </ET>
+		<ST> 20100812 125500 </ST>
+		<ET> 20100812 125500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 74Y </AirCraft>
 	</SIA7294-2096>
@@ -2981,8 +2982,8 @@
 			</JQ6434>
 		</Flights>
 		<FeedKey> QFA434/081101 </FeedKey>
-		<ST> 20100813 130000 </ST>
-		<ET> 20100813 130000 </ET>
+		<ST> 20100812 130000 </ST>
+		<ET> 20100812 130000 </ET>
 		<Rego> VHVZA </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -2998,8 +2999,8 @@
 			</QFA5707>
 		</Flights>
 		<FeedKey> JQ707/081101 </FeedKey>
-		<ST> 20100813 130000 </ST>
-		<ET> 20100813 130000 </ET>
+		<ST> 20100812 130000 </ST>
+		<ET> 20100812 130000 </ET>
 		<Rego> VHVQS </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3016,8 +3017,8 @@
 			</JQ6618>
 		</Flights>
 		<FeedKey> QFA618/081101 </FeedKey>
-		<ST> 20100813 130500 </ST>
-		<ET> 20100813 130500 </ET>
+		<ST> 20100812 130500 </ST>
+		<ET> 20100812 130500 </ET>
 		<Rego> VHVZE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3033,8 +3034,8 @@
 			</JQ6436>
 		</Flights>
 		<FeedKey> QFA436/081101 </FeedKey>
-		<ST> 20100813 133000 </ST>
-		<ET> 20100813 133000 </ET>
+		<ST> 20100812 133000 </ST>
+		<ET> 20100812 133000 </ET>
 		<Rego> VHOGH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3047,8 +3048,8 @@
 			</QFA812>
 		</Flights>
 		<FeedKey> QFA812/081101 </FeedKey>
-		<ST> 20100813 133000 </ST>
-		<ET> 20100813 133000 </ET>
+		<ST> 20100812 133000 </ST>
+		<ET> 20100812 133000 </ET>
 		<Rego> VHTJU </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3065,8 +3066,8 @@
 			</QFA5061>
 		</Flights>
 		<FeedKey> JQ61/081101 </FeedKey>
-		<ST> 20100813 133500 </ST>
-		<ET> 20100813 133500 </ET>
+		<ST> 20100812 133500 </ST>
+		<ET> 20100812 133500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 		<PaxJoin> 143 </PaxJoin>
@@ -3078,8 +3079,8 @@
 			</QFA2082>
 		</Flights>
 		<FeedKey> QFA2082/081101 </FeedKey>
-		<ST> 20100813 135000 </ST>
-		<ET> 20100813 135000 </ET>
+		<ST> 20100812 135000 </ST>
+		<ET> 20100812 135000 </ET>
 		<Rego> VHTQK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -3098,8 +3099,8 @@
 			</JQ6438>
 		</Flights>
 		<FeedKey> QFA438/081101 </FeedKey>
-		<ST> 20100813 140000 </ST>
-		<ET> 20100813 140000 </ET>
+		<ST> 20100812 140000 </ST>
+		<ET> 20100812 140000 </ET>
 		<Rego> VHTJS </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3115,8 +3116,8 @@
 			</JQ6620>
 		</Flights>
 		<FeedKey> QFA620/081101 </FeedKey>
-		<ST> 20100813 140500 </ST>
-		<ET> 20100813 140500 </ET>
+		<ST> 20100812 140500 </ST>
+		<ET> 20100812 140500 </ET>
 		<Rego> VHVZD </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3132,8 +3133,8 @@
 			</JQ6685>
 		</Flights>
 		<FeedKey> QFA685/081101 </FeedKey>
-		<ST> 20100813 141000 </ST>
-		<ET> 20100813 141000 </ET>
+		<ST> 20100812 141000 </ST>
+		<ET> 20100812 141000 </ET>
 		<Rego> VHTJM </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3146,8 +3147,8 @@
 			</QFA101>
 		</Flights>
 		<FeedKey> QFA101/081101 </FeedKey>
-		<ST> 20100813 112500 </ST>
-		<ET> 20100813 141500 </ET>
+		<ST> 20100812 112500 </ST>
+		<ET> 20100812 141500 </ET>
 		<Rego> VHQPE </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
@@ -3163,8 +3164,8 @@
 			</JQ6442>
 		</Flights>
 		<FeedKey> QFA442/081101 </FeedKey>
-		<ST> 20100813 150000 </ST>
-		<ET> 20100813 150000 </ET>
+		<ST> 20100812 150000 </ST>
+		<ET> 20100812 150000 </ET>
 		<Rego> VHTJG </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3181,8 +3182,8 @@
 			</QFA5739>
 		</Flights>
 		<FeedKey> JQ739/081101 </FeedKey>
-		<ST> 20100813 150000 </ST>
-		<ET> 20100813 150000 </ET>
+		<ST> 20100812 150000 </ST>
+		<ET> 20100812 150000 </ET>
 		<Rego> VHVQK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3196,8 +3197,8 @@
 			</QFA624>
 		</Flights>
 		<FeedKey> QFA624/081101 </FeedKey>
-		<ST> 20100813 150500 </ST>
-		<ET> 20100813 150500 </ET>
+		<ST> 20100812 150500 </ST>
+		<ET> 20100812 150500 </ET>
 		<Rego> VHVYE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3210,8 +3211,8 @@
 			</ANZ6882>
 		</Flights>
 		<FeedKey> ANZ6882/081101 </FeedKey>
-		<ST> 20100813 150500 </ST>
-		<ET> 20100813 150500 </ET>
+		<ST> 20100812 150500 </ST>
+		<ET> 20100812 150500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 74Y </AirCraft>
 	</ANZ6882-2111>
@@ -3222,8 +3223,8 @@
 			</QFA777>
 		</Flights>
 		<FeedKey> QFA777/081101 </FeedKey>
-		<ST> 20100813 151000 </ST>
-		<ET> 20100813 151000 </ET>
+		<ST> 20100812 151000 </ST>
+		<ET> 20100812 151000 </ET>
 		<Rego> VHOGN </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3236,8 +3237,8 @@
 			</QFA689>
 		</Flights>
 		<FeedKey> QFA689/081101 </FeedKey>
-		<ST> 20100813 151500 </ST>
-		<ET> 20100813 151500 </ET>
+		<ST> 20100812 151500 </ST>
+		<ET> 20100812 151500 </ET>
 		<Rego> VHVXD </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3250,8 +3251,8 @@
 			</QFA2285>
 		</Flights>
 		<FeedKey> QFA2285/081101 </FeedKey>
-		<ST> 20100813 152000 </ST>
-		<ET> 20100813 152000 </ET>
+		<ST> 20100812 152000 </ST>
+		<ET> 20100812 152000 </ET>
 		<Rego> VHTQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -3264,8 +3265,8 @@
 			</QFA818>
 		</Flights>
 		<FeedKey> QFA818/081101 </FeedKey>
-		<ST> 20100813 152500 </ST>
-		<ET> 20100813 152500 </ET>
+		<ST> 20100812 152500 </ST>
+		<ET> 20100812 152500 </ET>
 		<Rego> VHTJF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3282,8 +3283,8 @@
 			</QFA5796>
 		</Flights>
 		<FeedKey> JQ796/081101 </FeedKey>
-		<ST> 20100813 152500 </ST>
-		<ET> 20100813 152500 </ET>
+		<ST> 20100812 152500 </ST>
+		<ET> 20100812 152500 </ET>
 		<Rego> VHVQX </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3297,8 +3298,8 @@
 			</QFA2057>
 		</Flights>
 		<FeedKey> QFA2057/081101 </FeedKey>
-		<ST> 20100813 153500 </ST>
-		<ET> 20100813 153500 </ET>
+		<ST> 20100812 153500 </ST>
+		<ET> 20100812 153500 </ET>
 		<Rego> SBI </Rego>
 		<Carrier> Domestic </Carrier>
 		<Pax> 32,0 </Pax>
@@ -3311,8 +3312,8 @@
 			</CPA104>
 		</Flights>
 		<FeedKey> CPA104/081101 </FeedKey>
-		<ST> 20100813 153500 </ST>
-		<ET> 20100813 153500 </ET>
+		<ST> 20100812 153500 </ST>
+		<ET> 20100812 153500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA104-2118>
@@ -3326,8 +3327,8 @@
 			</QFA5968>
 		</Flights>
 		<FeedKey> JQ968/081101 </FeedKey>
-		<ST> 20100813 155000 </ST>
-		<ET> 20100813 155000 </ET>
+		<ST> 20100812 155000 </ST>
+		<ET> 20100812 155000 </ET>
 		<Rego> VHVQP </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3344,8 +3345,8 @@
 			</QFA5444>
 		</Flights>
 		<FeedKey> JQ444/081101 </FeedKey>
-		<ST> 20100813 155500 </ST>
-		<ET> 20100813 155500 </ET>
+		<ST> 20100812 155500 </ST>
+		<ET> 20100812 155500 </ET>
 		<Rego> VHVQH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3362,8 +3363,8 @@
 			</JQ6446>
 		</Flights>
 		<FeedKey> QFA446/081101 </FeedKey>
-		<ST> 20100813 160000 </ST>
-		<ET> 20100813 160000 </ET>
+		<ST> 20100812 160000 </ST>
+		<ET> 20100812 160000 </ET>
 		<Rego> VHVXF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3376,8 +3377,8 @@
 			</THA982>
 		</Flights>
 		<FeedKey> THA982/081101 </FeedKey>
-		<ST> 20100813 163000 </ST>
-		<ET> 20100813 163000 </ET>
+		<ST> 20100812 163000 </ST>
+		<ET> 20100812 163000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
 	</THA982-2122>
@@ -3391,8 +3392,8 @@
 			</QFA5709>
 		</Flights>
 		<FeedKey> JQ709/081101 </FeedKey>
-		<ST> 20100813 163500 </ST>
-		<ET> 20100813 163500 </ET>
+		<ST> 20100812 163500 </ST>
+		<ET> 20100812 163500 </ET>
 		<Rego> VHJQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3409,8 +3410,8 @@
 			</JQ6452>
 		</Flights>
 		<FeedKey> QFA452/081101 </FeedKey>
-		<ST> 20100813 170000 </ST>
-		<ET> 20100813 170000 </ET>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
 		<Rego> VHTJU </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3424,8 +3425,8 @@
 			</SIA228>
 		</Flights>
 		<FeedKey> SIA228/081101 </FeedKey>
-		<ST> 20100813 170000 </ST>
-		<ET> 20100813 170000 </ET>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 	</SIA228-2125>
@@ -3439,8 +3440,8 @@
 			</JQ6628>
 		</Flights>
 		<FeedKey> QFA628/081101 </FeedKey>
-		<ST> 20100813 170500 </ST>
-		<ET> 20100813 170500 </ET>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
 		<Rego> VHTJZ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3457,8 +3458,8 @@
 			</QFA5476>
 		</Flights>
 		<FeedKey> JQ476/081101 </FeedKey>
-		<ST> 20100813 170500 </ST>
-		<ET> 20100813 170500 </ET>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
 		<Rego> VHVQS </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3481,8 +3482,8 @@
 			</AFR8091>
 		</Flights>
 		<FeedKey> QFA9/081101 </FeedKey>
-		<ST> 20100813 170500 </ST>
-		<ET> 20100813 170500 </ET>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
 		<Rego> VHOJT </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -3497,8 +3498,8 @@
 			</QFA5446>
 		</Flights>
 		<FeedKey> JQ446/081101 </FeedKey>
-		<ST> 20100813 174500 </ST>
-		<ET> 20100813 174500 </ET>
+		<ST> 20100812 174500 </ST>
+		<ET> 20100812 174500 </ET>
 		<Rego> VHVQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3515,8 +3516,8 @@
 			</JQ6697>
 		</Flights>
 		<FeedKey> QFA697/081101 </FeedKey>
-		<ST> 20100813 175500 </ST>
-		<ET> 20100813 175500 </ET>
+		<ST> 20100812 175500 </ST>
+		<ET> 20100812 175500 </ET>
 		<Rego> VHVXH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3533,8 +3534,8 @@
 			</JQ6458>
 		</Flights>
 		<FeedKey> QFA458/081101 </FeedKey>
-		<ST> 20100813 180000 </ST>
-		<ET> 20100813 180000 </ET>
+		<ST> 20100812 180000 </ST>
+		<ET> 20100812 180000 </ET>
 		<Rego> VHZXA </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3550,8 +3551,8 @@
 			</JQ6632>
 		</Flights>
 		<FeedKey> QFA632/081101 </FeedKey>
-		<ST> 20100813 180500 </ST>
-		<ET> 20100813 180500 </ET>
+		<ST> 20100812 180500 </ST>
+		<ET> 20100812 180500 </ET>
 		<Rego> VHTJM </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3567,8 +3568,8 @@
 			</QFA5743>
 		</Flights>
 		<FeedKey> JQ743/081101 </FeedKey>
-		<ST> 20100813 181500 </ST>
-		<ET> 20100813 181500 </ET>
+		<ST> 20100812 181500 </ST>
+		<ET> 20100812 181500 </ET>
 		<Rego> VHVQK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3582,8 +3583,8 @@
 			</ANZ726>
 		</Flights>
 		<FeedKey> ANZ726/081101 </FeedKey>
-		<ST> 20100813 183000 </ST>
-		<ET> 20100813 183000 </ET>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 	</ANZ726-2134>
@@ -3597,8 +3598,8 @@
 			</QFA5448>
 		</Flights>
 		<FeedKey> JQ448/081101 </FeedKey>
-		<ST> 20100813 184000 </ST>
-		<ET> 20100813 184000 </ET>
+		<ST> 20100812 184000 </ST>
+		<ET> 20100812 184000 </ET>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 321 </AirCraft>
 		<Pax> 177,0 </Pax>
@@ -3614,8 +3615,8 @@
 			</JQ6481>
 		</Flights>
 		<FeedKey> QFA481/081101 </FeedKey>
-		<ST> 20100813 184500 </ST>
-		<ET> 20100813 184500 </ET>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
 		<Rego> VHOGM </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3631,8 +3632,8 @@
 			</QFA267>
 		</Flights>
 		<FeedKey> JQ35/081101 </FeedKey>
-		<ST> 20100813 184500 </ST>
-		<ET> 20100813 184500 </ET>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
 		<Rego> VHEBF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 332 </AirCraft>
@@ -3645,8 +3646,8 @@
 			</ANZ758>
 		</Flights>
 		<FeedKey> ANZ758/081101 </FeedKey>
-		<ST> 20100813 184500 </ST>
-		<ET> 20100813 184500 </ET>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 	</ANZ758-2138>
@@ -3660,8 +3661,8 @@
 			</JQ6701>
 		</Flights>
 		<FeedKey> QFA701/081101 </FeedKey>
-		<ST> 20100813 185000 </ST>
-		<ET> 20100813 185000 </ET>
+		<ST> 20100812 185000 </ST>
+		<ET> 20100812 185000 </ET>
 		<Rego> VHTJL </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3674,8 +3675,8 @@
 			</QFA2061>
 		</Flights>
 		<FeedKey> QFA2061/081101 </FeedKey>
-		<ST> 20100813 185500 </ST>
-		<ET> 20100813 185500 </ET>
+		<ST> 20100812 185500 </ST>
+		<ET> 20100812 185500 </ET>
 		<Rego> VHTQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -3692,8 +3693,8 @@
 			</JQ6462>
 		</Flights>
 		<FeedKey> QFA462/081101 </FeedKey>
-		<ST> 20100813 190000 </ST>
-		<ET> 20100813 190000 </ET>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
 		<Rego> VHVYH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3706,8 +3707,8 @@
 			</QFA822>
 		</Flights>
 		<FeedKey> QFA822/081101 </FeedKey>
-		<ST> 20100813 190000 </ST>
-		<ET> 20100813 190000 </ET>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
 		<Rego> VHTJF </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -3721,8 +3722,8 @@
 			</QFA2086>
 		</Flights>
 		<FeedKey> QFA2086/081101 </FeedKey>
-		<ST> 20100813 190000 </ST>
-		<ET> 20100813 190000 </ET>
+		<ST> 20100812 190000 </ST>
+		<ET> 20100812 190000 </ET>
 		<Rego> VHTQK </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> DH3 </AirCraft>
@@ -3738,8 +3739,8 @@
 			</JQ6634>
 		</Flights>
 		<FeedKey> QFA634/081101 </FeedKey>
-		<ST> 20100813 190500 </ST>
-		<ET> 20100813 190500 </ET>
+		<ST> 20100812 190500 </ST>
+		<ET> 20100812 190500 </ET>
 		<Rego> VHVXJ </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3753,8 +3754,8 @@
 			</QFA2289>
 		</Flights>
 		<FeedKey> QFA2289/081101 </FeedKey>
-		<ST> 20100813 191500 </ST>
-		<ET> 20100813 191500 </ET>
+		<ST> 20100812 191500 </ST>
+		<ET> 20100812 191500 </ET>
 		<Rego> SBI </Rego>
 		<Carrier> Domestic </Carrier>
 		<Pax> 23,0 </Pax>
@@ -3767,8 +3768,8 @@
 			</QFA133>
 		</Flights>
 		<FeedKey> QFA133/081101 </FeedKey>
-		<ST> 20100813 193000 </ST>
-		<ET> 20100813 193000 </ET>
+		<ST> 20100812 193000 </ST>
+		<ET> 20100812 193000 </ET>
 		<Rego> VHVXM </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3781,8 +3782,8 @@
 			</QFA1013>
 		</Flights>
 		<FeedKey> QFA1013/081101 </FeedKey>
-		<ST> 20100813 195500 </ST>
-		<ET> 20100813 195500 </ET>
+		<ST> 20100812 195500 </ST>
+		<ET> 20100812 195500 </ET>
 		<Rego> VHVZD </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -3798,8 +3799,8 @@
 			</JQ6490>
 		</Flights>
 		<FeedKey> QFA490/081101 </FeedKey>
-		<ST> 20100813 200000 </ST>
-		<ET> 20100813 200000 </ET>
+		<ST> 20100812 200000 </ST>
+		<ET> 20100812 200000 </ET>
 		<Rego> VHZXE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3812,8 +3813,8 @@
 			</QFA653>
 		</Flights>
 		<FeedKey> QFA653/081101 </FeedKey>
-		<ST> 20100813 200000 </ST>
-		<ET> 20100813 200000 </ET>
+		<ST> 20100812 200000 </ST>
+		<ET> 20100812 200000 </ET>
 		<Rego> VHZXD </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -3829,8 +3830,8 @@
 			</QFA5478>
 		</Flights>
 		<FeedKey> JQ478/081101 </FeedKey>
-		<ST> 20100813 200500 </ST>
-		<ET> 20100813 200500 </ET>
+		<ST> 20100812 200500 </ST>
+		<ET> 20100812 200500 </ET>
 		<Rego> VHJQG </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3847,8 +3848,8 @@
 			</QFA5970>
 		</Flights>
 		<FeedKey> JQ970/081101 </FeedKey>
-		<ST> 20100813 210500 </ST>
-		<ET> 20100813 210500 </ET>
+		<ST> 20100812 210500 </ST>
+		<ET> 20100812 210500 </ET>
 		<Rego> VHJQE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3865,8 +3866,8 @@
 			</QFA5715>
 		</Flights>
 		<FeedKey> JQ715/081101 </FeedKey>
-		<ST> 20100813 213000 </ST>
-		<ET> 20100813 213000 </ET>
+		<ST> 20100812 213000 </ST>
+		<ET> 20100812 213000 </ET>
 		<Rego> VHVQS </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3883,8 +3884,8 @@
 			</QFA5678>
 		</Flights>
 		<FeedKey> JQ678/081101 </FeedKey>
-		<ST> 20100813 220500 </ST>
-		<ET> 20100813 220500 </ET>
+		<ST> 20100812 220500 </ST>
+		<ET> 20100812 220500 </ET>
 		<Rego> VHVQH </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -3904,8 +3905,8 @@
 			</AFR8073>
 		</Flights>
 		<FeedKey> QFA29/081101 </FeedKey>
-		<ST> 20100813 235900 </ST>
-		<ET> 20100813 235900 </ET>
+		<ST> 20100812 235900 </ST>
+		<ET> 20100812 235900 </ET>
 		<Rego> VHOJH </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -3917,8 +3918,8 @@
 			</THA980>
 		</Flights>
 		<FeedKey> THA980/081102 </FeedKey>
-		<ST> 20100814 004500 </ST>
-		<ET> 20100814 004500 </ET>
+		<ST> 20100812 004500 </ST>
+		<ET> 20100812 004500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
 	</THA980-2155>
@@ -3929,8 +3930,8 @@
 			</SIA218>
 		</Flights>
 		<FeedKey> SIA218/081102 </FeedKey>
-		<ST> 20100814 010500 </ST>
-		<ET> 20100814 010500 </ET>
+		<ST> 20100812 010500 </ST>
+		<ET> 20100812 010500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 77W </AirCraft>
 	</SIA218-2156>
@@ -3941,8 +3942,8 @@
 			</CPA168>
 		</Flights>
 		<FeedKey> CPA168/081102 </FeedKey>
-		<ST> 20100814 012000 </ST>
-		<ET> 20100814 012000 </ET>
+		<ST> 20100812 012000 </ST>
+		<ET> 20100812 012000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA168-2157>
@@ -3953,8 +3954,8 @@
 			</CPA134>
 		</Flights>
 		<FeedKey> CPA134/081102 </FeedKey>
-		<ST> 20100814 085000 </ST>
-		<ET> 20100814 085000 </ET>
+		<ST> 20100812 085000 </ST>
+		<ET> 20100812 085000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA134-2158>
@@ -3965,8 +3966,8 @@
 			</PAL209>
 		</Flights>
 		<FeedKey> PAL209/081101 </FeedKey>
-		<ST> 20100814 090000 </ST>
-		<ET> 20100814 090000 </ET>
+		<ST> 20100812 090000 </ST>
+		<ET> 20100812 090000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</PAL209-2159>
@@ -3977,8 +3978,8 @@
 			</ANZ792>
 		</Flights>
 		<FeedKey> ANZ792/081102 </FeedKey>
-		<ST> 20100814 091500 </ST>
-		<ET> 20100814 091500 </ET>
+		<ST> 20100812 091500 </ST>
+		<ET> 20100812 091500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 	</ANZ792-2160>
@@ -3989,8 +3990,8 @@
 			</GIA719>
 		</Flights>
 		<FeedKey> GIA719/081102 </FeedKey>
-		<ST> 20100814 105500 </ST>
-		<ET> 20100814 105500 </ET>
+		<ST> 20100812 105500 </ST>
+		<ET> 20100812 105500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</GIA719-2161>
@@ -4001,8 +4002,8 @@
 			</SIA238>
 		</Flights>
 		<FeedKey> SIA238/081102 </FeedKey>
-		<ST> 20100814 112000 </ST>
-		<ET> 20100814 112000 </ET>
+		<ST> 20100812 112000 </ST>
+		<ET> 20100812 112000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 	</SIA238-2162>
@@ -4013,8 +4014,8 @@
 			</QFA6026>
 		</Flights>
 		<FeedKey> QFA6026/081102 </FeedKey>
-		<ST> 20100814 112000 </ST>
-		<ET> 20100814 112000 </ET>
+		<ST> 20100812 112000 </ST>
+		<ET> 20100812 112000 </ET>
 		<Rego> VHEBX </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
@@ -4026,8 +4027,8 @@
 			</ANZ124>
 		</Flights>
 		<FeedKey> ANZ124/081102 </FeedKey>
-		<ST> 20100814 113500 </ST>
-		<ET> 20100814 113500 </ET>
+		<ST> 20100812 113500 </ST>
+		<ET> 20100812 113500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
 	</ANZ124-2164>
@@ -4038,8 +4039,8 @@
 			</QFA93>
 		</Flights>
 		<FeedKey> QFA93/081102 </FeedKey>
-		<ST> 20100814 121000 </ST>
-		<ET> 20100814 121000 </ET>
+		<ST> 20100812 121000 </ST>
+		<ET> 20100812 121000 </ET>
 		<Rego> VHOEG </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -4060,8 +4061,8 @@
 			</BA7303>
 		</Flights>
 		<FeedKey> QFA25/081102 </FeedKey>
-		<ST> 20100814 123500 </ST>
-		<ET> 20100814 123500 </ET>
+		<ST> 20100812 123500 </ST>
+		<ET> 20100812 123500 </ET>
 		<Rego> VHEBV </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
@@ -4073,8 +4074,8 @@
 			</JQ61>
 		</Flights>
 		<FeedKey> JQ61/081102 </FeedKey>
-		<ST> 20100814 133500 </ST>
-		<ET> 20100814 133500 </ET>
+		<ST> 20100812 133500 </ST>
+		<ET> 20100812 133500 </ET>
 		<Rego> VHVQK </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -4089,8 +4090,8 @@
 			</QFA265>
 		</Flights>
 		<FeedKey> JQ29/081102 </FeedKey>
-		<ST> 20100814 141000 </ST>
-		<ET> 20100814 141000 </ET>
+		<ST> 20100812 141000 </ST>
+		<ET> 20100812 141000 </ET>
 		<Rego> VHEBF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 332 </AirCraft>
@@ -4102,8 +4103,8 @@
 			</CPA104>
 		</Flights>
 		<FeedKey> CPA104/081102 </FeedKey>
-		<ST> 20100814 153500 </ST>
-		<ET> 20100814 153500 </ET>
+		<ST> 20100812 153500 </ST>
+		<ET> 20100812 153500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
 	</CPA104-2169>
@@ -4114,8 +4115,8 @@
 			</THA982>
 		</Flights>
 		<FeedKey> THA982/081102 </FeedKey>
-		<ST> 20100814 163000 </ST>
-		<ET> 20100814 163000 </ET>
+		<ST> 20100812 163000 </ST>
+		<ET> 20100812 163000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
 	</THA982-2170>
@@ -4126,8 +4127,8 @@
 			</SIA228>
 		</Flights>
 		<FeedKey> SIA228/081102 </FeedKey>
-		<ST> 20100814 170000 </ST>
-		<ET> 20100814 170000 </ET>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 	</SIA228-2171>
@@ -4147,8 +4148,8 @@
 			</BA7309>
 		</Flights>
 		<FeedKey> QFA9/081102 </FeedKey>
-		<ST> 20100814 170500 </ST>
-		<ET> 20100814 170500 </ET>
+		<ST> 20100812 170500 </ST>
+		<ET> 20100812 170500 </ET>
 		<Rego> VHOJP </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -4165,8 +4166,8 @@
 			</QFA203>
 		</Flights>
 		<FeedKey> JQ171/081102 </FeedKey>
-		<ST> 20100814 175000 </ST>
-		<ET> 20100814 175000 </ET>
+		<ST> 20100812 175000 </ST>
+		<ET> 20100812 175000 </ET>
 		<Rego> VHVQF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
@@ -4183,8 +4184,8 @@
 			</BA7358>
 		</Flights>
 		<FeedKey> QFA37/081102 </FeedKey>
-		<ST> 20100814 183000 </ST>
-		<ET> 20100814 183000 </ET>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
 		<Rego> ZKJTQ </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -4196,8 +4197,8 @@
 			</ANZ726>
 		</Flights>
 		<FeedKey> ANZ726/081102 </FeedKey>
-		<ST> 20100814 183000 </ST>
-		<ET> 20100814 183000 </ET>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 		<DStatus> Boarding </DStatus>
@@ -4209,8 +4210,8 @@
 			</ANZ758>
 		</Flights>
 		<FeedKey> ANZ758/081102 </FeedKey>
-		<ST> 20100814 184500 </ST>
-		<ET> 20100814 184500 </ET>
+		<ST> 20100812 184500 </ST>
+		<ET> 20100812 184500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 		<DStatus> Boarding </DStatus>
@@ -4222,8 +4223,8 @@
 			</QFA133>
 		</Flights>
 		<FeedKey> QFA133/081102 </FeedKey>
-		<ST> 20100814 193000 </ST>
-		<ET> 20100814 193000 </ET>
+		<ST> 20100812 193000 </ST>
+		<ET> 20100812 193000 </ET>
 		<Rego> VHVXM </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -4238,8 +4239,8 @@
 			</QFA395>
 		</Flights>
 		<FeedKey> FJI930/081102 </FeedKey>
-		<ST> 20100814 235900 </ST>
-		<ET> 20100814 235900 </ET>
+		<ST> 20100812 235900 </ST>
+		<ET> 20100812 235900 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<DStatus> Boarding </DStatus>
@@ -4258,8 +4259,8 @@
 			</BA7317>
 		</Flights>
 		<FeedKey> QFA29/081102 </FeedKey>
-		<ST> 20100814 235900 </ST>
-		<ET> 20100814 235900 </ET>
+		<ST> 20100812 235900 </ST>
+		<ET> 20100812 235900 </ET>
 		<Rego> VHOJO </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -4271,8 +4272,8 @@
 				<Ports> PER </Ports>
 			</GT4444>
 		</Flights>
-		<ST> 20100813 170000 </ST>
-		<ET> 20100813 170000 </ET>
+		<ST> 20100812 170000 </ST>
+		<ET> 20100812 170000 </ET>
 		<Gates> 13 </Gates>
 		<Bays> 5 </Bays>
 	</GT4444-2180>
@@ -4282,8 +4283,8 @@
 				<Ports> MEL </Ports>
 			</LT4444>
 		</Flights>
-		<ST> 20100813 183000 </ST>
-		<ET> 20100813 183000 </ET>
+		<ST> 20100812 183000 </ST>
+		<ET> 20100812 183000 </ET>
 		<Gates> 3 </Gates>
 		<Bays/>
 	</LT4444-2181>

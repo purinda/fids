@@ -686,15 +686,20 @@ begin
         oFlight.DbNode := p;
         Table[r].Flight := oFlight.Presentation[ffFlight];
         Table[r].Ports := oFlight.Presentation[ffPorts];
-        { table[r].ScheduledTime := oFlight.Presentation[ffSTime] + ' ' + oFlight.Presentation[ffST];
-          table[r].EstimatedTime := oFlight.Presentation[ffET] + ' ' + oFlight.Presentation[ffETdate]; }
 
-        Table[r].STDate := StrToDate(oFlight.Presentation[ffSTdate]);
+        //
+        // TODO: Clean this up later
+        //
+
+        // ST
+        Table[r].STDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffSTdate]);
         Table[r].STime  := FIDS_StrTOTime(oFlight.Presentation[ffSTime]);
 
-        Table[r].ETDate := StrToDate(oFlight.Presentation[ffETdate]);
+        // ET
+        Table[r].ETDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffETdate]);
         Table[r].ETime  := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffETime]);
 
+        // AT
         Table[r].ATDate := uCommon.FIDS_StrToDT(oFlight.Presentation[ffATdate]);
         Table[r].ATime  := uCommon.FIDS_StrTOTime(oFlight.Presentation[ffATime]);
 

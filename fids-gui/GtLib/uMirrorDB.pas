@@ -185,10 +185,11 @@ const
 function	DbDateToStr( dt : string ) : string;
 
 	begin
+
     if Length( dt ) >= 8 then  begin
-    	if dt[ 7 ] = '0' then  result := Copy( dt, 8, 1 )  else  result := Copy( dt, 7, 2 );
+    	if dt[ 7 ] = '0' then  result := Copy( dt, 7, 2 )  else  result := Copy( dt, 7, 2 );
 		result := result + '/';
-        if dt[ 5 ] = '0' then  result := result + Copy( dt, 6, 1 ) else  result := result + Copy( dt, 5, 2 );   // can be 'TBA' etc
+        if dt[ 5 ] = '0' then  result := result + Copy( dt, 5, 2 ) else  result := result + Copy( dt, 5, 2 );   // can be 'TBA' etc
 		result := result + '/' + Copy( dt, 1, 4 );
     	end
     else  result := dt;

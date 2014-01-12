@@ -869,7 +869,7 @@ function   cFlight.GetField( field : aFlightField ) : string;  // presentation s
                 if Length( s ) >= 15 then  result := Copy( s, 10, 4 )   // can be 'TBA' etc
                 else  result := s;
                 end
-            else if field in [ ffETdate, ffSTdate ] then  begin
+            else if field in [ ffETdate, ffSTdate, ffATdate ] then  begin
                 s := ReadContent( pfk, name );
                 if Length( s ) >= 15 then  begin
                 	result := DbDateToStr( s );

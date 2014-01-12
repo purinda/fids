@@ -900,18 +900,17 @@ begin
 
     if St <> '' then
     begin
-        p := 1;
-        yr := StrGetDDDD(St, p);
-        p := p + 4;
-        mo := StrGetDD(St, p);
-        p := p + 2;
-        dy := StrGetDD(St, p);
-        p := p + 2; // skip space
-
+        yr := StrToInt(Copy(St, 7, 4));
+        mo := StrToInt(Copy(St, 4, 2));
+        dy := StrToInt(Copy(St, 1, 2));
         try
             Result := EncodeDate(yr, mo, dy);
         except
         end;
+    end
+    else
+    begin
+        Result := 0;
     end;
 end;
 
@@ -940,31 +939,6 @@ begin
         return := return + '0' + dd
     else
         return := return + dd;
-
-    // separator
-    {
-      return := return + ' ';
-
-      DecodeTime(St, hr, mn, se, ms);
-      hour := IntToStr(hr);
-      min := IntToStr(mn);
-      sec := Inttostr(se);
-
-      if (Length(hour) < 2)  then
-      return := return + '0' + hour
-      else
-      return := return + hour;
-
-      if (Length(min) < 2)  then
-      return := return + '0' + min
-      else
-      return := return + min;
-
-      if (Length(sec) < 2)  then
-      return := return + '0' + sec
-      else
-      return := return + sec;
-    }
 
     Result := return;
 end;

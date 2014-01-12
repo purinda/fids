@@ -163,6 +163,9 @@ var
     { Dodgy flags }
     ErrorOccuredVSTMouseUP: Boolean;
 
+    {Sensors related}
+    SensorsInitialised : Boolean;
+
 implementation
 
 uses FSearch, FEditAnD, ufRuleEdit, FIndicators, FMain, FEdit, FCrawlineLines, uConnection;
@@ -655,8 +658,11 @@ begin
     end;
 
     { Init sensors }
-    fcWindow.InitSensors(panelSensors);
-    //fcWindow.ImplementSensors(self, imlSensors);
+    if (SensorsInitialised = false) then
+    begin
+        fcWindow.InitSensors(panelSensors);
+        SensorsInitialised := true;
+    end;
 
     PopulateGrid();
 
