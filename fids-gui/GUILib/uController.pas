@@ -315,13 +315,13 @@ begin
     begin
         { Label }
         SensorLabel[i] := Tlabel.Create(panelSensors);
+        SensorLabel[i].Name := 'lbl' + SensorType;
         SensorLabel[i].SetParentComponent(panelSensors);
         SensorLabel[i].Transparent := true;
         SensorLabel[i].Canvas.Font.Style := [fsBold];
         SensorLabel[i].Height := panelSensors.Height;
 
-        SensorLabel[i].Width := SensorLabel[i].Canvas.Font.Size *
-          Length(SensorType);
+        SensorLabel[i].Width := SensorLabel[i].Canvas.Font.Size * Length(SensorType);
 
         SensorLabel[i].Caption := SensorType;
         { Sensors }
@@ -680,7 +680,6 @@ begin
     setlength(Table, oFlights.Count + exRows);
     r := 0;
 
-    // ShowMessage( IntToStr( flights.Count ) );
     for p in oFlights do
     begin
         oFlight.DbNode := p;
@@ -762,15 +761,12 @@ begin
     // Update fields
     if (oFlight.DbNode <> nil) then
     begin
-        //if (ff = ffET) OR (ff = ffST) OR (ff = ffAT) then       xxx fix me
-        //begin
-            //oFlight.Raw[ff] := detail;
-       // end
-       // else
-            oFlight.Presentation[ff] := detail
+	    oFlight.Presentation[ff] := detail
     end
     else
+    begin
         showmessage('Error 554: Flight db connectivity lost');
+    end;
 
 end;
 

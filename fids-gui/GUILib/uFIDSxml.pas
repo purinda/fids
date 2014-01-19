@@ -64,9 +64,6 @@ begin
     mInit := FALSE;
     // Following is a string list to log all messages
     MessageLog := TStringList.Create;
-
-    Poller.OnTimeOut(3, procedure()begin // aOnTimeOutProc
-      Connect; end);
 end;
 
 class function TFIDSxml.GetInstance: TFIDSxml;
@@ -84,8 +81,6 @@ begin
     if Assigned(FInstance) then
     begin
         MessageLog.Free;
-        //oHub.Free;
-        //oDataTree.Free;
         FInstance.Free;
     end;
 
@@ -100,74 +95,6 @@ function TFIDSxml.GetDataTree(): cMirrorDB;
 begin
     Result := DB;//Self.oDataTree;
 end;
-
-//function TFIDSxml.GetMessageHub(): cMessageHub;
-//begin
-//    Result := Self.oHub;
-//end;
-
-//procedure TFIDSxml.NewConnection;
-//var
-//    sl: TStringList;
-//begin
-//
-//    if (oDataTree = nil) and (oHub.Connected) then
-//    begin
-//        LogIn(mUserName, mPassword, mUserName);
-//
-//        oDataTree := cMirrorDB.Create(oHub, mUserName, FALSE, TRUE, 13);
-//        oDataTree.RegisterReader(Notify); // I want to see incoming messages
-//
-//        // oFlight := cFlight.Create( oDataTree, mUserName );
-//        sl := TStringList.Create; // tell mirror what I'm interested in
-//        sl.Add('Sensors');
-//        sl.Add('Comments');
-//        sl.Add('SystemConfig');
-//        sl.Add('SystemSettings');
-//        sl.Add('Arrivals');
-//        sl.Add('Departures');
-//        sl.Add('Timetable');
-//        sl.Add('CheckIns');
-//        sl.Add('DisplayConfig');   // for list of UDC IPs - see uKeyPadServer
-//        // don't need to load big IATA stuff ...
-//        oDataTree.InitMirror(sl); // maintain a local copy of the data base
-//        oDataTree.RegisterReader(Notify);
-//        // oDataTree.RegisterReader(  );
-//        sl.Free;
-//    end;
-//
-//end;
-//
-//procedure TFIDSxml.Connect;
-//begin // 192.168.0.163 : 1666    todo load systemconfig.xml   todo encrypt password?
-//    if oHub = nil then
-//    begin
-//        oHub := cMessageHub.Create(Log);
-//        oHub.OnConnection := NewConnection;
-//        oHub.RegisterReader(MessageReader);
-//        oHub.InitConnection([alLocal, alPipe], mUserName, uCommon.Server, '',
-//          tcpNone, TStringList(nil), 0);
-//        Poller.OnTimeOut(100, // in 10 seconds time check the connection
-//          procedure()begin // aOnTimeOutProc
-//          if not oHub.Connected then begin if not oHub.Master then begin
-//          FreeAndNil(oHub);
-//          { Return error }
-//          //ShowMessage('Could not find server ' + Server);
-//          { Close; }
-//        end; end else NewConnection; // should be redundant
-//        end);
-//    end;
-//end;
-
-//procedure TFIDSxml.Notify(const xml: string);
-//begin
-//    if not mInit and oDataTree.Ready then
-//    begin // mirrored data is complete
-//        mInit := TRUE;
-//        // ShowMessage('Notify Event');
-//        // a good time to initialize stuff needing the tree
-//    end;
-//end;
 
 procedure TFIDSxml.SetLogin(usr, pw: string);
 begin

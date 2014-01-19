@@ -1016,7 +1016,7 @@ procedure cMirrorDB.RequestHandler( const request : string; link : apLinkID );  
 	if Master then  begin
 		reply := LocalRequestHandler( request, link );
 		if reply <> '' then  begin
-            me.fLink := alLocal;  me.fID := mHubID;
+            me.fLink := alLo cal;  me.fID := mHubID;
         	mHub.Broadcast( reply, @ me );  // broadcast response to all but me
             end;
 		end

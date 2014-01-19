@@ -568,11 +568,6 @@ function isDateEmpty(inp: TDate): Boolean;
 function IsStrANumber(s: string): Boolean;
 function BubbleSort( list: TStringList ): TStringList;
 
-// Used for delaying a command without hogging the app
-procedure Delay(dwMilliseconds: Longint);
-
-// function MessageDlg(const Msg: WideString; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HelpCtx: Longint; DefaultBtn: TMsgDlgBtn = mbNone; Bitmap: TBitmap = nil): Integer; overload;
-
 implementation
 
 function BubbleSort( list: TStringList ): TStringList;
@@ -903,6 +898,7 @@ begin
         yr := StrToInt(Copy(St, 7, 4));
         mo := StrToInt(Copy(St, 4, 2));
         dy := StrToInt(Copy(St, 1, 2));
+
         try
             Result := EncodeDate(yr, mo, dy);
         except
@@ -990,81 +986,9 @@ begin
         return := return + '0' + min
     else
         return := return + min;
-    {
-      if (Length(sec) < 2)  then
-      return := return + '0' + sec
-      else
-      return := return + sec;
-    }
 
     Result := return;
 end;
-
-{
-  function fidsTime2stdTime(inp: String) : TTime;
-  var
-  t1, t2 : String;
-  begin
-  ShortTimeFormat := 'hh:mm';
-  t2 := inp;
-
-  t1 := copy(t2,0,2);
-  t1 := t1 + ':' + copy(t2,3,2);
-
-  Result := StrToTime(t1);
-  end;
-
-  function stdTime2fidsTime(inp: TTime) : String;
-  var
-  t1, t2 : String;
-  begin
-  t2 := FormatDateTime('hh:mm', inp);
-
-  t1 := copy(t2,0,2);
-  t1 := t1 + '' + copy(t2,4,2);
-  Result := t1;
-  end;
-
-
-  function fidsDate2stdDate(inp: String) : TDate;
-  var
-  t1, t2 : String;
-  begin
-  ShortDateFormat := 'dd/mm/yyyy';
-  t2 := inp;
-  t1 := copy(t2,7,2);
-  t1 := t1 + '/' + copy(t2,5,2);
-  t1 := t1 + '/' + copy(t2,1,4);
-  Result := StrToDate(t1);
-  end;
-
-  function stdDate2fidsDate(inp: TDate) : String;
-  var
-  t1, t2 : String;
-  begin
-  ShortDateFormat := 'dd/mm/yyyy';
-
-  t2 := DateToStr(inp);
-  t1 := copy(t2,7,4);
-  t1 := t1 + '' + copy(t2,4,2);
-  t1 := t1 + '' + copy(t2,0,2);
-
-  Result := t1;
-  end;
-}
-
-procedure Delay(dwMilliseconds: Longint);
-var
-  iStart, iStop: DWORD;
-begin
-  iStart := GetTickCount;
-  repeat
-    iStop := GetTickCount;
-    Application.ProcessMessages;
-    Sleep(1); // addition from Christian Scheffler to avoid high CPU last
-  until ((iStop - iStart) >= dwMilliseconds);
-end;
-
 
 function IntToBin(value: LongInt; digits: integer): string;
 begin

@@ -37,8 +37,10 @@ object frmWindow: TfrmWindow
     000000000000000000000000000000000000000000000000000000000000}
   OldCreateOrder = False
   ScreenSnap = True
+  OnActivate = FormActivate
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96
@@ -178,18 +180,14 @@ object frmWindow: TfrmWindow
     TabOrder = 3
     OnAfterItemErase = VSTAfterItemErase
     OnAfterPaint = VSTAfterPaint
-    OnChange = VSTChange
     OnCompareNodes = VSTCompareNodes
     OnDblClick = tbbModifyClick
-    OnFocusChanged = VSTFocusChanged
-    OnFreeNode = VSTFreeNode
     OnGetText = VSTGetText
     OnPaintText = VSTPaintText
     OnGetNodeDataSize = VSTGetNodeDataSize
     OnHeaderClick = VSTHeaderClick
     OnMouseUp = VSTMouseUp
     OnNewText = VSTNewText
-    ExplicitTop = 109
     Columns = <>
   end
   object ammbMainMenu: TActionMainMenuBar
@@ -262,6 +260,7 @@ object frmWindow: TfrmWindow
         Top = 0
         Caption = 'Gantt'
         ImageIndex = 18
+        OnClick = tbbGanttClick
       end
     end
     object tbExtended: TToolBar
@@ -347,7 +346,7 @@ object frmWindow: TfrmWindow
     Left = 464
     Top = 320
     Bitmap = {
-      494C01010200D800EC0118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010200D800F00118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -565,7 +564,7 @@ object frmWindow: TfrmWindow
     Left = 536
     Top = 320
     Bitmap = {
-      494C01011A00B8015C0220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A00B801600220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -4462,5 +4461,12 @@ object frmWindow: TfrmWindow
     MenuColor = clMenu
     Left = 392
     Top = 256
+  end
+  object tmrDodgy: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmrDodgyTimer
+    Left = 584
+    Top = 168
   end
 end

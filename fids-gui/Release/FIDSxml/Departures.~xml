@@ -7,14 +7,15 @@
 			</NTL238>
 		</Flights>
 		<FeedKey> SIA238/081031 </FeedKey>
-		<ST> 20100812 112700 </ST>
+		<ST> 20100922 112700 </ST>
 		<ET> 20100812 113000 </ET>
-		<AT> 20100812 113100 </AT>
+		<AT> 20111230 000000 </AT>
 		<Rego> 9VSPNA </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<Gates> 5 </Gates>
 		<DStatus> Departed </DStatus>
+		<NonPublic/>
 	</SIA238-1923>
 	<QFA614-1924>
 		<Flights>

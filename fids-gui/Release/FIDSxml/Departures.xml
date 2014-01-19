@@ -7,9 +7,9 @@
 			</NTL238>
 		</Flights>
 		<FeedKey> SIA238/081031 </FeedKey>
-		<ST> 20100914 112700 </ST>
+		<ST> 20100922 112700 </ST>
 		<ET> 20100812 113000 </ET>
-		<AT> 18991230 000000 </AT>
+		<AT> 20111230 000000 </AT>
 		<Rego> 9VSPNA </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
@@ -4066,6 +4066,7 @@
 		<Rego> VHEBV </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
+		<DStatus> Delayed </DStatus>
 	</QFA25-2166>
 	<JQ61-2167>
 		<Flights>
@@ -4095,6 +4096,7 @@
 		<Rego> VHEBF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 332 </AirCraft>
+		<DStatus> Final Call </DStatus>
 	</JQ29-2168>
 	<CPA104-2169>
 		<Flights>

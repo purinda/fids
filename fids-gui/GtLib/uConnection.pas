@@ -212,8 +212,8 @@ destructor	cConnection.Destroy;  // override;
 procedure  cConnection.OnConnectionEvent( event : aConnectionEvent; param : string );  // called by message hub when connection established
 
 	begin
-    if event = ceConnected then  NewConnection;
-    NotifyEvent( event, param );
+    	if event = ceConnected then  NewConnection;
+	    NotifyEvent( event, param );
     end;
 
 

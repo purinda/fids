@@ -84,7 +84,7 @@ procedure TfFeedMain.FormCreate(Sender: TObject);
     mPassword := SysPW;
     oTimeTable := cTimeTable.Create;
     oTimeTable.Log := Log;
-	Poller.OnTimeOut( 3,               // in 3/10 sec Connect   ie wait for create to finish
+	Poller.OnTimeOut( 30,               // in 3/10 sec Connect   ie wait for create to finish
     	procedure() begin  //aOnTimeOutProc
             Connect;
             end

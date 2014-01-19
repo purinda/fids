@@ -23,6 +23,7 @@ uses
 
 begin
   Application.Initialize;
+
   Application.MainFormOnTaskbar := True;
   Application.Title := 'DII FIDS GUI System v2';
   Application.CreateForm(TfrmLogin, frmLogin);

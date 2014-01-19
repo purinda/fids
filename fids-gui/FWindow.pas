@@ -10,7 +10,7 @@ uses
     uCommon, Buttons, uTTRules, VrControls, VrLcd, ActnPopup, StdActns,
     ActnList, PlatformDefaultStyleActnCtrls, ActnMan, ActnCtrls, ActnMenus,
     ActnColorMaps, RibbonLunaStyleActnCtrls, ufStringEntry, uDbTree, uGT,
-    uUtils;
+    uUtils, uPoller;
 
 type
     TfrmWindow = class(TForm)
@@ -58,13 +58,9 @@ type
         ToolButton1: TToolButton;
     amnuCrawlingLines: TAction;
     lblHostUnavailable: TLabel;
+    tmrDodgy: TTimer;
 
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
-
-        procedure VSTChange(Sender: TBaseVirtualTree; Node: PVirtualNode);
-        procedure VSTFocusChanged(Sender: TBaseVirtualTree; Node: PVirtualNode;
-          Column: TColumnIndex);
-        procedure VSTFreeNode(Sender: TBaseVirtualTree; Node: PVirtualNode);
         procedure VSTGetNodeDataSize(Sender: TBaseVirtualTree;
           var NodeDataSize: Integer);
         procedure VSTGetText(Sender: TBaseVirtualTree; Node: PVirtualNode;
@@ -105,6 +101,10 @@ type
       Node: PVirtualNode; ItemRect: TRect);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure amnuCrawlingLinesExecute(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure tmrDodgyTimer(Sender: TObject);
+    procedure tbbGanttClick(Sender: TObject);
 
     private
         { Main db backend handling Object }
@@ -162,9 +162,11 @@ var
 
     { Dodgy flags }
     ErrorOccuredVSTMouseUP: Boolean;
+    mShutDown: Boolean;
 
-    {Sensors related}
-    SensorsInitialised : Boolean;
+    {Flags to detect dyanmic components}
+    SensorsPanelInitialised : Boolean;
+    StatusButtonsInitialised : Boolean;
 
 implementation
 
@@ -246,11 +248,12 @@ begin
         self.PopulateHorizontally(SearchField, SearchString)
     else
         self.PopulateVertically(SearchField, SearchString);
-
 end;
 
 procedure TfrmWindow.Departures3Click(Sender: TObject);
 begin
+	ShowMessage('Use the main screen for now');
+    exit;
 
     if (ucommon.DeparturesRunning) then
     begin
@@ -291,6 +294,8 @@ end;
 
 procedure TfrmWindow.Arrivals3Click(Sender: TObject);
 begin
+	ShowMessage('Use the main screen for now');
+    exit;
 
     if (ucommon.ArrivalsRunning) then
     begin
@@ -317,28 +322,12 @@ end;
 procedure TfrmWindow.Bays2Click(Sender: TObject);
 begin
     ShowMessage('Still improving bays as a summary window, Not finished');
-
-
-    {Set checkkins window}
-    {
-    if (assigned(frmWindows[4])) then
-    begin
-        frmWindows[4].Show;
-        frmWindows[4].WindowState := wsNormal;
-    end
-    else
-    begin
-        frmWindows[4] := TfrmWindow.Create(nil);
-        frmWindows[4].ControllerType := FIDSHorizontallyPopulated;
-        frmWindows[4].ControllerID := FIDSBays;
-        frmWindows[4].SetController('Bays - '+ Caption, fkArrivals, uCommon.BaysFields, uCommon.BaysColumns );
-        frmWindows[4].Show;
-    end;
-    }
 end;
 
 procedure TfrmWindow.Belts1Click(Sender: TObject);
 begin
+	ShowMessage('Use the main screen for now');
+    exit;
 
     if (ucommon.BeltsRunning) then
     begin
@@ -365,6 +354,9 @@ end;
 
 procedure TfrmWindow.Checkins2Click(Sender: TObject);
 begin
+	ShowMessage('Use the main screen for now');
+    exit;
+
     if (ucommon.CheckinsRunning) then
     begin
         ShowWindow(ucommon.CheckinsHandle, SW_RESTORE);
@@ -459,10 +451,15 @@ begin
 
 end;
 
+procedure TfrmWindow.FormActivate(Sender: TObject);
+begin
+    panelSensors.Refresh;
+    panelSensors.Repaint;
+end;
+
 procedure TfrmWindow.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Hide;
-    // Self.Free;
 end;
 
 procedure TfrmWindow.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -476,6 +473,12 @@ begin
         FIDSCheckins:   uCommon.CheckinsRunning := false;
     end;
 
+end;
+
+procedure TfrmWindow.FormCreate(Sender: TObject);
+begin
+	SensorsPanelInitialised  := false;
+    StatusButtonsInitialised := false;
 end;
 
 procedure TfrmWindow.FormResize(Sender: TObject);
@@ -494,15 +497,14 @@ var
 
     icon: TIcon;
 begin
-
     Caption := ControllerName;
     ControllerMode := FIDSListingMode;
 
     VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
       toFullVertGridLines];
+
     if (ControllerType = FIDSHorizontallyPopulated) then
     begin
-        // vst.Header.Options := [];
         VST.TreeOptions.SelectionOptions := [toExtendedFocus];
     end
     else
@@ -512,23 +514,25 @@ begin
     end;
 
     if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
-        tbExtended.Visible := false;
+    begin
+	    tbExtended.Visible := false;
+    end;
 
     if (ControllerID = FIDSCheckins) OR (ControllerID = FIDSBays) OR
       (ControllerID = FIDSBelts) then
         tbbGantt.Visible := True
     else
-        tbbGantt.Visible := false;
+        tbbGantt.Visible := true;
 
-
-    case (ControllerID) of
-        FIDSArrivals:  begin uCommon.ArrivalsHandle := Handle; uCommon.ArrivalsRunning := true; end;
-        FIDSDepartures:  begin ucommon.DeparturesHandle := Handle;  uCommon.DeparturesRunning := true;  end;
-        FIDSBays:  begin uCommon.BaysHandle := Handle; uCommon.BaysRunning := true; end;
-        FIDSGates: begin uCommon.GatesHandle := Handle;  uCommon.GatesRunning := true; end;
-        FIDSBelts: begin uCommon.BeltsHandle := Handle; uCommon.BeltsRunning := true; end;
-        FIDSCheckins: begin  uCommon.CheckinsHandle := Handle; uCommon.CheckinsRunning := true; end;
-    end;
+//    TODO: Fix this window handlers. Used for focussing a perticular window from the main screen and sub screens.
+//    case (ControllerID) of
+//        FIDSArrivals:  begin uCommon.ArrivalsHandle := Handle; uCommon.ArrivalsRunning := true; end;
+//        FIDSDepartures:  begin ucommon.DeparturesHandle := Handle;  uCommon.DeparturesRunning := true;  end;
+//        FIDSBays:  begin uCommon.BaysHandle := Handle; uCommon.BaysRunning := true; end;
+//        FIDSGates: begin uCommon.GatesHandle := Handle;  uCommon.GatesRunning := true; end;
+//        FIDSBelts: begin uCommon.BeltsHandle := Handle; uCommon.BeltsRunning := true; end;
+//        FIDSCheckins: begin  uCommon.CheckinsHandle := Handle; uCommon.CheckinsRunning := true; end;
+//    end;
 
     VrClock1.Color := rgb(0, 5, 5);
     VrClock1.Palette.Low := rgb(0, 20, 20);
@@ -595,8 +599,11 @@ begin
     fcWindow.NewConnection(ControllerID);
 
     Statuses := fcWindow.GetStatuses;
-    if ControllerType = FIDSVerticallyPopulated then
+    if (ControllerType = FIDSVerticallyPopulated) AND (StatusButtonsInitialised = false) then
     begin
+    	{ Flag this process so next time the window gets created we wouldnt have duplicates }
+  	    StatusButtonsInitialised := true;
+
         { Build status change buttons }
         for Status in Statuses do
         begin
@@ -604,39 +611,44 @@ begin
 
             if LowerCase(Status) = 'cancelled' then
                 if (afkWindowKind = fkArrivals) then
+                begin
                     Button.ImageIndex := 1
+                end
                 else
+                begin
                     Button.ImageIndex := 14;
+                end;
 
-            if LowerCase(Status) = 'landed' then
-                Button.ImageIndex := 20;
-            if LowerCase(Status) = 'diverted' then
-                Button.ImageIndex := 16;
-            if LowerCase(Status) = 'on blocks' then
-                Button.ImageIndex := 22;
-            if LowerCase(Status) = 'boarding' then
-                Button.ImageIndex := 5;
-            if LowerCase(Status) = 'final call' then
-                Button.ImageIndex := 17;
-            if LowerCase(Status) = 'closed' then
-                Button.ImageIndex := 9;
-            if LowerCase(Status) = 'departed' then
-                Button.ImageIndex := 13;
-            if LowerCase(Status) = 'off blocks' then
-                Button.ImageIndex := 21;
-            if LowerCase(Status) = 'take off' then
-                Button.ImageIndex := 23;
-            if LowerCase(Status) = 'pre landed' then
-                Button.ImageIndex := 2;
-            if LowerCase(Status) = 'delayed' then
-                Button.ImageIndex := 10;
 
-            Button.SetParentComponent(tbExtended);
-            Button.AutoSize := True;
-            Button.Caption := Status;
-            Button.OnClick := tbDummyButton.OnClick;
-            tbExtended.Width := tbExtended.Width + Button.Width;
-            Inc(I);
+                if LowerCase(Status) = 'landed' then
+                    Button.ImageIndex := 20;
+                if LowerCase(Status) = 'diverted' then
+                    Button.ImageIndex := 16;
+                if LowerCase(Status) = 'on blocks' then
+                    Button.ImageIndex := 22;
+                if LowerCase(Status) = 'boarding' then
+                    Button.ImageIndex := 5;
+                if LowerCase(Status) = 'final call' then
+                    Button.ImageIndex := 17;
+                if LowerCase(Status) = 'closed' then
+                    Button.ImageIndex := 9;
+                if LowerCase(Status) = 'departed' then
+                    Button.ImageIndex := 13;
+                if LowerCase(Status) = 'off blocks' then
+                    Button.ImageIndex := 21;
+                if LowerCase(Status) = 'take off' then
+                    Button.ImageIndex := 23;
+                if LowerCase(Status) = 'pre landed' then
+                    Button.ImageIndex := 2;
+                if LowerCase(Status) = 'delayed' then
+                    Button.ImageIndex := 10;
+
+                Button.SetParentComponent(tbExtended);
+                Button.AutoSize := True;
+                Button.Caption := Status;
+                Button.OnClick := tbDummyButton.OnClick;
+                tbExtended.Width := tbExtended.Width + Button.Width;
+                Inc(I);
         end;
 
         // Adding the clear Button on both Arrivals and Departures
@@ -657,21 +669,24 @@ begin
         tbExtended.Visible := false;
     end;
 
-    { Init sensors }
-    if (SensorsInitialised = false) then
+    if (SensorsPanelInitialised = false) then
     begin
+        { Init sensors }
         fcWindow.InitSensors(panelSensors);
-        SensorsInitialised := true;
+        { Redraw Sensors }
+        fcWindow.ImplementSensors(self, imlSensors);
+        SensorsPanelInitialised := true;
     end;
 
     PopulateGrid();
-
     tbClearSearch.Caption := 'Back to "' + ControllerName + '" view';
-
 end;
 
 procedure TfrmWindow.Gates2Click(Sender: TObject);
 begin
+
+	ShowMessage('Use the main screen for now');
+    exit;
 
     if (ucommon.GatesRunning) then
     begin
@@ -750,8 +765,6 @@ begin
     I := 0;
     CGBBUsed := fcWindow.GetListOfCGBBUsed(ControllerID);
     try
-        { Redraw Sensors }
-        fcWindow.ImplementSensors(self, imlSensors);
 
         { Set how many rows to Rows array depending on Checkins/Gates/Etc used }
         SetLength(Rows, CGBBUsed.Count);
@@ -771,7 +784,6 @@ begin
                 { Loop through Flights in Database }
                 for Flight in fcWindow.Table do
                 begin
-                    // exit();
                     { Differentiate what data extract from flight info }
                     case (ControllerID) of
                         FIDSGates:
@@ -895,9 +907,6 @@ var
     TranslatedSearch: String;
 
 begin
-
-    { Redraw Sensors }
-    fcWindow.ImplementSensors(self, imlSensors);
 
     {
       dont clear as it tries to redraw the whole table everytime and uselose
@@ -1113,8 +1122,6 @@ begin
         // DO NOTHING; EXPECTED ISSUE
         // beep;
     end;
-
-    PopulateGrid();
 end;
 
 procedure TfrmWindow.AddNewFlight(CodeShare: Boolean; ExistingFlight: apNode);
@@ -1127,7 +1134,6 @@ begin
 
     if (CodeShare = false) then
     begin
- //       ShowMessage('NotACodeshare');
         { Create/Add the BLANK Flight }
         NewFlight := cFlight.Create( DB, 'Feed');     //    fcWindow.FXml.oDataTree
         NewFlight.Kind := afkWindowKind;
@@ -1136,7 +1142,6 @@ begin
     end
     else
     begin
-//        ShowMessage('Codeshare');
         NewFlight.DbNode := nil;
         NewFlight.Clear;
     end;
@@ -1466,7 +1471,6 @@ begin
         { Also check for updated values against exisitng flight information }     { To be implemented }
         // ShowMessage(EditWndVal);
         fcWindow.SetDetail(SelectedFlightPath, ffField, EditWndVal);
-        // fcWindow.SetDetail(SelectedFlightPath, ffField, EditWndVal);
     end;
 
 end;
@@ -1640,10 +1644,6 @@ begin
         else
             AddNewFlight(false, Flight.DbNode);
 
-        // retrieve data and redraw grid
-        Delay(2000);
-        PopulateGrid;
-        VST.Repaint;
     end;
 
 end;
@@ -1691,12 +1691,23 @@ begin
 
 end;
 
+procedure TfrmWindow.tbbGanttClick(Sender: TObject);
+begin
+    Poller.OnTimeOut(5, procedure()
+        begin  // aOnTimeOutProc
+			ShowMessage('test');
+    	end
+	);
+end;
+
 procedure TfrmWindow.tbbHomeClick(Sender: TObject);
 begin
     frmMain.Show();
 
     if (frmMain.WindowState = wsMinimized) then
+    begin
         frmMain.WindowState := wsNormal;
+    end;
 
 end;
 
@@ -1867,7 +1878,6 @@ begin
             FIDSBelts: frmEdit.Caption := 'Belts details ';
         end;
 
-
         if frmEdit.ShowModal = mrOk then
         begin
 
@@ -1918,8 +1928,7 @@ begin
               UpdateFlightData('txtPorts', TEdit.ClassName, ffPorts);
             }
             // retrieve data and redraw grid
-            PopulateGrid;
-            VST.Repaint;
+            tmrDodgy.Enabled := true;
         end;
 
     end
@@ -1943,26 +1952,31 @@ end;
 
 procedure TfrmWindow.tbDummyButtonClick(Sender: TObject);
 begin
-
+	tmrDodgy.Enabled := true;
     { Set status from caption of the button }
     if (afkWindowKind = fkArrivals) then
     begin
         if (LowerCase(TToolButton(Sender).Caption) = 'clear') then
+        begin
             self.SetDetail(ffAStatus, '')
+        end
         else
+        begin
             self.SetDetail(ffAStatus, TToolButton(Sender).Caption);
-
+        end;
     end
     else if (afkWindowKind = fkDepartures) then
     begin
         if (LowerCase(TToolButton(Sender).Caption) = 'clear') then
+        begin
             self.SetDetail(ffDStatus, '')
+        end
         else
+        begin
             self.SetDetail(ffDStatus, TToolButton(Sender).Caption);
-
+        end;
     end;
 
-    VST.Repaint;
 end;
 
 function TfrmWindow.ExpandNodes():Integer;
@@ -2021,6 +2035,16 @@ begin
     PopulateGrid();
 end;
 
+// TODO: Take this fucking shit out once we have a fucking callback function
+procedure TfrmWindow.tmrDodgyTimer(Sender: TObject);
+begin
+    // retrieve data and redraw grid
+    PopulateGrid;
+    VST.Repaint;
+
+    tmrDodgy.Enabled := false;
+end;
+
 procedure TfrmWindow.VSTAfterItemErase(Sender: TBaseVirtualTree;
   TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
 var
@@ -2028,7 +2052,6 @@ var
     I: Int8;
     Paths: TStringList;
 begin
-
     if (ControllerType = FIDSHorizontallyPopulated) then
     begin
         RowHighlight := not RowHighlight;
@@ -2145,12 +2168,7 @@ begin
     VSTIndex := 0;
     RowHighlight := false;
 
-    ExpandNodes();
-end;
-
-procedure TfrmWindow.VSTChange(Sender: TBaseVirtualTree; Node: PVirtualNode);
-begin
-   // VST.Refresh;
+//    ExpandNodes();
 end;
 
 procedure TfrmWindow.VSTCompareNodes(Sender: TBaseVirtualTree;
@@ -2248,49 +2266,7 @@ begin
         end
         else
             Result := CompareStr(Compare1, Compare2);
-
-        //ShowMessage(Compare1 + '-' +Compare2);
-        //Result := CompareStr(Compare1, Compare2);
     end;
-
-end;
-
-procedure TfrmWindow.VSTFocusChanged(Sender: TBaseVirtualTree;
-  Node: PVirtualNode; Column: TColumnIndex);
-begin
-    // VST.Refresh;
-end;
-
-procedure TfrmWindow.VSTFreeNode(Sender: TBaseVirtualTree; Node: PVirtualNode);
-var
-    Data: PTreeData;
-begin
-    {
-      if (ControllerType = FIDSVerticallyPopulated) then
-      begin
-      // Free all nodes used.
-      Data := VST.GetNodeData(Node);
-
-      if Assigned(Data) then
-      begin
-      Data^.Flight := '';
-      Data^.ports := '';
-      Data^.STDate := null;
-      Data^.STime := null;
-      Data^.ETDate := null;
-      Data^.ETime := null;
-      Data^.Status := '';
-      Data^.CheckIns := '';
-      Data^.Gates := '';
-      Data^.Bays := '';
-      Data^.Belts := '';
-      Data^.Carrier := '';
-      Data^.Terminal := '';
-      Data^.Rego := '';
-      Data^.CodeShare := 0;
-      Data^.DBPath := '';
-      end;
-      end; }
 
 end;
 
@@ -2535,7 +2511,6 @@ end;
 procedure TfrmWindow.VSTHeaderClick(Sender: TVTHeader; Column: TColumnIndex;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-
     VST.Header.SortColumn := Column;
 
     if Sender.SortDirection = sdAscending then
@@ -2559,7 +2534,6 @@ var
     PCGBBItemMouseLoc: PCGBB;
     I: Int16;
 begin
-
     tmpNode := VST.GetNodeAt(X, Y);
     {
       if not Assigned(tmpNode) then
@@ -2619,7 +2593,6 @@ procedure TfrmWindow.VSTNewText(Sender: TBaseVirtualTree; Node: PVirtualNode;
 Var
     Data: PTreeData;
 begin
-
     // This section is important when enabling on the spot editing
     // NOT YET IMPLEMENTED
     Data := VST.GetNodeData(Node);
@@ -2697,37 +2670,6 @@ begin
                 TargetCanvas.Font.Color := clWhite;
                 TargetCanvas.Font.Style := [fsBold];
             end;
-            {
-              if LowerCase(Data^.Status) = 'on blocks' then
-              begin
-              TargetCanvas.Font.Color:=clWhite;
-              TargetCanvas.Font.Style := [fsBold];
-              end;
-
-              if LowerCase(Data^.Status) = 'off blocks' then
-              begin
-              TargetCanvas.Font.Color:=clWhite;
-              TargetCanvas.Font.Style := [fsBold];
-              end;
-
-              if LowerCase(Data^.Status) = 'take off' then
-              begin
-              TargetCanvas.Font.Color:=clWhite;
-              TargetCanvas.Font.Style := [fsBold];
-              end;
-
-              if LowerCase(Data^.Status) = 'pre landed' then
-              begin
-              TargetCanvas.Font.Color:=clWhite;
-              TargetCanvas.Font.Style := [fsBold];
-              end;
-
-              if LowerCase(Data^.Status) = 'delayed' then
-              begin
-              TargetCanvas.Font.Color:=clWhite;
-              TargetCanvas.Font.Style := [fsBold];
-              end;
-            }
 
             if LowerCase(Data^.Status) = 'landed' then
             begin

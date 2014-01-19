@@ -450,7 +450,7 @@ constructor  cFlight.Create( db : cMirrorDB {or nil }; ReqID : string );
     end;
 
 
-function   cFlight.  MakeValidFlight( var name : string ) : boolean;
+function   cFlight.MakeValidFlight( var name : string ) : boolean;
 
     var
     	i : int;
