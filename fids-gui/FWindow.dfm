@@ -206,6 +206,7 @@ object frmWindow: TfrmWindow
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
+    ExplicitTop = -3
   end
   object ControlBar1: TControlBar
     Left = 0
@@ -4464,7 +4465,7 @@ object frmWindow: TfrmWindow
   end
   object tmrDodgy: TTimer
     Enabled = False
-    Interval = 500
+    Interval = 200
     OnTimer = tmrDodgyTimer
     Left = 584
     Top = 168

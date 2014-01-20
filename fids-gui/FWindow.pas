@@ -199,6 +199,7 @@ begin
     end;
 
     self.ControllerName := WindowName;
+    Caption := WindowName;
     afkWindowKind := fKind;
 
     { Window specific object creation }
@@ -238,7 +239,6 @@ end;
 
 procedure TfrmWindow.PopulateGrid();
 begin
-
     if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
         fcWindow.PopulateTTGrid()
     else
@@ -252,14 +252,11 @@ end;
 
 procedure TfrmWindow.Departures3Click(Sender: TObject);
 begin
-	ShowMessage('Use the main screen for now');
-    exit;
-
-    if (ucommon.DeparturesRunning) then
-    begin
-        ShowWindow(ucommon.DeparturesHandle, SW_RESTORE);
-        Exit;
-    end;
+//    if (ucommon.DeparturesRunning) then
+//    begin
+//        ShowWindow(ucommon.DeparturesHandle, SW_RESTORE);
+//        Exit;
+//    end;
 
     { Set departures window }
     if (assigned(frmWindows[1])) then
@@ -272,7 +269,7 @@ begin
         frmWindows[1] := TfrmWindow.Create(nil);
         frmWindows[1].ControllerType := FIDSVerticallyPopulated;
         frmWindows[1].ControllerID := FIDSDepartures;
-        frmWindows[1].SetController('Departures - ' + Caption, fkDepartures,
+        frmWindows[1].SetController('Departures - ' + fcWindow.JobName, fkDepartures,
           uCommon.DeparturesSortedFields, uCommon.DeparturesSortedColumns);
         frmWindows[1].Show;
     end;
@@ -294,14 +291,11 @@ end;
 
 procedure TfrmWindow.Arrivals3Click(Sender: TObject);
 begin
-	ShowMessage('Use the main screen for now');
-    exit;
-
-    if (ucommon.ArrivalsRunning) then
-    begin
-        ShowWindow(ucommon.ArrivalsHandle, SW_RESTORE);
-        Exit;
-    end;
+//    if (ucommon.ArrivalsRunning) then
+//    begin
+//        ShowWindow(ucommon.ArrivalsHandle, SW_RESTORE);
+//        Exit;
+//    end;
 
     if (assigned(frmWindows[0])) then
     begin
@@ -313,7 +307,7 @@ begin
         frmWindows[0] := TfrmWindow.Create(nil);
         frmWindows[0].ControllerType := FIDSVerticallyPopulated;
         frmWindows[0].ControllerID := FIDSArrivals;
-        frmWindows[0].SetController('Arrivals - ' + Caption, fkArrivals,
+        frmWindows[0].SetController('Arrivals - ' + fcWindow.JobName, fkArrivals,
           uCommon.ArrivalSortedFields, uCommon.ArrivalSortedColumns);
         frmWindows[0].Show;
     end;
@@ -326,14 +320,11 @@ end;
 
 procedure TfrmWindow.Belts1Click(Sender: TObject);
 begin
-	ShowMessage('Use the main screen for now');
-    exit;
-
-    if (ucommon.BeltsRunning) then
-    begin
-        ShowWindow(ucommon.BeltsHandle, SW_RESTORE);
-        Exit;
-    end;
+//    if (ucommon.BeltsRunning) then
+//    begin
+//        ShowWindow(ucommon.BeltsHandle, SW_RESTORE);
+//        Exit;
+//    end;
 
     { Set checkkins window }
     if (assigned(frmWindows[5])) then
@@ -346,7 +337,7 @@ begin
         frmWindows[5] := TfrmWindow.Create(nil);
         frmWindows[5].ControllerType := FIDSHorizontallyPopulated;
         frmWindows[5].ControllerID := FIDSBelts;
-        frmWindows[5].SetController('Belts - ' + Caption, fkArrivals,
+        frmWindows[5].SetController('Belts - ' + fcWindow.JobName, fkArrivals,
           uCommon.BeltsFields, uCommon.BeltsColumns);
         frmWindows[5].Show;
     end;
@@ -354,14 +345,11 @@ end;
 
 procedure TfrmWindow.Checkins2Click(Sender: TObject);
 begin
-	ShowMessage('Use the main screen for now');
-    exit;
-
-    if (ucommon.CheckinsRunning) then
-    begin
-        ShowWindow(ucommon.CheckinsHandle, SW_RESTORE);
-        Exit;
-    end;
+//    if (ucommon.CheckinsRunning) then
+//    begin
+//        ShowWindow(ucommon.CheckinsHandle, SW_RESTORE);
+//        Exit;
+//    end;
 
     { Set checkkins window }
     if (assigned(frmWindows[2])) then
@@ -374,7 +362,7 @@ begin
         frmWindows[2] := TfrmWindow.Create(nil);
         frmWindows[2].ControllerType := FIDSHorizontallyPopulated;
         frmWindows[2].ControllerID := FIDSCheckins;
-        frmWindows[2].SetController('Check-in - ' + Caption, fkDepartures,
+        frmWindows[2].SetController('Check-in - ' + fcWindow.JobName, fkDepartures,
           uCommon.CheckinsFields, uCommon.CheckinsColumns);
         frmWindows[2].Show;
     end;
@@ -389,7 +377,6 @@ end;
 procedure TfrmWindow.CustomDrawMenu(Menu: TMenuItem; Selected: Boolean;
   ACanvas: TCanvas; ARect: TRect);
 begin
-
     if Selected then
         ACanvas.Brush.Color := clHighlight
     else
@@ -459,7 +446,7 @@ end;
 
 procedure TfrmWindow.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-    Hide;
+	Action := caHide;
 end;
 
 procedure TfrmWindow.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -497,7 +484,6 @@ var
 
     icon: TIcon;
 begin
-    Caption := ControllerName;
     ControllerMode := FIDSListingMode;
 
     VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
@@ -663,7 +649,7 @@ begin
         end;
 
     end
-    else
+    else if (ControllerType = FIDSHorizontallyPopulated) then
     begin
         { Static set of buttons for }
         tbExtended.Visible := false;
@@ -685,9 +671,6 @@ end;
 procedure TfrmWindow.Gates2Click(Sender: TObject);
 begin
 
-	ShowMessage('Use the main screen for now');
-    exit;
-
     if (ucommon.GatesRunning) then
     begin
         ShowWindow(ucommon.GatesHandle, SW_RESTORE);
@@ -705,7 +688,7 @@ begin
         frmWindows[3] := TfrmWindow.Create(nil);
         frmWindows[3].ControllerType := FIDSHorizontallyPopulated;
         frmWindows[3].ControllerID := FIDSGates;
-        frmWindows[3].SetController('Gates - ' + Caption, fkDepartures,
+        frmWindows[3].SetController('Gates - ' + fcWindow.JobName, fkDepartures,
           uCommon.GatesFields, uCommon.GatesColumns);
         frmWindows[3].Show;
     end;
@@ -746,17 +729,12 @@ var
     Flight: TTreeData;
 
     I, J: Integer; { Counters for loops used }
-    SplitCaption: TStringList;
-
     XNode: PVirtualNode;
 begin
     VST.Clear;
 
     I := 0;
 
-    SplitCaption := TStringList.Create;
-    Split('-', self.Caption, SplitCaption);
-    VST.Header.Columns.Items[0].Text := SplitCaption[0];
     for I := 1 to 99 do
     begin
         VST.Header.Columns.Items[I].Text := 'Flight ' + Inttostr(I);
@@ -1953,6 +1931,7 @@ end;
 procedure TfrmWindow.tbDummyButtonClick(Sender: TObject);
 begin
 	tmrDodgy.Enabled := true;
+
     { Set status from caption of the button }
     if (afkWindowKind = fkArrivals) then
     begin

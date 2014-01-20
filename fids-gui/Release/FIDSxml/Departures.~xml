@@ -29,7 +29,7 @@
 		<FeedKey> QFA614/081031 </FeedKey>
 		<ST> 20110407 110700 </ST>
 		<ET> 20100812 111700 </ET>
-		<AT> 20100812 112500 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHVXR </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -37,7 +37,7 @@
 		<PaxJoin> 167 </PaxJoin>
 		<Fuel> 7300 </Fuel>
 		<Burn> 4600 </Burn>
-		<Gates> GT </Gates>
+		<Gates> GT,AS </Gates>
 		<DStatus> Final Call </DStatus>
 	</QFA614-1924>
 	<QFA426-1925>
@@ -114,6 +114,7 @@
 		<PaxJoin> 371 </PaxJoin>
 		<Fuel> 48600 </Fuel>
 		<Burn> 32100 </Burn>
+		<DStatus> Off Blocks </DStatus>
 	</QFA25-1928>
 	<QFA428-1929>
 		<Flights>
@@ -189,6 +190,7 @@
 		<PaxJoin> 278 </PaxJoin>
 		<Fuel> 175200 </Fuel>
 		<Burn> 158000 </Burn>
+		<DStatus> Boarding </DStatus>
 	</QFA93-1932>
 	<JQ30-1933>
 		<Flights>
@@ -297,6 +299,7 @@
 		<PaxJoin> 144 </PaxJoin>
 		<Fuel> 8600 </Fuel>
 		<Burn> 5200 </Burn>
+		<DStatus> Closed </DStatus>
 	</QFA616-1938>
 	<QFA2080-1939>
 		<Flights>
@@ -380,6 +383,7 @@
 		<PaxJoin> 219 </PaxJoin>
 		<Fuel> 10400 </Fuel>
 		<Burn> 5300 </Burn>
+		<DStatus> Final Call </DStatus>
 	</QFA432-1942>
 	<ST1234-1943>
 		<Flights>
@@ -411,6 +415,7 @@
 		<AirCraft> 321 </AirCraft>
 		<Pax> 210,0 </Pax>
 		<PaxJoin> 210 </PaxJoin>
+		<DStatus> Boarding </DStatus>
 	</JQ442-1944>
 	<QFA6125-1945>
 		<Flights>
@@ -3621,6 +3626,7 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Final Call </DStatus>
 	</QFA481-2136>
 	<JQ35-2137>
 		<Flights>
@@ -3667,6 +3673,7 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Boarding </DStatus>
 	</QFA701-2139>
 	<QFA2061-2140>
 		<Flights>
@@ -3819,6 +3826,7 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Departed </DStatus>
 	</QFA653-2149>
 	<JQ478-2150>
 		<Flights>
@@ -3873,6 +3881,7 @@
 		<AirCraft> 320 </AirCraft>
 		<Pax> 151,0 </Pax>
 		<PaxJoin> 151 </PaxJoin>
+		<DStatus> Closed </DStatus>
 	</JQ715-2152>
 	<JQ678-2153>
 		<Flights>
@@ -4066,6 +4075,7 @@
 		<Rego> VHEBV </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
+		<DStatus> Delayed </DStatus>
 	</QFA25-2166>
 	<JQ61-2167>
 		<Flights>
@@ -4095,6 +4105,7 @@
 		<Rego> VHEBF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 332 </AirCraft>
+		<DStatus> Final Call </DStatus>
 	</JQ29-2168>
 	<CPA104-2169>
 		<Flights>
@@ -4153,7 +4164,7 @@
 		<Rego> VHOJP </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
-		<DStatus/>
+		<DStatus> Departed </DStatus>
 		<Gates> txtGate2 </Gates>
 	</QFA9-2172>
 	<JQ171-2173>
@@ -4291,10 +4302,12 @@
 	<TEST2-2182>
 		<Flights>
 			<TEST2>
-				<CheckIns> 42 </CheckIns>
+				<CheckIns> 3 </CheckIns>
 				<Ports> SYD </Ports>
 			</TEST2>
 		</Flights>
 		<ST> 20110407 093000 </ST>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</TEST2-2182>
 </Departures>

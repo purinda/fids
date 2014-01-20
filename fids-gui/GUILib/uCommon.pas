@@ -754,7 +754,7 @@ begin
         begin
             dx := Pos(delimiter, txt);
             ns := Copy(txt, 0, dx - 1);
-            sl.Add(Trim(ns));
+            sl.Insert(0, Trim(ns));
             txt := Copy(txt, dx + delta, MaxInt);
         end;
     finally

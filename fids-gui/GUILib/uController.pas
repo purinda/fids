@@ -147,7 +147,8 @@ procedure CFlightController.NewConnection(cID: TFIDSWindowID);
 var
     i: integer;
 begin
-
+    // get the jobname (airport name)
+    JobName := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
     ControllerID := cID;
 
     if (FXml.mInit) then
@@ -162,8 +163,6 @@ begin
             // need a logged in id ('EgGUI') to update DB
             oFlight.Kind := afKind;
             PopulateGrid();
-            // get the jobname (airport name)
-            JobName := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
         end;
 
         if (cID = FIDSTArrivals) OR (cID = FIDSTDepartures) then

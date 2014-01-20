@@ -3,7 +3,7 @@
 	<QFA421-646>
 		<Flights>
 			<QFA421>
-				<Ports> MEL SYD </Ports>
+				<Ports> MEL </Ports>
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>
@@ -16,12 +16,12 @@
 		<AirCraft> 766 </AirCraft>
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
-		<Gates> 2,1 </Gates>
-		<AStatus> On Blocks </AStatus>
+		<Gates> 1,1 </Gates>
+		<AStatus> Delayed </AStatus>
 		<Belts> 3,1 </Belts>
-		<Comment> xzc </Comment>
+		<Comment> iouio </Comment>
 		<Terminal> 4 </Terminal>
 		<NonPublic/>
-		<Bays> 5 </Bays>
+		<Bays> 2 </Bays>
 	</QFA421-646>
 </Arrivals>
