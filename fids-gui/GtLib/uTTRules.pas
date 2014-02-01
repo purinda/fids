@@ -129,9 +129,26 @@ function 	cTTRule.GetField( field : aTimeTableField ) : string;
 
 	var
     	pRules : apNode;
+        s: string;
 	begin         // pull data presentation grade strings from local db tree
     result := '';
     if field = tfRuleName then  result := NodeName( mDbNode )
+        else if field in [ tfTime ] then  begin
+        	pRules := FindName( mDbNode, TTTagName[ tfRules ] );
+        	s := ReadContent( pRules, TTTagName[ field ] );
+        if Length( s ) >= 15 then  result := Copy( s, 10, 4 )   // can be 'TBA' etc
+        else  result := s;
+        end
+    else if field in [ tfDateStart, tfDateEnd ] then  begin
+   		pRules := FindName( mDbNode, TTTagName[ tfRules ] );
+    	s := ReadContent( pRules, TTTagName[ field ] );
+  		if Length( s ) >= 15 then  begin
+        result := DbDateToStr( s );
+        //result := IntToStr( Copy( s, 7, 2 ) ) + '/' + IntToStr( Copy( s, 1, 8 ) + '/'Copy( s, 1, 8 ) + '/';   // can be 'TBA' etc
+        //Insert( '/', result, 7 );
+        //Insert( '/', result, 5 );
+        end;
+    end
     else if field in PrimaryFields then result := ReadContent( mDbNode, TTTagName[ field ] )  // path
     else if field in RulesSubField then  begin
         pRules := FindName( mDbNode, TTTagName[ tfRules ] );

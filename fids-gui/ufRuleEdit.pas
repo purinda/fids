@@ -278,6 +278,10 @@ begin         // initialize various edit controls
             end;
             end;
 
+            Showmessage(oTTRule.Presentation[ tfTime ]);
+            Showmessage(oTTRule.Presentation[ tfDateStart ]);
+            Showmessage(oTTRule.Presentation[ tfDateEnd ]);
+
             ebRuleName.Text := oTTRule.Presentation[ tfRuleName ];
             ebTime.Time := uCommon.FIDS_StrTOTime ( oTTRule.Presentation[ tfTime ] );
             ebStart.DateTime := uCommon.FIDS_StrToDT( oTTRule.Presentation[ tfDateStart ] );

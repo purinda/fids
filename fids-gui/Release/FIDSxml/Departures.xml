@@ -4312,8 +4312,9 @@
 				<Ports> SYD </Ports>
 			</TEST2>
 		</Flights>
-		<ST> 20110407 093000 </ST>
+		<ST> 20110422 093000 </ST>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
+		<Rego> SF334 </Rego>
 	</TEST2-2182>
 </Departures>

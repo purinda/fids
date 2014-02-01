@@ -4165,7 +4165,9 @@
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<DStatus> Departed </DStatus>
-		<Gates> txtGate2 </Gates>
+		<Gates> 8 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</QFA9-2172>
 	<JQ171-2173>
 		<Flights>
@@ -4183,7 +4185,9 @@
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
 		<DStatus> Off Blocks </DStatus>
-		<Gates> txtGate2 </Gates>
+		<Gates> 9 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</JQ171-2173>
 	<QFA37-2174>
 		<Flights>
@@ -4255,7 +4259,9 @@
 		<Carrier> International </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<DStatus> Boarding </DStatus>
-		<Gates> txtGate2 </Gates>
+		<Gates> 1 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</FJI930-2178>
 	<QFA29-2179>
 		<Flights>

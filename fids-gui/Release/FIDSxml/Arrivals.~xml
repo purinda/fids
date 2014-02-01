@@ -17,7 +17,7 @@
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
 		<Gates> 1,1 </Gates>
-		<AStatus> Delayed </AStatus>
+		<AStatus> On Blocks </AStatus>
 		<Belts> 3,1 </Belts>
 		<Comment> iouio </Comment>
 		<Terminal> 4 </Terminal>
