@@ -96,11 +96,11 @@ uses FIndicators, FCrawlineLines, uConnection;
 
 procedure TfrmMain.cmdArrivalsClick(Sender: TObject);
 begin
-//	 if (ucommon.ArrivalsRunning) then
-//	 begin
-//         ShowWindow(ucommon.ArrivalsHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.ArrivalsRunning) then
+	// begin
+	// ShowWindow(ucommon.ArrivalsHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set arrival window }
 	if (assigned(frmWindows[0])) then
@@ -122,11 +122,11 @@ end;
 
 procedure TfrmMain.cmdCheckinsClick(Sender: TObject);
 begin
-//	 if (ucommon.CheckinsRunning) then
-//	 begin
-//         ShowWindow(ucommon.CheckinsHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.CheckinsRunning) then
+	// begin
+	// ShowWindow(ucommon.CheckinsHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set checkkins window }
 	if (assigned(frmWindows[2])) then
@@ -147,11 +147,11 @@ end;
 
 procedure TfrmMain.cmdDeparturesClick(Sender: TObject);
 begin
-//	 if (ucommon.DeparturesRunning) then
-//	 begin
-//         ShowWindow(ucommon.DeparturesHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.DeparturesRunning) then
+	// begin
+	// ShowWindow(ucommon.DeparturesHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set arrival window }
 	if (assigned(frmWindows[1])) then
@@ -173,11 +173,11 @@ end;
 
 procedure TfrmMain.cmdGatesClick(Sender: TObject);
 begin
-//	 if (ucommon.GatesRunning) then
-//	 begin
-//         ShowWindow(ucommon.GatesHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.GatesRunning) then
+	// begin
+	// ShowWindow(ucommon.GatesHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set checkkins window }
 	if (assigned(frmWindows[3])) then
@@ -203,11 +203,11 @@ end;
 
 procedure TfrmMain.Departures3Click(Sender: TObject);
 begin
-//	 if (ucommon.TDepartuesRunning) then
-//	 begin
-//         ShowWindow(ucommon.TDepartuesHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.TDepartuesRunning) then
+	// begin
+	// ShowWindow(ucommon.TDepartuesHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set checkkins window }
 	if (assigned(frmWindows[7])) then
@@ -254,11 +254,11 @@ end;
 
 procedure TfrmMain.cmdBeltsClick(Sender: TObject);
 begin
-//	 if (ucommon.BeltsRunning) then
-//	 begin
-//         ShowWindow(ucommon.BeltsHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.BeltsRunning) then
+	// begin
+	// ShowWindow(ucommon.BeltsHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set checkkins window }
 	if (assigned(frmWindows[5])) then
@@ -279,11 +279,11 @@ end;
 
 procedure TfrmMain.Arrivals3Click(Sender: TObject);
 begin
-//	 if (ucommon.TArrivalsRunning) then
-//	 begin
-//         ShowWindow(ucommon.TArrivalsHandle, SW_RESTORE);
-//         Exit;
-//	 end;
+	// if (ucommon.TArrivalsRunning) then
+	// begin
+	// ShowWindow(ucommon.TArrivalsHandle, SW_RESTORE);
+	// Exit;
+	// end;
 
 	{ Set checkkins window }
 	if (assigned(frmWindows[6])) then
@@ -317,9 +317,9 @@ begin
 		Application.Terminate;
 	end
 	else
-    begin
+	begin
 		CanClose := False;
-    end;
+	end;
 
 end;
 

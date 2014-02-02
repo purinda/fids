@@ -99,7 +99,7 @@ const
 function	DB() : cMirrorDB;  inline;
 
 	begin
-    result := Xml_Connection.iDB.DB;
+	    result := Xml_Connection.iDB.DB;
     end;
 
 
