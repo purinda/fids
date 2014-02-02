@@ -45,6 +45,8 @@ type
 		class property Instance: TFIDSxml read GetInstance;
 		function GetUserName: String;
 		procedure SetLogin(usr, pw: string);
+        function GetConnected() : boolean;
+        property Connected : boolean  read GetConnected;
 		// Properties used to access private data fields
 		// They use private methods to do this
 		function GetDataTree: cMirrorDB;
@@ -130,6 +132,12 @@ begin
 	begin // eg catch shutdown message
 		mShutDown := TRUE;
 	end;
+end;
+
+function TFIDSxml.GetConnected() : boolean;
+// aReader
+begin
+	Result := Xml_Connection.Connected;
 end;
 
 end.

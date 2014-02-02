@@ -1505,3 +1505,12 @@
 4	20:55 Sun 2 Feb 14	Acting as HOST
 3	21:54 Sun 2 Feb 14	Login FIDS2 ID windowsapps
 3	21:54 Sun 2 Feb 14	Login FIDS2 ID windowsapps
+3	22:00 Sun 2 Feb 14	Login FIDS2 ID windowsapps
+11	22:00 Sun 2 Feb 14	Log Out  ID windowsapps
+107	22:00 Sun 2 Feb 14	FAILED Login attempt FIDS2 ID windowsapps
+5	22:26 Sun 2 Feb 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	22:26 Sun 2 Feb 14	Login FIDS2 ID windowsapps
+4	22:26 Sun 2 Feb 14	Acting as HOST
+3	22:27 Sun 2 Feb 14	Login FIDS2 ID windowsapps
+216	22:27 Sun 2 Feb 14	EditRequest : Feed
+216	22:27 Sun 2 Feb 14	EditRequest : Feed

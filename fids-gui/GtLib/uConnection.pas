@@ -99,7 +99,10 @@ const
 function	DB() : cMirrorDB;  inline;
 
 	begin
-	    result := Xml_Connection.iDB.DB;
+    	if (Xml_Connection.oHub.Connected) then
+        begin
+		    result := Xml_Connection.iDB.DB;
+        end;
     end;
 
 

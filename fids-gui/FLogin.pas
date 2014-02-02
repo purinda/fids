@@ -70,28 +70,28 @@ end;
 
 procedure TfrmLogin.FormCreate(Sender: TObject);
 begin
-	ShowMessage(BoolToStr(fcWindow.isHostRunning));
-	Exit();
-
-	if (fcWindow.isHostRunning) then
-	begin
-		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
-	end;
+//	ShowMessage(BoolToStr(fcWindow.FXml.Connected));
+//	Exit();
+//
+//	if (fcWindow.isHostRunning) then
+//	begin
+//		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
+//	end;
 end;
 
 procedure TfrmLogin.Timer1Timer(Sender: TObject);
 begin
 
-	if not(fcWindow.isHostRunning) then
-	begin
-		lblFidsStatus.Visible := true;
-		height := 245 + lblFidsStatus.height + 10;
-		pnlContent.Top := lblFidsStatus.Top + lblFidsStatus.height + 10;
-	end
-	else
-	begin
-		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
-	end;
+//	if not(fcWindow.isHostRunning) then
+//	begin
+//		lblFidsStatus.Visible := true;
+//		height := 245 + lblFidsStatus.height + 10;
+//		pnlContent.Top := lblFidsStatus.Top + lblFidsStatus.height + 10;
+//	end
+//	else
+//	begin
+//		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
+//	end;
 
 end;
 
