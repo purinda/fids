@@ -594,7 +594,7 @@ begin
         strKind := 'Departures';
     end;
 
-    oRule := cTTRule.Create( DB, 'Feed');
+    oRule := cTTRule.Create( FXml.GetDataTree, 'Feed');
     // need a logged in id ('EgGUI') to update DsB;
     oRule.oTemplate.Kind := afKind;
 

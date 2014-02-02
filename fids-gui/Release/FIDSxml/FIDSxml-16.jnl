@@ -1,16 +1,25 @@
-<TimeStamp> 20131127 223717 </TimeStamp>
+<TimeStamp> 20140202 103639 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20131127 223717  from windowsapps </ReqEdit>
+		<ReqEdit> 20140202 103639  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20131127 223717 </TimeStamp>
+<TimeStamp> 20140202 103639 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqEdit> windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|ReqID| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140202 103741 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqNewTag> LoggedOut </ReqNewTag>
+		<Content> 20140202 103741  from windowsapps </Content>
+		<Path> |Users|FIDS2| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>

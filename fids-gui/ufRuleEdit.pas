@@ -178,12 +178,12 @@ var
 	strExclusion : string;
 begin
 	lstExclusions.Items.Add(uCommon.FIDS_DtTOStr( dtExFrom.Date ) + '-' + uCommon.FIDS_DtTOStr( dtUntill.Date )  );
-        ebExcept.clear;
+    ebExcept.clear;
 
-        for strExclusion in lstExclusions.Items do
-        begin
-        	ebExcept.Text := ebExcept.Text + ',' + strExclusion ;
-        end;
+    for strExclusion in lstExclusions.Items do
+    begin
+        ebExcept.Text := ebExcept.Text + ',' + strExclusion ;
+    end;
 
 end;
 
@@ -205,15 +205,17 @@ var
 	strExclusion : string;
 begin
 	lstExclusions.Items.Delete(lstExclusions.ItemIndex);
-        ebExcept.clear;
+    ebExcept.clear;
 
-        for strExclusion in lstExclusions.Items do
-        begin
-        	ebExcept.Text := ebExcept.Text + ',' + strExclusion ;
-        end;
+    for strExclusion in lstExclusions.Items do
+    begin
+        ebExcept.Text := ebExcept.Text + ',' + strExclusion ;
+    end;
 
-        if lstExclusions.Count = 0 then
-        	ebExcept.Clear;;
+    if lstExclusions.Count = 0 then
+    begin
+        ebExcept.Clear;
+    end;
 
 end;
 
@@ -271,16 +273,12 @@ begin         // initialize various edit controls
     begin
             kind := oTTRule.Presentation[ tfPath ];   // set kind selector
             for x := 0 to ComboBox1.Items.Count - 1 do  begin
-            if kind = ComboBox1.Items[ x ] then
-            begin
-                ComboBox1.ItemIndex := x;
-                break;
+                if kind = ComboBox1.Items[ x ] then
+                begin
+                    ComboBox1.ItemIndex := x;
+                    break;
+                end;
             end;
-            end;
-
-            Showmessage(oTTRule.Presentation[ tfTime ]);
-            Showmessage(oTTRule.Presentation[ tfDateStart ]);
-            Showmessage(oTTRule.Presentation[ tfDateEnd ]);
 
             ebRuleName.Text := oTTRule.Presentation[ tfRuleName ];
             ebTime.Time := uCommon.FIDS_StrTOTime ( oTTRule.Presentation[ tfTime ] );
@@ -305,8 +303,8 @@ begin         // initialize various edit controls
     	Clear;
 
         lstExclusions.Clear;
-	strExceptions := TStringList.Create;
-	uCommon.Split(',', ebExcept.Text, strExceptions);
+        strExceptions := TStringList.Create;
+        uCommon.Split(',', ebExcept.Text, strExceptions);
 
         for strException in strExceptions do
         begin

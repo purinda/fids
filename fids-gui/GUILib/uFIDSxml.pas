@@ -115,18 +115,6 @@ begin // 192.168.0.163 : 1666    todo load systemconfig.xml   todo encrypt passw
 
       end;
     Xml_Connection.LogIn;
-//    BEGIN
-//        strUser := mUserName;
-//        strPass := mPassword;
-//    END
-//    ELSE
-//    BEGIN
-//        strUser := usr;
-//        strPass := pw;
-//    END;
-//
-//    oHub.Broadcast(FormatLogIn(strUser, strPass, id));
-
 end;
 
 procedure TFIDSxml.Log(ErrorNo: integer; const s: string);

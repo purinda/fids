@@ -140,6 +140,7 @@ type
         FlightFields: array of aFlightField;
         ColumnNames: array of string;
 
+        procedure Initialize();
         procedure SetController(WindowName: string; fKind: aFlightKind;
           fFields: array of aFlightField; InpColumnNames: array of string);
     end;
@@ -170,7 +171,8 @@ var
 
 implementation
 
-uses FSearch, FEditAnD, ufRuleEdit, FIndicators, FMain, FEdit, FCrawlineLines, uConnection;
+uses FSearch, FEditAnD, ufRuleEdit, FIndicators, FMain, FEdit, FCrawlineLines, uConnection,
+  CrawlingEdit;
 
 {$R *.dfm}
 
@@ -462,6 +464,15 @@ begin
 
 end;
 
+procedure TfrmWindow.Initialize();
+begin
+    Application.CreateForm(TfrmMain, frmMain);
+    Application.CreateForm(TfRuleEdit, fRuleEdit);
+    Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
+    Application.CreateForm(TfrmEdit, frmEdit);
+    Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
+end;
+
 procedure TfrmWindow.FormCreate(Sender: TObject);
 begin
 	SensorsPanelInitialised  := false;
@@ -746,8 +757,7 @@ begin
 
         { Set how many rows to Rows array depending on Checkins/Gates/Etc used }
         SetLength(Rows, CGBBUsed.Count);
-        // ShowMessage( inttostr(CGBBUsed.Count) );
-        // exit();
+
         { Loop through checkins in use }
         // for I := 0 to CGBBUsed.Count - 1 do
         for FixedCol in CGBBUsed do
@@ -778,7 +788,6 @@ begin
                       ) = 0) then
                     // Match Found!
                     begin
-                        // ShowMessage('Flight:' + flight.Flight + ' | CC:' + FixedCol);
                         // ListBox1.Items.Add(Flight.Flight);
                         Rows[I].FlightList.Add(Flight.Flight);
                         // Copy the flight number into Rows.FlightList
@@ -787,7 +796,6 @@ begin
 
                 end;
 
-                // showmessage(inttostr(i));
                 { Start pushing data to the CELLS on VST }
                 { New node }
                 XNode := VST.AddChild(nil);
@@ -929,7 +937,6 @@ begin
                             { Update flight data on VST }
                             TableData := VST.GetNodeData(tmpLoopNode);
                             TableData^ := fcWindow.Table[I];
-                            // ShowMessage(fcWindow.Table[I].Flight);
                         end; { END CompareFlightPath }
 
                         tmpLoopNode := VST.GetNext(tmpLoopNode);
@@ -1414,7 +1421,6 @@ begin
                 begin
                     EditWndVal :=
                       FIDS_DtTOStr(TDateTimePicker(AComponent).Date);
-                    // ShowMessage(EditWndVal);
                 end;
 
             { Same Object type will be used for date and time fields so you have to consider it's Kind }
@@ -1423,7 +1429,6 @@ begin
                 Begin
                     EditWndVal := FIDS_TimeTOStr(TDateTimePicker(AComponent)
                       .Time) + '00';
-                    // ShowMessage(EditWndVal);
                 End;
 
             { Following is for checkboxes, they will return a string based value for checked and unchecked items }
@@ -1431,14 +1436,12 @@ begin
                 if (TCheckBox(AComponent).Checked) then
                 begin
                     EditWndVal := '1';
-                    // ShowMessage('1');
                 end;
 
             if ObjectType = TCheckBox.ClassName then
                 if Not(TCheckBox(AComponent).Checked) then
                 begin
                     EditWndVal := '0';
-                    // ShowMessage('0');
                 end;
 
         end;
@@ -1447,7 +1450,6 @@ begin
     begin
         { Checks for non-empty fields }
         { Also check for updated values against exisitng flight information }     { To be implemented }
-        // ShowMessage(EditWndVal);
         fcWindow.SetDetail(SelectedFlightPath, ffField, EditWndVal);
     end;
 
@@ -1719,20 +1721,19 @@ begin
           Cardinal(fcWindow.oTTRulesList.Count) then
         begin
             NodeIndex := VST.GetFirstSelected().Index;
+
             oRule.DbNode := fcWindow.oRules[NodeIndex];
             // oRule.DbPath := fcWindow.Table[NodeIndex].DBPath;
             oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
 
 
             // ShowMessage(oRule.DbNode.Content);
-            // oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
+//             oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
             fRuleEdit.TTRule := oRule; // link oRule to vst row;
             fRuleEdit.ShowModal;
 
             // retrieve data and redraw grid
-            fcWindow.PopulateTTGrid;
-            PopulateGrid;
-
+        	tmrDodgy.Enabled := true;
         end;
 
         exit();
@@ -1745,6 +1746,7 @@ begin
 
         if not assigned(VST.FocusedNode) then
             exit;
+
         if (VST.FocusedColumn <= 0) then
             exit;
 

@@ -1,12 +1,12 @@
-<TimeStamp> 20131230 134150 </TimeStamp>
+<TimeStamp> 20140202 155838 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20131230 134150  from windowsapps </ReqEdit>
+		<ReqEdit> 20140202 155838  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20131230 134150 </TimeStamp>
+<TimeStamp> 20140202 155838 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqEdit> windowsapps </ReqEdit>
@@ -14,11 +14,39 @@
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20131230 140121 </TimeStamp>
+<TimeStamp> 20140202 155842 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20131230 140121  from windowsapps </ReqEdit>
+		<ReqEdit> 20140202 155842  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
+<TimeStamp> 20140202 155854 </TimeStamp>
+<EditReply>
+	<Result> ERROR 216
+		<ReqEdit> 18991230 </ReqEdit>
+		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
+		<ReqID> FIDS2 </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140202 155854 </TimeStamp>
+<EditReply>
+	<Result> ERROR 216
+		<ReqEdit> 18991230 </ReqEdit>
+		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
+		<ReqID> FIDS2 </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140202 155854 </TimeStamp>
+<EditReply>
+	<Result> ERROR 216
+		<ReqEdit> 1 </ReqEdit>
+		<Path> |Timetable|LT4444_A|Template|Flights|LT4444|CheckIns| </Path>
+		<ReqID> FIDS2 </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140202 160623 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140202 160623  from windowsa

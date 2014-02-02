@@ -9,11 +9,11 @@
 		<FeedKey> SIA238/081031 </FeedKey>
 		<ST> 20100922 112700 </ST>
 		<ET> 20100812 113000 </ET>
-		<AT> 20111230 000000 </AT>
+		<AT> 20111230 201100 </AT>
 		<Rego> 9VSPNA </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
-		<Gates> 5 </Gates>
+		<Gates> 5,1 </Gates>
 		<DStatus> Departed </DStatus>
 		<NonPublic/>
 	</SIA238-1923>
@@ -4110,7 +4110,7 @@
 	<CPA104-2169>
 		<Flights>
 			<CPA104>
-				<Ports> HKG </Ports>
+				<Ports> HKG BGK </Ports>
 			</CPA104>
 		</Flights>
 		<FeedKey> CPA104/081102 </FeedKey>
@@ -4118,6 +4118,9 @@
 		<ET> 20100812 153500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 333 </AirCraft>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</CPA104-2169>
 	<THA982-2170>
 		<Flights>

@@ -322,7 +322,6 @@ object fRuleEdit: TfRuleEdit
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 10
-    ExplicitTop = 293
     object btnClose: TButton
       AlignWithMargins = True
       Left = 507

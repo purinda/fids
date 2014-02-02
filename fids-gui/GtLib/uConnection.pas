@@ -106,11 +106,12 @@ function	DB() : cMirrorDB;  inline;
 function	Connect( reader : apConnectionEventReader = nil ) : cMirrorDb;
 
 	begin
-    if Xml_Connection = nil then  begin
-    	Xml_Connection:= cConnection.Create();
-        if @reader <> nil then  Xml_Connection.RegisterEventReader( reader );
-    	end;
-    result := Xml_Connection.DB;
+        if Xml_Connection = nil then  begin
+            Xml_Connection:= cConnection.Create();
+            if @reader <> nil then  Xml_Connection.RegisterEventReader( reader );
+        end;
+
+    	result := Xml_Connection.DB;
     end;
 
 

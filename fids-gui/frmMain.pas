@@ -63,7 +63,6 @@ begin
 
   if ( FXml.GetMessageHub().Connected ) then
   begin
-    //LogIn( FeedID, SysPW, FeedID );
     oFlight := cFlight.Create( FXml.oDataTree,  'Feed' );
     i := FXml.oDataTree.RegisterReader( PopulateGrid );
   	PopulateGrid('');
