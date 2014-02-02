@@ -28,29 +28,16 @@ type
 		{ set of procedures for connectivity }
 		procedure Log(ErrorNo: integer; const s: string);
 		procedure MessageReader(const mesg: string; link: apLinkID = nil);
-		// aReader
-		// procedure Notify(const xml: string); // aDeltaNotify
 
-		procedure LogIn(const usr, pw, id: string);
-		// procedure   LogOut( userID : string );
-		// procedure NewConnection;
-		// procedure   SetDataTree( dt : cMirrorDB );
 	public
 		mInit, mShutDown: boolean;
-		// oDataTree: cMirrorDB;
-		// oHub: cMessageHub;
-		// procedure Connect();
 		{ procedure require to get singleton interface }
 
 		class property Instance: TFIDSxml read GetInstance;
-		function GetUserName: String;
-		procedure SetLogin(usr, pw: string);
-        function GetConnected() : boolean;
-        property Connected : boolean  read GetConnected;
 		// Properties used to access private data fields
 		// They use private methods to do this
 		function GetDataTree: cMirrorDB;
-		// function GetMessageHub: cMessageHub;
+		function GetUserName: String;
 
 	end;
 
@@ -97,28 +84,6 @@ begin
 	Result := DB; // Self.oDataTree;
 end;
 
-procedure TFIDSxml.SetLogin(usr, pw: string);
-begin
-
-end;
-
-procedure TFIDSxml.LogIn(const usr, pw, id: string);
-var
-	strUser, strPass: String;
-begin // 192.168.0.163 : 1666    todo load systemconfig.xml   todo encrypt password?
-	if ((Length(usr) <= 0) OR (Length(pw) <= 0)) then
-	begin
-		Xml_Connection.UserName := mUserName;
-		Xml_Connection.Password := mPassword;
-	end
-	else
-	begin
-		Xml_Connection.UserName := usr;
-		Xml_Connection.Password := pw;
-
-	end;
-	Xml_Connection.LogIn;
-end;
 
 procedure TFIDSxml.Log(ErrorNo: integer; const s: string);
 begin
@@ -134,10 +99,5 @@ begin
 	end;
 end;
 
-function TFIDSxml.GetConnected() : boolean;
-// aReader
-begin
-	Result := Xml_Connection.Connected;
-end;
 
 end.
