@@ -11,8 +11,8 @@ const
 	{ Following credentials are only
 	  used if no user, pass submitted to
 	  Login(), disable in End-Product }
-	mUserName = 'Feed';
-	mPassword = 'DI_system';
+	mUserName = 'FIDS2';
+	mPassword = '_DII_password_';
 
 type
 	TFIDSxml = class

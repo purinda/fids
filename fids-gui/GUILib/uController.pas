@@ -33,10 +33,10 @@ type
 		procedure NewConnection(cID: TFIDSWindowID);
 		procedure SetDetail(flightPath: string; ff: aFlightField;
 		  detail: string);
-		procedure ImplementSensors(formName: TForm; imgSensors: TImageList);
-		procedure InitSensors(panelSensors: TControl);
 
 		{ Sensor related }
+		procedure ImplementSensors(formName: TForm; imgSensors: TImageList);
+		procedure InitSensors(panelSensors: TControl);
 		function GetSensorTypes(): TStringList;
 		function StringToSensorType(str: string): TSensorType;
 		function GetSensorCount(const typeofsensor: TSensorType): int16;
@@ -58,7 +58,8 @@ type
 		function isHostRunning(): Boolean;
 
 		constructor Create(afkInput: aFlightKind;
-		  affFields: array of aFlightField);
+        	affFields: array of aFlightField);
+
 		destructor Destroy; override;
 
 	private
@@ -76,7 +77,6 @@ type
 		SensorLabel: array [0 .. 5] of TLabel;
 		SensorsInitialized: Boolean;
 
-		procedure TNewData(const xml: string);
 	end;
 
 implementation
@@ -123,13 +123,8 @@ begin
 	oFlight.Free;
 end;
 
-procedure CFlightController.TNewData(const xml: string);
-// aDeltaNotify - called whenever DB changes
-begin
-	oTTRulesList.Build(tfNone, '');
-	// node list should always be safe as long as Build is not decoupled from NewData events
-end;
-
+// TODO: Finalise user login and related implementation
+//
 function CFlightController.GetUsers(): TStringList;
 var
 	path: string;
@@ -138,8 +133,6 @@ var
 begin
 
 	path := uCommon.fidsUsersPath;
-
-	// Result := TStringList.Create;
 	showmessage(FXml.GetDataTree.GetNode(path).Content);
 
 end;
@@ -149,40 +142,40 @@ var
 	i: integer;
 begin
 	// get the jobname (airport name)
-	JobName := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
-	ControllerID := cID;
-
-	if (FXml.mInit) then
-	begin
-		if (cID = FIDSCheckins) OR (cID = FIDSArrivals) OR
-		  (cID = FIDSDepartures) OR (cID = FIDSGates) OR (cID = FIDSBays) OR
-		  (cID = FIDSBelts) then
-		begin
-			// LogIn( FeedID, SysPW, FeedID );
-			// FXml.oDataTree.RegisterReader( PopulateGrid );
-			oFlight := cFlight.Create(DB, 'Feed');
-			// need a logged in id ('EgGUI') to update DB
-			oFlight.Kind := afKind;
-			PopulateGrid();
-		end;
-
-		if (cID = FIDSTArrivals) OR (cID = FIDSTDepartures) then
-		begin
-			// LogIn( FeedID, SysPW, FeedID );
-			// FXml.oDataTree.RegisterReader( PopulateGrid );
-			// oRule := oRule.Create( fxml.oDataTree, 'Feed' );   // need a logged in id ('EgGUI') to update DB
-			oRule := cTTRule.Create(DB, 'Feed');
-			// need a logged in id ('EgGUI') to update DsB;
-			oRule.oTemplate.Kind := afKind;
-			PopulateTTGrid();
-		end;
-
-	end
-	else
-	begin
-		FXml.mShutDown := true;
-		// showmessage('FIDSXml Server not running or experianced a connection problem');
-	end;
+//	JobName := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
+//	ControllerID := cID;
+//
+//	if (FXml.mInit) then
+//	begin
+//		if (cID = FIDSCheckins) OR (cID = FIDSArrivals) OR
+//		  (cID = FIDSDepartures) OR (cID = FIDSGates) OR (cID = FIDSBays) OR
+//		  (cID = FIDSBelts) then
+//		begin
+//			// LogIn( FeedID, SysPW, FeedID );
+//			// FXml.oDataTree.RegisterReader( PopulateGrid );
+//			oFlight := cFlight.Create(DB, 'Feed');
+//			// need a logged in id ('EgGUI') to update DB
+//			oFlight.Kind := afKind;
+//			PopulateGrid();
+//		end;
+//
+//		if (cID = FIDSTArrivals) OR (cID = FIDSTDepartures) then
+//		begin
+//			// LogIn( FeedID, SysPW, FeedID );
+//			// FXml.oDataTree.RegisterReader( PopulateGrid );
+//			// oRule := oRule.Create( fxml.oDataTree, 'Feed' );   // need a logged in id ('EgGUI') to update DB
+//			oRule := cTTRule.Create(DB, 'Feed');
+//			// need a logged in id ('EgGUI') to update DsB;
+//			oRule.oTemplate.Kind := afKind;
+//			PopulateTTGrid();
+//		end;
+//
+//	end
+//	else
+//	begin
+//		FXml.mShutDown := true;
+//		ShowMessage('FIDSXml Server not running or experianced a connection problem');
+//	end;
 
 end;
 
