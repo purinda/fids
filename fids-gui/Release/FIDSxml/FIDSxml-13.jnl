@@ -1,12 +1,12 @@
-<TimeStamp> 20140121 000159 </TimeStamp>
+<TimeStamp> 20140216 165036 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 000159  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165036  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 000159 </TimeStamp>
+<TimeStamp> 20140216 165036 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqEdit> windowsapps </ReqEdit>
@@ -14,246 +14,83 @@
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 000204 </TimeStamp>
+<TimeStamp> 20140216 165038 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 000204  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165038  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 001527 </TimeStamp>
+<TimeStamp> 20140216 165134 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 001527  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165134  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 002330 </TimeStamp>
+<TimeStamp> 20140216 165140 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 002330  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165140  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 002525 </TimeStamp>
+<TimeStamp> 20140216 165205 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 002525  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165205  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 002544 </TimeStamp>
+<TimeStamp> 20140216 165233 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqNewTag> AT </ReqNewTag>
-		<Content> 18991230 000000 </Content>
-		<Path> |Departures|QFA9-2172| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002544 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqNewTag> NonPublic </ReqNewTag>
-		<Path> |Departures|QFA9-2172| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002555 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 8 </ReqEdit>
-		<Path> |Departures|QFA9-2172|Gates| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002601 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 9 </ReqEdit>
-		<Path> |Departures|JQ171-2173|Gates| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002601 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqNewTag> AT </ReqNewTag>
-		<Content> 18991230 000000 </Content>
-		<Path> |Departures|JQ171-2173| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002601 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqNewTag> NonPublic </ReqNewTag>
-		<Path> |Departures|JQ171-2173| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002608 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Departures|FJI930-2178|Gates| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002608 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqNewTag> AT </ReqNewTag>
-		<Content> 18991230 000000 </Content>
-		<Path> |Departures|FJI930-2178| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002608 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqNewTag> NonPublic </ReqNewTag>
-		<Path> |Departures|FJI930-2178| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 002921 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 002921  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165233  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 003133 </TimeStamp>
+<TimeStamp> 20140216 165838 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 003133  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 165838  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 003227 </TimeStamp>
+<TimeStamp> 20140216 171510 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 003227  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 171510  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 003553 </TimeStamp>
+<TimeStamp> 20140216 171905 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 003553  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 171905  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 004557 </TimeStamp>
+<TimeStamp> 20140216 173340 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140121 004557  from windowsapps </ReqEdit>
+		<ReqEdit> 20140216 173340  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140121 004925 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 004925  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 005121 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 005121  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 005128 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> On Blocks </ReqEdit>
-		<Path> |Arrivals|QFA421-646|AStatus| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 010759 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 010759  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 010945 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 010945  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 011110 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 011110  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 011150 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 011150  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 011202 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 011202  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 011402 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 011402  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 011704 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 011704  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 012232 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140121 012232  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140121 012250 </TimeStamp>
+<TimeStamp> 20140216 174803 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqNewTag> LoggedOut </ReqNewTag>
-		<Content> 20140121 012250  from windowsapps </Content>
+		<Content> 20140216 174802  from windowsapps </Content>
 		<Path> |Users|FIDS2| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>

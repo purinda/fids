@@ -126,6 +126,9 @@ var // find machine specific and connection info from LocalConfig.xml
 	machine, ID, pt: apNode;
 	x: int;
 begin
+	UserName := 'Feed';
+    Password := 'DI_system';
+
 	path := ChangeFileExt(Application.ExeName, '');
 	AppName := ExtractFileName(path); // strip path and .exe
 	oReaders := TList<apConnectionEventReader>.Create;

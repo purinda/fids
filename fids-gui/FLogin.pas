@@ -4,26 +4,24 @@ interface
 
 uses
 	Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-	Dialogs, StdCtrls, uFlight, uFidsTags, uCommon, uController, FWindow,
-	FSearch, Menus, ExtCtrls, ImgList, VrControls, VrLcd;
+	Dialogs, StdCtrls, uLogin, Menus, ExtCtrls, ImgList, VrControls, VrLcd;
 
 type
 	TfrmLogin = class(TForm)
-		pnlContent: TPanel;
-		EUsername: TLabeledEdit;
-		EPassword: TLabeledEdit;
-		Panel2: TPanel;
-		Button1: TButton;
-		Button2: TButton;
-		Timer1: TTimer;
-		lblFidsStatus: TLabel;
+    pnlContent: TPanel;
+    EUsername: TLabeledEdit;
+    EPassword: TLabeledEdit;
+    Button1: TButton;
+    Button2: TButton;
+    CheckBox1: TCheckBox;
+    lblJobName: TLabel;
 		procedure Button2Click(Sender: TObject);
-		procedure Timer1Timer(Sender: TObject);
 		procedure Button1Click(Sender: TObject);
-		procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 	private
 		{ Private declarations }
-		fcWindow: CFlightController;
+		LoginManager: CLogin;
 	public
 		{ Public declarations }
 	end;
@@ -42,6 +40,7 @@ procedure TfrmLogin.Button1Click(Sender: TObject);
 var
 	User, Pass: String;
 begin
+
 	User := EUsername.Text;
 	Pass := EPassword.Text;
 
@@ -70,29 +69,13 @@ end;
 
 procedure TfrmLogin.FormCreate(Sender: TObject);
 begin
-//	ShowMessage(BoolToStr(fcWindow.FXml.Connected));
-//	Exit();
-//
-//	if (fcWindow.isHostRunning) then
-//	begin
-//		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
-//	end;
+
+	LoginManager.Connect;
 end;
 
-procedure TfrmLogin.Timer1Timer(Sender: TObject);
+procedure TfrmLogin.FormShow(Sender: TObject);
 begin
-
-//	if not(fcWindow.isHostRunning) then
-//	begin
-//		lblFidsStatus.Visible := true;
-//		height := 245 + lblFidsStatus.height + 10;
-//		pnlContent.Top := lblFidsStatus.Top + lblFidsStatus.height + 10;
-//	end
-//	else
-//	begin
-//		fcWindow := CFlightController.Create(fkNone, ArrivalFields);
-//	end;
-
+	lblJobName.Caption := LoginManager.GetJobName();
 end;
 
 end.

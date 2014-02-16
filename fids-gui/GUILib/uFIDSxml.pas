@@ -66,24 +66,23 @@ end;
 
 destructor TFIDSxml.Destroy();
 begin
-	if Assigned(FInstance) then
-	begin
-		MessageLog.Free;
-		FInstance.Free;
-	end;
+//	if Assigned(FInstance) then
+//	begin
+//		MessageLog.Free;
+//		FInstance.Free;
+//	end;
 
 end;
 
 function TFIDSxml.GetUserName(): String;
 begin
-	Result := mUserName;
+//	Result := mUserName;
 end;
 
 function TFIDSxml.GetDataTree(): cMirrorDB;
 begin
-	Result := DB; // Self.oDataTree;
+//	Result := DB; // Self.oDataTree;
 end;
-
 
 procedure TFIDSxml.Log(ErrorNo: integer; const s: string);
 begin
@@ -93,11 +92,10 @@ end;
 procedure TFIDSxml.MessageReader(const mesg: string; link: apLinkID = nil);
 // aReader
 begin
-	if mesg = '<' + TagShutDown + '/>' then
-	begin // eg catch shutdown message
-		mShutDown := TRUE;
-	end;
+//	if mesg = '<' + TagShutDown + '/>' then
+//	begin // eg catch shutdown message
+//		mShutDown := TRUE;
+//	end;
 end;
-
 
 end.

@@ -3,8 +3,8 @@ object frmLogin: TfrmLogin
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'Login'
-  ClientHeight = 215
+  Caption = 'FIDS Login'
+  ClientHeight = 201
   ClientWidth = 329
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,37 +19,35 @@ object frmLogin: TfrmLogin
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lblFidsStatus: TLabel
-    AlignWithMargins = True
-    Left = 8
-    Top = 8
-    Width = 313
-    Height = 16
-    Align = alTop
-    Alignment = taCenter
-    Caption = 'FIDS Host is unavailable'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clRed
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Visible = False
-    ExplicitWidth = 153
-  end
   object pnlContent: TPanel
     Left = 8
     Top = 8
     Width = 313
-    Height = 201
+    Height = 199
     BevelOuter = bvNone
     TabOrder = 0
+    object lblJobName: TLabel
+      Left = 0
+      Top = 0
+      Width = 313
+      Height = 33
+      Align = alTop
+      Alignment = taCenter
+      Caption = '<Job Name>'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
     object EUsername: TLabeledEdit
       Left = 12
-      Top = 96
-      Width = 295
+      Top = 48
+      Width = 293
       Height = 21
       EditLabel.Width = 48
       EditLabel.Height = 13
@@ -58,8 +56,8 @@ object frmLogin: TfrmLogin
     end
     object EPassword: TLabeledEdit
       Left = 12
-      Top = 143
-      Width = 295
+      Top = 95
+      Width = 293
       Height = 21
       EditLabel.Width = 46
       EditLabel.Height = 13
@@ -67,39 +65,32 @@ object frmLogin: TfrmLogin
       PasswordChar = '*'
       TabOrder = 1
     end
-    object Panel2: TPanel
-      Left = 0
-      Top = 0
-      Width = 313
-      Height = 57
-      Align = alTop
-      Caption = 'DII LOGO GOES HERE'
-      TabOrder = 2
-    end
     object Button1: TButton
       Left = 150
-      Top = 170
+      Top = 154
       Width = 77
       Height = 25
       Caption = 'Sign in'
       Default = True
-      TabOrder = 3
+      TabOrder = 2
       OnClick = Button1Click
     end
     object Button2: TButton
       Left = 231
-      Top = 170
+      Top = 154
       Width = 76
       Height = 25
       Caption = 'Cancel'
-      TabOrder = 4
+      TabOrder = 3
       OnClick = Button2Click
     end
-  end
-  object Timer1: TTimer
-    Interval = 2000
-    OnTimer = Timer1Timer
-    Left = 16
-    Top = 168
+    object CheckBox1: TCheckBox
+      Left = 12
+      Top = 122
+      Width = 189
+      Height = 17
+      Caption = 'Remember my username'
+      TabOrder = 4
+    end
   end
 end

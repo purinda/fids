@@ -8,7 +8,7 @@ uses
 	uXmlParser, ExtCtrls, StdCtrls, uUtils, uPoller, uPacket, uFlight,
 	uGlobalDefs,
 	uGT, uMessageHub, udbTree, uMirrorDB, uFidsTags, SysUtils,
-	uFIDSXml, uCommon, Dialogs, Math, uTTRules, ColorButton;
+	uCommon, Dialogs, Math, uTTRules, ColorButton;
 
 type
 	// Set sensor types so we can use them in any window require.
@@ -18,19 +18,16 @@ type
 
 	CFlightController = class
 	public
-		JobName: string;
 		Table: array of TTreeData;
 		// Used only for timetables
 		oTTRulesList: cTTRulesList;
 		oRules: array [0 .. 20] of apNode;
 		oRule: cTTRule;
-		FXml: TFIDSxml;
 
 		{ Basic functionality }
 		procedure PopulateGrid();
 		procedure PopulateTTGrid();
 		procedure fOnIdle(Sender: TObject; var Done: Boolean);
-		procedure NewConnection(cID: TFIDSWindowID);
 		procedure SetDetail(flightPath: string; ff: aFlightField;
 		  detail: string);
 
@@ -55,10 +52,11 @@ type
 		function GetTerminals(): TStringList;
 		function GetListOfCGBBUsed(ControllerID: TFIDSWindowID): TStringList;
 		function GetUsers(): TStringList;
+        function GetJobName(): String;
 		function isHostRunning(): Boolean;
 
 		constructor Create(afkInput: aFlightKind;
-        	affFields: array of aFlightField);
+		  affFields: array of aFlightField);
 
 		destructor Destroy; override;
 
@@ -96,11 +94,6 @@ begin
 	afKind := afkInput;
 	setlength(Fields, High(affFields) + 10);
 
-	FXml := FXml.Instance;
-	// if ( FXml.oHub.Connected ) then
-	// Set flightkind for the Object, afkDepartures/afkArrivals/afkNone
-	// so data will be populated accordingly.
-
 	c := 0;
 	for ff in affFields do
 	begin
@@ -108,6 +101,12 @@ begin
 		inc(c);
 	end;
 
+end;
+
+function CFlightController.GetJobName;
+begin
+	// get the jobname (airport name)
+//    Result := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
 end;
 
 function CFlightController.isHostRunning(): Boolean;
@@ -119,7 +118,6 @@ destructor CFlightController.Destroy();
 begin
 	// FXml.oHub.Disconnect(true);
 	FreeAndNil(Xml_Connection);
-	FreeAndNil(FXml);
 	oFlight.Free;
 end;
 
@@ -131,51 +129,7 @@ var
 	tmp: apNode;
 	i: Int;
 begin
-
 	path := uCommon.fidsUsersPath;
-	showmessage(FXml.GetDataTree.GetNode(path).Content);
-
-end;
-
-procedure CFlightController.NewConnection(cID: TFIDSWindowID);
-var
-	i: integer;
-begin
-	// get the jobname (airport name)
-//	JobName := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
-//	ControllerID := cID;
-//
-//	if (FXml.mInit) then
-//	begin
-//		if (cID = FIDSCheckins) OR (cID = FIDSArrivals) OR
-//		  (cID = FIDSDepartures) OR (cID = FIDSGates) OR (cID = FIDSBays) OR
-//		  (cID = FIDSBelts) then
-//		begin
-//			// LogIn( FeedID, SysPW, FeedID );
-//			// FXml.oDataTree.RegisterReader( PopulateGrid );
-//			oFlight := cFlight.Create(DB, 'Feed');
-//			// need a logged in id ('EgGUI') to update DB
-//			oFlight.Kind := afKind;
-//			PopulateGrid();
-//		end;
-//
-//		if (cID = FIDSTArrivals) OR (cID = FIDSTDepartures) then
-//		begin
-//			// LogIn( FeedID, SysPW, FeedID );
-//			// FXml.oDataTree.RegisterReader( PopulateGrid );
-//			// oRule := oRule.Create( fxml.oDataTree, 'Feed' );   // need a logged in id ('EgGUI') to update DB
-//			oRule := cTTRule.Create(DB, 'Feed');
-//			// need a logged in id ('EgGUI') to update DsB;
-//			oRule.oTemplate.Kind := afKind;
-//			PopulateTTGrid();
-//		end;
-//
-//	end
-//	else
-//	begin
-//		FXml.mShutDown := true;
-//		ShowMessage('FIDSXml Server not running or experianced a connection problem');
-//	end;
 
 end;
 
@@ -191,7 +145,7 @@ begin
 		path := uCommon.fidsAStatusPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -205,7 +159,7 @@ begin
 	path := uCommon.fidsGatesPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -219,7 +173,7 @@ begin
 	path := uCommon.fidsBaysPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -233,7 +187,7 @@ begin
 	path := uCommon.fidsCheckinsPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -247,7 +201,7 @@ begin
 	path := uCommon.fidsCarrierTypesPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -261,7 +215,7 @@ begin
 	path := uCommon.fidsBeltsPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -275,7 +229,7 @@ begin
 	path := uCommon.fidsAircraftTypesPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -289,7 +243,7 @@ begin
 	path := uCommon.fidsTerminalsPath;
 
 	Result := TStringList.Create;
-	uCommon.ParseDelimited(Result, FXml.GetDataTree.GetNode(path).Content, ',');
+	uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
 
 end;
 
@@ -490,10 +444,10 @@ var
 begin
 
 	Result := TStringList.Create;
-	for i := 0 to SubNodeCount(FXml.GetDataTree.GetNode(fidsSensorPath)) - 1 do
+	for i := 0 to SubNodeCount(DB().GetNode(fidsSensorPath)) - 1 do
 	begin
 
-		tmp := FXml.GetDataTree.GetNode(fidsSensorPath).SubNodes.Items[i];
+		tmp := DB().GetNode(fidsSensorPath).SubNodes.Items[i];
 		Result.Add(tmp.NodeName);
 	end;
 
@@ -520,7 +474,7 @@ begin
 			path := '|WebFeeds';
 	end;
 
-	ret := FXml.GetDataTree.GetNode(fidsSensorPath + path).SubNodes.Count;
+	ret := DB().GetNode(fidsSensorPath + path).SubNodes.Count;
 
 	Result := ret;
 end;
@@ -547,7 +501,7 @@ begin
 			path := '|WebFeeds';
 	end;
 
-	Sensor := FXml.GetDataTree.GetNode(fidsSensorPath + path)
+	Sensor := DB().GetNode(fidsSensorPath + path)
 	  .SubNodes.Items[index];
 
 	case readwhat of
@@ -569,7 +523,7 @@ var
 	r, i, ffSTA, ffETA: Int;
 begin
 
-	oTTRulesList := cTTRulesList.Create(FXml.GetDataTree);
+	oTTRulesList := cTTRulesList.Create(DB());
 	oTTRulesList.Build(tfNone, '');
 
 	setlength(Table, oTTRulesList.Count + exRows);
@@ -584,7 +538,7 @@ begin
 		strKind := 'Departures';
 	end;
 
-	oRule := cTTRule.Create(FXml.GetDataTree, 'Feed');
+	oRule := cTTRule.Create(DB(), 'Feed');
 	// need a logged in id ('EgGUI') to update DsB;
 	oRule.oTemplate.Kind := afKind;
 

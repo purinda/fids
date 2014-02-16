@@ -79,8 +79,9 @@ type
 	private
 		{ Private declarations }
 		fcWindow: CFlightController;
-	public
-		{ Public declarations }
+    protected
+	    procedure CreateParams(var Params: TCreateParams) ; override;
+
 	end;
 
 var
@@ -93,6 +94,15 @@ implementation
 uses FIndicators, FCrawlineLines, uConnection;
 
 {$R *.dfm}
+
+
+procedure TfrmMain.CreateParams(var Params: TCreateParams) ;
+begin
+  inherited;
+  Params.ExStyle := Params.ExStyle or WS_EX_APPWINDOW;
+  Params.WndParent := 0;
+end;
+
 
 procedure TfrmMain.cmdArrivalsClick(Sender: TObject);
 begin
@@ -352,8 +362,7 @@ end;
 
 procedure TfrmMain.tmrBackgroundTimer(Sender: TObject);
 begin
-	fcWindow.NewConnection(FIDSArrivals);
-	Caption := fcWindow.JobName;
+	Caption := fcWindow.GetJobName();
 	{ Init sensors }
 	fcWindow.InitSensors(panelSensors);
 	{ Redraw Sensors }

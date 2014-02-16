@@ -6,9 +6,6 @@
 			<Projects Include="fids3.dproj">
 				<Dependencies/>
 			</Projects>
-			<Projects Include="FIDSxml\ExampleGUI\ExampleGUI.dproj">
-				<Dependencies/>
-			</Projects>
 		</ItemGroup>
 		<ProjectExtensions>
 			<Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -26,23 +23,14 @@
 		<Target Name="fids3:Make">
 			<MSBuild Projects="fids3.dproj" Targets="Make"/>
 		</Target>
-		<Target Name="ExampleGUI">
-			<MSBuild Projects="FIDSxml\ExampleGUI\ExampleGUI.dproj"/>
-		</Target>
-		<Target Name="ExampleGUI:Clean">
-			<MSBuild Projects="FIDSxml\ExampleGUI\ExampleGUI.dproj" Targets="Clean"/>
-		</Target>
-		<Target Name="ExampleGUI:Make">
-			<MSBuild Projects="FIDSxml\ExampleGUI\ExampleGUI.dproj" Targets="Make"/>
-		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="fids3;ExampleGUI"/>
+			<CallTarget Targets="fids3"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="fids3:Clean;ExampleGUI:Clean"/>
+			<CallTarget Targets="fids3:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="fids3:Make;ExampleGUI:Make"/>
+			<CallTarget Targets="fids3:Make"/>
 		</Target>
 		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
 	</Project>

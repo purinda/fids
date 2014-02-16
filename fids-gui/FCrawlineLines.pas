@@ -8,7 +8,7 @@ uses
 	uXmlParser, StdCtrls, uUtils, uPoller, uPacket, uFlight,
 	uGlobalDefs,
 	uGT, uMessageHub, udbTree, uMirrorDB, uFidsTags,
-	uFIDSXml, Math, uTTRules;
+	Math, uTTRules;
 
 type
 	// UDC Datastructure for UDC and Crawling line management
@@ -57,7 +57,7 @@ type
 	private
 		{ Private declarations }
 	public
-		FXml: TFIDSxml;
+
 		{ Public declarations }
 	end;
 
@@ -155,8 +155,6 @@ begin
 
 	VST.BeginUpdate;
 	VST.Clear;
-
-	FXml := FXml.Instance;
 	SetLength(Items, 20);
 
 	K := 0;
@@ -164,13 +162,13 @@ begin
 	for I := 0 to DB.GetNode(fidsDisplayConfigPath).SubNodes.Count - 1 do
 	begin
 
-		frame := FXml.GetDataTree.GetNode(fidsDisplayConfigPath)
+		frame := DB().GetNode(fidsDisplayConfigPath)
 		  .SubNodes.Items[I];
 		// ShowMessage(fidsDisplayConfigPath+'|'+frame.NodeName +'|Devices');
 		for J := 0 to DB.GetNode(fidsDisplayConfigPath + '|' + frame.NodeName +
 		  '|Devices').SubNodes.Count - 1 do
 		begin
-			page := FXml.GetDataTree.GetNode(fidsDisplayConfigPath + '|' +
+			page := DB().GetNode(fidsDisplayConfigPath + '|' +
 			  frame.NodeName + '|Devices').SubNodes.Items[J];
 			udc := page.SubNodes.Items[0];
 

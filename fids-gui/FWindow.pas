@@ -10,7 +10,7 @@ uses
 	uCommon, Buttons, uTTRules, VrControls, VrLcd, ActnPopup, StdActns,
 	ActnList, PlatformDefaultStyleActnCtrls, ActnMan, ActnCtrls, ActnMenus,
 	ActnColorMaps, RibbonLunaStyleActnCtrls, ufStringEntry, uDbTree, uGT,
-	uUtils, uPoller;
+	uUtils, uPoller, ulogin;
 
 type
 	TfrmWindow = class(TForm)
@@ -97,14 +97,14 @@ type
 		procedure Bays2Click(Sender: TObject);
 		procedure Belts1Click(Sender: TObject);
 		procedure tbbHomeClick(Sender: TObject);
-		procedure VSTAfterItemErase(Sender: TBaseVirtualTree;
-		  TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
 		procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 		procedure amnuCrawlingLinesExecute(Sender: TObject);
 		procedure FormActivate(Sender: TObject);
 		procedure FormCreate(Sender: TObject);
 		procedure tmrDodgyTimer(Sender: TObject);
 		procedure tbbGanttClick(Sender: TObject);
+    procedure VSTAfterItemErase(Sender: TBaseVirtualTree; TargetCanvas: TCanvas;
+      Node: PVirtualNode; ItemRect: TRect);
 
 	private
 		{ Main db backend handling Object }
@@ -136,6 +136,9 @@ type
 		ControllerType: TFIDSWindowType;
 		ControllerID: TFIDSWindowID;
 
+        // Login
+        Login : cLogin;
+
 		afkWindowKind: aFlightKind;
 		FlightFields: array of aFlightField;
 		ColumnNames: array of string;
@@ -143,7 +146,11 @@ type
 		procedure Initialize();
 		procedure SetController(WindowName: string; fKind: aFlightKind;
 		  fFields: array of aFlightField; InpColumnNames: array of string);
-	end;
+
+    protected
+	    procedure CreateParams(var Params: TCreateParams) ; override;
+
+    end;
 
 var
 	frmWindow: TfrmWindow;
@@ -155,11 +162,6 @@ var
 	SearchString: string;
 	SearchField: SmallInt;
 	SearchCaseSensitive: Boolean;
-
-	{ Color Coding }
-	RowHighlight: Boolean;
-	VSTIndex: Int16;
-	PrevDBPath: string;
 
 	{ Dodgy flags }
 	ErrorOccuredVSTMouseUP: Boolean;
@@ -176,6 +178,13 @@ uses FSearch, FEditAnD, ufRuleEdit, FIndicators, FMain, FEdit, FCrawlineLines,
 	CrawlingEdit;
 
 {$R *.dfm}
+
+procedure TfrmWindow.CreateParams(var Params: TCreateParams) ;
+begin
+  inherited;
+  Params.ExStyle := Params.ExStyle or WS_EX_APPWINDOW;
+  Params.WndParent := 0;
+end;
 
 procedure TfrmWindow.SetController(WindowName: string; fKind: aFlightKind;
   fFields: array of aFlightField; InpColumnNames: array of string);
@@ -272,7 +281,7 @@ begin
 		frmWindows[1] := TfrmWindow.Create(nil);
 		frmWindows[1].ControllerType := FIDSVerticallyPopulated;
 		frmWindows[1].ControllerID := FIDSDepartures;
-		frmWindows[1].SetController('Departures - ' + fcWindow.JobName,
+		frmWindows[1].SetController('Departures - ' + fcWindow.GetJobName(),
 		  fkDepartures, uCommon.DeparturesSortedFields,
 		  uCommon.DeparturesSortedColumns);
 		frmWindows[1].Show;
@@ -311,7 +320,7 @@ begin
 		frmWindows[0] := TfrmWindow.Create(nil);
 		frmWindows[0].ControllerType := FIDSVerticallyPopulated;
 		frmWindows[0].ControllerID := FIDSArrivals;
-		frmWindows[0].SetController('Arrivals - ' + fcWindow.JobName,
+		frmWindows[0].SetController('Arrivals - ' + fcWindow.GetJobName(),
 		  fkArrivals, uCommon.ArrivalSortedFields,
 		  uCommon.ArrivalSortedColumns);
 		frmWindows[0].Show;
@@ -342,7 +351,7 @@ begin
 		frmWindows[5] := TfrmWindow.Create(nil);
 		frmWindows[5].ControllerType := FIDSHorizontallyPopulated;
 		frmWindows[5].ControllerID := FIDSBelts;
-		frmWindows[5].SetController('Belts - ' + fcWindow.JobName, fkArrivals,
+		frmWindows[5].SetController('Belts - ' + fcWindow.GetJobName(), fkArrivals,
 		  uCommon.BeltsFields, uCommon.BeltsColumns);
 		frmWindows[5].Show;
 	end;
@@ -367,7 +376,7 @@ begin
 		frmWindows[2] := TfrmWindow.Create(nil);
 		frmWindows[2].ControllerType := FIDSHorizontallyPopulated;
 		frmWindows[2].ControllerID := FIDSCheckins;
-		frmWindows[2].SetController('Check-in - ' + fcWindow.JobName,
+		frmWindows[2].SetController('Check-in - ' + fcWindow.GetJobName(),
 		  fkDepartures, uCommon.CheckinsFields, uCommon.CheckinsColumns);
 		frmWindows[2].Show;
 	end;
@@ -601,8 +610,7 @@ begin
 	// END - Set Icon Dynamically
 
 	I := 0;
-	oRule := cTTRule.Create(DB, fcWindow.FXml.GetUserName);
-	fcWindow.NewConnection(ControllerID);
+	oRule := cTTRule.Create(DB, Login.GetUserName);
 
 	Statuses := fcWindow.GetStatuses;
 	if (ControllerType = FIDSVerticallyPopulated) AND
@@ -708,7 +716,7 @@ begin
 		frmWindows[3] := TfrmWindow.Create(nil);
 		frmWindows[3].ControllerType := FIDSHorizontallyPopulated;
 		frmWindows[3].ControllerID := FIDSGates;
-		frmWindows[3].SetController('Gates - ' + fcWindow.JobName, fkDepartures,
+		frmWindows[3].SetController('Gates - ' + fcWindow.GetJobName(), fkDepartures,
 		  uCommon.GatesFields, uCommon.GatesColumns);
 		frmWindows[3].Show;
 	end;
@@ -1129,7 +1137,7 @@ begin
 	if (CodeShare = false) then
 	begin
 		{ Create/Add the BLANK Flight }
-		NewFlight := cFlight.Create(DB, 'Feed'); // fcWindow.FXml.oDataTree
+		NewFlight := cFlight.Create(DB, Login.GetUsername()); // fcWindow.FXml.oDataTree
 		NewFlight.Kind := afkWindowKind;
 		NewFlight.Clear;
 		NewFlight.DbNode := nil;
@@ -1612,7 +1620,7 @@ begin
 	frmEdit.lstTerminals.Add('');
 	frmEdit.lstTerminals.AddStrings(fcWindow.GetTerminals);
 
-	Flight := cFlight.Create(DB, 'Feed');
+	Flight := cFlight.Create(DB, Login.GetUserName);
 	Flight.Kind := afkWindowKind;
 	Flight.DBPath := SelectedFlightPath;
 
@@ -1656,7 +1664,7 @@ begin
 	if MessageDlg('Please confirm deletion of flight "' + Flight + '" ?',
 	  mtconfirmation, [mbNo, mbYes], 0, mbNo) = mrYes then
 	begin
-		ChosenFlight := cFlight.Create(DB, 'Feed');
+		ChosenFlight := cFlight.Create(DB, Login.GetUserName);
 		ChosenFlight.DBPath := SelectedFlightPath;
 		// connect flight to a particular flight node in DB
 		if ChosenFlight.DbNode <> nil then
@@ -1675,8 +1683,9 @@ end;
 
 procedure TfrmWindow.tbbGanttClick(Sender: TObject);
 begin
-	Poller.OnTimeOut(5, procedure()begin // aOnTimeOutProc
-	  ShowMessage('test'); end);
+	Poller.OnTimeOut(5, procedure() begin // aOnTimeOutProc
+    	ShowMessage('test'); end
+    );
 end;
 
 procedure TfrmWindow.tbbHomeClick(Sender: TObject);
@@ -2001,6 +2010,7 @@ var
 	_control: TControl;
 	I: Integer;
 begin
+exit;
 	if not(fcWindow.isHostRunning) then
 	begin
 		// Disable user operation
@@ -2043,44 +2053,30 @@ var
 	NodeData: PTreeData;
 	I: Int8;
 	Paths: TStringList;
+    ProcessingFlight: cFlight;
 begin
 	if (ControllerType = FIDSHorizontallyPopulated) then
 	begin
-		RowHighlight := not RowHighlight;
-
-		if (RowHighlight = True) then
-		begin
-			TargetCanvas.Brush.Color := rgb(255, 255, 185);
-			TargetCanvas.FillRect(ItemRect);
-			RowHighlight := True;
-		end;
+		// Color Strips Implementation
 	end;
 
 	if (ControllerType = FIDSVerticallyPopulated) then
 	begin
-
 		NodeData := VST.GetNodeData(Node);
-		// ==========================================================================
-		Paths := TStringList.Create;
-		Split('|', NodeData.DBPath, Paths);
 
-		if not(PrevDBPath = (Paths[1] + Paths[2])) then
-		begin
-			RowHighlight := not RowHighlight;
-		end;
+		ProcessingFlight := cFlight.Create(DB, Login.GetUserName);
+		ProcessingFlight.DBPath := NodeData.DBPath;
+		// connect flight to a particular flight node in DB
+		if ProcessingFlight.DbNode <> nil then
+        begin
 
-		if (RowHighlight = True) then
-		begin
-			TargetCanvas.Brush.Color := rgb(255, 255, 185);
-			TargetCanvas.FillRect(ItemRect);
-			RowHighlight := True;
-		end;
+    		if (ProcessingFlight.CodeShare = 0) AND (Node.ChildCount = 0) then
+			begin
+                TargetCanvas.Brush.Color := rgb(255, 255, 185);
+                TargetCanvas.FillRect(ItemRect);
+            end;
 
-		PrevDBPath := Paths[1] + Paths[2];
-		Inc(VSTIndex);
-
-		FreeAndNil(Paths);
-		// ==========================================================================
+        end;
 
 		for I := 0 to VST.Header.Columns.Count - 1 do
 		begin
@@ -2152,13 +2148,13 @@ begin
 		end;
 
 	end; // end if Controller Type
+
 end;
 
 procedure TfrmWindow.VSTAfterPaint(Sender: TBaseVirtualTree;
   TargetCanvas: TCanvas);
 begin
-	VSTIndex := 0;
-	RowHighlight := false;
+
 
 	// ExpandNodes();
 end;

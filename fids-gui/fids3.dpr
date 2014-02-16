@@ -36,22 +36,23 @@ uses
   uController in 'GUILib\uController.pas',
   uFIDSxml in 'GUILib\uFIDSxml.pas',
   uFlightInfo in 'GUILib\uFlightInfo.pas',
-  uSettingsManager in 'GUILib\uSettingsManager.pas';
+  uSettingsManager in 'GUILib\uSettingsManager.pas',
+  uLogin in 'GUILib\uLogin.pas';
 
 {$R *.res}
 
 begin
-  Application.Initialize;
+	Application.Initialize;
 
-  Application.MainFormOnTaskbar := True;
-  Application.Title := 'DII FIDS GUI System v2';
-  Application.CreateForm(TfrmLogin, frmLogin);
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfRuleEdit, fRuleEdit);
-  Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
-  Application.CreateForm(TfrmEdit, frmEdit);
-  Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
-  Application.CreateForm(TfStrEntry, fStrEntry);
-  Application.Run;
+    Application.MainFormOnTaskbar := True;
+    Application.Title := 'DII FIDS GUI System v2';
+    Application.CreateForm(TfrmLogin, frmLogin);
+    Application.CreateForm(TfrmMain, frmMain);
+    Application.CreateForm(TfRuleEdit, fRuleEdit);
+    Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
+    Application.CreateForm(TfrmEdit, frmEdit);
+    Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
+    Application.CreateForm(TfStrEntry, fStrEntry);
+    Application.Run;
 
 end.

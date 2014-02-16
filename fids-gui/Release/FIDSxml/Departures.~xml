@@ -52,7 +52,7 @@
 		<FeedKey> QFA426/081031 </FeedKey>
 		<ST> 20100812 110000 </ST>
 		<ET> 20100812 111800 </ET>
-		<AT> 20100812 113600 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHVXB </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
@@ -60,6 +60,9 @@
 		<PaxJoin> 167 </PaxJoin>
 		<Fuel> 5800 </Fuel>
 		<Burn> 2800 </Burn>
+		<DStatus> Closed </DStatus>
+		<Gates> txtGate2 </Gates>
+		<NonPublic/>
 	</QFA426-1925>
 	<GT4444-1926>
 		<Flights>
@@ -71,6 +74,9 @@
 		<ET> 20100812 170000 </ET>
 		<Gates> 13 </Gates>
 		<Bays> 5 </Bays>
+		<DStatus> Off Blocks </DStatus>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</GT4444-1926>
 	<ANZ124-1927>
 		<Flights>

@@ -1,3 +1,6 @@
 fids-gui/__history/
 fids-gui/GUILib/__history/
+fids-gui/GtLib/__history
+fids-gui/Tools/DelphiLib/__history/
 *.dcu
+*.~xml
