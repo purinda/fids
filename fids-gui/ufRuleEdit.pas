@@ -5,7 +5,7 @@ interface
 uses
 	Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
 	Dialogs, StdCtrls, ExtCtrls, uTTRules, uGT, ComCtrls, uCommon, VarUtils,
-	StrUtils;
+	StrUtils, uConnection, uLogin;
 
 type
 	TfRuleEdit = class(TForm)
@@ -329,7 +329,7 @@ procedure TfRuleEdit.SetTTRule(rule: cTTRule);
 
 begin // tells form which rule to adjust
 	if oTTRule = nil then
-		oTTRule := cTTRule.Create(rule.DB, rule.ReqID);
+		oTTRule := cTTRule.Create(DB, DB.id);
 
 	oTTRule.DbNode := rule.DbNode;
 	// need own object since vst calls GetText a lot

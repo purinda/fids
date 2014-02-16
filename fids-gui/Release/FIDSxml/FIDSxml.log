@@ -1605,3 +1605,31 @@
 3	22:19 Sun 16 Feb 14	Login FIDS2 ID windowsapps
 3	22:22 Sun 16 Feb 14	Login FIDS2 ID windowsapps
 3	22:28 Sun 16 Feb 14	Login FIDS2 ID windowsapps
+3	23:27 Sun 16 Feb 14	Login FIDS2 ID windowsapps
+216	23:27 Sun 16 Feb 14	EditRequest : FIDS2
+216	23:27 Sun 16 Feb 14	EditRequest : FIDS2
+216	23:27 Sun 16 Feb 14	EditRequest : FIDS2
+3	00:08 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+216	00:09 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:09 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:09 Mon 17 Feb 14	EditRequest : FIDS2
+3	00:34 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+3	00:34 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+216	00:35 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:35 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:35 Mon 17 Feb 14	EditRequest : FIDS2
+3	00:35 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+3	00:40 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+216	00:40 Mon 17 Feb 14	EditRequest : FIDS2
+3	00:42 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+11	00:43 Mon 17 Feb 14	Log Out  ID windowsapps
+107	00:43 Mon 17 Feb 14	FAILED Login attempt FIDS2 ID windowsapps
+5	00:46 Mon 17 Feb 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	00:46 Mon 17 Feb 14	Login FIDS2 ID windowsapps
+4	00:46 Mon 17 Feb 14	Acting as HOST
+3	00:46 Mon 17 Feb 14	Login FIDS2 ID windowsapps

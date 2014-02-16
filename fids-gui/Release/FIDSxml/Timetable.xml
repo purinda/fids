@@ -24,8 +24,8 @@
 	</GT4444>
 	<LT4444>
 		<Rules>
-			<DateStart> 20081201 </DateStart>
-			<DateEnd> 20110131 </DateEnd>
+			<DateStart> 18991230 </DateStart>
+			<DateEnd> 18991230 </DateEnd>
 			<Time> 1830 </Time>
 			<Days> 7F </Days>
 			<DaysExcept> 00 </DaysExcept>
@@ -35,7 +35,7 @@
 		<Template>
 			<Flights>
 				<LT4444>
-					<Ports> MEL </Ports>
+					<Ports> MELX </Ports>
 				</LT4444>
 			</Flights>
 			<ST/>
