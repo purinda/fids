@@ -35,8 +35,6 @@ type
 		N4: TMenuItem;
 		About1: TMenuItem;
 		panelSensors: TFlowPanel;
-		tmrBackground: TTimer;
-		tmrContinuous: TTimer;
 		imlSensors: TImageList;
 		cmdCheckins: TButton;
 		cmdGates: TButton;
@@ -62,12 +60,10 @@ type
 		procedure cmdArrivalsClick(Sender: TObject);
 		procedure cmdDeparturesClick(Sender: TObject);
 		procedure FormCreate(Sender: TObject);
-		procedure tmrContinuousTimer(Sender: TObject);
 		procedure cmdCheckinsClick(Sender: TObject);
 		procedure cmdGatesClick(Sender: TObject);
 		procedure cmdBaysClick(Sender: TObject);
 		procedure cmdBeltsClick(Sender: TObject);
-		procedure tmrBackgroundTimer(Sender: TObject);
 		procedure Arrivals3Click(Sender: TObject);
 		procedure Departures3Click(Sender: TObject);
 		procedure FormShow(Sender: TObject);
@@ -346,6 +342,11 @@ begin
 	VrClock1.Palette.High := rgb(0, 255, 255);
 	Panel1.Color := rgb(0, 0, 0);
 
+	Caption := fcWindow.GetJobName();
+	{ Init sensors }
+	fcWindow.InitSensors(panelSensors);
+	{ Redraw Sensors }
+	fcWindow.ImplementSensors(self, imlSensors);
 end;
 
 procedure TfrmMain.Manage1Click(Sender: TObject);
@@ -357,46 +358,6 @@ procedure TfrmMain.mnuCrawlingLineClick(Sender: TObject);
 begin
 	FCrawlineLinesAllocator := TFCrawlineLinesAllocator.Create(nil);
 	FCrawlineLinesAllocator.Show;
-
-end;
-
-procedure TfrmMain.tmrBackgroundTimer(Sender: TObject);
-begin
-	Caption := fcWindow.GetJobName();
-	{ Init sensors }
-	fcWindow.InitSensors(panelSensors);
-	{ Redraw Sensors }
-	fcWindow.ImplementSensors(self, imlSensors);
-
-	tmrBackground.Enabled := False;
-
-end;
-
-procedure TfrmMain.tmrContinuousTimer(Sender: TObject);
-var
-	_control: TControl;
-	i: integer;
-begin
-	if not(fcWindow.isHostRunning) then
-	begin
-
-		for i := 0 to panelSensors.ControlCount - 1 do
-		begin
-			_control := panelSensors.Controls[i];
-
-			if (_control.ClassName = 'TLabel') then
-				_control.Visible := False;
-
-			if (_control.ClassName = 'TFlowPanel') then
-				_control.Visible := False;
-
-			if (_control.Name = 'lblHostUnavailable') then
-			begin
-				_control.Visible := True;
-			end;
-
-		end;
-	end;
 
 end;
 

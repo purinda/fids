@@ -14,7 +14,6 @@ uses
 
 type
 	TfrmWindow = class(TForm)
-		tmrContinuous: TTimer;
 		stMain: TStatusBar;
 		panelSensors: TFlowPanel;
 		imlSensors: TImageList;
@@ -58,7 +57,6 @@ type
 		ToolButton1: TToolButton;
 		amnuCrawlingLines: TAction;
 		lblHostUnavailable: TLabel;
-		tmrDodgy: TTimer;
 
 		procedure FormClose(Sender: TObject; var Action: TCloseAction);
 		procedure VSTGetNodeDataSize(Sender: TBaseVirtualTree;
@@ -76,7 +74,6 @@ type
 		procedure tbDummyButtonClick(Sender: TObject);
 		procedure Find2Click(Sender: TObject);
 		procedure tbClearSearchClick(Sender: TObject);
-		procedure FormShow(Sender: TObject);
 		procedure tbbModifyClick(Sender: TObject);
 		procedure tbbAddClick(Sender: TObject);
 		procedure VSTPaintText(Sender: TBaseVirtualTree;
@@ -101,10 +98,10 @@ type
 		procedure amnuCrawlingLinesExecute(Sender: TObject);
 		procedure FormActivate(Sender: TObject);
 		procedure FormCreate(Sender: TObject);
-		procedure tmrDodgyTimer(Sender: TObject);
 		procedure tbbGanttClick(Sender: TObject);
     procedure VSTAfterItemErase(Sender: TBaseVirtualTree; TargetCanvas: TCanvas;
       Node: PVirtualNode; ItemRect: TRect);
+    procedure FormShow(Sender: TObject);
 
 	private
 		{ Main db backend handling Object }
@@ -119,6 +116,7 @@ type
 		  SearchInput: Variant);
 		procedure UpdateFlightData(ComponentName: String; ObjectType: string;
 		  ffField: aFlightField);
+        procedure ConnectionEvent( event : aConnectionEvent; param : string );
 		procedure AddNewFlight(CodeShare: Boolean; ExistingFlight: apNode);
 		function NodesCount(vtTree: TVirtualStringTree): int64;
 		function FindInTable(row: Integer): String;
@@ -128,6 +126,7 @@ type
 		procedure CustomDrawMenu(Menu: TMenuItem; Selected: Boolean;
 		  ACanvas: TCanvas; ARect: TRect);
 		function ExpandNodes(): Integer;
+        procedure InitialiseWindow();
 	public
 		{ Public declarations }
 		{ Window specific variables }
@@ -495,6 +494,8 @@ procedure TfrmWindow.FormCreate(Sender: TObject);
 begin
 	SensorsPanelInitialised := false;
 	StatusButtonsInitialised := false;
+
+    uConnection.Xml_Connection.RegisterEventReader(ConnectionEvent);
 end;
 
 procedure TfrmWindow.FormResize(Sender: TObject);
@@ -504,6 +505,11 @@ begin
 end;
 
 procedure TfrmWindow.FormShow(Sender: TObject);
+begin
+	InitialiseWindow;
+end;
+
+procedure TfrmWindow.InitialiseWindow();
 var
 	I: SmallInt;
 	{ Statuses related }
@@ -1080,15 +1086,12 @@ begin
 			begin
 				VST.Clear;
 				ControllerMode := FIDSListingMode;
-				tmrContinuous.Enabled := false;
 				{ disable otherwise you will get messageboxes }
 				self.pnlSearchPanel.Visible := false;
 				MessageBox(Handle, 'No results returned',
 				  PWideChar(ControllerName + ' | FIDS'), MB_ICONINFORMATION);
 
-				tbClearSearchClick(tbClearSearch);
-				tmrContinuous.Enabled := True;
-				{ Enable so normal routine will go on }
+				tbClearSearchClick(tbClearSearch);				{ Enable so normal routine will go on }
 				Exit;
 			end;
 
@@ -1738,9 +1741,6 @@ begin
 			// oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
 			fRuleEdit.TTRule := oRule; // link oRule to vst row;
 			fRuleEdit.ShowModal;
-
-			// retrieve data and redraw grid
-			tmrDodgy.Enabled := True;
 		end;
 
 		Exit();
@@ -1927,8 +1927,7 @@ begin
 			  UpdateFlightData('txtRego', TEdit.ClassName, ffRego);
 			  UpdateFlightData('txtPorts', TEdit.ClassName, ffPorts);
 			}
-			// retrieve data and redraw grid
-			tmrDodgy.Enabled := True;
+
 		end;
 
 	end
@@ -1952,8 +1951,6 @@ end;
 
 procedure TfrmWindow.tbDummyButtonClick(Sender: TObject);
 begin
-	tmrDodgy.Enabled := True;
-
 	{ Set status from caption of the button }
 	if (afkWindowKind = fkArrivals) then
 	begin
@@ -2006,47 +2003,11 @@ begin
 end;
 
 procedure TfrmWindow.tmrContinuousTimer(Sender: TObject);
-var
-	_control: TControl;
-	I: Integer;
 begin
-exit;
-	if not(fcWindow.isHostRunning) then
-	begin
-		// Disable user operation
-		ControlBar1.Enabled := false;
 
-		for I := 0 to panelSensors.ControlCount - 1 do
-		begin
-			_control := panelSensors.Controls[I];
-
-			if (_control.ClassName = 'TLabel') then
-				_control.Visible := false;
-
-			if (_control.ClassName = 'TFlowPanel') then
-				_control.Visible := false;
-
-			if (_control.Name = 'lblHostUnavailable') then
-			begin
-				_control.Visible := True;
-			end;
-
-		end;
-	end;
-
-	PopulateGrid();
 end;
 
 // TODO: Take this fucking shit out once we have a fucking callback function
-procedure TfrmWindow.tmrDodgyTimer(Sender: TObject);
-begin
-	// retrieve data and redraw grid
-	PopulateGrid;
-	VST.Repaint;
-
-	tmrDodgy.Enabled := false;
-end;
-
 procedure TfrmWindow.VSTAfterItemErase(Sender: TBaseVirtualTree;
   TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
 var
@@ -2669,6 +2630,30 @@ begin
 
 	end; // controller type if
 
+end;
+
+
+procedure TfrmWindow.ConnectionEvent( event : aConnectionEvent; param : string );
+
+begin
+    case event of
+        ceConnected:
+			;
+        ceDbReady:
+			;
+        ceLogin:
+			;
+        ceEdit:
+			begin
+                // retrieve data and redraw grid
+                PopulateGrid;
+                VST.Repaint;
+            end;
+        ceDisconnected:
+			;
+        ceShutdown:
+        	Close;
+    end;
 end;
 
 end.

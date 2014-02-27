@@ -8,7 +8,7 @@
 			<Password> _DII_password_ </Password>
 		</Else>
 	</Machine>
-	<Mirror> SystemSettings, Departures, Arrivals, Timetable, CheckIns, Comments, Sensors </Mirror>
+	<Mirror> SystemSettings, Departures, Arrivals, Timetable, CheckIns, Comments, Sensors, Users </Mirror>
 	<Server>
 		<Port> 5666 </Port>
 		<Name> FIDSxml </Name>

@@ -3,7 +3,7 @@
 	<QFA421-646>
 		<Flights>
 			<QFA421>
-				<Ports> SYD MEL </Ports>
+				<Ports> SYD </Ports>
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>

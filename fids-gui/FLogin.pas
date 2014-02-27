@@ -4,7 +4,7 @@ interface
 
 uses
 	Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-	Dialogs, StdCtrls, uLogin, Menus, ExtCtrls, ImgList, VrControls, VrLcd;
+	Dialogs, StdCtrls, uLogin, Menus, ExtCtrls, ImgList, VrControls, VrLcd, uGlobalDefs;
 
 type
 	TfrmLogin = class(TForm)
@@ -15,10 +15,12 @@ type
     Button2: TButton;
     CheckBox1: TCheckBox;
     lblJobName: TLabel;
+    tmrConnectionChecker: TTimer;
 		procedure Button2Click(Sender: TObject);
 		procedure Button1Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure ConnectionEvent( event : aConnectionEvent; param : string );
+    procedure tmrConnectionCheckerTimer(Sender: TObject);
 	private
 		{ Private declarations }
 		LoginManager: CLogin;
@@ -43,6 +45,8 @@ begin
 
 	User := EUsername.Text;
 	Pass := EPassword.Text;
+
+    LoginManager.Check(User, Pass);
 
 	if ((Length(User) <= 0) OR ((Length(Pass) <= 0))) then
 	begin
@@ -69,13 +73,33 @@ end;
 
 procedure TfrmLogin.FormCreate(Sender: TObject);
 begin
-
-	LoginManager.Connect;
+	LoginManager.Connect(ConnectionEvent);
 end;
 
-procedure TfrmLogin.FormShow(Sender: TObject);
+procedure TfrmLogin.tmrConnectionCheckerTimer(Sender: TObject);
 begin
+
 	lblJobName.Caption := LoginManager.GetJobName();
+end;
+
+procedure TfrmLogin.ConnectionEvent( event : aConnectionEvent; param : string );
+begin
+    case event of
+        ceNone:
+        	;
+        ceConnected:
+			tmrConnectionChecker.Enabled := true;
+        ceDbReady:
+			;
+        ceLogin:
+			;
+        ceEdit:
+			;
+        ceDisconnected:
+			;
+        ceShutdown:
+        	Close;
+    end;
 end;
 
 end.

@@ -1,12 +1,12 @@
-<TimeStamp> 20140202 094000 </TimeStamp>
+<TimeStamp> 20140217 004655 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140202 094000  from windowsapps </ReqEdit>
+		<ReqEdit> 20140217 004655  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 094000 </TimeStamp>
+<TimeStamp> 20140217 004655 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqEdit> windowsapps </ReqEdit>
@@ -14,315 +14,27 @@
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 094004 </TimeStamp>
+<TimeStamp> 20140217 004659 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140202 094004  from windowsapps </ReqEdit>
+		<ReqEdit> 20140217 004659  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 094021 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 094022 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 094022 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Gates| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 094031 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|ST1234|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 094031 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|ST1234|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095716 </TimeStamp>
+<TimeStamp> 20140217 004705 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140202 095716  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095739 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095739 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095739 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 3 </ReqEdit>
-		<Path> |Timetable|QF666|Template|Flights|QF666|CheckIns| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095752 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095752 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095752 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|QF666|Template|Flights|QF666|CheckIns| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095755 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095755 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|QF666|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 095755 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|QF666|Template|Flights|QF666|CheckIns| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101754 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140202 101754  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101819 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101819 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101820 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Gates| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101824 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101824 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 101824 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Gates| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103530 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 20140202 103530  from windowsapps </ReqEdit>
-		<Path> |Users|FIDS2|LoggedIn| </Path>
-		<ReqID> _Alpha_ </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103538 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> SYD </ReqEdit>
-		<Path> |Arrivals|QFA421-646|Flights|QFA421|Ports| </Path>
+		<ReqEdit> MEL </ReqEdit>
+		<Path> |Timetable|LT4444|Template|Flights|LT4444|Ports| </Path>
 		<ReqID> windowsapps </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 103543 </TimeStamp>
-<EditReply>
-	<Result> OK
-		<ReqEdit> 1,2 </ReqEdit>
-		<Path> |Arrivals|QFA421-646|Gates| </Path>
-		<ReqID> windowsapps </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103604 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103604 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103604 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Gates| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103604 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Bays| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103604 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Flights|LT4444|CheckIns| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103611 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103611 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103611 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Gates| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103611 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Bays| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103611 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 1 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Template|Flights|LT4444|CheckIns| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103621 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateStart| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103621 </TimeStamp>
-<EditReply>
-	<Result> ERROR 216
-		<ReqEdit> 18991230 </ReqEdit>
-		<Path> |Timetable|LT4444_A|Rules|DateEnd| </Path>
-		<ReqID> Feed </ReqID>
-	</Result>
-</EditReply>
-<TimeStamp> 20140202 103631 </TimeStamp>
+<TimeStamp> 20140223 142749 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqNewTag> LoggedOut </ReqNewTag>
-		<Content> 20140202 103631  from windowsapps </Content>
+		<Content> 20140223 142749  from windowsapps </Content>
 		<Path> |Users|FIDS2| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>

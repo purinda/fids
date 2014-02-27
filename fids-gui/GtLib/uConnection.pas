@@ -126,8 +126,6 @@ var // find machine specific and connection info from LocalConfig.xml
 	machine, ID, pt: apNode;
 	x: int;
 begin
-	UserName := 'Feed';
-    Password := 'DI_system';
 
 	path := ChangeFileExt(Application.ExeName, '');
 	AppName := ExtractFileName(path); // strip path and .exe
@@ -367,8 +365,10 @@ var
 begin
 	if not DB.HasContent('SystemConfig', value) then
 	begin // no sys config yet
+
 		if Master then
 		begin // master only - system initial load from files
+
 			DB.LoadFromFile('SystemConfig.xml');
 			if DB.Error <> 0 then
 				ShowMessage('Problem loading file SystemConfig.xml');
@@ -376,6 +376,7 @@ begin
 				DB.Directory := value; // static work directory
 			mOriginalDirectory := DB.Directory;
 			DB.LoadFromFile('Users.xml');
+
 			if DB.HasContent('|SystemConfig|PromptDirectory|', value) then
 			begin // user set working directory
 				dir := ReadRegistry(mRegistryBase, 'WorkDirectory');

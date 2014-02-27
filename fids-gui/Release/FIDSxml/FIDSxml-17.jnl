@@ -1,12 +1,12 @@
-<TimeStamp> 20140202 103747 </TimeStamp>
+<TimeStamp> 20140223 233755 </TimeStamp>
 <EditReply>
 	<Result> OK
-		<ReqEdit> 20140202 103747  from windowsapps </ReqEdit>
+		<ReqEdit> 20140223 233755  from windowsapps </ReqEdit>
 		<Path> |Users|FIDS2|LoggedIn| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 103747 </TimeStamp>
+<TimeStamp> 20140223 233755 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqEdit> windowsapps </ReqEdit>
@@ -14,11 +14,51 @@
 		<ReqID> _Alpha_ </ReqID>
 	</Result>
 </EditReply>
-<TimeStamp> 20140202 103807 </TimeStamp>
+<TimeStamp> 20140223 233817 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140223 233817  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140223 234432 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140223 234432  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140223 234550 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140223 234550  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140223 234818 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140223 234818  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140223 234956 </TimeStamp>
+<EditReply>
+	<Result> OK
+		<ReqEdit> 20140223 234956  from windowsapps </ReqEdit>
+		<Path> |Users|FIDS2|LoggedIn| </Path>
+		<ReqID> _Alpha_ </ReqID>
+	</Result>
+</EditReply>
+<TimeStamp> 20140223 235004 </TimeStamp>
 <EditReply>
 	<Result> OK
 		<ReqNewTag> LoggedOut </ReqNewTag>
-		<Content> 20140202 103807  from windowsapps </Content>
+		<Content> 20140223 235004  from windowsapps </Content>
 		<Path> |Users|FIDS2| </Path>
 		<ReqID> _Alpha_ </ReqID>
 	</Result>

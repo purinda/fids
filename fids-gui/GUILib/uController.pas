@@ -52,8 +52,7 @@ type
 		function GetTerminals(): TStringList;
 		function GetListOfCGBBUsed(ControllerID: TFIDSWindowID): TStringList;
 		function GetUsers(): TStringList;
-        function GetJobName(): String;
-		function isHostRunning(): Boolean;
+		function GetJobName(): String;
 
 		constructor Create(afkInput: aFlightKind;
 		  affFields: array of aFlightField);
@@ -106,12 +105,7 @@ end;
 function CFlightController.GetJobName;
 begin
 	// get the jobname (airport name)
-//    Result := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
-end;
-
-function CFlightController.isHostRunning(): Boolean;
-begin
-	Result := DB.Ready; // not FXml.mShutDown;
+	// Result := FXml.GetDataTree.GetNode(fidsJobNamePath).Content;
 end;
 
 destructor CFlightController.Destroy();
@@ -501,8 +495,7 @@ begin
 			path := '|WebFeeds';
 	end;
 
-	Sensor := DB().GetNode(fidsSensorPath + path)
-	  .SubNodes.Items[index];
+	Sensor := DB().GetNode(fidsSensorPath + path).SubNodes.Items[index];
 
 	case readwhat of
 		Name:

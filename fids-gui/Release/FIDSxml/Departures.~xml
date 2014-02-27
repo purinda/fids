@@ -20,7 +20,7 @@
 	<QFA614-1924>
 		<Flights>
 			<QFA614>
-				<Ports> BNE </Ports>
+				<Ports> CMB </Ports>
 			</QFA614>
 			<JQ6614>
 				<Ports> BNE </Ports>
@@ -39,6 +39,7 @@
 		<Burn> 4600 </Burn>
 		<Gates> GT,AS </Gates>
 		<DStatus> Final Call </DStatus>
+		<NonPublic/>
 	</QFA614-1924>
 	<QFA426-1925>
 		<Flights>
@@ -166,13 +167,15 @@
 	<LT4444-1931>
 		<Flights>
 			<NTL4444>
-				<Ports> MEL </Ports>
+				<Ports> MEL SYD </Ports>
 			</NTL4444>
 		</Flights>
 		<ST> 20100812 183000 </ST>
 		<ET> 20100812 183000 </ET>
 		<Gates> 3 </Gates>
 		<Bays/>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</LT4444-1931>
 	<QFA93-1932>
 		<Flights>
@@ -4066,7 +4069,7 @@
 				<Ports> AKL,LAX </Ports>
 			</QFA25>
 			<SC8905>
-				<Ports> AKL </Ports>
+				<Ports> AKL SYD </Ports>
 			</SC8905>
 			<KE7315>
 				<Ports> AKL,LAX </Ports>
@@ -4082,11 +4085,14 @@
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
 		<DStatus> Delayed </DStatus>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</QFA25-2166>
 	<JQ61-2167>
 		<Flights>
 			<JQ61>
-				<Ports> DRW,SIN </Ports>
+				<Ports> DRW SIN </Ports>
 			</JQ61>
 		</Flights>
 		<FeedKey> JQ61/081102 </FeedKey>
@@ -4095,6 +4101,9 @@
 		<Rego> VHVQK </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</JQ61-2167>
 	<JQ29-2168>
 		<Flights>
@@ -4116,7 +4125,7 @@
 	<CPA104-2169>
 		<Flights>
 			<CPA104>
-				<Ports> HKG BGK </Ports>
+				<Ports> HKG SYD </Ports>
 			</CPA104>
 		</Flights>
 		<FeedKey> CPA104/081102 </FeedKey>

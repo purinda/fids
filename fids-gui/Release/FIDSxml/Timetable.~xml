@@ -24,8 +24,8 @@
 	</GT4444>
 	<LT4444>
 		<Rules>
-			<DateStart> 20081201 </DateStart>
-			<DateEnd> 20110131 </DateEnd>
+			<DateStart> 18991230 </DateStart>
+			<DateEnd> 18991230 </DateEnd>
 			<Time> 1830 </Time>
 			<Days> 7F </Days>
 			<DaysExcept> 00 </DaysExcept>
@@ -70,8 +70,8 @@
 	</ST1234>
 	<QF666>
 		<Rules>
-			<DateStart> 20091201 </DateStart>
-			<DateEnd> 20110131 </DateEnd>
+			<DateStart> 18991230 </DateStart>
+			<DateEnd> 18991230 </DateEnd>
 			<Time> 0330 </Time>
 			<Days> 00 </Days>
 			<DaysExcept> 0C </DaysExcept>
@@ -81,7 +81,7 @@
 		<Template>
 			<Flights>
 				<QF666>
-					<Ports> DWN </Ports>
+					<Ports> MEL </Ports>
 					<CheckIns> 5 </CheckIns>
 					<Path> Departures </Path>
 				</QF666>

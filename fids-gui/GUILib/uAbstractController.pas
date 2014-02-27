@@ -5,7 +5,7 @@ interface
 uses
 	ASCII, uXmlParser, uUtils, uPoller, uPacket, uFlight, uGlobalDefs,
 	uGT, uMessageHub, udbTree, uMirrorDB, uFidsTags, Classes, SysUtils,
-	uFIDSXml, uCommon;
+	uCommon;
 
 type
 	CAbstractController = class

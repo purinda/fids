@@ -19,7 +19,6 @@ object frmLogin: TfrmLogin
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnlContent: TPanel
@@ -33,7 +32,7 @@ object frmLogin: TfrmLogin
       Left = 0
       Top = 0
       Width = 313
-      Height = 33
+      Height = 16
       Align = alTop
       Alignment = taCenter
       Caption = '<Job Name>'
@@ -43,6 +42,7 @@ object frmLogin: TfrmLogin
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 74
     end
     object EUsername: TLabeledEdit
       Left = 12
@@ -92,5 +92,12 @@ object frmLogin: TfrmLogin
       Caption = 'Remember my username'
       TabOrder = 4
     end
+  end
+  object tmrConnectionChecker: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = tmrConnectionCheckerTimer
+    Left = 56
+    Top = 152
   end
 end

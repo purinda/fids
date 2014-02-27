@@ -20,7 +20,7 @@
 	<QFA614-1924>
 		<Flights>
 			<QFA614>
-				<Ports> BNE </Ports>
+				<Ports> CMB </Ports>
 			</QFA614>
 			<JQ6614>
 				<Ports> BNE </Ports>
@@ -39,6 +39,7 @@
 		<Burn> 4600 </Burn>
 		<Gates> GT,AS </Gates>
 		<DStatus> Final Call </DStatus>
+		<NonPublic/>
 	</QFA614-1924>
 	<QFA426-1925>
 		<Flights>
@@ -166,13 +167,15 @@
 	<LT4444-1931>
 		<Flights>
 			<NTL4444>
-				<Ports> MEL </Ports>
+				<Ports> MEL SYD </Ports>
 			</NTL4444>
 		</Flights>
 		<ST> 20100812 183000 </ST>
 		<ET> 20100812 183000 </ET>
 		<Gates> 3 </Gates>
 		<Bays/>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</LT4444-1931>
 	<QFA93-1932>
 		<Flights>
