@@ -40,28 +40,25 @@ uses FMain;
 
 procedure TfrmLogin.Button1Click(Sender: TObject);
 var
-	User, Pass: String;
+	LoginStatus : Boolean;
 begin
 
-	User := EUsername.Text;
-	Pass := EPassword.Text;
-
-    LoginManager.Check(User, Pass);
-
-	if ((Length(User) <= 0) OR ((Length(Pass) <= 0))) then
+	if ((Length(EUsername.Text) <= 0) OR ((Length(EPassword.Text) <= 0))) then
 	begin
-		ShowMessage('Username or Password not supplied');
+		MessageBox(Application.Handle, 'Username or password not supplied.', 'Login Failure', MB_ICONINFORMATION + MB_OK);
 		Exit;
 	end;
 
-	if (User = 'test') AND (Pass = 'test') then
+    LoginStatus := LoginManager.Check(EUsername.Text, EPassword.Text);
+
+	if (LoginStatus) then
 	begin
 		frmMain.show;
 		Hide;
 	end
 	else
 	begin
-		ShowMessage('Incorrect Username or Password, Please try again');
+		MessageBox(Application.Handle, 'Incorrect username or password, Please try again', 'Login Failure', MB_ICONSTOP + MB_OK);
 	end;
 
 end;

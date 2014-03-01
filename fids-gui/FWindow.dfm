@@ -260,7 +260,6 @@ object frmWindow: TfrmWindow
         Top = 0
         Caption = 'Gantt'
         ImageIndex = 18
-        OnClick = tbbGanttClick
       end
     end
     object tbExtended: TToolBar

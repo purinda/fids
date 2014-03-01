@@ -98,7 +98,6 @@ type
 		procedure amnuCrawlingLinesExecute(Sender: TObject);
 		procedure FormActivate(Sender: TObject);
 		procedure FormCreate(Sender: TObject);
-		procedure tbbGanttClick(Sender: TObject);
     procedure VSTAfterItemErase(Sender: TBaseVirtualTree; TargetCanvas: TCanvas;
       Node: PVirtualNode; ItemRect: TRect);
     procedure FormShow(Sender: TObject);
@@ -1682,13 +1681,6 @@ begin
 		PopulateGrid;
 	end;
 
-end;
-
-procedure TfrmWindow.tbbGanttClick(Sender: TObject);
-begin
-	Poller.OnTimeOut(5, procedure() begin // aOnTimeOutProc
-    	ShowMessage('test'); end
-    );
 end;
 
 procedure TfrmWindow.tbbHomeClick(Sender: TObject);
