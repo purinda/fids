@@ -17,7 +17,7 @@ object frmLogin: TfrmLogin
   Padding.Right = 5
   Padding.Bottom = 5
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

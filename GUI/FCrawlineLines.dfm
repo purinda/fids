@@ -29,6 +29,7 @@ object FCrawlineLinesAllocator: TFCrawlineLinesAllocator
     Header.Font.Height = -11
     Header.Font.Name = 'Tahoma'
     Header.Font.Style = []
+    Header.Height = 17
     Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
     TabOrder = 0
     OnDblClick = VSTDblClick

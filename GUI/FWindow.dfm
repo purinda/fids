@@ -3,7 +3,7 @@ object frmWindow: TfrmWindow
   Top = 0
   Caption = 'Window'
   ClientHeight = 622
-  ClientWidth = 952
+  ClientWidth = 898
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -48,7 +48,7 @@ object frmWindow: TfrmWindow
   object stMain: TStatusBar
     Left = 0
     Top = 601
-    Width = 952
+    Width = 898
     Height = 21
     Panels = <
       item
@@ -62,17 +62,19 @@ object frmWindow: TfrmWindow
       item
         Width = 50
       end>
+    ExplicitWidth = 701
   end
   object panelSensors: TFlowPanel
     Left = 0
     Top = 25
-    Width = 952
+    Width = 898
     Height = 26
     Align = alTop
     AutoWrap = False
     BevelOuter = bvNone
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 701
     object pnlClock: TPanel
       Left = 0
       Top = 0
@@ -135,16 +137,17 @@ object frmWindow: TfrmWindow
   object pnlSearchPanel: TPanel
     Left = 0
     Top = 569
-    Width = 952
+    Width = 898
     Height = 32
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 2
     Visible = False
+    ExplicitWidth = 701
     object tbClearSearch: TSpeedButton
       Left = 0
       Top = 0
-      Width = 952
+      Width = 898
       Height = 32
       Align = alClient
       Flat = True
@@ -162,7 +165,7 @@ object frmWindow: TfrmWindow
   object VST: TVirtualStringTree
     Left = 0
     Top = 115
-    Width = 952
+    Width = 898
     Height = 454
     Align = alClient
     Colors.BorderColor = clBlack
@@ -180,7 +183,6 @@ object frmWindow: TfrmWindow
     Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
     TabOrder = 3
     OnAfterItemErase = VSTAfterItemErase
-    OnAfterPaint = VSTAfterPaint
     OnCompareNodes = VSTCompareNodes
     OnDblClick = tbbModifyClick
     OnGetText = VSTGetText
@@ -189,12 +191,13 @@ object frmWindow: TfrmWindow
     OnHeaderClick = VSTHeaderClick
     OnMouseUp = VSTMouseUp
     OnNewText = VSTNewText
+    ExplicitWidth = 701
     Columns = <>
   end
   object ammbMainMenu: TActionMainMenuBar
     Left = 0
     Top = 0
-    Width = 952
+    Width = 898
     Height = 25
     UseSystemFont = False
     ActionManager = amMainMenu
@@ -209,11 +212,12 @@ object frmWindow: TfrmWindow
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
+    ExplicitWidth = 701
   end
   object ControlBar1: TControlBar
     Left = 0
     Top = 51
-    Width = 952
+    Width = 898
     Height = 64
     Align = alTop
     Anchors = [akTop, akRight]
@@ -224,6 +228,7 @@ object frmWindow: TfrmWindow
     RowSize = 50
     TabOrder = 5
     OnMouseUp = ControlBar1MouseUp
+    ExplicitWidth = 701
     object tblDetails: TToolBar
       Left = 11
       Top = 2
@@ -263,6 +268,7 @@ object frmWindow: TfrmWindow
         Top = 0
         Caption = 'Gantt'
         ImageIndex = 18
+        OnClick = tbbGanttClick
       end
     end
     object tbExtended: TToolBar
@@ -294,7 +300,7 @@ object frmWindow: TfrmWindow
       end
     end
     object tbBasic: TToolBar
-      Left = 850
+      Left = 609
       Top = 2
       Width = 90
       Height = 60
@@ -341,7 +347,7 @@ object frmWindow: TfrmWindow
     Left = 464
     Top = 320
     Bitmap = {
-      494C01010200D800080218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010200D800200218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -559,7 +565,7 @@ object frmWindow: TfrmWindow
     Left = 536
     Top = 320
     Bitmap = {
-      494C01011A00B801780220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A00B801900220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
