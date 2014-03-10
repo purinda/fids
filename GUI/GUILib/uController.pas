@@ -21,7 +21,6 @@ type
     Table: array of TTreeData;
     // Used only for timetables
     oTTRulesList: cTTRulesList;
-    oRules: array [0 .. 20] of apNode;
     oRule: cTTRule;
 
     { Basic functionality }
@@ -514,7 +513,7 @@ begin
   oTTRulesList := cTTRulesList.Create(DB());
   oTTRulesList.Build(tfNone, '');
 
-  setlength(Table, oTTRulesList.Count + exRows);
+  SetLength(Table, oTTRulesList.Count + exRows);
 
   if (ControllerID = FIDSTArrivals) then
   begin
@@ -526,24 +525,19 @@ begin
     strKind := 'Departures';
   end;
 
-  oRule := cTTRule.Create(DB(), 'Feed');
+  oRule := cTTRule.Create(DB, DB.id);
   // need a logged in id ('EgGUI') to update DsB;
   oRule.oTemplate.Kind := afKind;
 
-  i := 0;
   for r := 0 to oTTRulesList.Count - 1 do
   begin
     oRule.DbNode := oTTRulesList[r];
 
-    // need own object since vst calls GetText a lot
-    oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
-
     if (oRule.Presentation[tfPath] = strKind) then
     begin
-      oRules[i] := oRule.DbNode;
 
-      Table[i].Flight := oRule.Presentation[tfRuleName];
-      Table[i].Ports := oRule.oTemplate.Presentation[ffPorts];
+      Table[r].Flight := oRule.Presentation[tfRuleName];
+      Table[r].Ports := oRule.oTemplate.Presentation[ffPorts];
 
       Table[r].STDate := uCommon.FIDS_StrToDT
         (oRule.oTemplate.Presentation[ffSTdate]);
@@ -560,34 +554,21 @@ begin
       Table[r].ATime := uCommon.FIDS_StrTOTime
         (oRule.oTemplate.Presentation[ffATime]);
 
-      Table[i].Gates := oRule.oTemplate.Presentation[ffGates];
-      Table[i].Bays := oRule.oTemplate.Presentation[ffBays];
-      Table[i].CheckIns := oRule.oTemplate.Presentation[ffCheckIns];
-      Table[i].Belts := oRule.oTemplate.Presentation[ffBelts];
-      Table[i].Carrier := oRule.oTemplate.Presentation[ffCarrier];
-      Table[i].Terminal := oRule.oTemplate.Presentation[ffTerminal];
-      Table[i].Rego := oRule.oTemplate.Presentation[ffRego];
-      Table[i].CodeShare := oRule.oTemplate.CodeShare;
-      Table[i].Comment := oRule.oTemplate.Presentation[ffComment];
-      Table[i].NonPublic := oRule.oTemplate.Presentation[ffNonPublic];
+      Table[r].Gates := oRule.oTemplate.Presentation[ffGates];
+      Table[r].Bays := oRule.oTemplate.Presentation[ffBays];
+      Table[r].CheckIns := oRule.oTemplate.Presentation[ffCheckIns];
+      Table[r].Belts := oRule.oTemplate.Presentation[ffBelts];
+      Table[r].Carrier := oRule.oTemplate.Presentation[ffCarrier];
+      Table[r].Terminal := oRule.oTemplate.Presentation[ffTerminal];
+      Table[r].Rego := oRule.oTemplate.Presentation[ffRego];
+      Table[r].CodeShare := oRule.oTemplate.CodeShare;
+      Table[r].Comment := oRule.oTemplate.Presentation[ffComment];
+      Table[r].NonPublic := oRule.oTemplate.Presentation[ffNonPublic];
 
-      // Newly Added
-      {
-        Table[i].Slottime := oRule.oTemplate.Presentation[ffSlotTime];
-        Table[i].CheckinOpeningTime := oRule.oTemplate.Presentation[ffCheckinOpeningTime];
-        Table[i].CheckinClosingTime := oRule.oTemplate.Presentation[ffCheckinClosingTime];
-        Table[i].RelatedFlight := oRule.oTemplate.Presentation[ffRelatedFlight];
-        Table[i].Raceway := oRule.oTemplate.Presentation[ffRaceway];
-        Table[i].Aircraft := oRule.oTemplate.Presentation[ffAirCraft];
-        Table[i].OffBlock := oRule.oTemplate.Presentation[ffOffBlock];
-      }
-      Table[i].DBPath := oRule.oTemplate.DBPath;
-
-      inc(i);
+      Table[r].DBPath := oRule.oTemplate.DBPath;
     end;
   end;
 
-  setlength(Table, i + exRows);
   oTTRulesList.Free;
 end;
 

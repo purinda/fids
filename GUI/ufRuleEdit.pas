@@ -93,7 +93,6 @@ uses
   uFlight, uUtils, uFidsTags;
 
 procedure TfRuleEdit.SetCheckBoxes(group: TGroupBox; vals: int);
-
 var // relies on check box tags set to 2^n values
   x: int;
   c: TControl;
@@ -111,7 +110,6 @@ begin // sets the 7 day check values from a single value
 end;
 
 function TfRuleEdit.GetCheckBoxes(group: TGroupBox): int;
-
 var // relies on check box tags set to 2^n values
   x: int;
   c: TControl;
@@ -131,7 +129,6 @@ begin // read the 7 day check values into a single value
 end;
 
 function TfRuleEdit.CheckError: boolean;
-
 begin // produces crude error messages from error number - true is NO errors
   result := true;
   if oTTRule.Error <> teNone then
@@ -143,7 +140,6 @@ begin // produces crude error messages from error number - true is NO errors
 end;
 
 procedure TfRuleEdit.CollectFieldValues;
-
 begin // feed all fields into cTTRules for validation and global update of changes
   // should be automated with data dictionary ?
   oTTRule.Error := teNone;
@@ -165,13 +161,11 @@ begin // feed all fields into cTTRules for validation and global update of chang
 end;
 
 procedure TfRuleEdit.ebRuleNameChange(Sender: TObject);
-
 begin // new flight name is derrived from rule name ?
   lbFlightNum.Caption := StripTail(ebRuleName.Text);
 end;
 
 procedure TfRuleEdit.btDeleteClick(Sender: TObject);
-
 begin // delete a rule
   oTTRule.Delete;
   if CheckError() then
@@ -194,7 +188,6 @@ begin
 end;
 
 procedure TfRuleEdit.btNewClick(Sender: TObject);
-
 begin // ceate a new rule in timetable
   oTTRule.DbNode := nil;
   oTTRule.oTemplate.DbNode := nil;
@@ -227,8 +220,8 @@ begin
 end;
 
 procedure TfRuleEdit.btOKClick(Sender: TObject);
-
-begin // ok finished edits so update any changed fields
+begin
+  // ok finished edits so update any changed fields
 
 end;
 
@@ -254,10 +247,10 @@ begin
 end;
 
 procedure TfRuleEdit.FormCreate(Sender: TObject);
-
 var
   kind: aFlightKind;
-begin // init flight kind drop down
+begin
+
   for kind := Succ(Low(aFlightKind)) to High(aFlightKind) do
   begin
     ComboBox1.Items.Add(EnumToStr(Ord(kind), TypeInfo(aFlightKind)));
@@ -266,15 +259,14 @@ begin // init flight kind drop down
 end;
 
 procedure TfRuleEdit.FormShow(Sender: TObject);
-
 var
   kind, s: string;
   x, days: int;
 
   strExceptions: TStringList;
   strException: String;
+begin
 
-begin // initialize various edit controls
   if oTTRule <> nil then
   begin
     kind := oTTRule.Presentation[tfPath]; // set kind selector
@@ -309,7 +301,9 @@ begin // initialize various edit controls
     SetCheckBoxes(gbDaysExcept, days);
   end
   else
+  begin
     Clear;
+  end;
 
   lstExclusions.Clear;
   strExceptions := TStringList.Create;
@@ -325,14 +319,21 @@ begin // initialize various edit controls
 end;
 
 procedure TfRuleEdit.SetTTRule(rule: cTTRule);
-
-begin // tells form which rule to adjust
+begin
   if oTTRule = nil then
-    oTTRule := cTTRule.Create(DB, DB.id);
+  begin
+    oTTRule := cTTRule.Create(DB, DB.Id);
+    ShowMessage('do we get here');
+  end;
 
-  oTTRule.DbNode := rule.DbNode;
+  oTTRule.DbPath := rule.DbPath;
+  rule.oTemplate.kind := aFlightKind.fkDepartures;
+
+  ShowMessage(rule.DbPath);
+  ShowMessage(rule.oTemplate.Presentation[ffPorts]);
   // need own object since vst calls GetText a lot
   oTTRule.oTemplate.DbNode := rule.oTemplate.DbNode;
+  ShowMessage(oTTRule.oTemplate.Presentation[ffPorts]);
 end;
 
 end.

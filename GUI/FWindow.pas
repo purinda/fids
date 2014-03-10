@@ -59,7 +59,6 @@ type
     lblHostUnavailable: TLabel;
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure tmrContinuousTimer(Sender: TObject);
     procedure tbDummyButtonClick(Sender: TObject);
     procedure Find2Click(Sender: TObject);
     procedure tbClearSearchClick(Sender: TObject);
@@ -136,7 +135,6 @@ type
     FlightFields: array of aFlightField;
     ColumnNames: array of string;
 
-    procedure Initialize();
     procedure SetController(WindowName: string; fKind: aFlightKind;
       fFields: array of aFlightField; InpColumnNames: array of string);
 
@@ -246,17 +244,27 @@ procedure TfrmWindow.PopulateGrid();
 var
   ForceRefresh : Boolean;
 begin
+
   ForceRefresh := True;
 
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
+  begin
     fcWindow.PopulateTTGrid()
+  end
   else
+  begin
     fcWindow.PopulateGrid(ForceRefresh);
+  end;
 
   if (ControllerType = FIDSHorizontallyPopulated) then
+  begin
     self.PopulateHorizontally(SearchField, SearchString)
+  end
   else
+  begin
     self.PopulateVertically(SearchField, SearchString);
+  end;
+
 end;
 
 procedure TfrmWindow.Departures3Click(Sender: TObject);
@@ -478,19 +486,20 @@ begin
 
 end;
 
-procedure TfrmWindow.Initialize();
-begin
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfRuleEdit, fRuleEdit);
-  Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
-  Application.CreateForm(TfrmEdit, frmEdit);
-  Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
-end;
 
 procedure TfrmWindow.FormCreate(Sender: TObject);
 begin
   SensorsPanelInitialised := false;
   StatusButtonsInitialised := false;
+
+  //
+  // Create forms required to be initialised
+  //
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfRuleEdit, fRuleEdit);
+  Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
+  Application.CreateForm(TfrmEdit, frmEdit);
+  Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
 end;
 
 procedure TfrmWindow.FormResize(Sender: TObject);
@@ -524,7 +533,7 @@ begin
   ControllerMode := FIDSListingMode;
 
   VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
-    toFullVertGridLines];
+    toFullVertGridLines, toHotTrack, toUseExplorerTheme];
 
   if (ControllerType = FIDSHorizontallyPopulated) then
   begin
@@ -532,7 +541,6 @@ begin
   end
   else
   begin
-    // vst.Header.Options := [hoVisible, hoHotTrack];
     VST.TreeOptions.SelectionOptions := [toFullRowSelect];
   end;
 
@@ -561,8 +569,6 @@ begin
   VrClock1.Palette.Low := rgb(0, 20, 20);
   VrClock1.Palette.High := rgb(0, 255, 255);
   pnlClock.Color := rgb(0, 0, 0);
-
-  // -------------------
 
   // Set Icon Dynamically
   icon := TIcon.Create;
@@ -618,7 +624,8 @@ begin
   // END - Set Icon Dynamically
 
   I := 0;
-  oRule := cTTRule.Create(DB, Login.GetUserName);
+
+  oRule := cTTRule.Create(DB, DB.id);
 
   Statuses := fcWindow.GetStatuses;
   if (ControllerType = FIDSVerticallyPopulated) AND
@@ -1136,7 +1143,7 @@ begin
   if (CodeShare = false) then
   begin
     { Create/Add the BLANK Flight }
-    NewFlight := cFlight.Create(DB, Login.GetUserName());
+    NewFlight := cFlight.Create(DB, DB.id);
     // fcWindow.FXml.oDataTree
     NewFlight.Kind := afkWindowKind;
     NewFlight.Clear;
@@ -1581,7 +1588,6 @@ begin
   end;
 
   { Common Function for both Vertically and Horizontally populated data }
-
   if (ControllerID = FIDSArrivals) then
     frmEditAnD.SetFields(uCommon.ArrivalFields, uCommon.ArrivalColumns);
 
@@ -1613,7 +1619,7 @@ begin
   frmEdit.lstTerminals.Add('');
   frmEdit.lstTerminals.AddStrings(fcWindow.GetTerminals);
 
-  Flight := cFlight.Create(DB, Login.GetUserName);
+  Flight := cFlight.Create(DB, DB.id);
   Flight.Kind := afkWindowKind;
   Flight.DBPath := SelectedFlightPath;
 
@@ -1659,7 +1665,7 @@ begin
   if MessageDlg('Please confirm deletion of flight "' + Flight + '" ?',
     mtconfirmation, [mbNo, mbYes], 0, mbNo) = mrYes then
   begin
-    ChosenFlight := cFlight.Create(DB, Login.GetUserName);
+    ChosenFlight := cFlight.Create(DB, DB.id);
     ChosenFlight.DBPath := SelectedFlightPath;
     // connect flight to a particular flight node in DB
     if ChosenFlight.DbNode <> nil then
@@ -1718,20 +1724,19 @@ var
 begin
   FlightFound := false;
 
+  { Timetable specific edit }
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
   begin
-    { Timetable specific edit }
+    { Check that clicked flight is in the loaded TT rules }
     if VST.GetFirstSelected().Index < Cardinal(fcWindow.oTTRulesList.Count) then
     begin
       NodeIndex := VST.GetFirstSelected().Index;
+      oRule.Create(DB, DB.id);
 
-      oRule.DbNode := fcWindow.oRules[NodeIndex];
-      // oRule.DbPath := fcWindow.Table[NodeIndex].DBPath;
-      oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
+      oRule.DbPath := fcWindow.Table[NodeIndex].DBPath;
+      oRule.oTemplate.kind := aFlightKind.fkArrivals;
 
-      // ShowMessage(oRule.DbNode.Content);
-      // oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
-      fRuleEdit.TTRule := oRule; // link oRule to vst row;
+      fRuleEdit.TTRule := oRule;
       fRuleEdit.ShowModal;
     end;
 
@@ -1824,10 +1829,6 @@ begin
 
     if (self.ControllerID = FIDSArrivals) OR (self.ControllerID = FIDSDepartures)
     then
-    begin
-      Application.CreateForm(TfrmEditAnD, frmEdit)
-    end
-    else
     begin
       Application.CreateForm(TfrmEditAnD, frmEdit);
     end;
@@ -1995,12 +1996,7 @@ begin
   // VST.Show;
 end;
 
-procedure TfrmWindow.tmrContinuousTimer(Sender: TObject);
-begin
 
-end;
-
-// TODO: Take this fucking shit out once we have a fucking callback function
 procedure TfrmWindow.VSTAfterItemErase(Sender: TBaseVirtualTree;
   TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
 var
@@ -2009,6 +2005,7 @@ var
   Paths: TStringList;
   ProcessingFlight: cFlight;
 begin
+Exit;
 
   if (ControllerType = FIDSHorizontallyPopulated) then
   begin
@@ -2019,7 +2016,7 @@ begin
   begin
     NodeData := VST.GetNodeData(Node);
 
-    ProcessingFlight := cFlight.Create(DB, Login.GetUserName);
+    ProcessingFlight := cFlight.Create(DB, DB.id);
     ProcessingFlight.DBPath := NodeData.DBPath;
     // connect flight to a particular flight node in DB
     if ProcessingFlight.DbNode <> nil then
@@ -2457,6 +2454,7 @@ var
   PCGBBItemMouseLoc: PCGBB;
   I: Int16;
 begin
+
   tmpNode := VST.GetNodeAt(X, Y);
 
   if (self.ControllerType = FIDSHorizontallyPopulated) then
@@ -2531,7 +2529,6 @@ procedure TfrmWindow.VSTPaintText(Sender: TBaseVirtualTree;
 Var
   Data: PTreeData;
 begin
-Exit;
 
   Data := VST.GetNodeData(Node);
 

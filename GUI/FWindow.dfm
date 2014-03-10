@@ -62,7 +62,6 @@ object frmWindow: TfrmWindow
       item
         Width = 50
       end>
-    ExplicitWidth = 701
   end
   object panelSensors: TFlowPanel
     Left = 0
@@ -74,7 +73,6 @@ object frmWindow: TfrmWindow
     BevelOuter = bvNone
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 701
     object pnlClock: TPanel
       Left = 0
       Top = 0
@@ -143,7 +141,6 @@ object frmWindow: TfrmWindow
     BevelOuter = bvNone
     TabOrder = 2
     Visible = False
-    ExplicitWidth = 701
     object tbClearSearch: TSpeedButton
       Left = 0
       Top = 0
@@ -191,7 +188,6 @@ object frmWindow: TfrmWindow
     OnHeaderClick = VSTHeaderClick
     OnMouseUp = VSTMouseUp
     OnNewText = VSTNewText
-    ExplicitWidth = 701
     Columns = <>
   end
   object ammbMainMenu: TActionMainMenuBar
@@ -212,7 +208,6 @@ object frmWindow: TfrmWindow
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
-    ExplicitWidth = 701
   end
   object ControlBar1: TControlBar
     Left = 0
@@ -228,7 +223,6 @@ object frmWindow: TfrmWindow
     RowSize = 50
     TabOrder = 5
     OnMouseUp = ControlBar1MouseUp
-    ExplicitWidth = 701
     object tblDetails: TToolBar
       Left = 11
       Top = 2
@@ -347,7 +341,7 @@ object frmWindow: TfrmWindow
     Left = 464
     Top = 320
     Bitmap = {
-      494C01010200D800200218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010200D800240218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -565,7 +559,7 @@ object frmWindow: TfrmWindow
     Left = 536
     Top = 320
     Bitmap = {
-      494C01011A00B801900220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A00B801940220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
