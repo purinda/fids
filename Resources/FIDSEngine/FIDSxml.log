@@ -1934,3 +1934,28 @@
 3	00:58 Tue 11 Mar 14	Login FIDS2 ID purinda-ws
 3	00:58 Tue 11 Mar 14	Login FIDS2 ID purinda-ws
 3	01:00 Tue 11 Mar 14	Login FIDS2 ID purinda-ws
+11	22:01 Tue 11 Mar 14	Log Out  ID purinda-ws
+107	22:01 Tue 11 Mar 14	FAILED Login attempt FIDS2 ID purinda-ws
+5	12:37 Sun 16 Mar 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	12:37 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+4	12:37 Sun 16 Mar 14	Acting as HOST
+3	12:41 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	13:20 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	13:22 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	13:49 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	13:51 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	13:59 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	14:53 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+3	14:57 Sun 16 Mar 14	Login FIDS2 ID purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( Time ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( DateStart ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( DateEnd ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( Time ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( DateStart ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws
+209	14:57 Sun 16 Mar 14	Non Unique NewNode( DateEnd ) on a Key tag
+209	14:57 Sun 16 Mar 14	EditRequest : purinda-ws

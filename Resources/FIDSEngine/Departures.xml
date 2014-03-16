@@ -38,7 +38,7 @@
 		<Fuel> 7300 </Fuel>
 		<Burn> 4600 </Burn>
 		<Gates> GT,AS </Gates>
-		<DStatus> Final Call </DStatus>
+		<DStatus> Departed </DStatus>
 		<NonPublic/>
 	</QFA614-1924>
 	<QFA426-1925>
@@ -61,7 +61,7 @@
 		<PaxJoin> 167 </PaxJoin>
 		<Fuel> 5800 </Fuel>
 		<Burn> 2800 </Burn>
-		<DStatus> Closed </DStatus>
+		<DStatus> Boarding </DStatus>
 		<Gates> txtGate2 </Gates>
 		<NonPublic/>
 	</QFA426-1925>
@@ -75,26 +75,29 @@
 		<ET> 20100812 170000 </ET>
 		<Gates> 13 </Gates>
 		<Bays> 5 </Bays>
-		<DStatus> Off Blocks </DStatus>
+		<DStatus> Final Call </DStatus>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
 	</GT4444-1926>
 	<ANZ124-1927>
 		<Flights>
 			<NZ124>
-				<Ports> AKL </Ports>
+				<Ports> AKLCMB </Ports>
 			</NZ124>
 		</Flights>
 		<FeedKey> ANZ124/081031 </FeedKey>
 		<ST> 20100812 113500 </ST>
 		<ET> 20100812 113200 </ET>
-		<AT> 20100812 114300 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> ZKNBS </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<PaxJoin> 273 </PaxJoin>
 		<Fuel> 37800 </Fuel>
 		<Burn> 26100 </Burn>
+		<Gates> txtGate2 </Gates>
+		<NonPublic/>
+		<DStatus> XX </DStatus>
 	</ANZ124-1927>
 	<QFA25-1928>
 		<Flights>
@@ -121,7 +124,7 @@
 		<PaxJoin> 371 </PaxJoin>
 		<Fuel> 48600 </Fuel>
 		<Burn> 32100 </Burn>
-		<DStatus> Off Blocks </DStatus>
+		<DStatus> Departed </DStatus>
 	</QFA25-1928>
 	<QFA428-1929>
 		<Flights>
@@ -143,6 +146,7 @@
 		<PaxJoin> 223 </PaxJoin>
 		<Fuel> 10400 </Fuel>
 		<Burn> 5300 </Burn>
+		<DStatus> Departed </DStatus>
 	</QFA428-1929>
 	<JQ474-1930>
 		<Flights>
@@ -163,6 +167,7 @@
 		<AirCraft> 320 </AirCraft>
 		<Pax> 156,0 </Pax>
 		<PaxJoin> 156 </PaxJoin>
+		<DStatus> Departed </DStatus>
 	</JQ474-1930>
 	<LT4444-1931>
 		<Flights>
@@ -199,7 +204,7 @@
 		<PaxJoin> 278 </PaxJoin>
 		<Fuel> 175200 </Fuel>
 		<Burn> 158000 </Burn>
-		<DStatus> Boarding </DStatus>
+		<DStatus> Departed </DStatus>
 	</QFA93-1932>
 	<JQ30-1933>
 		<Flights>
@@ -347,6 +352,7 @@
 		<PaxJoin> 128 </PaxJoin>
 		<Fuel> 6600 </Fuel>
 		<Burn> 3500 </Burn>
+		<DStatus> Departed </DStatus>
 	</QFA683-1940>
 	<QFA769-1941>
 		<Flights>
@@ -3854,6 +3860,9 @@
 		<AirCraft> 320 </AirCraft>
 		<Pax> 113,0 </Pax>
 		<PaxJoin> 113 </PaxJoin>
+		<Gates> 1 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</JQ478-2150>
 	<JQ970-2151>
 		<Flights>
@@ -4084,7 +4093,7 @@
 		<Rego> VHEBV </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
-		<DStatus> Delayed </DStatus>
+		<DStatus> Final Call </DStatus>
 		<Gates> txtGate2 </Gates>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
@@ -4104,6 +4113,7 @@
 		<Gates> txtGate2 </Gates>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
+		<DStatus> Closed </DStatus>
 	</JQ61-2167>
 	<JQ29-2168>
 		<Flights>
@@ -4120,7 +4130,7 @@
 		<Rego> VHEBF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 332 </AirCraft>
-		<DStatus> Final Call </DStatus>
+		<DStatus> Boarding </DStatus>
 	</JQ29-2168>
 	<CPA104-2169>
 		<Flights>
@@ -4136,6 +4146,7 @@
 		<Gates> txtGate2 </Gates>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
+		<DStatus> Off Blocks </DStatus>
 	</CPA104-2169>
 	<THA982-2170>
 		<Flights>
@@ -4148,6 +4159,7 @@
 		<ET> 20100812 163000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 772 </AirCraft>
+		<DStatus> Delayed </DStatus>
 	</THA982-2170>
 	<SIA228-2171>
 		<Flights>
@@ -4160,6 +4172,7 @@
 		<ET> 20100812 170000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
+		<DStatus> Delayed </DStatus>
 	</SIA228-2171>
 	<QFA9-2172>
 		<Flights>
@@ -4202,7 +4215,7 @@
 		<Rego> VHVQF </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
-		<DStatus> Off Blocks </DStatus>
+		<DStatus> Departed </DStatus>
 		<Gates> 9 </Gates>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
@@ -4222,6 +4235,7 @@
 		<Rego> ZKJTQ </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 734 </AirCraft>
+		<DStatus> Boarding </DStatus>
 	</QFA37-2174>
 	<ANZ726-2175>
 		<Flights>
@@ -4247,7 +4261,7 @@
 		<ET> 20100812 184500 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 320 </AirCraft>
-		<DStatus> Boarding </DStatus>
+		<DStatus> Closed </DStatus>
 	</ANZ758-2176>
 	<QFA133-2177>
 		<Flights>
@@ -4261,6 +4275,7 @@
 		<Rego> VHVXM </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 73H </AirCraft>
+		<DStatus> Final Call </DStatus>
 	</QFA133-2177>
 	<FJI930-2178>
 		<Flights>
@@ -4299,7 +4314,7 @@
 		<Rego> VHOJO </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
-		<DStatus> Boarding </DStatus>
+		<DStatus> Closed </DStatus>
 	</QFA29-2179>
 	<GT4444-2180>
 		<Flights>
@@ -4311,6 +4326,7 @@
 		<ET> 20100812 170000 </ET>
 		<Gates> 13 </Gates>
 		<Bays> 5 </Bays>
+		<DStatus> Final Call </DStatus>
 	</GT4444-2180>
 	<LT4444-2181>
 		<Flights>

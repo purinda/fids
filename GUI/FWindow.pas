@@ -1731,12 +1731,8 @@ begin
     if VST.GetFirstSelected().Index < Cardinal(fcWindow.oTTRulesList.Count) then
     begin
       NodeIndex := VST.GetFirstSelected().Index;
-      oRule.Create(DB, DB.id);
 
-      oRule.DbPath := fcWindow.Table[NodeIndex].DBPath;
-      oRule.oTemplate.kind := aFlightKind.fkArrivals;
-
-      fRuleEdit.TTRule := oRule;
+      fRuleEdit.TTPath := fcWindow.Table[NodeIndex].DBPath;
       fRuleEdit.ShowModal;
     end;
 

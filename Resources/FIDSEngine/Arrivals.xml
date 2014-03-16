@@ -3,7 +3,7 @@
 	<QFA421-646>
 		<Flights>
 			<QFA421>
-				<Ports> SYD </Ports>
+				<Ports> SYD CMD </Ports>
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>
@@ -16,8 +16,8 @@
 		<AirCraft> 766 </AirCraft>
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
-		<Gates> 1,1 </Gates>
-		<AStatus> On Blocks </AStatus>
+		<Gates> 2,2 </Gates>
+		<AStatus> Delayed </AStatus>
 		<Belts> 1,1 </Belts>
 		<Comment> iouio </Comment>
 		<Terminal> 4 </Terminal>

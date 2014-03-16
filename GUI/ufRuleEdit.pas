@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, uTTRules, uGT, ComCtrls, uCommon, VarUtils,
-  StrUtils, uConnection, uLogin;
+  StrUtils, uConnection, uLogin, uFlight;
 
 type
   TfRuleEdit = class(TForm)
@@ -70,15 +70,18 @@ type
     procedure btnAddClick(Sender: TObject);
     procedure btnRemClick(Sender: TObject);
   private
+    sTTPath: String;
     oTTRule: cTTRule;
+    oFlight: cFlight;
+
     function CheckError: boolean;
     procedure Clear;
     procedure SetCheckBoxes(group: TGroupBox; vals: int);
     function GetCheckBoxes(group: TGroupBox): int;
     procedure CollectFieldValues;
-    procedure SetTTRule(rule: cTTRule);
+    procedure SetTTRule(sDBPath: String);
   public
-    property TTRule: cTTRule read oTTRule write SetTTRule;
+    property TTPath: String read sTTPath write SetTTRule;
     // how form knows which rule to edit
   end;
 
@@ -90,7 +93,7 @@ implementation
 {$R *.dfm}
 
 uses
-  uFlight, uUtils, uFidsTags;
+  uUtils, uFidsTags;
 
 procedure TfRuleEdit.SetCheckBoxes(group: TGroupBox; vals: int);
 var // relies on check box tags set to 2^n values
@@ -140,8 +143,10 @@ begin // produces crude error messages from error number - true is NO errors
 end;
 
 procedure TfRuleEdit.CollectFieldValues;
-begin // feed all fields into cTTRules for validation and global update of changes
+begin
+  // feed all fields into cTTRules for validation and global update of changes
   // should be automated with data dictionary ?
+
   oTTRule.Error := teNone;
   oTTRule.Presentation[tfPath] := ComboBox1.Items[ComboBox1.ItemIndex];
   oTTRule.Presentation[tfRuleName] := ebRuleName.Text;
@@ -155,9 +160,8 @@ begin // feed all fields into cTTRules for validation and global update of chang
   oTTRule.oTemplate.Presentation[ffBays] := ebBays.Text;
   oTTRule.oTemplate.Presentation[ffCheckIns] := ebCheckIns.Text;
 
-  oTTRule.Presentation[tfDays] := IntToHex(GetCheckBoxes(gbDays), 2);
-  oTTRule.Presentation[tfDaysExcept] :=
-    IntToHex(GetCheckBoxes(gbDaysExcept), 2);
+//  oTTRule.Presentation[tfDays] := IntToHex(GetCheckBoxes(gbDays), 2);
+//  oTTRule.Presentation[tfDaysExcept] := IntToHex(GetCheckBoxes(gbDaysExcept), 2);
 end;
 
 procedure TfRuleEdit.ebRuleNameChange(Sender: TObject);
@@ -270,6 +274,7 @@ begin
   if oTTRule <> nil then
   begin
     kind := oTTRule.Presentation[tfPath]; // set kind selector
+
     for x := 0 to ComboBox1.Items.Count - 1 do
     begin
       if kind = ComboBox1.Items[x] then
@@ -318,22 +323,20 @@ begin
   strExceptions.Free;
 end;
 
-procedure TfRuleEdit.SetTTRule(rule: cTTRule);
+procedure TfRuleEdit.SetTTRule(sDBPath: String);
 begin
+
   if oTTRule = nil then
   begin
-    oTTRule := cTTRule.Create(DB, DB.Id);
-    ShowMessage('do we get here');
+    oFlight := cFlight.Create(DB, DB.Id);
+    oTTRule := cTTRule.Create(DB, DB.id);
+
+    oFlight.DbPath := sDBPath;
+    oTTRule.DbPath := sDBPath;
+    oTTRule.oTemplate := oFlight;
+    oTTRule.oTemplate.kind := aFlightKind.fkArrivals;
   end;
 
-  oTTRule.DbPath := rule.DbPath;
-  rule.oTemplate.kind := aFlightKind.fkDepartures;
-
-  ShowMessage(rule.DbPath);
-  ShowMessage(rule.oTemplate.Presentation[ffPorts]);
-  // need own object since vst calls GetText a lot
-  oTTRule.oTemplate.DbNode := rule.oTemplate.DbNode;
-  ShowMessage(oTTRule.oTemplate.Presentation[ffPorts]);
 end;
 
 end.
