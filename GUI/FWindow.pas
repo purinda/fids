@@ -57,6 +57,7 @@ type
     ToolButton1: TToolButton;
     amnuCrawlingLines: TAction;
     lblHostUnavailable: TLabel;
+    tbbCodeshare: TToolButton;
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure tbDummyButtonClick(Sender: TObject);
@@ -97,6 +98,7 @@ type
     procedure VSTCompareNodes(Sender: TBaseVirtualTree; Node1,
       Node2: PVirtualNode; Column: TColumnIndex; var Result: Integer);
     procedure tbbGanttClick(Sender: TObject);
+    procedure tbbCodeshareClick(Sender: TObject);
 
   private
     { Main db backend handling Object }
@@ -135,6 +137,7 @@ type
     FlightFields: array of aFlightField;
     ColumnNames: array of string;
 
+    procedure Initialize();
     procedure SetController(WindowName: string; fKind: aFlightKind;
       fFields: array of aFlightField; InpColumnNames: array of string);
 
@@ -149,6 +152,9 @@ var
   { Following vars to keep track of selected nodes, scroll position, sorting when redraw grid every second }
   SelectedFlightPath: String;
 
+  { Zebra strip }
+  ParentNodes: array [0 .. 10000] of Cardinal;
+  
   { Remember Filters/Searched strings }
   SearchString: string;
   SearchField: SmallInt;
@@ -244,27 +250,17 @@ procedure TfrmWindow.PopulateGrid();
 var
   ForceRefresh : Boolean;
 begin
-
   ForceRefresh := True;
 
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
-  begin
     fcWindow.PopulateTTGrid()
-  end
   else
-  begin
     fcWindow.PopulateGrid(ForceRefresh);
-  end;
 
   if (ControllerType = FIDSHorizontallyPopulated) then
-  begin
     self.PopulateHorizontally(SearchField, SearchString)
-  end
   else
-  begin
     self.PopulateVertically(SearchField, SearchString);
-  end;
-
 end;
 
 procedure TfrmWindow.Departures3Click(Sender: TObject);
@@ -486,20 +482,19 @@ begin
 
 end;
 
-
-procedure TfrmWindow.FormCreate(Sender: TObject);
+procedure TfrmWindow.Initialize();
 begin
-  SensorsPanelInitialised := false;
-  StatusButtonsInitialised := false;
-
-  //
-  // Create forms required to be initialised
-  //
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfRuleEdit, fRuleEdit);
   Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
   Application.CreateForm(TfrmEdit, frmEdit);
   Application.CreateForm(TFCrawlingLineEdit, FCrawlingLineEdit);
+end;
+
+procedure TfrmWindow.FormCreate(Sender: TObject);
+begin
+  SensorsPanelInitialised := false;
+  StatusButtonsInitialised := false;
 end;
 
 procedure TfrmWindow.FormResize(Sender: TObject);
@@ -518,6 +513,9 @@ begin
   PopulateGrid;
   VST.Repaint;
   InitialiseWindow;
+
+  // Focus on the first node on FormLoad.
+  VST.ScrollIntoView(VST.GetFirst(), true);
 end;
 
 procedure TfrmWindow.InitialiseWindow();
@@ -533,7 +531,7 @@ begin
   ControllerMode := FIDSListingMode;
 
   VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
-    toFullVertGridLines, toHotTrack, toUseExplorerTheme];
+    toFullVertGridLines];
 
   if (ControllerType = FIDSHorizontallyPopulated) then
   begin
@@ -541,6 +539,7 @@ begin
   end
   else
   begin
+    // vst.Header.Options := [hoVisible, hoHotTrack];
     VST.TreeOptions.SelectionOptions := [toFullRowSelect];
   end;
 
@@ -569,6 +568,8 @@ begin
   VrClock1.Palette.Low := rgb(0, 20, 20);
   VrClock1.Palette.High := rgb(0, 255, 255);
   pnlClock.Color := rgb(0, 0, 0);
+
+  // -------------------
 
   // Set Icon Dynamically
   icon := TIcon.Create;
@@ -624,8 +625,7 @@ begin
   // END - Set Icon Dynamically
 
   I := 0;
-
-  oRule := cTTRule.Create(DB, DB.id);
+  oRule := cTTRule.Create(DB, Login.GetUserName);
 
   Statuses := fcWindow.GetStatuses;
   if (ControllerType = FIDSVerticallyPopulated) AND
@@ -1143,7 +1143,7 @@ begin
   if (CodeShare = false) then
   begin
     { Create/Add the BLANK Flight }
-    NewFlight := cFlight.Create(DB, DB.id);
+    NewFlight := cFlight.Create(DB, Login.GetUserName());
     // fcWindow.FXml.oDataTree
     NewFlight.Kind := afkWindowKind;
     NewFlight.Clear;
@@ -1588,6 +1588,7 @@ begin
   end;
 
   { Common Function for both Vertically and Horizontally populated data }
+
   if (ControllerID = FIDSArrivals) then
     frmEditAnD.SetFields(uCommon.ArrivalFields, uCommon.ArrivalColumns);
 
@@ -1619,7 +1620,7 @@ begin
   frmEdit.lstTerminals.Add('');
   frmEdit.lstTerminals.AddStrings(fcWindow.GetTerminals);
 
-  Flight := cFlight.Create(DB, DB.id);
+  Flight := cFlight.Create(DB, Login.GetUserName);
   Flight.Kind := afkWindowKind;
   Flight.DBPath := SelectedFlightPath;
 
@@ -1635,6 +1636,37 @@ begin
 
   end;
 
+end;
+
+procedure TfrmWindow.tbbCodeshareClick(Sender: TObject);
+var 
+  I, MidLeft, MidTop : Int;
+  NextNode, LastViewNode : PVirtualNode;
+ 
+begin
+  NextNode := VST.GetFirst();
+  
+  MidLeft := Left + (Width div 2);
+  MidTop := Top + (Height div 2);
+ 
+  LastViewNode := VST.GetNodeAt(Point(MidLeft, MidTop));
+
+  // If focused on a child get the parent node so when collapsed 
+  // it will focus on the parent leaving the node in collapsed state.
+  if not (LastViewNode.Parent = VST.GetFirst().Parent) then
+  begin
+    LastViewNode := LastViewNode.Parent;
+  end;
+   
+  VST.Hide;
+  for I := 0 to NodesCount(VST) -1 do
+  begin
+    VST.Expanded[NextNode] := tbbCodeshare.Down;
+    NextNode := VST.GetNextSibling(NextNode);
+  end;
+    
+  VST.Show;
+  VST.ScrollIntoView(LastViewNode, True);
 end;
 
 procedure TfrmWindow.tbbDeleteClick(Sender: TObject);
@@ -1665,7 +1697,7 @@ begin
   if MessageDlg('Please confirm deletion of flight "' + Flight + '" ?',
     mtconfirmation, [mbNo, mbYes], 0, mbNo) = mrYes then
   begin
-    ChosenFlight := cFlight.Create(DB, DB.id);
+    ChosenFlight := cFlight.Create(DB, Login.GetUserName);
     ChosenFlight.DBPath := SelectedFlightPath;
     // connect flight to a particular flight node in DB
     if ChosenFlight.DbNode <> nil then
@@ -1724,16 +1756,21 @@ var
 begin
   FlightFound := false;
 
-  { Timetable specific edit }
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
   begin
-    { Check that clicked flight is in the loaded TT rules }
+    { Timetable specific edit }
     if VST.GetFirstSelected().Index < Cardinal(fcWindow.oTTRulesList.Count) then
     begin
       NodeIndex := VST.GetFirstSelected().Index;
 
-      fRuleEdit.TTPath := fcWindow.Table[NodeIndex].DBPath;
-      fRuleEdit.ShowModal;
+      oRule.DbNode := fcWindow.oRules[NodeIndex];
+      // oRule.DbPath := fcWindow.Table[NodeIndex].DBPath;
+      oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
+
+      // ShowMessage(oRule.DbNode.Content);
+      // oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
+      fRuleEdit.TTRule := oRule; // link oRule to vst row;
+      fRuleEdit.Show;
     end;
 
     Exit();
@@ -1825,6 +1862,10 @@ begin
 
     if (self.ControllerID = FIDSArrivals) OR (self.ControllerID = FIDSDepartures)
     then
+    begin
+      Application.CreateForm(TfrmEditAnD, frmEdit)
+    end
+    else
     begin
       Application.CreateForm(TfrmEditAnD, frmEdit);
     end;
@@ -1974,9 +2015,6 @@ var
   CSPrimary: PVirtualNode;
 
 begin
-
-  // VST.Hide;
-  // expand all nodes
   try
     tmpLoopNode := VST.GetFirst();
     while assigned(tmpLoopNode) do
@@ -1985,13 +2023,9 @@ begin
       tmpLoopNode := VST.GetNext(tmpLoopNode);
     end;
   except
-    // DO NOTHING; EXPECTED ISSUE
-    // beep;
   end;
 
-  // VST.Show;
 end;
-
 
 procedure TfrmWindow.VSTAfterItemErase(Sender: TBaseVirtualTree;
   TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
@@ -2000,13 +2034,15 @@ var
   I: Int8;
   Paths: TStringList;
   ProcessingFlight: cFlight;
+  RowColor: Cardinal;
 begin
-Exit;
 
-  if (ControllerType = FIDSHorizontallyPopulated) then
-  begin
-    // Color Strips Implementation
-  end;
+  {                       }
+  { Color Strips Function }
+  {                       }
+
+  { Default row color }
+  RowColor := RGB(255, 255, 255);
 
   if (ControllerType = FIDSVerticallyPopulated) then
   begin
@@ -2014,17 +2050,51 @@ Exit;
 
     ProcessingFlight := cFlight.Create(DB, DB.id);
     ProcessingFlight.DBPath := NodeData.DBPath;
-    // connect flight to a particular flight node in DB
-    if ProcessingFlight.DbNode <> nil then
+
+    { Flight must not be nil or a child of a parent }
+    if (ProcessingFlight.DbNode <> nil) AND (ProcessingFlight.CodeShare = 0) then
     begin
 
-      if (ProcessingFlight.CodeShare = 0) AND (Node.ChildCount = 0) then
+      if Odd(Node.Index) then
       begin
-        TargetCanvas.Brush.Color := rgb(255, 255, 185);
-        TargetCanvas.FillRect(ItemRect);
+        RowColor := RGB(255, 255, 185);
+
+        { Keep track of the last node highlighted }
+        ParentNodes[VST.AbsoluteIndex(Node)] := RowColor;
+      end
+      else
+      begin
+        ParentNodes[VST.AbsoluteIndex(Node)] := RowColor;
       end;
 
+    end
+
+    { If processing node is a child, replicate it's parent color }
+    else if (ProcessingFlight.CodeShare > 0)  then
+    begin
+      RowColor := ParentNodes[VST.AbsoluteIndex(Node.Parent)];
+
+//      Following condition will enable zebra strips for child nodes.  
+//      if (Node.Index >= 1) then
+//      begin
+//        if Odd(Node.Index) then
+//        begin
+//          if (RowColor = RGB(255, 255, 185)) then
+//            RowColor := RGB(255, 255, 255)
+//          else
+//            RowColor := RGB(255, 255, 185);
+//        end;
+//      end;
+    
     end;
+
+    { Set row color }
+    TargetCanvas.Brush.Color := RowColor;
+    TargetCanvas.FillRect(ItemRect);
+
+    {                       }
+    { Color Strips Function }
+    {                       }
 
     for I := 0 to VST.Header.Columns.Count - 1 do
     begin
@@ -2096,9 +2166,8 @@ Exit;
     end;
 
   end; // end if Controller Type
-
-
 end;
+
 
 procedure TfrmWindow.VSTCompareNodes(Sender: TBaseVirtualTree; Node1,
   Node2: PVirtualNode; Column: TColumnIndex; var Result: Integer);
@@ -2450,7 +2519,6 @@ var
   PCGBBItemMouseLoc: PCGBB;
   I: Int16;
 begin
-
   tmpNode := VST.GetNodeAt(X, Y);
 
   if (self.ControllerType = FIDSHorizontallyPopulated) then
@@ -2525,6 +2593,7 @@ procedure TfrmWindow.VSTPaintText(Sender: TBaseVirtualTree;
 Var
   Data: PTreeData;
 begin
+Exit;
 
   Data := VST.GetNodeData(Node);
 

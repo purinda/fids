@@ -47,6 +47,7 @@ begin
   Application.Title := 'DII FIDS GUI System v2';
   Application.CreateForm(TfrmLogin, frmLogin);
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmManageIndicators, frmManageIndicators);
 
   Application.Run;
 

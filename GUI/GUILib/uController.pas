@@ -1,4 +1,4 @@
-unit uController;
+ï»¿unit uController;
 
 interface
 
@@ -21,6 +21,7 @@ type
     Table: array of TTreeData;
     // Used only for timetables
     oTTRulesList: cTTRulesList;
+    oRules: array [0 .. 20] of apNode;
     oRule: cTTRule;
 
     { Basic functionality }
@@ -296,12 +297,10 @@ begin
   ButtonX := Mouse.CursorPos.x - (TButton(Sender).Left + WindowX);
   ButtonY := Mouse.CursorPos.Y - (TButton(Sender).Top + WindowY);
 
-  if (TButton(Sender).Caption = '»') then
+  if (TButton(Sender).Caption = 'Â»') then
   begin
     frmManageIndicators.Show();
   end
-
-  // ShowMessage(Sender.ClassName);
 end;
 
 procedure CFlightController.ImplementSensors(formName: TForm;
@@ -365,7 +364,7 @@ begin
 
           if (i = 5) then
           begin
-            Sensor.Caption := '»';
+            Sensor.Caption := 'Â»';
             Sensor.OnClick := SensorClick;
             break;
           end; // end of sensorcount = 5 if
@@ -513,7 +512,7 @@ begin
   oTTRulesList := cTTRulesList.Create(DB());
   oTTRulesList.Build(tfNone, '');
 
-  SetLength(Table, oTTRulesList.Count + exRows);
+  setlength(Table, oTTRulesList.Count + exRows);
 
   if (ControllerID = FIDSTArrivals) then
   begin
@@ -525,19 +524,24 @@ begin
     strKind := 'Departures';
   end;
 
-  oRule := cTTRule.Create(DB, DB.id);
+  oRule := cTTRule.Create(DB(), 'Feed');
   // need a logged in id ('EgGUI') to update DsB;
   oRule.oTemplate.Kind := afKind;
 
+  i := 0;
   for r := 0 to oTTRulesList.Count - 1 do
   begin
     oRule.DbNode := oTTRulesList[r];
 
+    // need own object since vst calls GetText a lot
+    oRule.oTemplate.DbNode := oRule.oTemplate.DbNode;
+
     if (oRule.Presentation[tfPath] = strKind) then
     begin
+      oRules[i] := oRule.DbNode;
 
-      Table[r].Flight := oRule.Presentation[tfRuleName];
-      Table[r].Ports := oRule.oTemplate.Presentation[ffPorts];
+      Table[i].Flight := oRule.Presentation[tfRuleName];
+      Table[i].Ports := oRule.oTemplate.Presentation[ffPorts];
 
       Table[r].STDate := uCommon.FIDS_StrToDT
         (oRule.oTemplate.Presentation[ffSTdate]);
@@ -554,21 +558,34 @@ begin
       Table[r].ATime := uCommon.FIDS_StrTOTime
         (oRule.oTemplate.Presentation[ffATime]);
 
-      Table[r].Gates := oRule.oTemplate.Presentation[ffGates];
-      Table[r].Bays := oRule.oTemplate.Presentation[ffBays];
-      Table[r].CheckIns := oRule.oTemplate.Presentation[ffCheckIns];
-      Table[r].Belts := oRule.oTemplate.Presentation[ffBelts];
-      Table[r].Carrier := oRule.oTemplate.Presentation[ffCarrier];
-      Table[r].Terminal := oRule.oTemplate.Presentation[ffTerminal];
-      Table[r].Rego := oRule.oTemplate.Presentation[ffRego];
-      Table[r].CodeShare := oRule.oTemplate.CodeShare;
-      Table[r].Comment := oRule.oTemplate.Presentation[ffComment];
-      Table[r].NonPublic := oRule.oTemplate.Presentation[ffNonPublic];
+      Table[i].Gates := oRule.oTemplate.Presentation[ffGates];
+      Table[i].Bays := oRule.oTemplate.Presentation[ffBays];
+      Table[i].CheckIns := oRule.oTemplate.Presentation[ffCheckIns];
+      Table[i].Belts := oRule.oTemplate.Presentation[ffBelts];
+      Table[i].Carrier := oRule.oTemplate.Presentation[ffCarrier];
+      Table[i].Terminal := oRule.oTemplate.Presentation[ffTerminal];
+      Table[i].Rego := oRule.oTemplate.Presentation[ffRego];
+      Table[i].CodeShare := oRule.oTemplate.CodeShare;
+      Table[i].Comment := oRule.oTemplate.Presentation[ffComment];
+      Table[i].NonPublic := oRule.oTemplate.Presentation[ffNonPublic];
 
-      Table[r].DBPath := oRule.oTemplate.DBPath;
+      // Newly Added
+      {
+        Table[i].Slottime := oRule.oTemplate.Presentation[ffSlotTime];
+        Table[i].CheckinOpeningTime := oRule.oTemplate.Presentation[ffCheckinOpeningTime];
+        Table[i].CheckinClosingTime := oRule.oTemplate.Presentation[ffCheckinClosingTime];
+        Table[i].RelatedFlight := oRule.oTemplate.Presentation[ffRelatedFlight];
+        Table[i].Raceway := oRule.oTemplate.Presentation[ffRaceway];
+        Table[i].Aircraft := oRule.oTemplate.Presentation[ffAirCraft];
+        Table[i].OffBlock := oRule.oTemplate.Presentation[ffOffBlock];
+      }
+      Table[i].DBPath := oRule.oTemplate.DBPath;
+
+      inc(i);
     end;
   end;
 
+  setlength(Table, i + exRows);
   oTTRulesList.Free;
 end;
 
@@ -597,7 +614,7 @@ begin
   oFlights.Build(afKind, ffNone, '');
   // set grid size for data storage
   // + 1 Row for column names and + 1 column for codeshare + extra field to compensate population
-  SetLength(Table, oFlights.Count + exRows);
+  SetLength(Table, oFlights.Count);
   r := 0;
 
   for p in oFlights do
