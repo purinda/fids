@@ -260,9 +260,12 @@ begin
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
   begin
     fcWindow.ControllerID := ControllerID;
-    fcWindow.PopulateTTGrid()
+    fcWindow.PopulateTTGrid();
+  end
   else
+  begin
     fcWindow.PopulateGrid(ForceRefresh);
+  end;
 
   if (ControllerType = FIDSHorizontallyPopulated) then
     self.PopulateHorizontally(SearchField, SearchString)
