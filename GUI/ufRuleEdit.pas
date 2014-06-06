@@ -254,7 +254,6 @@ begin
 end;
 
 procedure TfRuleEdit.FormCreate(Sender: TObject);
-
 var
 	kind: aFlightKind;
 begin
@@ -315,9 +314,10 @@ begin
 		SetCheckBoxes(gbDaysExcept, days);
 	end
 	else
-  begin
+
+	begin
 		Clear;
-  end;
+	end;
 
 	lstExclusions.Clear;
 	strExceptions := TStringList.Create;
@@ -333,7 +333,6 @@ begin
 end;
 
 procedure TfRuleEdit.SetTTRule(rule: cTTRule);
-
 begin
   // tells form which rule to adjust
 	if oTTRule = nil then
@@ -343,7 +342,7 @@ begin
 
   oTTRule := cTTRule.Create(DB(), 'Feed');
   oTTRule.DbPath := rule.DbPath;
-	// need own object since vst calls GetText a lot
+  // need own object since vst calls GetText a lot
   // oTTRule.oTemplate.DbNode := rule.oTemplate.DbNode;
 end;
 

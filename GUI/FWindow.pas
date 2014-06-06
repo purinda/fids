@@ -101,7 +101,6 @@ type
     procedure tbbCodeshareClick(Sender: TObject);
     procedure VSTCollapsing(Sender: TBaseVirtualTree; Node: PVirtualNode;
       var Allowed: Boolean);
-
   private
     { Main db backend handling Object }
     fcWindow: CFlightController;
@@ -262,11 +261,8 @@ begin
   begin
     fcWindow.ControllerID := ControllerID;
     fcWindow.PopulateTTGrid()
-  end
   else
-  begin
     fcWindow.PopulateGrid(ForceRefresh);
-  end;
 
   if (ControllerType = FIDSHorizontallyPopulated) then
     self.PopulateHorizontally(SearchField, SearchString)
@@ -1688,8 +1684,8 @@ begin
     
   VST.Show;
   VST.ScrollIntoView(LastViewNode, True);
-
   DisableNodeCollapsing := true;
+
 end;
 
 procedure TfrmWindow.tbbDeleteClick(Sender: TObject);
@@ -1781,7 +1777,6 @@ begin
 
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) then
   begin
-
     { Timetable specific edit }
     if VST.GetFirstSelected().Index <= Cardinal(Length(fcWindow.Table)) then
     begin
@@ -2204,7 +2199,9 @@ begin
   begin
     Allowed := False;
   end;
+
 end;
+
 
 procedure TfrmWindow.VSTCompareNodes(Sender: TBaseVirtualTree; Node1,
   Node2: PVirtualNode; Column: TColumnIndex; var Result: Integer);

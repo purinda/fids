@@ -2233,6 +2233,7 @@
 3	22:35 Sun 25 May 14	Login FIDS2 ID FIDS-PC
 11	22:40 Sun 25 May 14	Log Out  ID FIDS-PC
 107	22:40 Sun 25 May 14	FAILED Login attempt FIDS2 ID FIDS-PC
+<<<<<<< HEAD
 5	12:24 Sun 1 Jun 14	Startup FIDSxml v0.98 build 21 Dec 2013 
 3	12:24 Sun 1 Jun 14	Login FIDS2 ID FIDS-PC
 4	12:24 Sun 1 Jun 14	Acting as HOST
@@ -2393,3 +2394,5 @@
 4	23:02 Thu 5 Jun 14	Acting as HOST
 11	23:03 Thu 5 Jun 14	Log Out  ID FIDS-PC
 107	23:03 Thu 5 Jun 14	FAILED Login attempt FIDS2 ID FIDS-PC
+=======
+>>>>>>> c9e424ad15727ca6ad7e7b40f2a35059c8727fe2

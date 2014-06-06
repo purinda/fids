@@ -512,7 +512,7 @@ begin
   oTTRulesList := cTTRulesList.Create(DB());
   oTTRulesList.Build(tfNone, '');
 
-  SetLength(Table, oTTRulesList.Count + exRows);
+  setlength(Table, oTTRulesList.Count + exRows);
 
   if (ControllerID = FIDSTArrivals) then
   begin
@@ -579,6 +579,7 @@ begin
         Table[i].OffBlock := oRule.oTemplate.Presentation[ffOffBlock];
       }
       Table[i].DBPath := oRule.oTemplate.DBPath;
+
       inc(i);
     end;
   end;
@@ -613,6 +614,7 @@ begin
   // set grid size for data storage
   // + 1 Row for column names and + 1 column for codeshare + extra field to compensate population
   SetLength(Table, oFlights.Count + 1);
+
   r := 0;
 
   for p in oFlights do
