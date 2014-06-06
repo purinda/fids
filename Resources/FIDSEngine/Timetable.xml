@@ -81,14 +81,14 @@
 		<Template>
 			<Flights>
 				<QF666>
-					<Ports> MEL </Ports>
-					<CheckIns> 5 </CheckIns>
+					<Ports> MEL,SYD </Ports>
+					<CheckIns> 51 </CheckIns>
 					<Path> Departures </Path>
 				</QF666>
 			</Flights>
 			<ST/>
 			<ET/>
-			<Gates> 25 </Gates>
+			<Gates> 12 </Gates>
 			<Bays> 2 </Bays>
 		</Template>
 	</QF666>

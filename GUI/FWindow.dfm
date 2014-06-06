@@ -168,6 +168,7 @@ object frmWindow: TfrmWindow
     Colors.BorderColor = clBlack
     Colors.GridLineColor = clBlack
     Colors.TreeLineColor = clBlack
+    DrawSelectionMode = smBlendedRectangle
     Header.AutoSizeIndex = -1
     Header.DefaultHeight = 17
     Header.Font.Charset = DEFAULT_CHARSET
@@ -179,13 +180,14 @@ object frmWindow: TfrmWindow
     Header.MainColumn = -1
     Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
     TabOrder = 3
+    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowRoot, toShowTreeLines, toThemeAware, toUseBlendedImages, toChildrenAbove]
     OnAfterItemErase = VSTAfterItemErase
+    OnCollapsing = VSTCollapsing
     OnCompareNodes = VSTCompareNodes
     OnDblClick = tbbModifyClick
     OnGetText = VSTGetText
     OnPaintText = VSTPaintText
     OnGetNodeDataSize = VSTGetNodeDataSize
-    OnHeaderClick = VSTHeaderClick
     OnMouseUp = VSTMouseUp
     OnNewText = VSTNewText
     Columns = <>
@@ -195,7 +197,6 @@ object frmWindow: TfrmWindow
     Top = 0
     Width = 898
     Height = 25
-    UseSystemFont = False
     ActionManager = amMainMenu
     Color = clMenuBar
     ColorMap.DisabledFontColor = 7171437
@@ -203,7 +204,7 @@ object frmWindow: TfrmWindow
     ColorMap.BtnSelectedFont = clBlack
     ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clMenuText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -226,7 +227,7 @@ object frmWindow: TfrmWindow
     object tblDetails: TToolBar
       Left = 11
       Top = 2
-      Width = 150
+      Width = 198
       Height = 60
       Anchors = [akTop]
       AutoSize = True
@@ -262,13 +263,21 @@ object frmWindow: TfrmWindow
         Top = 0
         Caption = 'Gantt'
         ImageIndex = 18
-        OnClick = tbbGanttClick
+      end
+      object tbbCodeshare: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'CS'
+        Down = True
+        ImageIndex = 19
+        Style = tbsCheck
+        OnClick = tbbCodeshareClick
       end
     end
     object tbExtended: TToolBar
-      Left = 174
+      Left = 222
       Top = 2
-      Width = 75
+      Width = 91
       Height = 60
       AutoSize = True
       ButtonHeight = 60
@@ -294,7 +303,7 @@ object frmWindow: TfrmWindow
       end
     end
     object tbBasic: TToolBar
-      Left = 609
+      Left = 803
       Top = 2
       Width = 90
       Height = 60
@@ -341,7 +350,7 @@ object frmWindow: TfrmWindow
     Left = 464
     Top = 320
     Bitmap = {
-      494C01010200D800280218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010200D800500218001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -559,7 +568,7 @@ object frmWindow: TfrmWindow
     Left = 536
     Top = 320
     Bitmap = {
-      494C01011A00B801980220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A00B801C00220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF

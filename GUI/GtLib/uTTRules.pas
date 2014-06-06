@@ -178,6 +178,7 @@ var
   pRules: apNode;
 begin // push data into local field values and maybe do global upates
   mVals[field] := val;
+
   if MakeValid(field) then
   begin
     if mDbNode <> nil then

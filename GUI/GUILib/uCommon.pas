@@ -41,6 +41,16 @@ type
     CheckinClosingTime: String;
     Aircraft: String;
     DBPath: String;
+
+    { Timetable specifc fields }
+    DateStart : string;
+    DateEnd   : string;
+    DateException : string;
+    DaysExcept    : string;
+    Template      : string;
+    TTDbPath      : string;
+
+
   end;
 
   { Type information for Checkins, Baggages, Bays and Belts }
@@ -524,13 +534,13 @@ const
 
   { Paths of icons }
   icoCancelled = 'cancelled.gif';
-  icoLanded = 'landed.gif';
-  icoDiverted = 'diverted.gif';
-  icoOnBlocks = 'onblocks.gif';
-  icoBoarding = 'boarding.gif';
+  icoLanded    = 'landed.gif';
+  icoDiverted  = 'diverted.gif';
+  icoOnBlocks  = 'onblocks.gif';
+  icoBoarding  = 'boarding.gif';
   icoFinalCall = 'finalcall.gif';
-  icoClosed = 'closed.gif';
-  icoDeparted = 'departed.gif';
+  icoClosed    = 'closed.gif';
+  icoDeparted  = 'departed.gif';
   icoOffBlocks = 'offblocks.gif';
 
 procedure ShowBalloonTip(Control: TWinControl; Icon: integer; Title: PWideChar;

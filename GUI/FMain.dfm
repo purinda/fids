@@ -81,6 +81,7 @@ object frmMain: TfrmMain
     AutoWrap = False
     BevelOuter = bvNone
     TabOrder = 2
+    ExplicitTop = -3
     object Panel1: TPanel
       Left = 0
       Top = 0
@@ -121,23 +122,6 @@ object frmMain: TfrmMain
       Width = 8
       Height = 13
       AutoSize = False
-    end
-    object lblHostUnavailable: TLabel
-      AlignWithMargins = True
-      Left = 93
-      Top = 3
-      Width = 153
-      Height = 16
-      Align = alClient
-      Caption = 'FIDS Host is unavailable'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Transparent = True
-      Visible = False
     end
   end
   object cmdCheckins: TButton
@@ -206,7 +190,7 @@ object frmMain: TfrmMain
     TabOrder = 7
     OnClick = cmdSchedulesClick
   end
-  object Button1: TButton
+  object cmdGanttChart: TButton
     Left = 453
     Top = 40
     Width = 69
@@ -218,7 +202,42 @@ object frmMain: TfrmMain
     ImageMargins.Top = 5
     Images = imlMain
     TabOrder = 8
-    OnClick = Button1Click
+    OnClick = cmdGanttChartClick
+  end
+  object panelUnavailable: TFlowPanel
+    Left = 0
+    Top = 27
+    Width = 793
+    Height = 27
+    Align = alTop
+    AutoWrap = False
+    BevelOuter = bvNone
+    TabOrder = 9
+    Visible = False
+    ExplicitTop = 8
+    object Label2: TLabel
+      Left = 0
+      Top = 0
+      Width = 8
+      Height = 13
+      AutoSize = False
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 11
+      Top = 3
+      Width = 153
+      Height = 16
+      Align = alClient
+      Caption = 'FIDS Host is unavailable'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
   end
   object mnuMain: TMainMenu
     Images = imlMain
@@ -317,7 +336,7 @@ object frmMain: TfrmMain
     Left = 968
     Top = 48
     Bitmap = {
-      494C010102000400A80118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010102000400B00118001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001000000001002000000000000018
       000000000000000000000000000000000000E8A30000E8A30000E8A30000E8A3
       0000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A30000E8A3
@@ -530,7 +549,7 @@ object frmMain: TfrmMain
     Left = 632
     Top = 24
     Bitmap = {
-      494C01011900B8012C0220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011900B801340220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       010000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -4272,7 +4291,7 @@ object frmMain: TfrmMain
     Left = 720
     Top = 24
     Bitmap = {
-      494C01010300E801480220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010300E801500220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       00000000000000000000000000000000000099C0730099C0730099C0730099C0
       730099C0730099C0730099C0730099C0730099C0730099C0730099C0730099C0

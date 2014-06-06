@@ -429,7 +429,6 @@ begin
     begin
       result := pt = nil;
     end);
-  // test for clear
 end;
 
 constructor cDbTree.Create(treeID: word = 0; isKey: boolean = false;

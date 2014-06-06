@@ -12,19 +12,22 @@ type
     pnlContent: TPanel;
     EUsername: TLabeledEdit;
     EPassword: TLabeledEdit;
-    Button1: TButton;
-    Button2: TButton;
+    btnLogin: TButton;
+    btnCancel: TButton;
     CheckBox1: TCheckBox;
     lblJobName: TLabel;
     tmrConnectionChecker: TTimer;
-    procedure Button2Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ConnectionEvent(event: aConnectionEvent; param: string);
     procedure tmrConnectionCheckerTimer(Sender: TObject);
   private
     { Private declarations }
     LoginManager: CLogin;
+
+    { Function to manage form behaviour when Engine is not running }
+    procedure EngineAway(Away: Boolean);
   public
     { Public declarations }
   end;
@@ -39,7 +42,7 @@ uses FMain;
 
 {$R *.dfm}
 
-procedure TfrmLogin.Button1Click(Sender: TObject);
+procedure TfrmLogin.btnLoginClick(Sender: TObject);
 var
   LoginStatus: Boolean;
 begin
@@ -76,7 +79,7 @@ begin
 
 end;
 
-procedure TfrmLogin.Button2Click(Sender: TObject);
+procedure TfrmLogin.btnCancelClick(Sender: TObject);
 begin
   Application.Terminate;
 end;
@@ -97,7 +100,7 @@ begin
     ceNone:
       ;
     ceConnected:
-      tmrConnectionChecker.Enabled := true;
+      EngineAway(false);
     ceDbReady:
       ;
     ceLogin:
@@ -107,7 +110,21 @@ begin
     ceDisconnected:
       ;
     ceShutdown:
-      Close;
+      EngineAway(True);
+  end;
+end;
+
+procedure TfrmLogin.EngineAway(Away: Boolean);
+begin
+  if (Away) then
+  begin
+    tmrConnectionChecker.Enabled := false;
+    btnLogin.Enabled := false;
+  end
+  else
+  begin
+    tmrConnectionChecker.Enabled := true;
+    btnLogin.Enabled := true;
   end;
 end;
 

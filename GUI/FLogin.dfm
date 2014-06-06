@@ -65,7 +65,7 @@ object frmLogin: TfrmLogin
       PasswordChar = '*'
       TabOrder = 1
     end
-    object Button1: TButton
+    object btnLogin: TButton
       Left = 150
       Top = 154
       Width = 77
@@ -73,16 +73,16 @@ object frmLogin: TfrmLogin
       Caption = 'Sign in'
       Default = True
       TabOrder = 2
-      OnClick = Button1Click
+      OnClick = btnLoginClick
     end
-    object Button2: TButton
+    object btnCancel: TButton
       Left = 231
       Top = 154
       Width = 76
       Height = 25
       Caption = 'Cancel'
       TabOrder = 3
-      OnClick = Button2Click
+      OnClick = btnCancelClick
     end
     object CheckBox1: TCheckBox
       Left = 12

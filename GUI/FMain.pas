@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, uFlight, uFidsTags, uCommon, uController, FWindow,
-  FSearch, Menus, ExtCtrls, ImgList, VrControls, VrLcd, ButtonGroup;
+  FSearch, Menus, ExtCtrls, ImgList, VrControls, VrLcd, ButtonGroup, uGlobalDefs;
 
 type
   TfrmMain = class(TForm)
@@ -49,14 +49,16 @@ type
     VrClock1: TVrClock;
     Label1: TLabel;
     Manage1: TMenuItem;
-    Button1: TButton;
+    cmdGanttChart: TButton;
     mnuGanttChart: TPopupMenu;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
     Belts1: TMenuItem;
     imgGanttImg: TImageList;
     mnuCrawlingLine: TMenuItem;
-    lblHostUnavailable: TLabel;
+    panelUnavailable: TFlowPanel;
+    Label2: TLabel;
+    Label3: TLabel;
     procedure cmdArrivalsClick(Sender: TObject);
     procedure cmdDeparturesClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -69,12 +71,18 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure Manage1Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure cmdGanttChartClick(Sender: TObject);
     procedure cmdSchedulesClick(Sender: TObject);
     procedure mnuCrawlingLineClick(Sender: TObject);
+
+    { Connection event }
+    procedure ConnectionEvent(event: aConnectionEvent; param: string);
   private
     { Private declarations }
     fcWindow: CFlightController;
+
+    { Engine unavailable }
+    procedure EngineAway(Away: Boolean);
   protected
     procedure CreateParams(var Params: TCreateParams); override;
 
@@ -306,7 +314,7 @@ begin
   end;
 end;
 
-procedure TfrmMain.Button1Click(Sender: TObject);
+procedure TfrmMain.cmdGanttChartClick(Sender: TObject);
 begin
   mnuGanttChart.Popup(mouse.CursorPos.X, mouse.CursorPos.Y);
 end;
@@ -330,7 +338,7 @@ end;
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   fcWindow := CFlightController.Create(fkArrivals, ArrivalFields);
-  Connect;
+  uConnection.Xml_Connection.RegisterEventReader(ConnectionEvent);
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
@@ -357,6 +365,59 @@ begin
   FCrawlineLinesAllocator := TFCrawlineLinesAllocator.Create(nil);
   FCrawlineLinesAllocator.Show;
 
+end;
+
+procedure TfrmMain.ConnectionEvent(event: aConnectionEvent; param: string);
+begin
+  case event of
+    ceNone:
+      ;
+    ceConnected:
+      EngineAway(False);
+    ceDbReady:
+      ;
+    ceLogin:
+      ;
+    ceEdit:
+      ;
+    ceDisconnected:
+      ;
+    ceShutdown:
+      EngineAway(True);
+  end;
+end;
+
+
+procedure TfrmMain.EngineAway(Away: Boolean);
+begin
+  if (Away) then
+  begin
+    cmdArrivals.Enabled := false;
+    cmdDepartures.Enabled := false;
+    cmdCheckins.Enabled := false;
+    cmdGates.Enabled := false;
+    cmdBays.Enabled := false;
+    cmdBelts.Enabled := false;
+    cmdSchedules.Enabled := false;
+    cmdGanttChart.Enabled := false;
+
+    panelSensors.Visible := false;
+    panelUnavailable.Visible := true;
+  end
+  else
+  begin
+    cmdArrivals.Enabled := true;
+    cmdDepartures.Enabled := true;
+    cmdCheckins.Enabled := true;
+    cmdGates.Enabled := true;
+    cmdBays.Enabled := true;
+    cmdBelts.Enabled := true;
+    cmdSchedules.Enabled := true;
+    cmdGanttChart.Enabled := true;
+
+    panelSensors.Visible := true;
+    panelUnavailable.Visible := false;
+  end;
 end;
 
 end.

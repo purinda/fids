@@ -3,7 +3,7 @@
 	<SIA238-1923>
 		<Flights>
 			<NTL238>
-				<Ports> SIN,ADL,AUC </Ports>
+				<Ports> SIN,ADL,CMB </Ports>
 			</NTL238>
 		</Flights>
 		<FeedKey> SIA238/081031 </FeedKey>
@@ -11,11 +11,12 @@
 		<ET> 20100812 113000 </ET>
 		<AT> 20111230 201100 </AT>
 		<Rego> 9VSPNA </Rego>
-		<Carrier> International </Carrier>
+		<Carrier> Int Cargo </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<Gates> 5,1 </Gates>
-		<DStatus> Departed </DStatus>
+		<DStatus> Delayed </DStatus>
 		<NonPublic/>
+		<Terminal> T3 </Terminal>
 	</SIA238-1923>
 	<QFA614-1924>
 		<Flights>
@@ -61,8 +62,8 @@
 		<PaxJoin> 167 </PaxJoin>
 		<Fuel> 5800 </Fuel>
 		<Burn> 2800 </Burn>
-		<DStatus> Boarding </DStatus>
-		<Gates> txtGate2 </Gates>
+		<DStatus> Closed </DStatus>
+		<Gates> 1 </Gates>
 		<NonPublic/>
 	</QFA426-1925>
 	<GT4444-1926>
@@ -97,7 +98,7 @@
 		<Burn> 26100 </Burn>
 		<Gates> txtGate2 </Gates>
 		<NonPublic/>
-		<DStatus> XX </DStatus>
+		<DStatus> Departed </DStatus>
 	</ANZ124-1927>
 	<QFA25-1928>
 		<Flights>
@@ -160,7 +161,7 @@
 		<FeedKey> JQ474/081031 </FeedKey>
 		<ST> 20100812 113500 </ST>
 		<ET> 20100812 114000 </ET>
-		<AT> 20100812 114900 </AT>
+		<AT> 20100812 201000 </AT>
 		<Gates> 10 </Gates>
 		<Rego> VHVQZ </Rego>
 		<Carrier> Domestic </Carrier>
@@ -168,19 +169,24 @@
 		<Pax> 156,0 </Pax>
 		<PaxJoin> 156 </PaxJoin>
 		<DStatus> Departed </DStatus>
+		<NonPublic/>
 	</JQ474-1930>
 	<LT4444-1931>
 		<Flights>
 			<NTL4444>
 				<Ports> MEL SYD </Ports>
+				<CheckIns> 29 </CheckIns>
 			</NTL4444>
 		</Flights>
 		<ST> 20100812 183000 </ST>
 		<ET> 20100812 183000 </ET>
 		<Gates> 3 </Gates>
-		<Bays/>
+		<Bays> 7 </Bays>
 		<AT> 18991230 000000 </AT>
 		<NonPublic/>
+		<Carrier> Int Cargo </Carrier>
+		<Terminal> T2 </Terminal>
+		<DStatus> Departed </DStatus>
 	</LT4444-1931>
 	<QFA93-1932>
 		<Flights>
@@ -197,14 +203,16 @@
 		<FeedKey> QFA93/081031 </FeedKey>
 		<ST> 20100812 111000 </ST>
 		<ET> 20100812 114500 </ET>
-		<AT> 20100812 115700 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHOEG </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
 		<PaxJoin> 278 </PaxJoin>
 		<Fuel> 175200 </Fuel>
 		<Burn> 158000 </Burn>
-		<DStatus> Departed </DStatus>
+		<DStatus> Off Blocks </DStatus>
+		<Gates> txtGate2 </Gates>
+		<NonPublic/>
 	</QFA93-1932>
 	<JQ30-1933>
 		<Flights>
@@ -249,7 +257,7 @@
 		<FeedKey> QFA850/081031 </FeedKey>
 		<ST> 20100812 113500 </ST>
 		<ET> 20100812 120300 </ET>
-		<AT> 20100812 121400 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHTJO </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 734 </AirCraft>
@@ -257,6 +265,8 @@
 		<PaxJoin> 62 </PaxJoin>
 		<Fuel> 7000 </Fuel>
 		<Burn> 2100 </Burn>
+		<Gates> txtGate2 </Gates>
+		<NonPublic/>
 	</QFA850-1935>
 	<QFA430-1936>
 		<Flights>
@@ -273,7 +283,7 @@
 		<FeedKey> QFA430/081031 </FeedKey>
 		<ST> 20100812 120000 </ST>
 		<ET> 20100812 121100 </ET>
-		<AT> 20100812 122900 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHZXE </Rego>
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
@@ -281,6 +291,10 @@
 		<PaxJoin> 236 </PaxJoin>
 		<Fuel> 10800 </Fuel>
 		<Burn> 5400 </Burn>
+		<DStatus> Off Blocks </DStatus>
+		<Gates> 2 </Gates>
+		<NonPublic/>
+		<Bays> 2 </Bays>
 	</QFA430-1936>
 	<QF143-1937>
 		<Flights>
@@ -688,6 +702,10 @@
 		<AirCraft> 763 </AirCraft>
 		<Pax> 204,0 </Pax>
 		<PaxJoin> 204 </PaxJoin>
+		<DStatus> Delayed </DStatus>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</QFA438-1957>
 	<QFA440-1958>
 		<Flights>
@@ -2163,6 +2181,10 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Departed </DStatus>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</QFA412-2045>
 	<JQ464-2046>
 		<Flights>
@@ -2367,6 +2389,10 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 73H </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Delayed </DStatus>
+		<Gates> txtGate2 </Gates>
+		<AT> 18991230 000000 </AT>
+		<NonPublic/>
 	</QFA1011-2057>
 	<QFA2078-2058>
 		<Flights>
@@ -2928,6 +2954,7 @@
 		<Carrier> Domestic </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<Pax> 0 </Pax>
+		<DStatus> Delayed </DStatus>
 	</QFA769-2092>
 	<QFA85-2093>
 		<Flights>
@@ -2942,6 +2969,10 @@
 		<Carrier> International </Carrier>
 		<AirCraft> 763 </AirCraft>
 		<PaxJoin> 173 </PaxJoin>
+		<Gates> txtGate2 </Gates>
+		<AT> 19351230 193500 </AT>
+		<NonPublic/>
+		<DStatus> Delayed </DStatus>
 	</QFA85-2093>
 	<QFA432-2094>
 		<Flights>
@@ -4172,7 +4203,7 @@
 		<ET> 20100812 170000 </ET>
 		<Carrier> International </Carrier>
 		<AirCraft> 744 </AirCraft>
-		<DStatus> Delayed </DStatus>
+		<DStatus> Departed </DStatus>
 	</SIA228-2171>
 	<QFA9-2172>
 		<Flights>
@@ -4339,16 +4370,4 @@
 		<Gates> 3 </Gates>
 		<Bays/>
 	</LT4444-2181>
-	<TEST2-2182>
-		<Flights>
-			<TEST2>
-				<CheckIns> 3 </CheckIns>
-				<Ports> SYD </Ports>
-			</TEST2>
-		</Flights>
-		<ST> 20110422 093000 </ST>
-		<AT> 18991230 000000 </AT>
-		<NonPublic/>
-		<Rego> SF334 </Rego>
-	</TEST2-2182>
 </Departures>
