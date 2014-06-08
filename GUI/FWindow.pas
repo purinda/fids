@@ -1667,7 +1667,7 @@ begin
   NextNode := VST.GetFirst();
   
   MidLeft := Left + (Width div 2);
-  MidTop := Top + (Height div 2);
+  MidTop := Top - VST.Top + (Height div 2);
  
   LastViewNode := VST.GetNodeAt(Point(MidLeft, MidTop));
 
