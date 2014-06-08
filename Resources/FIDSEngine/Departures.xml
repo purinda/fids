@@ -25,6 +25,7 @@
 			</QFA614>
 			<JQ6614>
 				<Ports> BNE </Ports>
+				<CheckIns> 31 </CheckIns>
 			</JQ6614>
 		</Flights>
 		<FeedKey> QFA614/081031 </FeedKey>
@@ -39,8 +40,9 @@
 		<Fuel> 7300 </Fuel>
 		<Burn> 4600 </Burn>
 		<Gates> GT,AS </Gates>
-		<DStatus> Departed </DStatus>
+		<DStatus> Delayed </DStatus>
 		<NonPublic/>
+		<RelatedFlight> CH213 </RelatedFlight>
 	</QFA614-1924>
 	<QFA426-1925>
 		<Flights>
@@ -99,6 +101,7 @@
 		<Gates> txtGate2 </Gates>
 		<NonPublic/>
 		<DStatus> Departed </DStatus>
+		<RelatedFlight> CH123 </RelatedFlight>
 	</ANZ124-1927>
 	<QFA25-1928>
 		<Flights>
@@ -118,7 +121,7 @@
 		<FeedKey> QFA25/081031 </FeedKey>
 		<ST> 20100812 113500 </ST>
 		<ET> 20100812 113500 </ET>
-		<AT> 20100812 115200 </AT>
+		<AT> 20100812 201000 </AT>
 		<Rego> VHEBX </Rego>
 		<Carrier> International </Carrier>
 		<AirCraft> 743 </AirCraft>
@@ -126,6 +129,9 @@
 		<Fuel> 48600 </Fuel>
 		<Burn> 32100 </Burn>
 		<DStatus> Departed </DStatus>
+		<Gates> 1 </Gates>
+		<NonPublic/>
+		<RelatedFlight> XC124 </RelatedFlight>
 	</QFA25-1928>
 	<QFA428-1929>
 		<Flights>
@@ -175,7 +181,7 @@
 		<Flights>
 			<NTL4444>
 				<Ports> MEL SYD </Ports>
-				<CheckIns> 29 </CheckIns>
+				<CheckIns> 27 </CheckIns>
 			</NTL4444>
 		</Flights>
 		<ST> 20100812 183000 </ST>
@@ -201,7 +207,7 @@
 			</KE7349>
 		</Flights>
 		<FeedKey> QFA93/081031 </FeedKey>
-		<ST> 20100812 111000 </ST>
+		<ST> 20140608 111000 </ST>
 		<ET> 20100812 114500 </ET>
 		<AT> 20100812 201000 </AT>
 		<Rego> VHOEG </Rego>

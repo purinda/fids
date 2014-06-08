@@ -541,8 +541,12 @@ var
 begin
   ControllerMode := FIDSListingMode;
 
-  VST.TreeOptions.PaintOptions := [toShowVertGridLines, toShowHorzGridLines,
-    toFullVertGridLines];
+  VST.TreeOptions.PaintOptions := [
+    toShowVertGridLines,
+    toShowHorzGridLines,
+    toFullVertGridLines,
+    toHotTrack
+  ];
 
   if (ControllerType = FIDSHorizontallyPopulated) then
   begin
@@ -1800,7 +1804,7 @@ begin
 
       // oRule.DbNode := fcWindow.oTTRulesList[ NodeIndex ];
       fRuleEdit.TTRule := oRule; // link oRule to vst row;
-      fRuleEdit.Show;
+      fRuleEdit.ShowModal;
     end;
 
     Exit();
@@ -2228,7 +2232,7 @@ begin
   // retrive VData from VT and load them to Flight VVData Structure
   VData1 := VST.GetNodeData(Node1);
   VData2 := VST.GetNodeData(Node2);
-
+ShowMessage(VData1.Flight);
   if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'flight') then
   begin
     Compare1 := VData1.Flight;
@@ -2302,7 +2306,7 @@ begin
   end;
 
   // Improve below code so TimeStamp, Integers and Characters can be sorted
-  if (not assigned(VData1)) or (not assigned(VData2)) then
+  if (not Assigned(VData1)) or (not Assigned(VData2)) then
     Result := 0
   else
   begin
@@ -2317,7 +2321,10 @@ begin
         Result := 0;
     end
     else
+    begin
       Result := CompareStr(Compare1, Compare2);
+    end;
+
   end;
 end;
 

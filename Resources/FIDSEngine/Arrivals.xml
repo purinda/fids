@@ -7,7 +7,7 @@
 			</QFA421>
 		</Flights>
 		<FeedKey> QFA421/081031 </FeedKey>
-		<ST> 20100812 110000 </ST>
+		<ST> 20100818 123200 </ST>
 		<ET> 20100812 111500 </ET>
 		<AT> 21110201 211100 </AT>
 		<Corresponding> Arrivals|QFA421-646|Flights|QFA421 </Corresponding>
@@ -17,11 +17,11 @@
 		<Pax> 216,17 </Pax>
 		<PaxDisembark> 216 </PaxDisembark>
 		<Gates> 2,2 </Gates>
-		<AStatus> On Blocks </AStatus>
-		<Belts> 1,1 </Belts>
+		<AStatus> Landed </AStatus>
+		<Belts> 2,2 </Belts>
 		<Comment> iouio </Comment>
-		<Terminal> 4 </Terminal>
+		<Terminal> T3 </Terminal>
 		<NonPublic/>
-		<Bays> 2 </Bays>
+		<Bays> 5 </Bays>
 	</QFA421-646>
 </Arrivals>

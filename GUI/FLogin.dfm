@@ -35,14 +35,14 @@ object frmLogin: TfrmLogin
       Height = 16
       Align = alTop
       Alignment = taCenter
-      Caption = '<Job Name>'
+      Caption = 'Initialising...'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 74
+      ExplicitWidth = 69
     end
     object EUsername: TLabeledEdit
       Left = 12
@@ -72,6 +72,7 @@ object frmLogin: TfrmLogin
       Height = 25
       Caption = 'Sign in'
       Default = True
+      Enabled = False
       TabOrder = 2
       OnClick = btnLoginClick
     end

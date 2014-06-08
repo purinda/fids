@@ -101,7 +101,7 @@ begin
   for ff in affFields do
   begin
     Fields[c] := ff;
-    inc(c);
+    Inc(c);
   end;
 
 end;

@@ -7,7 +7,7 @@ uses
 
 implementation
 
-function PortTCPIsOpen(dwPort : Word; ipAddressStr:string) : boolean;
+function IsPortTCPOpen(dwPort : Word; ipAddressStr:string) : boolean;
 var
   client : sockaddr_in;//sockaddr_in is used by Windows Sockets to specify a local or remote endpoint address
   sock, ret : Integer;

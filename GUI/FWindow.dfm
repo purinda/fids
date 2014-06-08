@@ -180,7 +180,7 @@ object frmWindow: TfrmWindow
     Header.MainColumn = -1
     Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
     TabOrder = 3
-    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowRoot, toShowTreeLines, toThemeAware, toUseBlendedImages, toChildrenAbove]
+    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowHorzGridLines, toShowRoot, toShowTreeLines, toThemeAware, toUseBlendedImages, toChildrenAbove]
     OnAfterItemErase = VSTAfterItemErase
     OnCollapsing = VSTCollapsing
     OnCompareNodes = VSTCompareNodes
@@ -190,6 +190,7 @@ object frmWindow: TfrmWindow
     OnGetNodeDataSize = VSTGetNodeDataSize
     OnMouseUp = VSTMouseUp
     OnNewText = VSTNewText
+    ExplicitTop = 119
     Columns = <>
   end
   object ammbMainMenu: TActionMainMenuBar

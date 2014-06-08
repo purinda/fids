@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, uLogin, Menus, ExtCtrls, ImgList, VrControls, VrLcd,
-  uGlobalDefs, uCommon;
+  uGlobalDefs, uCommon, uSocket;
 
 type
   TfrmLogin = class(TForm)
@@ -87,6 +87,8 @@ end;
 procedure TfrmLogin.FormCreate(Sender: TObject);
 begin
   LoginManager.Connect(ConnectionEvent);
+
+
 end;
 
 procedure TfrmLogin.tmrConnectionCheckerTimer(Sender: TObject);
@@ -120,11 +122,16 @@ begin
   begin
     tmrConnectionChecker.Enabled := false;
     btnLogin.Enabled := false;
+
+    lblJobName.Color := clRed;
+    lblJobName.Caption := 'FIDS engine is unavailable.';
   end
   else
   begin
     tmrConnectionChecker.Enabled := true;
     btnLogin.Enabled := true;
+    lblJobName.Color := clBlack;
+    lblJobName.Caption := 'Connecting...';
   end;
 end;
 

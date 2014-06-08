@@ -227,9 +227,8 @@ begin
 end;
 
 procedure TfRuleEdit.btOKClick(Sender: TObject);
-
-begin // ok finished edits so update any changed fields
-
+begin
+  // ok finished edits so update any changed fields
 end;
 
 procedure TfRuleEdit.Button3Click(Sender: TObject);
@@ -334,7 +333,8 @@ end;
 
 procedure TfRuleEdit.SetTTRule(rule: cTTRule);
 begin
-  // tells form which rule to adjust
+
+  // Tells form which rule to adjust
 	if oTTRule = nil then
   begin
 		oTTRule := cTTRule.Create(DB(), 'Feed');
@@ -342,8 +342,7 @@ begin
 
   oTTRule := cTTRule.Create(DB(), 'Feed');
   oTTRule.DbPath := rule.DbPath;
-  // need own object since vst calls GetText a lot
-  // oTTRule.oTemplate.DbNode := rule.oTemplate.DbNode;
+
 end;
 
 end.
