@@ -1569,7 +1569,7 @@ begin
   if (self.ControllerType = FIDSVerticallyPopulated) then
   begin
     TDataItem.Flight := '';
-    TDataItem.ports := '';
+    TDataItem.Ports := '';
     TDataItem.Status := '';
     TDataItem.CheckIns := '';
     TDataItem.STDate := Now;
@@ -1609,10 +1609,14 @@ begin
   { Common Function for both Vertically and Horizontally populated data }
 
   if (ControllerID = FIDSArrivals) then
+  begin
     frmEditAnD.SetFields(uCommon.ArrivalFields, uCommon.ArrivalColumns);
+  end;
 
   if (ControllerID = FIDSDepartures) then
+  begin
     frmEditAnD.SetFields(uCommon.DeparturesFields, uCommon.DeparturesColumns);
+  end;
 
   if (ControllerID = FIDSTArrivals) OR (ControllerID = FIDSTDepartures) OR
     (ControllerID = FIDSCheckins) OR (ControllerID = FIDSGates) OR
@@ -1699,7 +1703,7 @@ var
   Flight: string;
 begin
 
-  if Not assigned(VST.FocusedNode) then
+  if Not Assigned(VST.FocusedNode) then
   begin
     Exit;
   end;
@@ -2249,6 +2253,12 @@ begin
     Compare2 := VData2.Status;
   end;
 
+  if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'related flight') then
+  begin
+    Compare1 := VData1.RelatedFlight;
+    Compare2 := VData2.RelatedFlight;
+  end;
+
   if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'check-in') then
   begin
     Compare1 := VData1.CheckIns;
@@ -2394,6 +2404,9 @@ begin
       if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'status') then
         CellText := VData^.Status;
 
+      if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'related flight') then
+        CellText := VData^.RelatedFlight;
+
       if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'check-in') then
         CellText := VData^.CheckIns;
 
@@ -2504,6 +2517,9 @@ begin
 
       if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'status') then
         CellText := VData^.Status;
+
+      if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'related flight') then
+        CellText := VData^.RelatedFlight;
 
       if (LowerCase(VST.Header.Columns.Items[Column].Text) = 'checkin') then
         CellText := VData^.CheckIns;

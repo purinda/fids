@@ -12,8 +12,14 @@ uses
 
 type
   // Set sensor types so we can use them in any window require.
-  TSensorType = (Hosts = 0, Feeds = 1, Workstations = 2, Timefeed = 3,
-    WebFeeds = 4);
+  TSensorType = (
+    Hosts         = 0,
+    Feeds         = 1,
+    Workstations  = 2,
+    Timefeed      = 3,
+    WebFeeds      = 4
+  );
+
   TSensorDataType = (Name = 0, IP = 1, Status = 2);
 
   CFlightController = class
@@ -132,9 +138,13 @@ var
   i: Int;
 begin
   if (afKind = fkDepartures) then
-    path := uCommon.fidsDStatusPath
+  begin
+    path := uCommon.fidsDStatusPath;
+  end
   else
+  begin
     path := uCommon.fidsAStatusPath;
+  end;
 
   Result := TStringList.Create;
   uCommon.ParseDelimited(Result, DB().GetNode(path).Content, ',');
@@ -640,6 +650,7 @@ begin
     if (afKind = fkDepartures) then
       Table[r].Status := oFlight.Presentation[ffDStatus];
 
+    Table[r].RelatedFlight := oFlight.Presentation[ffRelatedFlight];
     Table[r].Gates := oFlight.Presentation[ffGates];
     Table[r].Bays := oFlight.Presentation[ffBays];
     Table[r].CheckIns := oFlight.Presentation[ffCheckIns];
@@ -649,7 +660,6 @@ begin
     Table[r].Rego := oFlight.Presentation[ffRego];
     Table[r].CodeShare := oFlight.CodeShare;
     Table[r].Comment := oFlight.Presentation[ffComment];
-    // ShowMessage( oFlight.Presentation[ffNonPublic] );
 
     // Newly Added
     Table[r].Slottime := oFlight.Presentation[ffSlotTime];
@@ -657,7 +667,6 @@ begin
       [ffScheduledCheckinCounters];
     Table[r].CheckinOpeningTime := oFlight.Presentation[ffCheckinOpeningTime];
     Table[r].CheckinClosingTime := oFlight.Presentation[ffCheckinClosingTime];
-    Table[r].RelatedFlight := oFlight.Presentation[ffRelatedFlight];
     Table[r].Raceway := oFlight.Presentation[ffRaceway];
     Table[r].Aircraft := oFlight.Presentation[ffAirCraft];
     Table[r].OffBlock := oFlight.Presentation[ffOffBlock];
@@ -667,7 +676,7 @@ begin
     Table[r].Crawling := oFlight.Presentation[ffCrawling];
     Table[r].DBPath := oFlight.DBPath;
 
-    inc(r);
+    Inc(r);
   end;
 
   { Potential memory leak? }
@@ -698,7 +707,7 @@ begin
   end
   else
   begin
-    showmessage('Error 554: Flight db connectivity lost');
+    ShowMessage('Error 554: Flight db connectivity lost');
   end;
 
 end;

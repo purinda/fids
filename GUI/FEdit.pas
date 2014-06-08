@@ -469,7 +469,8 @@ begin
     begin
       { Calculate TOP Pixel }
       if not SameLevel
-      then { ST/ET/AT should be in the same level and never split }
+      then
+        { ST/ET/AT should be in the same level and never split }
         if (I = 0) then
           PTop := uCommon.ComponentTop
         else

@@ -129,8 +129,8 @@ Var
   ffField: aFlightField;
 begin
 
-  SetLength(FieldNames, length(strFields));
-  SetLength(ffFields, length(IffFields));
+  SetLength(FieldNames, Length(strFields));
+  SetLength(ffFields, Length(IffFields));
 
   I := 0;
   for ffField in IffFields do
@@ -330,7 +330,7 @@ begin
   begin
 
     // This ignores date(ETA, ETA[date]) fields displaying as labels in the edit window.
-    if (Pos('date', lowercase(FieldName)) = 0) then
+    if (Pos('DATE', UpperCase(FieldName)) = 0) then
     begin
       { Positioning Labels }
       lblField[I] := TLabel.Create(self);
@@ -369,14 +369,17 @@ begin
         lblField[I].Top := Row2;
         lblField[I].Left := Col2;
       end;
-      if (lowercase(FieldName) = 'std') OR (lowercase(FieldName) = 'sta') then
-      // 3 row 1 column
+      if (lowercase(FieldName) = 'relatedflight') then // 2 row 3 column
+      begin
+        lblField[I].Top := Row2;
+        lblField[I].Left := Col2;
+      end;
+      if (lowercase(FieldName) = 'std') OR (lowercase(FieldName) = 'sta') then       // 3 row 1 column
       begin
         lblField[I].Top := Row3;
         lblField[I].Left := Col1;
       end;
-      if (lowercase(FieldName) = 'etd') OR (lowercase(FieldName) = 'eta') then
-      // 3 row 2.5 column
+      if (lowercase(FieldName) = 'etd') OR (lowercase(FieldName) = 'eta') then      // 3 row 2.5 column
       begin
         lblField[I].Top := Row3;
         lblField[I].Left := Col2;

@@ -43,14 +43,12 @@ type
     DBPath: String;
 
     { Timetable specifc fields }
-    DateStart : string;
-    DateEnd   : string;
+    DateStart     : string;
+    DateEnd       : string;
     DateException : string;
     DaysExcept    : string;
     Template      : string;
     TTDbPath      : string;
-
-
   end;
 
   { Type information for Checkins, Baggages, Bays and Belts }
@@ -64,11 +62,22 @@ type
   end;
 
   TFIDSWindowMode = (FIDSListingMode = 0, FIDSSearchMode = 1);
-  TFIDSWindowType = (FIDSVerticallyPopulated = 0,
-    FIDSHorizontallyPopulated = 1);
-  TFIDSWindowID = (FIDSArrivals = -3, FIDSDepartures = -2, FIDSTArrivals = -1,
-    FIDSTDepartures = 0, FIDSGates = 1, FIDSBays = 2, FIDSBelts = 3,
-    FIDSCheckins = 4);
+
+  TFIDSWindowType = (
+    FIDSVerticallyPopulated = 0,
+    FIDSHorizontallyPopulated = 1
+  );
+
+  TFIDSWindowID = (
+    FIDSArrivals    = -3,
+    FIDSDepartures  = -2,
+    FIDSTArrivals   = -1,
+    FIDSTDepartures = 0,
+    FIDSGates       = 1,
+    FIDSBays        = 2,
+    FIDSBelts       = 3,
+    FIDSCheckins    = 4
+  );
 
 var
   ArrivalsRunning: Boolean;
@@ -90,7 +99,7 @@ var
   TDepartuesHandle: HWND;
 
   { Different data types and arrays used in different windows }
-  ArrivalFields: array [0 .. 17] of aFlightField = (
+  ArrivalFields: array [0 .. 18] of aFlightField = (
     ffFlight,
     ffRego,
     ffAirCraft,
@@ -100,23 +109,19 @@ var
     ffSTdate,
     ffETime,
     ffETdate,
-    // ffOnBlock,
     ffATime,
     ffATdate,
-    // ffSlotTime,
     ffGates,
     ffBays,
     ffTerminal,
     ffBelts,
     ffCarrier,
     ffNonPublic,
-    // ffRelatedFlight,//relatedflight
-    // ffRaceway,
+    ffRelatedFlight,
     ffComment
-    // ffCrawling
   );
 
-  ArrivalColumns: array [0 .. 17] of String = (
+  ArrivalColumns: array [0 .. 18] of String = (
     'Flight',
     'Rego',
     'Aircraft Type',
@@ -126,24 +131,20 @@ var
     'STA[Date]',
     'ETA',
     'ETA[Date]',
-    // 'On Blocks',
     'ATA',
     'ATA[Date]',
-    // 'Slot Time',
     'Gate',
     'Bay',
     'Terminal',
     'Belts',
-    'Related Flight',
     'Carrier',
-    // 'Public',
-    // 'Lateral',
+    'Public',
+    'Related Flight',
     'Message'
-    // 'Crawling'
   );
 
   { Different data types and arrays used in different windows }
-  ArrivalSortedFields: array [0 .. 14] of aFlightField = (
+  ArrivalSortedFields: array [0 .. 15] of aFlightField = (
     ffFlight,
     ffPorts,
     ffSTime,
@@ -151,6 +152,7 @@ var
     ffATime,
     ffSTdate,
     ffAStatus,
+    ffRelatedFlight,
     ffGates,
     ffBays,
     ffBelts,
@@ -161,7 +163,7 @@ var
     ffNonPublic
   );
 
-  ArrivalSortedColumns: array [0 .. 14] of String = (
+  ArrivalSortedColumns: array [0 .. 15] of String = (
     'Flight',
     'Ports',
     'STA',
@@ -169,6 +171,7 @@ var
     'ATA',
     'STA[Date]',
     'Status',
+    'Related Flight',
     'Gate',
     'Bay',
     'Belts',
@@ -201,14 +204,6 @@ var
   TArrivalColumns: array [0 .. 8] of String = (
     'Flight',
     'Ports',
-    {
-      'STA',
-      'STA[Date]',
-      'ETA',
-      'ETA[Date]',
-      'ATA',
-      'ATA[Date]',
-    }
     'Gate',
     'Bay',
     'Belts',
@@ -221,14 +216,6 @@ var
   TDeparturesFields: array [0 .. 8] of aFlightField = (
     ffFlight,
     ffPorts,
-    {
-      ffSTime,
-      ffSTdate,
-      ffETime,
-      ffETdate,
-      ffATime,
-      ffATdate,
-    }
     ffCheckIns,
     ffGates,
     ffBays,
@@ -240,14 +227,6 @@ var
   TDeparturesColumns: array [0 .. 8] of String = (
     'Flight',
     'Ports',
-    {
-      'STA',
-      'STA[Date]',
-      'ETA',
-      'ETA[Date]',
-      'ATA',
-      'ATA[Date]',
-    }
     'Check-in',
     'Gate',
     'Bay',
@@ -257,7 +236,7 @@ var
     'NonPublic'
   );
 
-  DeparturesFields: array [0 .. 17] of aFlightField = (
+  DeparturesFields: array [0 .. 18] of aFlightField = (
     ffFlight,
     ffRego,
     ffAirCraft,
@@ -278,13 +257,14 @@ var
     ffCheckIns,
     ffCarrier,
     ffNonPublic,
+    ffRelatedFlight,
     // ffScheduledCheckinCounters,//scheduledcheckincounters
     // ffCheckinOpeningTime,   //checkinopeningtime
     // ffCheckinClosingTime,   //checkinclosingtime
     ffComment
     // ffCrawling
   );
-  DeparturesColumns: array [0 .. 17] of String = (
+  DeparturesColumns: array [0 .. 18] of String = (
     'Flight',
     'Rego',
     'Aircraft Type',
@@ -294,25 +274,19 @@ var
     'STD[Date]',
     'ETD',
     'ETD[Date]',
-    // 'Off Blocks',
     'ATD',
     'ATD[Date]',
-    // 'Slot Time',
     'Gate',
     'Bay',
     'Terminal',
-    // 'Related Flight',
     'Check-in',
     'Carrier',
     'Public',
-    // 'Scheduled Checkin Counters',
-    // 'Checkin Opening time',
-    // 'Checkin Closing time',
+    'Related Flight',
     'Message'
-    // 'Crawling'
   );
 
-  DeparturesSortedFields: array [0 .. 14] of aFlightField = (
+  DeparturesSortedFields: array [0 .. 15] of aFlightField = (
     ffFlight,
     ffPorts,
     ffSTime,
@@ -320,6 +294,7 @@ var
     ffATime,
     ffSTdate,
     ffDStatus,
+    ffRelatedFlight,
     ffCheckIns,
     ffGates,
     ffBays,
@@ -329,7 +304,8 @@ var
     ffComment,
     ffNonPublic
   );
-  DeparturesSortedColumns: array [0 .. 14] of String = (
+
+  DeparturesSortedColumns: array [0 .. 15] of String = (
     'Flight',
     'Ports',
     'STD',
@@ -337,6 +313,7 @@ var
     'ATD',
     'STD[Date]',
     'Status',
+    'Related Flight',
     'Check-in',
     'Gate',
     'Bay',
