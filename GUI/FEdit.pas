@@ -341,7 +341,6 @@ begin
           // TEdit(inpField[I]).Format := fidsGUITimeFormat;
           TEdit(inpField[I]).Width := 60;
           TEdit(inpField[I]).Text := FormatDateTime('hhmm', FlightData.ATime);
-
         end;
 
       ffATdate:
