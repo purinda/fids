@@ -182,6 +182,7 @@ object frmWindow: TfrmWindow
     TabOrder = 3
     TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowHorzGridLines, toShowRoot, toShowTreeLines, toThemeAware, toUseBlendedImages, toChildrenAbove]
     OnAfterItemErase = VSTAfterItemErase
+    OnAfterItemPaint = VSTAfterItemPaint
     OnCollapsing = VSTCollapsing
     OnCompareNodes = VSTCompareNodes
     OnDblClick = tbbModifyClick

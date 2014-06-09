@@ -59,6 +59,7 @@ type
     function GetListOfCGBBUsed(ControllerID: TFIDSWindowID): TStringList;
     function GetUsers(): TStringList;
     function GetJobName(): String;
+    procedure SetStatusRect(Status: string; var ItemRect: TRect; var TargetCanvas: TCanvas);
 
     constructor Create(afkInput: aFlightKind; affFields: array of aFlightField);
 
@@ -412,6 +413,70 @@ begin
   end;
 
   { END - Sensor Specific Routines }
+end;
+
+procedure CFlightController.SetStatusRect(Status: string; var ItemRect: TRect; var TargetCanvas: TCanvas);
+begin
+
+    if LowerCase(Status) = 'boarding' then
+    begin
+      TargetCanvas.Brush.Color := rgb(200, 0, 0);
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'landed' then
+    begin
+      TargetCanvas.Brush.Color := rgb(200, 0, 0);
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'final call' then
+    begin
+      TargetCanvas.Brush.Color := rgb(200, 0, 0);
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'gate closing' then
+    begin
+      TargetCanvas.Brush.Color := clGreen;
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'diverted' then
+    begin
+      TargetCanvas.Brush.Color := clBlue;
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'departed' then
+    begin
+      TargetCanvas.Brush.Color := clBlue;
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'cancelled' then
+    begin
+      TargetCanvas.Brush.Color := clBlue;
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'confirmed' then
+    begin
+      TargetCanvas.Brush.Color := rgb(0, 153, 0);
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'last call' then
+    begin
+      TargetCanvas.Brush.Color := rgb(0, 153, 0);
+      TargetCanvas.FillRect(ItemRect);
+    end;
+
+    if LowerCase(Status) = 'closed' then
+    begin
+      TargetCanvas.Brush.Color := rgb(170, 0, 170);
+      TargetCanvas.FillRect(ItemRect);
+    end;
 end;
 
 function CFlightController.StringToSensorType(str: string): TSensorType;

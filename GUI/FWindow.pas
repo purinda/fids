@@ -101,6 +101,8 @@ type
     procedure tbbCodeshareClick(Sender: TObject);
     procedure VSTCollapsing(Sender: TBaseVirtualTree; Node: PVirtualNode;
       var Allowed: Boolean);
+    procedure VSTAfterItemPaint(Sender: TBaseVirtualTree; TargetCanvas: TCanvas;
+      Node: PVirtualNode; ItemRect: TRect);
   private
     { Main db backend handling Object }
     fcWindow: CFlightController;
@@ -2139,69 +2141,45 @@ begin
       end;
     end;
 
-    if LowerCase(NodeData.Status) = 'boarding' then
-    begin
-      TargetCanvas.Brush.Color := rgb(200, 0, 0);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'landed' then
-    begin
-      TargetCanvas.Brush.Color := rgb(200, 0, 0);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'final call' then
-    begin
-      TargetCanvas.Brush.Color := rgb(200, 0, 0);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'gate closing' then
-    begin
-      TargetCanvas.Brush.Color := clGreen;
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'diverted' then
-    begin
-      TargetCanvas.Brush.Color := clBlue;
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'departed' then
-    begin
-      TargetCanvas.Brush.Color := clBlue;
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'cancelled' then
-    begin
-      TargetCanvas.Brush.Color := clBlue;
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'confirmed' then
-    begin
-      TargetCanvas.Brush.Color := rgb(0, 153, 0);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'last call' then
-    begin
-      TargetCanvas.Brush.Color := rgb(0, 153, 0);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-    if LowerCase(NodeData.Status) = 'closed' then
-    begin
-      TargetCanvas.Brush.Color := rgb(170, 0, 170);
-      TargetCanvas.FillRect(ItemRect);
-    end;
-
-  end; // end if Controller Type
+    // Draw status colors on "Status" column
+    fcWindow.SetStatusRect(NodeData.Status, ItemRect, TargetCanvas);
+  end;
 end;
 
+
+procedure TfrmWindow.VSTAfterItemPaint(Sender: TBaseVirtualTree;
+  TargetCanvas: TCanvas; Node: PVirtualNode; ItemRect: TRect);
+var
+  NodeData: PTreeData;
+  I: Int8;
+begin
+  NodeData := VST.GetNodeData(Node);
+
+  if (Sender as TBaseVirtualTree).Selected[Node] then
+  begin
+
+    for I := 0 to VST.Header.Columns.Count - 1 do
+    begin
+      if UpperCase(VST.Header.Columns.Items[I].Text) = 'STATUS' then
+      begin
+        ItemRect.Left := VST.Header.Columns.Items[I].Left;
+        ItemRect.Right := VST.Header.Columns.Items[I + 1].Left;
+
+        // Draw status colors on "Status" column
+        fcWindow.SetStatusRect(NodeData.Status, ItemRect, TargetCanvas);
+
+        // Redraw status on top of ItemRect
+        TargetCanvas.Font.Color := clWhite;
+        TargetCanvas.TextOut(ItemRect.Left + 10, ItemRect.Top + 2, NodeData.Status);
+
+      end;
+    end;
+
+    // Draw focus rect for a row
+    TargetCanvas.DrawFocusRect(ItemRect);
+  end;
+
+end;
 
 procedure TfrmWindow.VSTCollapsing(Sender: TBaseVirtualTree; Node: PVirtualNode;
   var Allowed: Boolean);
