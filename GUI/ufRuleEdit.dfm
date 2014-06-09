@@ -119,10 +119,10 @@ object fRuleEdit: TfRuleEdit
     TabOrder = 0
     OnChange = ebRuleNameChange
   end
-  object ComboBox1: TComboBox
+  object cmbFKind: TComboBox
     Left = 87
     Top = 143
-    Width = 145
+    Width = 177
     Height = 21
     TabOrder = 1
   end
@@ -346,6 +346,15 @@ object fRuleEdit: TfRuleEdit
       ModalResult = 1
       TabOrder = 1
       OnClick = Button3Click
+    end
+    object Button1: TButton
+      Left = 22
+      Top = 0
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 2
+      OnClick = Button1Click
     end
   end
   object ebStart: TDateTimePicker

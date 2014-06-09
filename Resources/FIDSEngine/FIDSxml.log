@@ -2477,3 +2477,47 @@
 3	00:01 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
 3	00:02 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
 3	00:03 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	00:13 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+216	00:13 Mon 9 Jun 14	EditRequest : FIDS2
+216	00:13 Mon 9 Jun 14	EditRequest : FIDS2
+216	00:13 Mon 9 Jun 14	EditRequest : FIDS2
+3	00:14 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+216	00:14 Mon 9 Jun 14	EditRequest : GT10
+3	00:15 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	00:15 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	00:18 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+11	00:18 Mon 9 Jun 14	Log Out  ID FIDS-PC
+107	00:18 Mon 9 Jun 14	FAILED Login attempt FIDS2 ID FIDS-PC
+5	00:18 Mon 9 Jun 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	00:18 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+4	00:18 Mon 9 Jun 14	Acting as HOST
+3	00:18 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	12:36 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+11	12:38 Mon 9 Jun 14	Log Out  ID FIDS-PC
+107	12:38 Mon 9 Jun 14	FAILED Login attempt FIDS2 ID FIDS-PC
+5	12:41 Mon 9 Jun 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	12:41 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+4	12:41 Mon 9 Jun 14	Acting as HOST
+3	12:41 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	12:43 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	13:18 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	13:20 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	13:21 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+11	13:22 Mon 9 Jun 14	Log Out  ID FIDS-PC
+107	13:22 Mon 9 Jun 14	FAILED Login attempt FIDS2 ID FIDS-PC
+5	13:22 Mon 9 Jun 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	13:22 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+4	13:22 Mon 9 Jun 14	Acting as HOST
+3	13:23 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+11	13:23 Mon 9 Jun 14	Log Out  ID FIDS-PC
+107	13:23 Mon 9 Jun 14	FAILED Login attempt FIDS2 ID FIDS-PC
+5	13:23 Mon 9 Jun 14	Startup FIDSxml v0.98 build 21 Dec 2013 
+3	13:23 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+4	13:23 Mon 9 Jun 14	Acting as HOST
+3	13:23 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC
+3	13:24 Mon 9 Jun 14	Login FIDS2 ID FIDS-PC

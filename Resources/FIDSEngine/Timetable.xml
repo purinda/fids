@@ -24,8 +24,8 @@
 	</GT4444>
 	<LT4444>
 		<Rules>
-			<DateStart> 18991230 </DateStart>
-			<DateEnd> 18991230 </DateEnd>
+			<DateStart> 20141230 </DateStart>
+			<DateEnd> 20141230 </DateEnd>
 			<Time> 1830 </Time>
 			<Days> 7F </Days>
 			<DaysExcept> 00 </DaysExcept>
@@ -36,12 +36,13 @@
 			<Flights>
 				<LT4444>
 					<Ports> MEL </Ports>
+					<CheckIns> 1 </CheckIns>
 				</LT4444>
 			</Flights>
 			<ST/>
 			<ET/>
-			<Gates> 3 </Gates>
-			<Bays> 4 </Bays>
+			<Gates> 2 </Gates>
+			<Bays> 45 </Bays>
 		</Template>
 	</LT4444>
 	<ST1234>
@@ -70,12 +71,12 @@
 	</ST1234>
 	<QF666>
 		<Rules>
-			<DateStart> 18991230 </DateStart>
-			<DateEnd> 18991230 </DateEnd>
-			<Time> 0330 </Time>
-			<Days> 00 </Days>
-			<DaysExcept> 0C </DaysExcept>
-			<DateException> 20081218-20081220 </DateException>
+			<DateStart> 20141230 </DateStart>
+			<DateEnd> 20141230 </DateEnd>
+			<Time> 2132 </Time>
+			<Days> 03 </Days>
+			<DaysExcept> 3C </DaysExcept>
+			<DateException> ,20081218-20081220,20110429-20110429 </DateException>
 		</Rules>
 		<Path> Departures </Path>
 		<Template>
@@ -89,13 +90,13 @@
 			<ST/>
 			<ET/>
 			<Gates> 12 </Gates>
-			<Bays> 2 </Bays>
+			<Bays> 3 </Bays>
 		</Template>
 	</QF666>
 	<QF143>
 		<Rules>
-			<DateStart> 20091201 </DateStart>
-			<DateEnd> 20110131 </DateEnd>
+			<DateStart> 18991230 </DateStart>
+			<DateEnd> 18991230 </DateEnd>
 			<Time> 0330 </Time>
 			<Days> 7F </Days>
 			<DaysExcept> 10 </DaysExcept>
@@ -106,6 +107,7 @@
 			<Flights>
 				<QF143>
 					<Ports> BNE </Ports>
+					<CheckIns> 2 </CheckIns>
 				</QF143>
 			</Flights>
 			<ST/>

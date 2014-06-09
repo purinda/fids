@@ -8,7 +8,7 @@ interface
 
 uses
   Classes, Generics.Collections, Generics.Defaults,
-  uFidsTags, uGlobalDefs, uMirrorDB, uDBTree, uGT, uFlight;
+  uFidsTags, uGlobalDefs, uMirrorDB, uDBTree, uGT, uFlight, Windows, Messages, Forms, Dialogs;
 
 type
   // see also field sets below
@@ -155,7 +155,7 @@ begin // pull data presentation grade strings from local db tree
   begin
     pRules := FindName(mDbNode, TTTagName[tfRules]);
     s := ReadContent(pRules, TTTagName[field]);
-    if Length(s) >= 15 then
+//    if Length(s) >= 15 then
     begin
       result := DbDateToStr(s);
       // result := IntToStr( Copy( s, 7, 2 ) ) + '/' + IntToStr( Copy( s, 1, 8 ) + '/'Copy( s, 1, 8 ) + '/';   // can be 'TBA' etc
@@ -164,7 +164,9 @@ begin // pull data presentation grade strings from local db tree
     end;
   end
   else if field in PrimaryFields then
-    result := ReadContent(mDbNode, TTTagName[field]) // path
+  begin
+      result := ReadContent(mDbNode, TTTagName[field]); // path
+  end
   else if field in RulesSubField then
   begin
     pRules := FindName(mDbNode, TTTagName[tfRules]);

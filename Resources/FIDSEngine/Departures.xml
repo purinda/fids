@@ -128,8 +128,8 @@
 		<PaxJoin> 371 </PaxJoin>
 		<Fuel> 48600 </Fuel>
 		<Burn> 32100 </Burn>
-		<DStatus> Departed </DStatus>
-		<Gates> 1 </Gates>
+		<DStatus> Delayed </DStatus>
+		<Gates> 3 </Gates>
 		<NonPublic/>
 		<RelatedFlight> XC124 </RelatedFlight>
 	</QFA25-1928>

@@ -11,7 +11,7 @@ type
 	TfRuleEdit = class(TForm)
 		ebRuleName: TEdit;
 		Label1: TLabel;
-		ComboBox1: TComboBox;
+    cmbFKind: TComboBox;
 		Label2: TLabel;
 		Label3: TLabel;
 		Label4: TLabel;
@@ -60,6 +60,7 @@ type
 		dtUntill: TDateTimePicker;
 		Label12: TLabel;
 		Label13: TLabel;
+    Button1: TButton;
 		procedure FormShow(Sender: TObject);
 		procedure btOKClick(Sender: TObject);
 		procedure btDeleteClick(Sender: TObject);
@@ -69,6 +70,7 @@ type
 		procedure Button3Click(Sender: TObject);
 		procedure btnAddClick(Sender: TObject);
 		procedure btnRemClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
 	private
 		oTTRule: cTTRule;
 		function CheckError: boolean;
@@ -143,11 +145,11 @@ begin // produces crude error messages from error number - true is NO errors
 end;
 
 procedure TfRuleEdit.CollectFieldValues;
-
-begin // feed all fields into cTTRules for validation and global update of changes
-	// should be automated with data dictionary ?
+begin
+  { feed all fields into cTTRules for validation and global update of changes
+	  should be automated with data dictionary ? }
 	oTTRule.Error := teNone;
-	oTTRule.Presentation[tfPath] := ComboBox1.Items[ComboBox1.ItemIndex];
+	oTTRule.Presentation[tfPath] := cmbFKind.Items[cmbFKind.ItemIndex];
 	oTTRule.Presentation[tfRuleName] := ebRuleName.Text;
 	oTTRule.Presentation[tfTime] := uCommon.FIDS_TimeTOStr(ebTime.Time);
 	oTTRule.Presentation[tfDateStart] := uCommon.FIDS_DtTOStr(ebStart.Date);
@@ -165,13 +167,12 @@ begin // feed all fields into cTTRules for validation and global update of chang
 end;
 
 procedure TfRuleEdit.ebRuleNameChange(Sender: TObject);
-
-begin // new flight name is derrived from rule name ?
+begin
+  // new flight name is derrived from rule name ?
 	lbFlightNum.Caption := StripTail(ebRuleName.Text);
 end;
 
 procedure TfRuleEdit.btDeleteClick(Sender: TObject);
-
 begin // delete a rule
 	oTTRule.Delete;
 	if CheckError() then
@@ -231,6 +232,13 @@ begin
   // ok finished edits so update any changed fields
 end;
 
+procedure TfRuleEdit.Button1Click(Sender: TObject);
+begin
+		ebStart.DateTime := uCommon.FIDS_StrToDT
+		  (oTTRule.Presentation[tfDateStart]);
+		ebEnd.DateTime := uCommon.FIDS_StrToDT(oTTRule.Presentation[tfDateEnd]);
+end;
+
 procedure TfRuleEdit.Button3Click(Sender: TObject);
 begin
 	CollectFieldValues;
@@ -257,11 +265,10 @@ var
 	kind: aFlightKind;
 begin
 
-  // init flight kind drop down
+  // init flight kind drop down Arrivals, Dep..
 	for kind := Succ( Low(aFlightKind)) to High(aFlightKind) do
 	begin
-		ComboBox1.Items.Add(EnumToStr(Ord(kind), TypeInfo(aFlightKind)));
-		// Arrivals etc
+		cmbFKind.Items.Add(EnumToStr(Ord(kind), TypeInfo(aFlightKind)));
 	end;
 
 end;
@@ -281,11 +288,11 @@ begin
 	if oTTRule <> nil then
 	begin
 		kind := oTTRule.Presentation[tfPath]; // set kind selector
-		for x := 0 to ComboBox1.Items.Count - 1 do
+		for x := 0 to cmbFKind.Items.Count - 1 do
 		begin
-			if kind = ComboBox1.Items[x] then
+			if kind = cmbFKind.Items[x] then
 			begin
-				ComboBox1.ItemIndex := x;
+				cmbFKind.ItemIndex := x;
 				break;
 			end;
 		end;
@@ -337,10 +344,10 @@ begin
   // Tells form which rule to adjust
 	if oTTRule = nil then
   begin
-		oTTRule := cTTRule.Create(DB(), 'Feed');
+		oTTRule := cTTRule.Create(DB(), DB.id);
   end;
 
-  oTTRule := cTTRule.Create(DB(), 'Feed');
+  oTTRule := cTTRule.Create(DB(), DB.id);
   oTTRule.DbPath := rule.DbPath;
 
 end;
