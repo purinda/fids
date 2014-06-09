@@ -347,15 +347,6 @@ object fRuleEdit: TfRuleEdit
       TabOrder = 1
       OnClick = Button3Click
     end
-    object Button1: TButton
-      Left = 22
-      Top = 0
-      Width = 75
-      Height = 25
-      Caption = 'Button1'
-      TabOrder = 2
-      OnClick = Button1Click
-    end
   end
   object ebStart: TDateTimePicker
     Left = 87

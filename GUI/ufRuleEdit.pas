@@ -60,7 +60,6 @@ type
 		dtUntill: TDateTimePicker;
 		Label12: TLabel;
 		Label13: TLabel;
-    Button1: TButton;
 		procedure FormShow(Sender: TObject);
 		procedure btOKClick(Sender: TObject);
 		procedure btDeleteClick(Sender: TObject);
